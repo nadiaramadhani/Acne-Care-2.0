@@ -47,7 +47,7 @@ struct onBoardingView: View {
                     onboarding4
                         .transition(transition)
                 case 4:
-                    HomeView()
+                    TestHomeView()
                         .transition(transition)
                 default:
                     RoundedRectangle(cornerRadius: 25.0)

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct TestHomeView: View {
     @AppStorage("name") var currentUserName: String?
     @AppStorage("signed_in") var currentUserSignedIn: Bool = false
     
@@ -29,6 +29,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        TestHomeView()
     }
 }
