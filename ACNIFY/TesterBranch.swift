@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TesterBranch: View {
     var body: some View {
-        Text("Ini branch baru")
+        Text("Ini branch baru bro")
     }
 }
 
