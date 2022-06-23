@@ -18,23 +18,35 @@ struct onBoardingView: View {
      3 = third onboarding
      */
     
+    let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
     @State var onBoardingState: Int = 0
-  //  @AppStorage("userName") var userName = ""
-    
     @State var userName: String = ""
+    
+    //username input
+    @AppStorage("name") var currentUserName: String?
+    @AppStorage("signed_in") var currentUserSignedIn: Bool = false
+    
+    
     var body: some View {
-
+        
         ZStack{
             ZStack{
                 switch onBoardingState{
                 case 0:
                     onboarding1
+                        .transition(transition)
                 case 1:
                     onboarding2
+                        .transition(transition)
+                    
                 case 2:
                     onboarding3
+                        .transition(transition)
+                    
                 case 3:
                     onboarding4
+                        .transition(transition)
+                    
                 default:
                     RoundedRectangle(cornerRadius: 25.0)
                         .foregroundColor(.blue)
@@ -60,18 +72,18 @@ struct UserInputView_Previews: PreviewProvider {
 extension onBoardingView{
     private  var bottomButton: some View {
         Text(onBoardingState == 3 ? "FINISH" :
-        "NEXT"
+                "NEXT"
         )
-            .font(.headline)
-            .foregroundColor(.white)
-            .frame(width: 350, height:50 )
-//            .frame(maxWidth: .infinity)
-            .background(Color("primaryGreen"))
-            .cornerRadius(10)
-            .padding()
-            .onTapGesture {
-                handleNextButtonPressed()
-            }
+        .font(.headline)
+        .foregroundColor(.white)
+        .frame(width: 350, height:50 )
+        //            .frame(maxWidth: .infinity)
+        .background(Color("primaryGreen"))
+        .cornerRadius(10)
+        .padding()
+        .onTapGesture {
+            handleNextButtonPressed()
+        }
     }
     //MARK: ONBOARDING 1
     private var onboarding1: some View {
@@ -82,12 +94,12 @@ extension onBoardingView{
             
             Text("**Identify your skin condition**")
                 .font(.title)
-              .multilineTextAlignment(.leading)
+                .multilineTextAlignment(.leading)
                 .foregroundColor(Color("primaryGreen"))
                 .frame(width: 350, alignment: .leading)
                 .padding(.leading, 30)
                 .padding(.bottom)
-
+            
             Text("Have a better understanding of your skin condition to find suitable product")
                 .frame(width: 350, alignment: .leading)
                 .font(.title3)
@@ -95,7 +107,7 @@ extension onBoardingView{
             Spacer()
         }
     }
-//MARK: ONBOARDING 2
+    //MARK: ONBOARDING 2
     private var onboarding2: some View {
         VStack{
             Spacer()
@@ -104,33 +116,33 @@ extension onBoardingView{
             
             Text("**Check the suitable ingredients**")
                 .font(.title)
-              .multilineTextAlignment(.leading)
+                .multilineTextAlignment(.leading)
                 .foregroundColor(Color("primaryGreen"))
                 .frame(width: 350, alignment: .leading)
                 .padding(.leading, 30)
                 .padding(.bottom)
-
+            
             Text("Get to know your acne with its characteristics and recommendation ingredients that suitable for you")
                 .frame(width: 350, alignment: .leading)
                 .font(.title3)
                 .padding(.leading, 30)
             Spacer()
             
-//            Button(action: {
-//                withAnimation(.easeInOut(duration: 0.5)){
-//                    print("next")
-//                }
-//
-//            }, label: {
-//                Text("Next".uppercased())
-//
-//            })
-//            .padding()
-//            .frame(width: 346, height: 50, alignment: .center)
-//            .background(Color("primaryGreen").cornerRadius(10))
-//            .foregroundColor(.white)
-//            .font(.headline)
-//            Spacer()
+            //            Button(action: {
+            //                withAnimation(.easeInOut(duration: 0.5)){
+            //                    print("next")
+            //                }
+            //
+            //            }, label: {
+            //                Text("Next".uppercased())
+            //
+            //            })
+            //            .padding()
+            //            .frame(width: 346, height: 50, alignment: .center)
+            //            .background(Color("primaryGreen").cornerRadius(10))
+            //            .foregroundColor(.white)
+            //            .font(.headline)
+            //            Spacer()
         }
     }
     //MARK: ONBOARDING 3
@@ -141,82 +153,107 @@ extension onBoardingView{
                 .padding()
             Text("**Daily Progress of The Treatment**")
                 .font(.title)
-              .multilineTextAlignment(.leading)
+                .multilineTextAlignment(.leading)
                 .foregroundColor(Color("primaryGreen"))
                 .frame(width: 350, alignment: .leading)
                 .padding(.leading, 30)
                 .padding(.bottom)
-
+            
             Text("Track and trace your daily treatment progress to maintain the skin condition")
                 .frame(width: 350, alignment: .leading)
                 .font(.title3)
                 .padding(.leading, 30)
             Spacer()
             
-//            Button(action: {
-//                withAnimation(.easeInOut(duration: 0.5)){
-//                    print("next")
-//                }
-//
-//            }, label: {
-//                Text("Next".uppercased())
-//
-//            })
-//            .padding()
-//            .frame(width: 346, height: 50, alignment: .center)
-//            .background(Color("primaryGreen").cornerRadius(10))
-//            .foregroundColor(.white)
-//            .font(.headline)
-//            Spacer()
+            //            Button(action: {
+            //                withAnimation(.easeInOut(duration: 0.5)){
+            //                    print("next")
+            //                }
+            //
+            //            }, label: {
+            //                Text("Next".uppercased())
+            //
+            //            })
+            //            .padding()
+            //            .frame(width: 346, height: 50, alignment: .center)
+            //            .background(Color("primaryGreen").cornerRadius(10))
+            //            .foregroundColor(.white)
+            //            .font(.headline)
+            //            Spacer()
         }
     }
     //MARK: ONBOARDING 4
     private var onboarding4: some View {
         VStack{
-                 Spacer()
-                 Text("**Welcome to Acnify!**")
-                     .padding()
-                     .font(.title)
-                     .frame(width: 370, alignment: .leading)
-                     .foregroundColor(Color("primaryGreen"))
-                     .opacity(28.0)
+            Spacer()
+            Text("**Welcome to Acnify!**")
+                .padding()
+                .font(.title)
+                .frame(width: 370, alignment: .leading)
+                .foregroundColor(Color("primaryGreen"))
+                .opacity(28.0)
             
-                 Text("Tell us yourname")
-                    .font(.title3)
-                    .frame(width: 340, alignment: .leading)
-
-                 TextField("Name", text: $userName)
-                     .colorMultiply(Color.white)
-                     .frame(width: 346,alignment: .leading)
-                     .padding()
-                     .font(.headline)
-                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
+            Text("Tell us yourname")
+                .font(.title3)
+                .frame(width: 340, alignment: .leading)
+            
+            TextField("Name", text: $userName)
+                .colorMultiply(Color.white)
+                .frame(width: 346,alignment: .leading)
+                .padding()
+                .font(.headline)
+                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
             
             Spacer()
-//            Button(action: {
-//                withAnimation(.easeInOut(duration: 0.5)){
-//                    print("next")
-//                }
-//
-//            }, label: {
-//                Text("Next".uppercased())
-//
-//            })
-//            .padding()
-//            .frame(width: 346, height: 50, alignment: .center)
-//            .background(Color("primaryGreen").cornerRadius(10))
-//            .foregroundColor(.white)
-//            .font(.headline)
-//            .padding(.bottom, 40)
-             }
-
+            //            Button(action: {
+            //                withAnimation(.easeInOut(duration: 0.5)){
+            //                    print("next")
+            //                }
+            //
+            //            }, label: {
+            //                Text("Next".uppercased())
+            //
+            //            })
+            //            .padding()
+            //            .frame(width: 346, height: 50, alignment: .center)
+            //            .background(Color("primaryGreen").cornerRadius(10))
+            //            .foregroundColor(.white)
+            //            .font(.headline)
+            //            .padding(.bottom, 40)
+        }
+        
     }
 }
 extension onBoardingView{
     //MARK: FUNCTIONS
-    func handleNextButtonPressed() {
+    func signIn() {
+        currentUserName = userName
         withAnimation(.spring()) {
-            onBoardingState += 1
+            currentUserSignedIn = true
         }
+    }
+    
+    func handleNextButtonPressed() {
+        
+        //check name inputs
+        switch onBoardingState {
+        case 3:
+            guard userName.count >= 3 else {
+                return
+            }
+            
+        default:
+            break
+            
+        }
+        if onBoardingState == 4 {
+            signIn()
+        }
+        else {
+            withAnimation(.spring()) {
+                onBoardingState += 1
+            }
+        }
+        
     }
 }
