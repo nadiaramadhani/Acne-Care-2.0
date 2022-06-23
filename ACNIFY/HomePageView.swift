@@ -13,15 +13,18 @@ struct HomePageView: View {
     var body: some View {
         
         ZStack{
-            RadialGradient(gradient: Gradient(colors: [Color.gray, Color.blue]),
-                           center: .topLeading,
-                           startRadius: 5,
-                           endRadius: UIScreen.main.bounds.height)
+//            RadialGradient(gradient: Gradient(colors: [Color.gray, Color.blue]),
+//                           center: .topLeading,
+//                           startRadius: 5,
+//                           endRadius: UIScreen.main.bounds.height)
             
             if currentUserSignedIn {
-                Text("Profile View")
+                HomeView()
+                    .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .top)))
+                
             } else {
                 onBoardingView()
+                    .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .bottom)))
             }
         }
     }
