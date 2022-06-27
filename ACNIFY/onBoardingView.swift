@@ -46,7 +46,9 @@ struct onBoardingView: View {
                 case 3:
                     onboarding4
                         .transition(transition)
-                    
+                case 4:
+                    TestHomeView()
+                        .transition(transition)
                 default:
                     RoundedRectangle(cornerRadius: 25.0)
                         .foregroundColor(.blue)
@@ -126,8 +128,6 @@ extension onBoardingView{
                 .frame(width: 350, alignment: .leading)
                 .font(.title3)
                 .padding(.leading, 30)
-            Spacer()
-            
             //            Button(action: {
             //                withAnimation(.easeInOut(duration: 0.5)){
             //                    print("next")
@@ -143,6 +143,8 @@ extension onBoardingView{
             //            .foregroundColor(.white)
             //            .font(.headline)
             //            Spacer()
+            
+        
         }
     }
     //MARK: ONBOARDING 3
@@ -163,8 +165,6 @@ extension onBoardingView{
                 .frame(width: 350, alignment: .leading)
                 .font(.title3)
                 .padding(.leading, 30)
-            Spacer()
-            
             //            Button(action: {
             //                withAnimation(.easeInOut(duration: 0.5)){
             //                    print("next")
@@ -180,6 +180,8 @@ extension onBoardingView{
             //            .foregroundColor(.white)
             //            .font(.headline)
             //            Spacer()
+            
+          
         }
     }
     //MARK: ONBOARDING 4
@@ -205,21 +207,6 @@ extension onBoardingView{
                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
             
             Spacer()
-            //            Button(action: {
-            //                withAnimation(.easeInOut(duration: 0.5)){
-            //                    print("next")
-            //                }
-            //
-            //            }, label: {
-            //                Text("Next".uppercased())
-            //
-            //            })
-            //            .padding()
-            //            .frame(width: 346, height: 50, alignment: .center)
-            //            .background(Color("primaryGreen").cornerRadius(10))
-            //            .foregroundColor(.white)
-            //            .font(.headline)
-            //            .padding(.bottom, 40)
         }
         
     }
@@ -244,8 +231,8 @@ extension onBoardingView{
             
         default:
             break
-            
         }
+        
         if onBoardingState == 4 {
             signIn()
         }
