@@ -11,7 +11,7 @@ import SwiftUI
 struct ACNIFYApp: App {
     var body: some Scene {
         WindowGroup {
-            onBoardingView()
+            UpdateSkinView()
         }
     }
 }

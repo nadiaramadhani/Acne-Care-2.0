@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B417C652864759B00DABC05 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B417C642864759B00DABC05 /* CardModel.swift */; };
+	
+		9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE128680B1700449BB4 /* CustomPopUp.swift */; };
+		9B86CBE42868179200449BB4 /* SheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE32868179200449BB4 /* SheetManager.swift */; };
+		9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */; };
+		9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE82868A9C600449BB4 /* PopUpModel.swift */; };
+		9B96423D286577C400662591 /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96423C286577C400662591 /* SnapCarousel.swift */; };
+		9B96423F28657A3800662591 /* SnapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96423E28657A3800662591 /* SnapView.swift */; };
+		9B96424128657AB400662591 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96424028657AB400662591 /* Card.swift */; };
 		9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */; };
 		9AE804392865246B006493A9 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE804382865246B006493A9 /* MainPageView.swift */; };
 		9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8043C2867724D006493A9 /* TesterPickerView.swift */; };
@@ -17,6 +26,9 @@
 		9BB3781D28634BA2007A3640 /* ACNIFYTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3781C28634BA2007A3640 /* ACNIFYTests.swift */; };
 		9BB3782728634BA2007A3640 /* ACNIFYUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3782628634BA2007A3640 /* ACNIFYUITests.swift */; };
 		9BB3782928634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */; };
+		9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */; };
+		9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FE2866F3470069E86E /* SkinResultView.swift */; };
+		
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +49,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B417C642864759B00DABC05 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		9B86CBE128680B1700449BB4 /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
+		9B86CBE32868179200449BB4 /* SheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetManager.swift; sourceTree = "<group>"; };
+		9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSkinView.swift; sourceTree = "<group>"; };
+		9B86CBE72868826700449BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9B86CBE82868A9C600449BB4 /* PopUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpModel.swift; sourceTree = "<group>"; };
+		9B96423C286577C400662591 /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
+		9B96423E28657A3800662591 /* SnapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapView.swift; sourceTree = "<group>"; };
+		9B96424028657AB400662591 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotos.swift; sourceTree = "<group>"; };
 		9AE804382865246B006493A9 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		9AE8043C2867724D006493A9 /* TesterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesterPickerView.swift; sourceTree = "<group>"; };
@@ -50,6 +71,8 @@
 		9BB3782228634BA2007A3640 /* ACNIFYUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACNIFYUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB3782628634BA2007A3640 /* ACNIFYUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYUITests.swift; sourceTree = "<group>"; };
 		9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeView.swift; sourceTree = "<group>"; };
+		9BB4B4FE2866F3470069E86E /* SkinResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +100,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B417C612864755600DABC05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B86CBE32868179200449BB4 /* SheetManager.swift */,
+				9B86CBE82868A9C600449BB4 /* PopUpModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9B417C622864756900DABC05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */,
+				9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */,
+				9B86CBE128680B1700449BB4 /* CustomPopUp.swift */,
+				9BB4B4FE2866F3470069E86E /* SkinResultView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B417C632864757100DABC05 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		9BB377FF28634BA0007A3640 = {
 			isa = PBXGroup;
 			children = (
+				9BB4B5002866FA710069E86E /* TRASH */,
+				9B417C632864757100DABC05 /* ViewModel */,
+				9B417C622864756900DABC05 /* View */,
+				9B417C612864755600DABC05 /* Model */,
 				9BB3780A28634BA0007A3640 /* ACNIFY */,
 				9BB3781B28634BA2007A3640 /* ACNIFYTests */,
 				9BB3782528634BA2007A3640 /* ACNIFYUITests */,
@@ -100,6 +154,7 @@
 		9BB3780A28634BA0007A3640 /* ACNIFY */ = {
 			isa = PBXGroup;
 			children = (
+				9B86CBE72868826700449BB4 /* Info.plist */,
 				9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */,
 				9BB3780D28634BA0007A3640 /* onBoardingView.swift */,
 				9AE804382865246B006493A9 /* MainPageView.swift */,
@@ -134,6 +189,17 @@
 				9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */,
 			);
 			path = ACNIFYUITests;
+			sourceTree = "<group>";
+		};
+		9BB4B5002866FA710069E86E /* TRASH */ = {
+			isa = PBXGroup;
+			children = (
+				9B96423C286577C400662591 /* SnapCarousel.swift */,
+				9B96423E28657A3800662591 /* SnapView.swift */,
+				9B96424028657AB400662591 /* Card.swift */,
+				9B417C642864759B00DABC05 /* CardModel.swift */,
+			);
+			path = TRASH;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +333,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BB3780E28634BA0007A3640 /* onBoardingView.swift in Sources */,
+				9B86CBE42868179200449BB4 /* SheetManager.swift in Sources */,
+				9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */,
+				9B96423F28657A3800662591 /* SnapView.swift in Sources */,
+				9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */,
+				9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */,
 				9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */,
+				9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */,
+				9B96423D286577C400662591 /* SnapCarousel.swift in Sources */,
+				9B417C652864759B00DABC05 /* CardModel.swift in Sources */,
+				9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */,
+				9B96424128657AB400662591 /* Card.swift in Sources */,
 				9AE804392865246B006493A9 /* MainPageView.swift in Sources */,
 				9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */,
 				9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */,
@@ -432,6 +508,7 @@
 				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ACNIFY/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -463,6 +540,7 @@
 				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ACNIFY/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
