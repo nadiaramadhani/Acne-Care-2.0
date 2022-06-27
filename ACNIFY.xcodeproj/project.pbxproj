@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */; };
+		9AE804392865246B006493A9 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE804382865246B006493A9 /* MainPageView.swift */; };
+		9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8043C2867724D006493A9 /* TesterPickerView.swift */; };
 		9B417C652864759B00DABC05 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B417C642864759B00DABC05 /* CardModel.swift */; };
-	
 		9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE128680B1700449BB4 /* CustomPopUp.swift */; };
 		9B86CBE42868179200449BB4 /* SheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE32868179200449BB4 /* SheetManager.swift */; };
 		9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */; };
@@ -16,9 +18,6 @@
 		9B96423D286577C400662591 /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96423C286577C400662591 /* SnapCarousel.swift */; };
 		9B96423F28657A3800662591 /* SnapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96423E28657A3800662591 /* SnapView.swift */; };
 		9B96424128657AB400662591 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96424028657AB400662591 /* Card.swift */; };
-		9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */; };
-		9AE804392865246B006493A9 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE804382865246B006493A9 /* MainPageView.swift */; };
-		9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8043C2867724D006493A9 /* TesterPickerView.swift */; };
 		9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */; };
 		9BB3780E28634BA0007A3640 /* onBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780D28634BA0007A3640 /* onBoardingView.swift */; };
 		9BB3781028634BA2007A3640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3780F28634BA2007A3640 /* Assets.xcassets */; };
@@ -28,7 +27,6 @@
 		9BB3782928634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */; };
 		9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */; };
 		9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FE2866F3470069E86E /* SkinResultView.swift */; };
-		
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotos.swift; sourceTree = "<group>"; };
+		9AE804382865246B006493A9 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		9AE8043C2867724D006493A9 /* TesterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesterPickerView.swift; sourceTree = "<group>"; };
 		9B417C642864759B00DABC05 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		9B86CBE128680B1700449BB4 /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		9B86CBE32868179200449BB4 /* SheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetManager.swift; sourceTree = "<group>"; };
@@ -58,9 +59,6 @@
 		9B96423C286577C400662591 /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
 		9B96423E28657A3800662591 /* SnapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapView.swift; sourceTree = "<group>"; };
 		9B96424028657AB400662591 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotos.swift; sourceTree = "<group>"; };
-		9AE804382865246B006493A9 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
-		9AE8043C2867724D006493A9 /* TesterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesterPickerView.swift; sourceTree = "<group>"; };
 		9BB3780828634BA0007A3640 /* ACNIFY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACNIFY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYApp.swift; sourceTree = "<group>"; };
 		9BB3780D28634BA0007A3640 /* onBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingView.swift; sourceTree = "<group>"; };
@@ -120,18 +118,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		9B417C632864757100DABC05 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		9BB377FF28634BA0007A3640 = {
 			isa = PBXGroup;
 			children = (
 				9BB4B5002866FA710069E86E /* TRASH */,
-				9B417C632864757100DABC05 /* ViewModel */,
 				9B417C622864756900DABC05 /* View */,
 				9B417C612864755600DABC05 /* Model */,
 				9BB3780A28634BA0007A3640 /* ACNIFY */,
