@@ -10,6 +10,16 @@
 		9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */; };
 		9AE804392865246B006493A9 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE804382865246B006493A9 /* MainPageView.swift */; };
 		9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8043C2867724D006493A9 /* TesterPickerView.swift */; };
+		9AF3DC372869C4A3007847E7 /* Nadia1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC362869C4A3007847E7 /* Nadia1.swift */; };
+		9AF3DC392869C4E5007847E7 /* Nadia2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC382869C4E4007847E7 /* Nadia2.swift */; };
+		9AF3DC3B2869C4EC007847E7 /* Nadia3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3A2869C4EC007847E7 /* Nadia3.swift */; };
+		9AF3DC3D2869C4F6007847E7 /* Nadia4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3C2869C4F6007847E7 /* Nadia4.swift */; };
+		9AF3DC3F2869C504007847E7 /* Nadia5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3E2869C504007847E7 /* Nadia5.swift */; };
+		9AF3DC412869C53F007847E7 /* Rahmat1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC402869C53F007847E7 /* Rahmat1.swift */; };
+		9AF3DC442869C563007847E7 /* Rahmat2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC432869C563007847E7 /* Rahmat2.swift */; };
+		9AF3DC462869C56D007847E7 /* Rahmat3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC452869C56D007847E7 /* Rahmat3.swift */; };
+		9AF3DC482869C576007847E7 /* Rahmat4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC472869C576007847E7 /* Rahmat4.swift */; };
+		9AF3DC4A2869C588007847E7 /* Rahmat5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC492869C588007847E7 /* Rahmat5.swift */; };
 		9B417C652864759B00DABC05 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B417C642864759B00DABC05 /* CardModel.swift */; };
 		9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE128680B1700449BB4 /* CustomPopUp.swift */; };
 		9B86CBE42868179200449BB4 /* SheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE32868179200449BB4 /* SheetManager.swift */; };
@@ -50,6 +60,16 @@
 		9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotos.swift; sourceTree = "<group>"; };
 		9AE804382865246B006493A9 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		9AE8043C2867724D006493A9 /* TesterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesterPickerView.swift; sourceTree = "<group>"; };
+		9AF3DC362869C4A3007847E7 /* Nadia1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia1.swift; sourceTree = "<group>"; };
+		9AF3DC382869C4E4007847E7 /* Nadia2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia2.swift; sourceTree = "<group>"; };
+		9AF3DC3A2869C4EC007847E7 /* Nadia3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia3.swift; sourceTree = "<group>"; };
+		9AF3DC3C2869C4F6007847E7 /* Nadia4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia4.swift; sourceTree = "<group>"; };
+		9AF3DC3E2869C504007847E7 /* Nadia5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia5.swift; sourceTree = "<group>"; };
+		9AF3DC402869C53F007847E7 /* Rahmat1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat1.swift; sourceTree = "<group>"; };
+		9AF3DC432869C563007847E7 /* Rahmat2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat2.swift; sourceTree = "<group>"; };
+		9AF3DC452869C56D007847E7 /* Rahmat3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat3.swift; sourceTree = "<group>"; };
+		9AF3DC472869C576007847E7 /* Rahmat4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat4.swift; sourceTree = "<group>"; };
+		9AF3DC492869C588007847E7 /* Rahmat5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat5.swift; sourceTree = "<group>"; };
 		9B417C642864759B00DABC05 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		9B86CBE128680B1700449BB4 /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		9B86CBE32868179200449BB4 /* SheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetManager.swift; sourceTree = "<group>"; };
@@ -98,6 +118,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9AF3DC352869C47E007847E7 /* Nadia */ = {
+			isa = PBXGroup;
+			children = (
+				9AF3DC362869C4A3007847E7 /* Nadia1.swift */,
+				9AF3DC382869C4E4007847E7 /* Nadia2.swift */,
+				9AF3DC3A2869C4EC007847E7 /* Nadia3.swift */,
+				9AF3DC3C2869C4F6007847E7 /* Nadia4.swift */,
+				9AF3DC3E2869C504007847E7 /* Nadia5.swift */,
+			);
+			path = Nadia;
+			sourceTree = "<group>";
+		};
+		9AF3DC422869C54C007847E7 /* Rahmat */ = {
+			isa = PBXGroup;
+			children = (
+				9AF3DC402869C53F007847E7 /* Rahmat1.swift */,
+				9AF3DC432869C563007847E7 /* Rahmat2.swift */,
+				9AF3DC452869C56D007847E7 /* Rahmat3.swift */,
+				9AF3DC472869C576007847E7 /* Rahmat4.swift */,
+				9AF3DC492869C588007847E7 /* Rahmat5.swift */,
+			);
+			path = Rahmat;
+			sourceTree = "<group>";
+		};
 		9B417C612864755600DABC05 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +154,7 @@
 		9B417C622864756900DABC05 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9AF3DC352869C47E007847E7 /* Nadia */,
 				9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */,
 				9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */,
 				9B86CBE128680B1700449BB4 /* CustomPopUp.swift */,
@@ -150,6 +195,7 @@
 				9AE804382865246B006493A9 /* MainPageView.swift */,
 				9AE8043C2867724D006493A9 /* TesterPickerView.swift */,
 				9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */,
+				9AF3DC422869C54C007847E7 /* Rahmat */,
 				9BB3780F28634BA2007A3640 /* Assets.xcassets */,
 				9BB3781128634BA2007A3640 /* Preview Content */,
 			);
@@ -323,19 +369,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BB3780E28634BA0007A3640 /* onBoardingView.swift in Sources */,
+				9AF3DC482869C576007847E7 /* Rahmat4.swift in Sources */,
 				9B86CBE42868179200449BB4 /* SheetManager.swift in Sources */,
 				9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */,
+				9AF3DC442869C563007847E7 /* Rahmat2.swift in Sources */,
 				9B96423F28657A3800662591 /* SnapView.swift in Sources */,
+				9AF3DC412869C53F007847E7 /* Rahmat1.swift in Sources */,
 				9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */,
+				9AF3DC372869C4A3007847E7 /* Nadia1.swift in Sources */,
+				9AF3DC392869C4E5007847E7 /* Nadia2.swift in Sources */,
 				9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */,
 				9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */,
+				9AF3DC462869C56D007847E7 /* Rahmat3.swift in Sources */,
+				9AF3DC3D2869C4F6007847E7 /* Nadia4.swift in Sources */,
 				9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */,
 				9B96423D286577C400662591 /* SnapCarousel.swift in Sources */,
 				9B417C652864759B00DABC05 /* CardModel.swift in Sources */,
 				9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */,
 				9B96424128657AB400662591 /* Card.swift in Sources */,
 				9AE804392865246B006493A9 /* MainPageView.swift in Sources */,
+				9AF3DC3B2869C4EC007847E7 /* Nadia3.swift in Sources */,
+				9AF3DC3F2869C504007847E7 /* Nadia5.swift in Sources */,
 				9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */,
+				9AF3DC4A2869C588007847E7 /* Rahmat5.swift in Sources */,
 				9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
