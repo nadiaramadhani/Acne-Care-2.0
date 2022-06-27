@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B417C652864759B00DABC05 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B417C642864759B00DABC05 /* CardModel.swift */; };
 		9B4A28F7286446EB00EE5B19 /* TestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4A28F6286446EB00EE5B19 /* TestHomeView.swift */; };
+		9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE128680B1700449BB4 /* CustomPopUp.swift */; };
+		9B86CBE42868179200449BB4 /* SheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE32868179200449BB4 /* SheetManager.swift */; };
+		9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */; };
+		9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE82868A9C600449BB4 /* PopUpModel.swift */; };
+		9B96423D286577C400662591 /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96423C286577C400662591 /* SnapCarousel.swift */; };
+		9B96423F28657A3800662591 /* SnapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96423E28657A3800662591 /* SnapView.swift */; };
+		9B96424128657AB400662591 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96424028657AB400662591 /* Card.swift */; };
 		9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */; };
 		9BB3780E28634BA0007A3640 /* onBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780D28634BA0007A3640 /* onBoardingView.swift */; };
 		9BB3781028634BA2007A3640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3780F28634BA2007A3640 /* Assets.xcassets */; };
@@ -15,6 +23,8 @@
 		9BB3781D28634BA2007A3640 /* ACNIFYTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3781C28634BA2007A3640 /* ACNIFYTests.swift */; };
 		9BB3782728634BA2007A3640 /* ACNIFYUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3782628634BA2007A3640 /* ACNIFYUITests.swift */; };
 		9BB3782928634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */; };
+		9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */; };
+		9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FE2866F3470069E86E /* SkinResultView.swift */; };
 		9BEDCE062863DA5000CAFBC0 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEDCE052863DA5000CAFBC0 /* IntroView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B417C642864759B00DABC05 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		9B4A28F6286446EB00EE5B19 /* TestHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeView.swift; sourceTree = "<group>"; };
+		9B86CBE128680B1700449BB4 /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
+		9B86CBE32868179200449BB4 /* SheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetManager.swift; sourceTree = "<group>"; };
+		9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSkinView.swift; sourceTree = "<group>"; };
+		9B86CBE72868826700449BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9B86CBE82868A9C600449BB4 /* PopUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpModel.swift; sourceTree = "<group>"; };
+		9B96423C286577C400662591 /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
+		9B96423E28657A3800662591 /* SnapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapView.swift; sourceTree = "<group>"; };
+		9B96424028657AB400662591 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		9BB3780828634BA0007A3640 /* ACNIFY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACNIFY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYApp.swift; sourceTree = "<group>"; };
 		9BB3780D28634BA0007A3640 /* onBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingView.swift; sourceTree = "<group>"; };
@@ -47,6 +66,8 @@
 		9BB3782228634BA2007A3640 /* ACNIFYUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACNIFYUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB3782628634BA2007A3640 /* ACNIFYUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYUITests.swift; sourceTree = "<group>"; };
 		9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeView.swift; sourceTree = "<group>"; };
+		9BB4B4FE2866F3470069E86E /* SkinResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinResultView.swift; sourceTree = "<group>"; };
 		9BEDCE052863DA5000CAFBC0 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,9 +96,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B417C612864755600DABC05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B86CBE32868179200449BB4 /* SheetManager.swift */,
+				9B86CBE82868A9C600449BB4 /* PopUpModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9B417C622864756900DABC05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */,
+				9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */,
+				9B86CBE128680B1700449BB4 /* CustomPopUp.swift */,
+				9BB4B4FE2866F3470069E86E /* SkinResultView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B417C632864757100DABC05 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		9BB377FF28634BA0007A3640 = {
 			isa = PBXGroup;
 			children = (
+				9BB4B5002866FA710069E86E /* TRASH */,
+				9B417C632864757100DABC05 /* ViewModel */,
+				9B417C622864756900DABC05 /* View */,
+				9B417C612864755600DABC05 /* Model */,
 				9BB3780A28634BA0007A3640 /* ACNIFY */,
 				9BB3781B28634BA2007A3640 /* ACNIFYTests */,
 				9BB3782528634BA2007A3640 /* ACNIFYUITests */,
@@ -98,6 +150,7 @@
 		9BB3780A28634BA0007A3640 /* ACNIFY */ = {
 			isa = PBXGroup;
 			children = (
+				9B86CBE72868826700449BB4 /* Info.plist */,
 				9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */,
 				9BB3780D28634BA0007A3640 /* onBoardingView.swift */,
 				9BEDCE052863DA5000CAFBC0 /* IntroView.swift */,
@@ -131,6 +184,17 @@
 				9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */,
 			);
 			path = ACNIFYUITests;
+			sourceTree = "<group>";
+		};
+		9BB4B5002866FA710069E86E /* TRASH */ = {
+			isa = PBXGroup;
+			children = (
+				9B96423C286577C400662591 /* SnapCarousel.swift */,
+				9B96423E28657A3800662591 /* SnapView.swift */,
+				9B96424028657AB400662591 /* Card.swift */,
+				9B417C642864759B00DABC05 /* CardModel.swift */,
+			);
+			path = TRASH;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +328,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BB3780E28634BA0007A3640 /* onBoardingView.swift in Sources */,
+				9B86CBE42868179200449BB4 /* SheetManager.swift in Sources */,
+				9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */,
+				9B96423F28657A3800662591 /* SnapView.swift in Sources */,
+				9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */,
 				9B4A28F7286446EB00EE5B19 /* TestHomeView.swift in Sources */,
+				9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */,
 				9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */,
+				9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */,
+				9B96423D286577C400662591 /* SnapCarousel.swift in Sources */,
 				9BEDCE062863DA5000CAFBC0 /* IntroView.swift in Sources */,
+				9B417C652864759B00DABC05 /* CardModel.swift in Sources */,
+				9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */,
+				9B96424128657AB400662591 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,9 +502,9 @@
 				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ACNIFY/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -457,9 +531,9 @@
 				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ACNIFY/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
