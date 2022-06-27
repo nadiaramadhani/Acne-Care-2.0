@@ -17,7 +17,6 @@
 		9BB3781D28634BA2007A3640 /* ACNIFYTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3781C28634BA2007A3640 /* ACNIFYTests.swift */; };
 		9BB3782728634BA2007A3640 /* ACNIFYUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3782628634BA2007A3640 /* ACNIFYUITests.swift */; };
 		9BB3782928634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */; };
-		9BEDCE062863DA5000CAFBC0 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEDCE052863DA5000CAFBC0 /* HomePageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +50,6 @@
 		9BB3782228634BA2007A3640 /* ACNIFYUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACNIFYUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB3782628634BA2007A3640 /* ACNIFYUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYUITests.swift; sourceTree = "<group>"; };
 		9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9BEDCE052863DA5000CAFBC0 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +102,6 @@
 			children = (
 				9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */,
 				9BB3780D28634BA0007A3640 /* onBoardingView.swift */,
-				9BEDCE052863DA5000CAFBC0 /* HomePageView.swift */,
 				9AE804382865246B006493A9 /* MainPageView.swift */,
 				9AE8043C2867724D006493A9 /* TesterPickerView.swift */,
 				9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */,
@@ -274,7 +271,6 @@
 				9AE804392865246B006493A9 /* MainPageView.swift in Sources */,
 				9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */,
 				9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */,
-				9BEDCE062863DA5000CAFBC0 /* HomePageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
