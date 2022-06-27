@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */; };
+		9AE804392865246B006493A9 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE804382865246B006493A9 /* MainPageView.swift */; };
+		9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8043C2867724D006493A9 /* TesterPickerView.swift */; };
 		9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */; };
 		9BB3780E28634BA0007A3640 /* onBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780D28634BA0007A3640 /* onBoardingView.swift */; };
 		9BB3781028634BA2007A3640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3780F28634BA2007A3640 /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotos.swift; sourceTree = "<group>"; };
+		9AE804382865246B006493A9 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		9AE8043C2867724D006493A9 /* TesterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesterPickerView.swift; sourceTree = "<group>"; };
 		9BB3780828634BA0007A3640 /* ACNIFY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACNIFY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYApp.swift; sourceTree = "<group>"; };
 		9BB3780D28634BA0007A3640 /* onBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingView.swift; sourceTree = "<group>"; };
@@ -99,6 +105,9 @@
 				9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */,
 				9BB3780D28634BA0007A3640 /* onBoardingView.swift */,
 				9BEDCE052863DA5000CAFBC0 /* HomePageView.swift */,
+				9AE804382865246B006493A9 /* MainPageView.swift */,
+				9AE8043C2867724D006493A9 /* TesterPickerView.swift */,
+				9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */,
 				9BB3780F28634BA2007A3640 /* Assets.xcassets */,
 				9BB3781128634BA2007A3640 /* Preview Content */,
 			);
@@ -262,6 +271,9 @@
 			files = (
 				9BB3780E28634BA0007A3640 /* onBoardingView.swift in Sources */,
 				9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */,
+				9AE804392865246B006493A9 /* MainPageView.swift in Sources */,
+				9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */,
+				9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */,
 				9BEDCE062863DA5000CAFBC0 /* HomePageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +436,8 @@
 				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -453,6 +467,8 @@
 				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
