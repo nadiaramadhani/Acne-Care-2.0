@@ -16,6 +16,9 @@
 		9B96423D286577C400662591 /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96423C286577C400662591 /* SnapCarousel.swift */; };
 		9B96423F28657A3800662591 /* SnapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96423E28657A3800662591 /* SnapView.swift */; };
 		9B96424128657AB400662591 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96424028657AB400662591 /* Card.swift */; };
+		9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */; };
+		9AE804392865246B006493A9 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE804382865246B006493A9 /* MainPageView.swift */; };
+		9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8043C2867724D006493A9 /* TesterPickerView.swift */; };
 		9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */; };
 		9BB3780E28634BA0007A3640 /* onBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780D28634BA0007A3640 /* onBoardingView.swift */; };
 		9BB3781028634BA2007A3640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3780F28634BA2007A3640 /* Assets.xcassets */; };
@@ -56,6 +59,9 @@
 		9B96423C286577C400662591 /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
 		9B96423E28657A3800662591 /* SnapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapView.swift; sourceTree = "<group>"; };
 		9B96424028657AB400662591 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotos.swift; sourceTree = "<group>"; };
+		9AE804382865246B006493A9 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		9AE8043C2867724D006493A9 /* TesterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesterPickerView.swift; sourceTree = "<group>"; };
 		9BB3780828634BA0007A3640 /* ACNIFY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACNIFY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYApp.swift; sourceTree = "<group>"; };
 		9BB3780D28634BA0007A3640 /* onBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingView.swift; sourceTree = "<group>"; };
@@ -153,8 +159,9 @@
 				9B86CBE72868826700449BB4 /* Info.plist */,
 				9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */,
 				9BB3780D28634BA0007A3640 /* onBoardingView.swift */,
-				9BEDCE052863DA5000CAFBC0 /* IntroView.swift */,
-				9B4A28F6286446EB00EE5B19 /* TestHomeView.swift */,
+				9AE804382865246B006493A9 /* MainPageView.swift */,
+				9AE8043C2867724D006493A9 /* TesterPickerView.swift */,
+				9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */,
 				9BB3780F28634BA2007A3640 /* Assets.xcassets */,
 				9BB3781128634BA2007A3640 /* Preview Content */,
 			);
@@ -341,6 +348,9 @@
 				9B417C652864759B00DABC05 /* CardModel.swift in Sources */,
 				9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */,
 				9B96424128657AB400662591 /* Card.swift in Sources */,
+				9AE804392865246B006493A9 /* MainPageView.swift in Sources */,
+				9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */,
+				9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,8 +513,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ACNIFY/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -532,8 +545,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ACNIFY/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

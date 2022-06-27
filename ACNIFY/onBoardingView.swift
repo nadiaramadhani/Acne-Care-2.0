@@ -47,7 +47,7 @@ struct onBoardingView: View {
                     onboarding4
                         .transition(transition)
                 case 4:
-                    TestHomeView()
+                    onboarding4
                         .transition(transition)
                 default:
                     RoundedRectangle(cornerRadius: 25.0)
@@ -128,7 +128,21 @@ extension onBoardingView{
                 .frame(width: 350, alignment: .leading)
                 .font(.title3)
                 .padding(.leading, 30)
-            Spacer()
+            //            Button(action: {
+            //                withAnimation(.easeInOut(duration: 0.5)){
+            //                    print("next")
+            //                }
+            //
+            //            }, label: {
+            //                Text("Next".uppercased())
+            //
+            //            })
+            //            .padding()
+            //            .frame(width: 346, height: 50, alignment: .center)
+            //            .background(Color("primaryGreen").cornerRadius(10))
+            //            .foregroundColor(.white)
+            //            .font(.headline)
+            //            Spacer()
             
         
         }
@@ -151,7 +165,21 @@ extension onBoardingView{
                 .frame(width: 350, alignment: .leading)
                 .font(.title3)
                 .padding(.leading, 30)
-            Spacer()
+            //            Button(action: {
+            //                withAnimation(.easeInOut(duration: 0.5)){
+            //                    print("next")
+            //                }
+            //
+            //            }, label: {
+            //                Text("Next".uppercased())
+            //
+            //            })
+            //            .padding()
+            //            .frame(width: 346, height: 50, alignment: .center)
+            //            .background(Color("primaryGreen").cornerRadius(10))
+            //            .foregroundColor(.white)
+            //            .font(.headline)
+            //            Spacer()
             
           
         }
@@ -203,7 +231,6 @@ extension onBoardingView{
             
         default:
             break
-            
         }
         
         if onBoardingState == 4 {
