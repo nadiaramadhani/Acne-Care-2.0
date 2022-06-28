@@ -36,7 +36,7 @@ struct CameraView: View{
                     HStack{
                         Spacer()
                         
-                        Button(action:{},label:{
+                        Button(action:camera.reTake,label:{
                             Image(systemName:"arrow.triangle.2.circlepath.camera")
                                 .foregroundColor(.black)
                                 .padding()
@@ -72,7 +72,7 @@ struct CameraView: View{
                         Spacer()
                         
                     }else{
-                        Button(action:{camera.takePic()},
+                        Button(action:camera.takePic,
                                label:{
                             ZStack{
                                 
@@ -121,13 +121,13 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     func Check(){
         //first checking camera has got permission
         switch AVCaptureDevice.authorizationStatus(for: .video){
-        case.authorized:
+        case .authorized:
             setUp()
             return
             //Setting Up Session
-        case.notDetermined:
+        case .notDetermined:
             //restusting for permission
-            AVCaptureDevice.requestAccess(for:.video){ (status) in
+            AVCaptureDevice.requestAccess(for: .video) { (status) in
                 if status{
                     self.setUp()
                 }
@@ -151,8 +151,8 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
             self.session.beginConfiguration()
             
             //change for your own
-            let device=AVCaptureDevice.default(.builtInDualCamera,
-                                               for: .video, position: .back)
+            let device = AVCaptureDevice.default(.builtInDualCamera,
+                for: .video, position: .back)
             
             let input = try AVCaptureDeviceInput(device:
             device!)
@@ -245,7 +245,7 @@ struct CameraPreview: UIViewRepresentable{
         
         
     }
-    func updateUIView( _ _uiView: UIView, context:Context){
+    func updateUIView(_ uiView: UIView, context: Context){
         
     }
 }
