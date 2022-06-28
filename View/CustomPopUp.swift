@@ -75,7 +75,9 @@ private extension CustomPopUp {
         .background(Color("primaryGreen"))
         .foregroundColor(.white)
         .cornerRadius(10)
-        .padding(.top, 100)    }
+        .padding(.top, 100)
+        
+    }
     
     
 }

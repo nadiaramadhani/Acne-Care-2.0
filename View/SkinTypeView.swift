@@ -110,6 +110,7 @@ struct Card: View {
                     .foregroundColor(Color("primaryGreen"))
                     .font(.system(size: 16))
                     .fontWeight(.bold)
+                    .padding(.bottom,20)
         
                 Image(self.data.image)
                     .resizable()
@@ -119,7 +120,7 @@ struct Card: View {
                 Text(self.data.desc)
                     .font(.system(size: 16))
                     .padding(.vertical)
-                    .frame(width: 300, alignment: .leading)
+                    .frame(width: 270, alignment: .leading)
 //                Button(action: {
 //
 //                }) {
