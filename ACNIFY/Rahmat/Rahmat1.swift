@@ -62,6 +62,7 @@ struct morningChooseProduct: View {
                                     
                                     HStack{
                                         Image("dayOilCleanser")
+                                            .frame(width:40, height: 90)
                                             .padding()
                                         
                                         VStack(alignment: .leading){
@@ -113,6 +114,7 @@ struct morningChooseProduct: View {
                                     
                                     HStack{
                                         Image("Day")
+                                            .frame(width:40, height: 90)
                                             .padding()
                                         
                                         VStack(alignment: .leading){
@@ -162,6 +164,7 @@ struct morningChooseProduct: View {
                                     
                                     HStack{
                                         Image("dayToner")
+                                            .frame(width:40, height: 90)
                                             .padding()
                                         
                                         VStack(alignment: .leading){
@@ -176,7 +179,7 @@ struct morningChooseProduct: View {
                                                 .font(.system(size:14))
                                                 .fontWeight(.light)
                                                 .multilineTextAlignment(.leading)
-                                                .frame(width: 225,alignment: .leading)
+                                                .frame(width: 215,alignment: .leading)
                                             
                                             
                                             Spacer()
@@ -213,6 +216,7 @@ struct morningChooseProduct: View {
                                     
                                     HStack{
                                         Image("daySerum")
+                                            .frame(width:40, height: 90)
                                             .padding()
                                         
                                         VStack(alignment: .leading){
@@ -227,7 +231,7 @@ struct morningChooseProduct: View {
                                                 .font(.system(size:14))
                                                 .fontWeight(.light)
                                                 .multilineTextAlignment(.leading)
-                                                .frame(width: 230,alignment: .leading)
+                                                .frame(width: 215,alignment: .leading)
                                             
                                             
                                             Spacer()
@@ -266,6 +270,7 @@ struct morningChooseProduct: View {
                                     
                                     HStack{
                                         Image("Moisturizer")
+                                            .frame(width:40, height: 90)
                                             .padding()
                                         
                                         VStack(alignment: .leading){
@@ -280,7 +285,7 @@ struct morningChooseProduct: View {
                                                 .font(.system(size:14))
                                                 .fontWeight(.light)
                                                 .multilineTextAlignment(.leading)
-                                                .frame(width: 217,alignment: .leading)
+                                                .frame(width: 215,alignment: .leading)
                                             
                                             
                                             Spacer()
@@ -317,6 +322,7 @@ struct morningChooseProduct: View {
                                     
                                     HStack{
                                         Image("dayAcneTreatment")
+                                            .frame(width:40, height: 90)
                                             .padding()
                                         
                                         VStack(alignment: .leading){
@@ -368,6 +374,7 @@ struct morningChooseProduct: View {
                                     
                                     HStack{
                                         Image("daySunscreen")
+                                            .frame(width:40, height: 90)
                                             .padding()
                                         
                                         VStack(alignment: .leading){
