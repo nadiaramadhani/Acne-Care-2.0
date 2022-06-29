@@ -150,25 +150,67 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
             //setting configs
             self.session.beginConfiguration()
             
+            //Camera discovery
+            let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes:
+                [.builtInTrueDepthCamera, .builtInDualCamera, .builtInWideAngleCamera],
+                mediaType: .video, position: .unspecified)
+            
+            let devices123123123 = discoverySession.devices
+            
+            if devices123123123.isEmpty{
+                print("Kamera tidak terdeteksi")
+            }else{
+                print("Kamera terdeteksi")
+            }
+            
             //change for your own
-            let device = AVCaptureDevice.default(.builtInDualCamera,
-                for: .video, position: .back)
-            
-            let input = try AVCaptureDeviceInput(device:
-            device!)
-            
-            // checking and adding to session
-            if self.session.canAddInput(input){
-                self.session.addInput(input)
+            if let device = AVCaptureDevice.default(.builtInWideAngleCamera,
+                                                    for: .video, position: .front){
+                let input = try AVCaptureDeviceInput(device:
+                device)
+                
+                // checking and adding to session
+                if self.session.canAddInput(input){
+                    self.session.addInput(input)
+                }
+                
+                //same for output
+                
+                if self.session.canAddOutput(self.output){
+                    self.session.addOutput(self.output)
+                }
+                
+                self.session.commitConfiguration()
+                
             }
             
-            //same for output
+//            let device = AVCaptureDevice.default(.builtInDualCamera,
+//                for: .video, position: .back)
             
-            if self.session.canAddOutput(self.output){
-                self.session.addOutput(self.output)
-            }
+           // let device = AVCaptureDevice.default(for: .video, po )
+            //device.position = .front
             
-            self.session.commitConfiguration()
+            
+            
+
+            
+//            let input = try AVCaptureDeviceInput(device:
+//            device!)
+//
+//            // checking and adding to session
+//            if self.session.canAddInput(input){
+//                self.session.addInput(input)
+//            }
+//
+//            //same for output
+//
+//            if self.session.canAddOutput(self.output){
+//                self.session.addOutput(self.output)
+//            }
+//
+//            self.session.commitConfiguration()
+            
+            
         }
         catch{
             print(error.localizedDescription)
