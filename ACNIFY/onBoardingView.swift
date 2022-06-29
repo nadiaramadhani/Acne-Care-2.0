@@ -21,6 +21,8 @@ struct onBoardingView: View {
     let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
     @State var onBoardingState: Int = 0
     @State var userName: String = ""
+    @State var alertTitle: String = ""
+    @State var showingAlert = false
     
     //username input
     @AppStorage("name") var currentUserName: String?
@@ -31,34 +33,49 @@ struct onBoardingView: View {
         
         ZStack{
             ZStack{
-                switch onBoardingState{
+                switch onBoardingState {
                 case 0:
+                    VStack{
                     onboarding1
                         .transition(transition)
+                    bottomButton
+                    }
                 case 1:
-                    onboarding2
-                        .transition(transition)
+                    VStack{
+                        onboarding2
+                            .transition(transition)
+                        bottomButton
+                    }
                     
                 case 2:
-                    onboarding3
-                        .transition(transition)
+                    VStack{
+                        onboarding3
+                            .transition(transition)
+                        bottomButton
+                    }
                     
                 case 3:
-                    onboarding4
-                        .transition(transition)
+                    VStack{
+                        onboarding4
+                            .transition(transition)
+                        bottomButton
+                    }
+                    
                 case 4:
-                    onboarding4
+                    SkinTypeView()
                         .transition(transition)
                 default:
-                    RoundedRectangle(cornerRadius: 25.0)
-                        .foregroundColor(.blue)
+                    MainPageView()
+//                    RoundedRectangle(cornerRadius: 25.0)
+//                        .foregroundColor(.blue)
                 }
             }
-            VStack{
+         
                 Spacer()
-                bottomButton
-            }
-        }
+        }.alert(isPresented: $showingAlert, content: {
+            return Alert(title: Text(alertTitle))
+            
+        })
         
     }
 }
@@ -142,7 +159,7 @@ extension onBoardingView{
             //            .background(Color("primaryGreen").cornerRadius(10))
             //            .foregroundColor(.white)
             //            .font(.headline)
-            //            Spacer()
+                        Spacer()
             
         
         }
@@ -179,7 +196,7 @@ extension onBoardingView{
             //            .background(Color("primaryGreen").cornerRadius(10))
             //            .foregroundColor(.white)
             //            .font(.headline)
-            //            Spacer()
+                        Spacer()
             
           
         }
@@ -201,7 +218,7 @@ extension onBoardingView{
             
             TextField("Name", text: $userName)
                 .colorMultiply(Color.white)
-                .frame(width: 346,alignment: .leading)
+                .frame(width: 300,alignment: .leading)
                 .padding()
                 .font(.headline)
                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
@@ -210,12 +227,13 @@ extension onBoardingView{
         }
         
     }
+        
 }
 extension onBoardingView{
     //MARK: FUNCTIONS
     func signIn() {
         currentUserName = userName
-        withAnimation(.spring()) {
+        withAnimation{
             currentUserSignedIn = true
         }
     }
@@ -226,6 +244,7 @@ extension onBoardingView{
         switch onBoardingState {
         case 3:
             guard userName.count >= 3 else {
+               showAlert(title: "Input your name first")
                 return
             }
             
@@ -233,13 +252,19 @@ extension onBoardingView{
             break
         }
         
-        if onBoardingState == 4 {
+        if onBoardingState == 3 {
             signIn()
+
         }
         else {
             withAnimation(.spring()) {
                 onBoardingState += 1
             }
+        }
+        func showAlert(title: String) {
+            alertTitle = title
+            showingAlert.toggle()
+            return
         }
         
     }

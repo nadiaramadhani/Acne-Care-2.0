@@ -62,12 +62,21 @@ struct SkinType: View {
                              
                                 
                              page: self.$page, height: g.frame(in: .global).height)
-                    
+//page: self.$page, height: 382)
+                             
                 }
                 
                 PageControl(page: self.$page)
+                
+                
                 Button {
-                    print("tapped")
+                    
+                    //TODO: Input selected card value to core data
+//go to acne type view
+//                    withAnimation{
+//                    AcneTypeView1()
+//                    }
+                    
                 } label: {
                     Text("Choose").foregroundColor(Color.white)
                         .frame(width: 150, height: 50, alignment: .center)
@@ -83,7 +92,7 @@ struct SkinType: View {
     }
 }
 
-struct List: View {
+struct CardList: View {
     @Binding var page : Int
     var body: some View {
         HStack(spacing: 10){
@@ -108,13 +117,13 @@ struct Card: View {
                 
                 Text(self.data.title)
                     .foregroundColor(Color("primaryGreen"))
-                    .font(.system(size: 16))
+                    .font(.system(size: 17))
                     .fontWeight(.bold)
                     .padding(.bottom,20)
         
                 Image(self.data.image)
                     .resizable()
-                    .frame(width: self.width - (150), height: 230)
+                    .frame(width: self.width - (170), height: 230)
                     
                 
                 Text(self.data.desc)
@@ -169,7 +178,7 @@ struct Carousel: UIViewRepresentable {
         view.showsVerticalScrollIndicator = false
         view.showsHorizontalScrollIndicator = false
         view.delegate = context.coordinator
-        let view1 = UIHostingController(rootView: List(page: self.$page))
+        let view1 = UIHostingController(rootView: CardList(page: self.$page))
         view1.view.frame = CGRect(x: 0, y: 0, width: total, height: self.height)
         view1.view.backgroundColor = .clear
     
@@ -275,9 +284,9 @@ struct Type : Identifiable {
 var data = [
 
 Type(id: 0, image: "skintype1", title: "Normal", desc: "No severe sensitivity, barely visible pores, hydrated"),
-Type(id: 1, image: "skintype2", title: "Dry", desc: "Large pores, shiny appearance over the face mostly in T-Zone area"),
-Type(id: 2, image: "skintype3", title: "Sensitive", desc: "No severe sensitivity, barely visible pores, hydrated"),
-Type(id: 3, image: "skintype4", title: "Normal", desc: "No severe sensitivity, barely visible pores, hydrated"),
-Type(id: 5, image: "skintype5", title: "Combination", desc: "No severe sensitivity, barely visible pores, hydrated"),
+Type(id: 1, image: "skintype2", title: "Dry", desc: "Feels tight, scaling and flaking, feels itchy"),
+Type(id: 2, image: "skintype3", title: "Oily", desc: "Large pores, shiny appearance over the face mostly in T-Zone area"),
+Type(id: 3, image: "skintype4", title: "Combination", desc: "Shiny appearance in T-Zone (forehead, nose and chin) area, cheeks tend to be dry and tight"),
+Type(id: 5, image: "skintype5", title: "Sensitive", desc: "NEasily inflammed through specific trigger (redness, itching, burning, dryness)"),
 
 ]

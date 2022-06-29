@@ -167,7 +167,7 @@ struct AcneCarousel: UIViewRepresentable {
         view.showsVerticalScrollIndicator = false
         view.showsHorizontalScrollIndicator = false
         view.delegate = context.coordinator
-        let view1 = UIHostingController(rootView: List(page: self.$page))
+        let view1 = UIHostingController(rootView: CardList(page: self.$page))
         view1.view.frame = CGRect(x: 0, y: 0, width: total, height: self.height)
         view1.view.backgroundColor = .clear
     
