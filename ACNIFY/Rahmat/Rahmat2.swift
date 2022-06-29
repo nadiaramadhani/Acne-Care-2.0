@@ -60,6 +60,7 @@ struct NightChooseProduct: View {
                                     
                                     HStack{
                                         Image("nightOilCleanser")
+                                            .frame(width:40, height: 90)
                                             .padding()
                                         
                                         VStack(alignment: .leading){
@@ -74,7 +75,7 @@ struct NightChooseProduct: View {
                                                 .font(.system(size:14))
                                                 .fontWeight(.light)
                                                 .multilineTextAlignment(.leading)
-                                                .frame(width: 217,alignment: .leading)
+                                                .frame(width: 215,alignment: .leading)
                                             
                                             
                                             Spacer()
@@ -111,6 +112,7 @@ struct NightChooseProduct: View {
                                     
                                     HStack{
                                         Image("nightFacialWash")
+                                            .frame(width:40, height: 90)
                                             .padding()
                                         
                                         VStack(alignment: .leading){
@@ -125,7 +127,7 @@ struct NightChooseProduct: View {
                                                 .font(.system(size:14))
                                                 .fontWeight(.light)
                                                 .multilineTextAlignment(.leading)
-                                                .frame(width: 217,alignment: .leading)
+                                                .frame(width: 215,alignment: .leading)
                                             
                                             
                                             Spacer()
@@ -160,6 +162,7 @@ struct NightChooseProduct: View {
                                     
                                     HStack{
                                         Image("nightToner")
+                                            .frame(width:40, height: 90)
                                             .padding()
                                         
                                         VStack(alignment: .leading){
@@ -174,7 +177,7 @@ struct NightChooseProduct: View {
                                                 .font(.system(size:14))
                                                 .fontWeight(.light)
                                                 .multilineTextAlignment(.leading)
-                                                .frame(width: 217,alignment: .leading)
+                                                .frame(width: 215,alignment: .leading)
                                             
                                             
                                             Spacer()
@@ -211,6 +214,7 @@ struct NightChooseProduct: View {
                                     
                                     HStack{
                                         Image("nightSerum")
+                                            .frame(width:40, height: 90)
                                             .padding()
                                         
                                         VStack(alignment: .leading){
@@ -225,7 +229,7 @@ struct NightChooseProduct: View {
                                                 .font(.system(size:14))
                                                 .fontWeight(.light)
                                                 .multilineTextAlignment(.leading)
-                                                .frame(width: 217,alignment: .leading)
+                                                .frame(width: 215,alignment: .leading)
                                             
                                             
                                             Spacer()
@@ -264,6 +268,7 @@ struct NightChooseProduct: View {
                                     
                                     HStack{
                                         Image("nightMoisturizer")
+                                            .frame(width:40, height: 90)
                                             .padding()
                                         
                                         VStack(alignment: .leading){
@@ -278,7 +283,7 @@ struct NightChooseProduct: View {
                                                 .font(.system(size:14))
                                                 .fontWeight(.light)
                                                 .multilineTextAlignment(.leading)
-                                                .frame(width: 217,alignment: .leading)
+                                                .frame(width: 215,alignment: .leading)
                                             
                                             
                                             Spacer()
@@ -315,6 +320,7 @@ struct NightChooseProduct: View {
                                     
                                     HStack{
                                         Image("nightAcneTreatment")
+                                            .frame(width:40, height: 90)
                                             .padding()
                                         
                                         VStack(alignment: .leading){
@@ -329,7 +335,7 @@ struct NightChooseProduct: View {
                                                 .font(.system(size:14))
                                                 .fontWeight(.light)
                                                 .multilineTextAlignment(.leading)
-                                                .frame(width: 217,alignment: .leading)
+                                                .frame(width: 215,alignment: .leading)
                                             
                                             
                                             Spacer()
