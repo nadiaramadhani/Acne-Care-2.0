@@ -23,15 +23,20 @@ struct MainPageView: View {
         Box(id: 3, title:"15 Juni 2022", imageUrl:"0"),
         Box(id: 4, title:"16 Juni 2022", imageUrl:"0"),
     ]
-    
+    @AppStorage("name") var currentUserName: String?
+    @AppStorage("signed_in") var currentUserSignedIn: Bool = false
+
     @State var isDailyRoutineTapped = false
     @State var updateButton = false
     
     var body: some View {
         if isDailyRoutineTapped{
+            
             TesterPickerView()
         }else if updateButton{
-            TesterPickerView()
+
+          //  withAnimation(TesterPickerView())
+       TesterPickerView()
         }
         else{
             ZStack{
@@ -39,7 +44,7 @@ struct MainPageView: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack{
                     
-                    Text("**Welcome Rudy**")
+                    Text("Welcome \(currentUserName ?? "Username")!")
                     //.font(.title)
                         .font(.system(size:24, weight:.bold,design: .default))
                         .italic()
@@ -89,23 +94,41 @@ struct MainPageView: View {
                                 .frame(height:0)
                             
                             ZStack{
-                                Image("skincareTimeHomepage")
+                                Image("ICard")
+                                    .padding()
+                                    .shadow(color: .gray, radius: 2)
                                 
-                                Button(action: {self.updateButton = true},
-                                       label: {
-                                        Text("Update")
-                                        .font(.system(size:13))
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.white)
-                                        .padding()
-                                        //.padding(.horizontal,6)
-                                        .frame(width: 80, height: 41)
-                                        .background(
-                                            Color("primaryGreen")
-                                                .cornerRadius(10)
-                                                .shadow(radius: 5))
-                                        .position(x:98, y:113)
-                                })
+                                
+                                VStack{
+                                    Text("Skincare Time")
+                                        .font(.system(size: 16))
+                                        .fontWeight(.bold)
+                                        .padding(.trailing, 165)
+                                        
+                                    
+                                    Button(action: {
+                                        withAnimation(.spring()){
+                                            self.updateButton = true}},
+                                           label: {
+                                            Text("Update")
+                                            .font(.system(size:13))
+                                            .fontWeight(.semibold)
+                                            .foregroundColor(.white)
+                                            .padding()
+                                           .frame(width: 80, height: 41)
+
+                                            //.padding(.horizontal,6)
+    //                                        .frame(width: 80, height: 41)
+                                            .background(
+                                                Color("primaryGreen")
+                                                    .cornerRadius(10)
+                                                    .shadow(radius: 5))
+                                          //  .position(x:98, y:113)
+                                    })
+                                        .padding(.trailing,200 )
+                                    
+
+                                }
                             }
                            // NavigationLink("", destination: DailyLogRoutine(),
                                           // isActive: $updateButton)
@@ -118,11 +141,37 @@ struct MainPageView: View {
                                 .font(.system(size:20, weight:.bold,design: .default))
                                 .padding(.leading,-170)
                             
-                            Image("skincareCardHomepage")
-                                //.resizable() //ukuran bisa di custom
-                                //.padding()
+                            
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 20, style:.continuous)
+                                   .frame(width: 340, height: 92)
+                                   .foregroundColor(Color("beige"))
+//                                    .fill(Color("beige"))
+                                    .padding()
+                                    .shadow(color: .brown, radius: 2)
+                                
+                                    
+                                HStack{
+                                    Image("mySkinPersona")
+                                        .padding()
+                                        .padding(.leading, 10)
+                                    
+                                    Text("My Skin Persona")
+                                        .font(.system(size: 16))
+                                        .fontWeight(.bold)
+                                    
+                                        .padding()
+                                    Image("arrow")
+                                        .padding()
+                                        .padding(.trailing, 10)
+                                }
+                               
+    
+                            }
                                 .onTapGesture {
+                                    withAnimation{
                                     isDailyRoutineTapped = true
+                                    }
                                 }
                             //NavigationLink("", destination: onBoardingView(),
                                            //isActive: $isDailyRoutineTapped)
@@ -174,7 +223,7 @@ struct BoxView: View{
         VStack{
             Image("0")
                 .resizable()
-                .frame(width:96, height:120)
+                .frame(width:100, height:120)
                 .cornerRadius(12) //Ini belum di set ukuran corner radiusnya
             Text("12 Juni 2022")
                 .font(.system(size:14, weight:.thin,design: .default))

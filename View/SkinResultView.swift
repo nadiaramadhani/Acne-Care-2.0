@@ -17,13 +17,16 @@ import SwiftUI
 //}
 struct SkinResultView: View {
     @State private var selected = 1
+    @State private var data = 0
     
+//    let items: [BookmarkItem] = [.causes, .tips]
+
     var body: some View {
         
         NavigationView{
            
             
-            ScrollView {
+            VStack {
                 Picker("Skin", selection: $selected){
                     Text("Skin")
                         .tag(1)
@@ -32,12 +35,19 @@ struct SkinResultView: View {
                 }
                 .pickerStyle(.segmented)
                 .padding()
-                
-                if selected == 1 {
-                    SkinView()
-                } else if selected == 2 {
-                    AcneView()
-                }
+               
+                    if selected == 1 {
+                        if data == 0{
+                            DrySkinView()
+                            
+                        } else if
+                                data == 1{
+                                //
+                            }
+                        
+                    } else if selected == 2 {
+                        AcneView()
+                    }
                 
                 
                
@@ -161,18 +171,6 @@ struct AcneView : View {
                     .padding()
                 Text("There is small black or yellowish bumps that develop on the skin")
                     .frame(width: 300, height: 50, alignment: .center)
-//
-//                        Button(action: {
-//                            print("tapped")
-//
-//                        }) {
-//                            Text("Click for real image")
-//                                .font(.system(size: 16))
-//                                .padding(.top, 20)
-//
-//                        }
-//
-
             }
             
             
@@ -286,27 +284,31 @@ OTC such as Retinol, which is a form of vitamin A that works by increasing skin 
 
 
 //MARK: DUMMY DATA
-
-struct SkinTypeText: Identifiable {
-    var id: Int
-    
-    var title : String
-    var description: String
-    var image: String
-    var longDesc: String
-    
-}
-
-var SkinTypeData = [
-    SkinTypeText(id: 0 , title: "Normal", description: "", image: "skintype1",
-                 longDesc: ""),
-    SkinTypeText(id: 1, title: "Dry", description: "Feels tight, scaling and flaking, feels itchy", image: "skintype2",
-                 longDesc: "Dry skin condition characterized as people who have it shows almost invisible pores, dull, rough complexion, Red patches, Less elastic skin, More visible lines."),
-    SkinTypeText(id: 2, title: "Oily", description: "", image: "skintype3", longDesc: ""),
-    SkinTypeText(id: 3, title: "Combination", description: "", image: "skintype4", longDesc: ""),
-    SkinTypeText(id: 4, title: "Sensitive", description: "", image: "skintype5", longDesc: ""),
-
-]
+//
+//struct SkinTypeText: Identifiable {
+//    var id: Int
+//
+//    var title : String
+//    var description: String
+//    var image: String
+//    var longDesc: String
+//
+//}
+//
+//var SkinTypeData = [
+//    SkinTypeText(id: 0 , title: "Normal", description: "", image: "skintype1",
+//                 longDesc: ""),
+//    SkinTypeText(id: 1, title: "Dry", description: "Feels tight, scaling and flaking, feels itchy", image: "skintype2",
+//                 longDesc: "Dry skin condition characterized as people who have it shows almost invisible pores, dull, rough complexion, Red patches, Less elastic skin, More visible lines."),
+//    SkinTypeText(id: 2, title: "Oily", description: "", image: "skintype3", longDesc: ""),
+//    SkinTypeText(id: 3, title: "Combination", description: "", image: "skintype4", longDesc: ""),
+//    SkinTypeText(id: 4, title: "Sensitive", description: "", image: "skintype5", longDesc: ""),
+//
+//]
+//
+//var acneTypeData = [
+//SkinTypeText(id: 0, title: "Blackhead", description: "", image: "", longDesc: "")
+//]
 
 struct SkinResultView_Previews: PreviewProvider {
     static var previews: some View {
