@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A747F34286C92A700683171 /* Nadia6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F33286C92A700683171 /* Nadia6.swift */; };
+		9A747F36286C92B500683171 /* Nadia7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F35286C92B500683171 /* Nadia7.swift */; };
+		9A747F38286C92C700683171 /* Nadia8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F37286C92C700683171 /* Nadia8.swift */; };
+		9A747F3A286C92D300683171 /* Nadia9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F39286C92D300683171 /* Nadia9.swift */; };
+		9A747F3C286C92DC00683171 /* Nadia10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3B286C92DC00683171 /* Nadia10.swift */; };
+		9A747F3E286C92EA00683171 /* Rahmat6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3D286C92EA00683171 /* Rahmat6.swift */; };
+		9A747F40286C92F300683171 /* Rahmat7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3F286C92F300683171 /* Rahmat7.swift */; };
+		9A747F42286C92FD00683171 /* Rahmat8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F41286C92FD00683171 /* Rahmat8.swift */; };
+		9A747F44286C930700683171 /* Rahmat9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F43286C930700683171 /* Rahmat9.swift */; };
+		9A747F46286C931200683171 /* Rahmat10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F45286C931200683171 /* Rahmat10.swift */; };
+		9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */; };
+		9A747F4C286C935400683171 /* CoreDataRahmat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F4A286C935400683171 /* CoreDataRahmat.xcdatamodeld */; };
 		9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */; };
 		9AE804392865246B006493A9 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE804382865246B006493A9 /* MainPageView.swift */; };
 		9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8043C2867724D006493A9 /* TesterPickerView.swift */; };
@@ -57,6 +69,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A747F33286C92A700683171 /* Nadia6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia6.swift; sourceTree = "<group>"; };
+		9A747F35286C92B500683171 /* Nadia7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia7.swift; sourceTree = "<group>"; };
+		9A747F37286C92C700683171 /* Nadia8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia8.swift; sourceTree = "<group>"; };
+		9A747F39286C92D300683171 /* Nadia9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia9.swift; sourceTree = "<group>"; };
+		9A747F3B286C92DC00683171 /* Nadia10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia10.swift; sourceTree = "<group>"; };
+		9A747F3D286C92EA00683171 /* Rahmat6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat6.swift; sourceTree = "<group>"; };
+		9A747F3F286C92F300683171 /* Rahmat7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat7.swift; sourceTree = "<group>"; };
+		9A747F41286C92FD00683171 /* Rahmat8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat8.swift; sourceTree = "<group>"; };
+		9A747F43286C930700683171 /* Rahmat9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat9.swift; sourceTree = "<group>"; };
+		9A747F45286C931200683171 /* Rahmat10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat10.swift; sourceTree = "<group>"; };
+		9A747F48286C933500683171 /* CoreDataNadia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataNadia.xcdatamodel; sourceTree = "<group>"; };
+		9A747F4B286C935400683171 /* CoreDataRahmat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataRahmat.xcdatamodel; sourceTree = "<group>"; };
 		9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotos.swift; sourceTree = "<group>"; };
 		9AE804382865246B006493A9 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		9AE8043C2867724D006493A9 /* TesterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesterPickerView.swift; sourceTree = "<group>"; };
@@ -126,6 +150,12 @@
 				9AF3DC3A2869C4EC007847E7 /* Nadia3.swift */,
 				9AF3DC3C2869C4F6007847E7 /* Nadia4.swift */,
 				9AF3DC3E2869C504007847E7 /* Nadia5.swift */,
+				9A747F33286C92A700683171 /* Nadia6.swift */,
+				9A747F35286C92B500683171 /* Nadia7.swift */,
+				9A747F37286C92C700683171 /* Nadia8.swift */,
+				9A747F39286C92D300683171 /* Nadia9.swift */,
+				9A747F3B286C92DC00683171 /* Nadia10.swift */,
+				9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */,
 			);
 			path = Nadia;
 			sourceTree = "<group>";
@@ -138,6 +168,12 @@
 				9AF3DC452869C56D007847E7 /* Rahmat3.swift */,
 				9AF3DC472869C576007847E7 /* Rahmat4.swift */,
 				9AF3DC492869C588007847E7 /* Rahmat5.swift */,
+				9A747F3D286C92EA00683171 /* Rahmat6.swift */,
+				9A747F3F286C92F300683171 /* Rahmat7.swift */,
+				9A747F41286C92FD00683171 /* Rahmat8.swift */,
+				9A747F43286C930700683171 /* Rahmat9.swift */,
+				9A747F45286C931200683171 /* Rahmat10.swift */,
+				9A747F4A286C935400683171 /* CoreDataRahmat.xcdatamodeld */,
 			);
 			path = Rahmat;
 			sourceTree = "<group>";
@@ -368,28 +404,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A747F3C286C92DC00683171 /* Nadia10.swift in Sources */,
 				9BB3780E28634BA0007A3640 /* onBoardingView.swift in Sources */,
+				9A747F3E286C92EA00683171 /* Rahmat6.swift in Sources */,
 				9AF3DC482869C576007847E7 /* Rahmat4.swift in Sources */,
+				9A747F44286C930700683171 /* Rahmat9.swift in Sources */,
+				9A747F3A286C92D300683171 /* Nadia9.swift in Sources */,
 				9B86CBE42868179200449BB4 /* SheetManager.swift in Sources */,
 				9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */,
 				9AF3DC442869C563007847E7 /* Rahmat2.swift in Sources */,
 				9B96423F28657A3800662591 /* SnapView.swift in Sources */,
+				9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */,
+				9A747F36286C92B500683171 /* Nadia7.swift in Sources */,
 				9AF3DC412869C53F007847E7 /* Rahmat1.swift in Sources */,
+				9A747F38286C92C700683171 /* Nadia8.swift in Sources */,
 				9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */,
 				9AF3DC372869C4A3007847E7 /* Nadia1.swift in Sources */,
 				9AF3DC392869C4E5007847E7 /* Nadia2.swift in Sources */,
 				9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */,
 				9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */,
+				9A747F4C286C935400683171 /* CoreDataRahmat.xcdatamodeld in Sources */,
 				9AF3DC462869C56D007847E7 /* Rahmat3.swift in Sources */,
 				9AF3DC3D2869C4F6007847E7 /* Nadia4.swift in Sources */,
+				9A747F46286C931200683171 /* Rahmat10.swift in Sources */,
+				9A747F42286C92FD00683171 /* Rahmat8.swift in Sources */,
 				9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */,
 				9B96423D286577C400662591 /* SnapCarousel.swift in Sources */,
 				9B417C652864759B00DABC05 /* CardModel.swift in Sources */,
 				9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */,
+				9A747F34286C92A700683171 /* Nadia6.swift in Sources */,
 				9B96424128657AB400662591 /* Card.swift in Sources */,
 				9AE804392865246B006493A9 /* MainPageView.swift in Sources */,
 				9AF3DC3B2869C4EC007847E7 /* Nadia3.swift in Sources */,
 				9AF3DC3F2869C504007847E7 /* Nadia5.swift in Sources */,
+				9A747F40286C92F300683171 /* Rahmat7.swift in Sources */,
 				9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */,
 				9AF3DC4A2869C588007847E7 /* Rahmat5.swift in Sources */,
 				9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */,
@@ -721,6 +769,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9A747F48286C933500683171 /* CoreDataNadia.xcdatamodel */,
+			);
+			currentVersion = 9A747F48286C933500683171 /* CoreDataNadia.xcdatamodel */;
+			path = CoreDataNadia.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		9A747F4A286C935400683171 /* CoreDataRahmat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9A747F4B286C935400683171 /* CoreDataRahmat.xcdatamodel */,
+			);
+			currentVersion = 9A747F4B286C935400683171 /* CoreDataRahmat.xcdatamodel */;
+			path = CoreDataRahmat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9BB3780028634BA0007A3640 /* Project object */;
 }
