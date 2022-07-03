@@ -9,25 +9,14 @@ import SwiftUI
 
 struct TesterPickerView: View {
     
-    //    let cards = [
-    //        Card(stepName:"Facial Wash",desc: "Wash your face with gentle face wash", imageInput:"Day"),
-    //        Card(stepName:"Moisturizer",desc: "Always make sure to hydrated your skin", imageInput:"Moisturizer"),
-    //        Card(stepName:"Acne Treatment",desc: "Treatments work to clear away bacteria and dry up the excess oils that lead to acne", imageInput:"Day"),
-    //        Card(stepName:"Sunscreen",desc: "Protect the skin from the harmful effects of the sun", imageInput:"Day")
-    //
-    //    ]
+    //BINDING UNTUK NARIK DATA PRODUCT YANG SUDAH DIPILIH
     
-    //@State private var selectedCard: Card?
+
     @State var selected = 0
-    //    @State private var isSelectedFacialMorning: Bool = false
-    //    @State private var isSelectedMoisturizerMorning: Bool = false
-    //    @State private var isSelectedAcneTreatmentMorning: Bool = false
-    //    @State private var isSelectedSunscreenMorning: Bool = false
-    //    @State private var isSelectedFacialNight: Bool = false
-    //    @State private var isSelectedMoisturizeNight: Bool = false
-    //    @State private var isSelectedAcneTreatmentNight: Bool = false
+ 
     
-    @State var isNext = false
+    @State var isCreateMorning = false
+    @State var isCreateNight = false
     @State var isEditMorning = false
     @State var isEditNight = false
     @State var isBack = false
@@ -40,13 +29,18 @@ struct TesterPickerView: View {
             morningChooseProduct()
         }else if isEditNight{
             NightChooseProduct()
-        }else{
+        }else if isCreateMorning{
+            morningChooseProduct()
+        }else if isCreateNight{
+            NightChooseProduct()
+        }
+        else{
             
             NavigationView{
                 ZStack{
                     Color("secondaryYellow3rd")
                         .edgesIgnoringSafeArea(.all)
-               VStack{
+                    VStack{
                     
 
                             Picker("What is your favorite color?", selection: $selected) {
@@ -80,12 +74,12 @@ struct TesterPickerView: View {
                                             self.isEditMorning = true
                                         }
                                     
-                                    HStack{
-                                        
-                                        Toggle("Turn on the Skincare Notification", isOn: $isEditMorning)
-                                        
-                                    }.frame(width: 360, height: 44, alignment: .leading)
-                                        .edgesIgnoringSafeArea(.all)
+//                                    HStack{
+//
+//                                        Toggle("Turn on the Skincare Notification", isOn: $isEditMorning)
+//
+//                                    }.frame(width: 360, height: 44, alignment: .leading)
+//                                        .edgesIgnoringSafeArea(.all)
                                     Spacer()
                                     
                                     VStack{
@@ -96,6 +90,25 @@ struct TesterPickerView: View {
                                             .fontWeight(.light)
                                             .frame(width: 300, alignment: .center)
                                             .multilineTextAlignment(.center)
+                                        Button(action: {self.isCreateMorning = true},
+                                               label: {
+                                            Text("Create")
+                                                .font(.headline)
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(.white)
+                                                .padding()
+                                            //.padding(.horizontal,6)
+                                                .frame(width: 153, height: 50)
+                                                .background(
+                                                    Color("primaryGreen")
+                                                        .cornerRadius(10)
+                                                        .shadow(radius: 5))
+                                            
+                            
+                                        })
+                            
+//                                        NavigationLink("", destination: morningChooseProduct(),
+//                                           isActive: $isCreateMorning)
                                     }
                                     Spacer()
                                     
@@ -116,12 +129,12 @@ struct TesterPickerView: View {
                                             self.isEditNight = true
                                         }
                                     
-                                    HStack{
-                                        
-                                        Toggle("Turn on the Skincare Notification", isOn: $isEditNight)
-                                        
-                                    }.frame(width: 360, height: 44, alignment: .leading)
-                                        .edgesIgnoringSafeArea(.all)
+//                                    HStack{
+//
+//                                        Toggle("Turn on the Skincare Notification", isOn: $isEditNight)
+//
+//                                    }.frame(width: 360, height: 44, alignment: .leading)
+//                                        .edgesIgnoringSafeArea(.all)
                                     
                                     Spacer()
                             
@@ -133,6 +146,27 @@ struct TesterPickerView: View {
                                             .fontWeight(.light)
                                             .frame(width: 300, alignment: .center)
                                             .multilineTextAlignment(.center)
+                                        
+                                        Button(action: {self.isCreateNight = true},
+                                               label: {
+                                            Text("Create")
+                                                .font(.headline)
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(.white)
+                                                .padding()
+                                            //.padding(.horizontal,6)
+                                                .frame(width: 153, height: 50)
+                                                .background(
+                                                    Color("primaryGreen")
+                                                        .cornerRadius(10)
+                                                        .shadow(radius: 5))
+                                            
+                            
+                                        })
+                            
+                                        
+//                                        NavigationLink("", destination: NightChooseProduct(),
+//                                           isActive: $isCreateNight)
                                     }
                                     Spacer()
                                     
@@ -142,45 +176,47 @@ struct TesterPickerView: View {
                             
                             
                             
-                            //            //Next Button
-                            //            Button(action: {self.isNext = true},
-                            //                   label: {
-                            //                Text("Next")
-                            //                    .font(.headline)
-                            //                    .fontWeight(.semibold)
-                            //                    .foregroundColor(.white)
-                            //                    .padding()
-                            //                //.padding(.horizontal,6)
-                            //                    .frame(width: 153, height: 50)
-                            //                    .background(
-                            //                        Color("primaryGreen")
-                            //                            .cornerRadius(10)
-                            //                            .shadow(radius: 5))
-                            //
-                            //            })
-                            
-                            NavigationLink("", destination: TakePhotos(),
-                                           isActive: $isNext)
-                        
-                   // }
-                    .navigationTitle("Skincare")
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarItems(leading:
-                                            HStack{
-                        Button(action: {
-                            self.isBack = true
-                        }){
-                            Label("",systemImage: "chevron.backward")
-                            
-                        }
-                        
-                    }
-                                        
-                                        
-                    )
+//                                        //Create Button
+//                                        Button(action: {self.isCreate = true},
+//                                               label: {
+//                                            Text("Create")
+//                                                .font(.headline)
+//                                                .fontWeight(.semibold)
+//                                                .foregroundColor(.white)
+//                                                .padding()
+//                                            //.padding(.horizontal,6)
+//                                                .frame(width: 153, height: 50)
+//                                                .background(
+//                                                    Color("primaryGreen")
+//                                                        .cornerRadius(10)
+//                                                        .shadow(radius: 5))
+//
+//
+//                                        })
+//
+//                                        NavigationLink("", destination: TakePhotos(),
+//                                           isActive: $isCreate)
+//
+//                   // }
+                    
  
                     
                 }
+               .navigationTitle("Skincare")
+               .navigationBarTitleDisplayMode(.inline)
+               .navigationBarItems(leading:
+                                       HStack{
+                   Button(action: {
+                       self.isBack = true
+                   }){
+                       Label("",systemImage: "chevron.backward")
+                       
+                   }
+                   
+               }
+                                   
+                                   
+               )
                
             }
             }

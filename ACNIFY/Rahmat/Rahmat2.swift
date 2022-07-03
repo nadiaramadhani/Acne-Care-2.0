@@ -9,6 +9,7 @@
 
 import Foundation
 import SwiftUI
+import CoreMedia
 
 struct NightChooseProduct: View {
     
@@ -21,11 +22,18 @@ struct NightChooseProduct: View {
     @State private var isSelectedMoisturizerNight: Bool = false
     @State private var isSelectedAcneTreatmentNight: Bool = false
     @State private var isSelectedSunscreenNight: Bool = false
-
+    @State private var isEditNight: Bool = false
+    @State private var sheetsNotificationNight: Bool = false
+    @State private var addProductOilCleanserNight: Bool = false
+    @State private var username: String = ""
+    @State private var password: String = ""
     
     @State var isNext = false
     @State var isDone = false
     @State var isBack = false
+    @State var isCancelSheetNight = false
+    @State var isSaveSheetNight = false
+    @State var currentTimeNight = Date()
     
     var body: some View {
         
@@ -33,6 +41,10 @@ struct NightChooseProduct: View {
             TesterPickerView()
         }else if isDone{
             TesterPickerView()
+        }else if isCancelSheetNight {
+            NightChooseProduct()
+        }else if isSaveSheetNight{
+            NightChooseProduct()
         }else{
             NavigationView{
                 
@@ -40,6 +52,67 @@ struct NightChooseProduct: View {
                     Color(.white)
                         .edgesIgnoringSafeArea(.all)
                     VStack {
+                        Text("Set Reminder")
+                            .font(.system(size:20))
+                            .fontWeight(.bold)
+                            .padding(.top,50)
+                            .padding(.leading,-180)
+                        
+                        HStack{
+                            
+                            Toggle("Turn on the Skincare Notification", isOn: $isEditNight
+                            ).sheet(isPresented: $isEditNight, content:{
+                                NavigationView{
+                                    VStack{
+                                        Form{
+                                            Section(header: Text("")){
+                                                DatePicker("Time", selection: $currentTimeNight, displayedComponents: .hourAndMinute)
+                                            }
+                                        }
+                                        
+                                    }
+                                    .navigationBarTitle("Reminder")
+                                    .navigationBarTitleDisplayMode(.inline)
+                                    .navigationBarItems(leading:
+                                                            HStack{
+                                        Button(action: {
+                                            self.isCancelSheetNight = true
+                                        }){
+                                            Text("Cancel")
+                                                .foregroundColor(.blue)
+                                                .frame(alignment: .leading)
+                                    
+                                        }
+                                        
+                                    }
+                                                        
+                                                        
+                                    )
+                                    .navigationBarItems(trailing:
+                                                            HStack{
+                                        Button(action: {
+                                            self.isSaveSheetNight = true
+                                        }){
+                                            Text("Save")
+                                                .font(.headline)
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(.blue)
+                                                .frame(alignment: .leading)
+                                            
+                                            
+                                        }
+                                        
+                                    }
+                                                        
+                                                        
+                                    )
+                                    
+                                }
+                            })
+                            
+                        }.frame(width: 360, height: 44, alignment: .leading)
+                            .edgesIgnoringSafeArea(.all)
+                        
                         Text("Product Type")
                             .font(.system(size:20))
                             .fontWeight(.bold)
@@ -86,9 +159,53 @@ struct NightChooseProduct: View {
                                                 .fontWeight(.light)
                                                 .foregroundColor(Color("primaryGreen"))
                                                 .onTapGesture{
-                                                    
+                                                    self.addProductOilCleanserNight = true
                                                 }
-                                        }
+//                                            Button(action:{
+//                                                self.addProductOilCleanserNight = true
+//
+//                                            }){
+//                                                Text("Add your Product")
+//                                                    .font(.system(size:12))
+//                                                    .fontWeight(.light)
+//                                                    .foregroundColor(Color("primaryGreen"))
+//                                                    .alert(isPresented: $addProductOilCleanserNight, content:{
+//                                                        Alert(
+//
+//                                                            title: Text("Product Name"),
+//                                                            message: Text("Write a product name that you use"),
+//                                                            primaryButton:.default(Text("Save")),
+//                                                            secondaryButton:.cancel(Text("Back"))
+//
+////                                                            ,Harusnya bisa input TextField disini<<#Label: View#>>
+//                                                        )
+//                                                    })
+//
+//
+//                                            }
+                                            
+                                                    Button("Show Alert") {
+                                                        addProductOilCleanserNight = true
+                                                    }
+                                                    .font(.system(size:12))
+                                                    .foregroundColor(Color("primaryGreen"))
+                                                    .alert("Login", isPresented: $addProductOilCleanserNight, actions: {
+                                                            TextField("Username", text: $username)
+                                                            SecureField("Password", text: $password)
+                                                        
+                                                        
+
+//                                                        Button("Login", action: {})
+//                                                        Button("Cancel", role: .cancel, action: {})
+
+
+                                                    }, message: {
+                                                        Text("Please enter your username and password.")
+                                                    })
+                                                }
+                                        
+//Resource mendekati yang paling mudah https://www.youtube.com/watch?v=1FqRNf2WbJE
+                                        
                                         
                                         
                                         
@@ -371,7 +488,7 @@ struct NightChooseProduct: View {
                         })
                         .padding(.leading,0)
                       
-                        .frame(width: 500, height: 660)
+                        .frame(width: 500, height: 630)
                         .edgesIgnoringSafeArea(.bottom)
                         
                         
@@ -433,6 +550,7 @@ struct NightChooseProduct: View {
                                     
                                     
                 )
+               
                 
                 
             }

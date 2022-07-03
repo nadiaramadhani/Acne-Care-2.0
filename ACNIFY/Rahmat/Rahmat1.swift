@@ -11,10 +11,11 @@
 
 import Foundation
 import SwiftUI
+import UserNotifications
 
 struct morningChooseProduct: View {
     
-    
+    //Ngestate hasil yagn udah dicentang hasilnya true
     @State private var selected = 0
     @State private var isSelectedOilCleanserMorning: Bool = false
     @State private var isSelectedFacialMorning: Bool = false
@@ -23,32 +24,111 @@ struct morningChooseProduct: View {
     @State private var isSelectedMoisturizerMorning: Bool = false
     @State private var isSelectedAcneTreatmentMorning: Bool = false
     @State private var isSelectedSunscreenMorning: Bool = false
+    @State private var isEditMorning: Bool = false
+    @State private var sheetsNotificationMorning: Bool = false
+    
 
     
     @State var isNext = false
     @State var isDone = false
     @State var isBack = false
+    @State var isCancelSheet = false
+    @State var isSaveSheet = false
+    @State var currentTimeMorning = Date()
     
     var body: some View {
         
         if isBack{
             TesterPickerView()
         }else if isDone{
-            TesterPickerView()
+            TakePhotos()
+        }else if isCancelSheet{
+            morningChooseProduct()
+        }else if isSaveSheet{
+            morningChooseProduct()
+            
         }else{
+            
             NavigationView{
                 
                 ZStack{
+                    
+                    
+                    
                     Color(.white)
                         .edgesIgnoringSafeArea(.all)
+                    
+                    
                     VStack {
+                        Text("Set Reminder")
+                            .font(.system(size:20))
+                            .fontWeight(.bold)
+                            .padding(.top,50)
+                            .padding(.leading,-180)
+                        
+                        HStack{
+                            
+                            Toggle("Turn on the Skincare Notification", isOn: $sheetsNotificationMorning)
+                                .sheet(isPresented: $sheetsNotificationMorning, content:{
+                                    NavigationView{
+                                        VStack{
+                                            
+                                            
+                                            Form{
+                                                Section(header: Text("")){
+                                                    DatePicker("Time", selection: $currentTimeMorning, displayedComponents: .hourAndMinute)
+                                                }
+                                            }
+                                            
+                                            
+                                        }
+                                        .navigationBarTitle("Reminder")
+                                        .navigationBarTitleDisplayMode(.inline)
+                                        .navigationBarItems(leading:
+                                                                HStack{
+                                            Button(action: {
+                                                self.isCancelSheet = true
+                                            }){
+                                                Text("Cancel")
+                                                    .foregroundColor(.blue)
+                                                    .frame(alignment: .leading)
+                                        
+                                            }
+                                            
+                                        }
+                                                            
+                                                            
+                                        )
+                                        .navigationBarItems(trailing:
+                                                                HStack{
+                                            Button(action: {
+                                                self.isSaveSheet = true
+                                            }){
+                                                Text("Save")
+                                                    .font(.headline)
+                                                    .fontWeight(.semibold)
+                                                    .foregroundColor(.blue)
+                                                    .frame(alignment: .leading)
+                                                
+                                                
+                                            }
+                                            
+                                        }
+                                                            
+                                                            
+                                        )
+                                        
+                                    }
+                                })
+                            
+                            
+                        }.frame(width: 360, height: 44, alignment: .leading)
+                            .edgesIgnoringSafeArea(.all)
+                        
                         Text("Product Type")
                             .font(.system(size:20))
                             .fontWeight(.bold)
                             .padding(.leading,-180)
-                            
-                            
-                            
                         
                         ScrollView(.vertical, showsIndicators: false, content: {
                             VStack{
@@ -92,6 +172,8 @@ struct morningChooseProduct: View {
                                                 }
                                         }
                                         
+                                        //Nambahin list produk yang dicentang
+                                        //Kalo udah dicentang, dia tetap di slide ini dan tercentang
                                         
                                         
                                         
@@ -415,34 +497,14 @@ struct morningChooseProduct: View {
                                     }
                                 }
                                 
-                                
-                                
-                                
-                                
                             }
                         })
                         .padding(.leading,0)
-                        .frame(width: 500, height: 660)
+                        .frame(width: 500, height: 630)
                         .edgesIgnoringSafeArea(.bottom)
-                        
-                        
-//                        Text("Set Reminder")
-//                            .font(.system(size:20))
-//                            .fontWeight(.bold)
-//                            .padding(.leading,-180)
-//                            .padding(.top,10)
-                        
-//                        ZStack{
-//                            Rectangle()
-//                                .fill(Color.blue)
-//                                .frame(width: 350, height: 44)
-//                                .cornerRadius(12)
-//
-//                                .padding(5)
-                            
-                            
                            
                     }
+                        
                 }
                 .navigationBarTitle("Edit")
                 .navigationBarTitleDisplayMode(.inline)
@@ -454,7 +516,7 @@ struct morningChooseProduct: View {
                         Text("Cancel")
                             .foregroundColor(.blue)
                             .frame(alignment: .leading)
-                        
+                
                     }
                     
                 }
@@ -479,6 +541,7 @@ struct morningChooseProduct: View {
                                     
                                     
                 )
+//                .sheet(isPresented: $show, content: )
                 
                 
             }
@@ -486,17 +549,7 @@ struct morningChooseProduct: View {
     }
 }
 
-//struct ToggleCheckbox: ToggleStyle {
-//    func makeBody(configuration: Configuration) -> some View{
-//        Button {
-//            configuration.isOn.toggle()
-//        } label: {
-//            Image(systemName: "checkmark.square")
-//                .symbolVariant(configuration.isOn ? .fill: .none)
-//        }
-//        .tint(Color(.gray)) //atau "primaryGreen"
-//    }
-//}
+
 
 struct NewToggleCheckbox: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View{
@@ -516,5 +569,27 @@ struct morningChooseProduct_Previews: PreviewProvider {
     }
 }
 
+//BISA BUAT STRUCT BARU YANG ISINYA LIST PRODUCT DAN SET WAKTU
 
+class NotificationManager{
+    static let instance = NotificationManager()
+    func requestAuthorization(){
+        let options: UNAuthorizationOptions = [.alert, .sound, .badge]; UNUserNotificationCenter.current().requestAuthorization(options: options) { (success, error) in
+            if success {
+                print("All set!")
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+}
+
+
+
+//struct sheetsNotificationMorning: View{
+//    var body: some View{
+//        .sheet
+//        
+//    }
+//}
 //tUTORIAL local notif= https://www.youtube.com/watch?v=iRjyk1S0nvo
