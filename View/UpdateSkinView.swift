@@ -10,6 +10,12 @@ import SwiftUI
 struct UpdateSkinView: View {
     @State private var isPopUpPresented = false
     @State var updateSkinText = ""
+    
+    @Environment (\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var skins: FetchedResults<UpdateEntity>
+    
+    
+
     var body: some View {
             VStack{
                 ZStack{
@@ -30,9 +36,14 @@ struct UpdateSkinView: View {
                             .fontWeight(.bold)
                         HStack{
                             VStack{
-                                Text("😃")
+                                Text("😁")
                                 Text("Better")
                                     .font(.system(size: 16))
+                            }
+                            .onTapGesture {
+                                var emojiUpdate = "😁"
+                                
+                                
                             }
                             .padding()
                             
@@ -80,6 +91,7 @@ happened
                 
                 Button(action: {
                     self.isPopUpPresented.toggle()
+                    addUpdate()
                     
                 }) {
                     Text("Finish")
@@ -96,6 +108,19 @@ happened
             .popup(isPresented: isPopUpPresented, alignment: .center, direction: .top, content: CustomPopUp.init)
         
     }
+    
+    func addUpdate() {
+        let newUpdate = UpdateEntity(context: moc)
+        
+        newUpdate.dateUpdate = Date()
+        newUpdate.descUpdate = updateSkinText
+//        newUpdate.emojiUpdate = emojiUpdate
+        
+     //   newUpdate.imageUpdate =
+        try? moc.save()
+        
+    }
+    
 }
 
 struct UpdateSkinView_Previews: PreviewProvider {

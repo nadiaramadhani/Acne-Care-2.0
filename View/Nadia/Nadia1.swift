@@ -35,18 +35,18 @@ struct AcneTypeView: View {
               
                     VStack{
                         
-                        Text("Skin Quiz")
+                        Text("Acne Quiz")
                              .font(.title)
                              .fontWeight(.bold)
                              .foregroundColor(Color("primaryGreen"))
                              .padding(.top, 20)
                          
-                         Text("Question 1 of 2")
+                         Text("Question 2 of 2")
                              .font(.system(size: 12))
 //                             .padding(.top, 10)
                            
                          
-                         Text("Pick one that represents your current skin condition")
+                         Text("Pick one that represents your current acne condition")
                             .multilineTextAlignment(.center)
                              .font(.system(size: 18))
                              .padding(.vertical)
@@ -54,9 +54,9 @@ struct AcneTypeView: View {
                     }
                 
                 
-                GeometryReader {g in
+                GeometryReader { g in
                     
-                    Carousel(width:
+                    AcneCarousel(width:
                              
                                 UIScreen.main.bounds.width,
                              
@@ -66,6 +66,7 @@ struct AcneTypeView: View {
                 }
                 
                 PageControl(page: self.$page)
+                
                 Button {
                     print("tapped")
                 } label: {
@@ -77,9 +78,7 @@ struct AcneTypeView: View {
                     
                 Spacer()
                 
-            }
-//            .padding(.vertical)
-        
+            }        
     }
 }
 
@@ -87,9 +86,9 @@ struct AcneList: View {
     @Binding var page : Int
     var body: some View {
         HStack(spacing: 10){
-            ForEach(data){ i in
+            ForEach(acneData){ i in
                 
-                Card(page: self.$page, width: UIScreen.main.bounds.width, data: i)
+                AcneCard(page: self.$page, width: UIScreen.main.bounds.width, AcneData: i)
                 
             }
         }
@@ -99,35 +98,27 @@ struct AcneList: View {
 struct AcneCard: View {
     @Binding var page: Int
     var width : CGFloat
-   
-    var data: Type
+    var AcneData: Type
     var body: some View {
         VStack{
             
             VStack{
                 
-                Text(self.data.title)
+                Text(self.AcneData.title)
                     .foregroundColor(Color("primaryGreen"))
                     .font(.system(size: 16))
                     .fontWeight(.bold)
                     .padding(.bottom,20)
         
-                Image(self.data.image)
+                Image(self.AcneData.image)
                     .resizable()
-                    .frame(width: self.width - (150), height: 230)
+                    .frame(width: self.width - (220), height: 165)
                     
                 
-                Text(self.data.desc)
+                Text(self.AcneData.desc)
                     .font(.system(size: 16))
                     .padding(.vertical)
-                    .frame(width: 270, alignment: .leading)
-//                Button(action: {
-//
-//                }) {
-//                    Text("Real image")
-//                        .font(.system(size: 14))
-//                }
-                
+                    .frame(width: 270, height: 120, alignment: .leading)
         
             }
             .padding(.horizontal, 15)
@@ -137,14 +128,11 @@ struct AcneCard: View {
             )
             .background(Color("gray"))
             .cornerRadius(25)
-            //.padding(.vertical, self.page == data.id ? 0 : 25)
-            
-            
-           // .padding(.top, 25)
+          
             Spacer(minLength: 0)
         }
     //    .frame(width: 300, height: 350)
-        .frame(width: self.width)
+        .frame(width: self.width, height: 500)
     }
 }
 
@@ -159,7 +147,7 @@ struct AcneCarousel: UIViewRepresentable {
     
     func makeUIView(context: Context) -> some UIView {
         
-        let total = width * CGFloat (data.count)
+        let total = width * CGFloat (acneData.count)
         let view = UIScrollView()
         view.isPagingEnabled = true
         view.contentSize = CGSize(width: total, height: 1.0)
@@ -167,7 +155,7 @@ struct AcneCarousel: UIViewRepresentable {
         view.showsVerticalScrollIndicator = false
         view.showsHorizontalScrollIndicator = false
         view.delegate = context.coordinator
-        let view1 = UIHostingController(rootView: CardList(page: self.$page))
+        let view1 = UIHostingController(rootView: AcneList(page: self.$page))
         view1.view.frame = CGRect(x: 0, y: 0, width: total, height: self.height)
         view1.view.backgroundColor = .clear
     
@@ -198,69 +186,6 @@ struct AcneCarousel: UIViewRepresentable {
     
     
 }
-//struct PageControl : UIViewRepresentable {
-//    @Binding var page : Int
-//
-//    func makeUIView(context: Context) -> UIPageControl {
-//
-//        let view = UIPageControl()
-//        view.currentPageIndicatorTintColor = .black
-//        view.pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
-//        view.numberOfPages = data.count
-//        return view
-//
-//    }
-//    func updateUIView(_ uiView: UIPageControl, context: Context) {
-//
-//        DispatchQueue.main.async {
-//            uiView.currentPage = self.page
-//
-//        }
-//    }
-//}
-
-//struct pageControl: View {
-//    @Binding var selectedPage: Int
-//    var pages: Int
-//    var circleDiameter: CGFloat
-//    var circleMargin: CGFloat
-//
-//    private var circleRadius: CGFloat { circleDiameter / 2}
-//    private var pageIndex: CGFloat { CGFloat(selectedPage - 1) }
-//
-//        private var currentPosition: CGFloat {
-//            // Get the first circle position
-//            let stackWidth = circleDiameter * CGFloat(pages) + circleMargin * CGFloat(pages - 1)
-//            let halfStackWidth = stackWidth / 2
-//            let iniPosition = -halfStackWidth + circleRadius
-//
-//            // Calculate the distance to get the next circle
-//            let distanceToNextPoint = circleDiameter + circleMargin
-//
-//            // Use the pageIndex to get the current position
-//            return iniPosition + (pageIndex * distanceToNextPoint)
-//
-//        }
-//
-//
-//    var body: some View {
-//
-//        ZStack{
-//            HStack{
-//                ForEach(0..<pages) {_ in
-//                    Circle()
-//                        .stroke(Color.black, style: StrokeStyle(lineWidth: 2, lineCap: .round))
-//                        .frame(width:  circleDiameter, height: circleDiameter)
-//                }
-//            }
-//            Circle()
-//                .foregroundColor(.black)
-//                .frame(width: circleDiameter, height: circleDiameter)
-//
-//        }
-//
-//    }
-//}
 
 struct AcneType : Identifiable {
     var id: Int
@@ -270,13 +195,13 @@ struct AcneType : Identifiable {
     
 }
 
-var AcneData = [
+var acneData = [
 
-AcneType(id: 0, image: "skintype1", title: "Normal", desc: "No severe sensitivity, barely visible pores, hydrated"),
-AcneType(id: 1, image: "skintype2", title: "Dry", desc: "Large pores, shiny appearance over the face mostly in T-Zone area"),
-AcneType(id: 2, image: "skintype3", title: "Sensitive", desc: "No severe sensitivity, barely visible pores, hydrated"),
-AcneType(id: 3, image: "skintype4", title: "Normal", desc: "No severe sensitivity, barely visible pores, hydrated"),
-AcneType(id: 5, image: "skintype5", title: "Combination", desc: "No severe sensitivity, barely visible pores, hydrated"),
-
+Type(id: 0, image: "Papules", title: "Papules", desc: "Small, inflamed lesions presenting as pink, tender"),
+Type(id: 1, image: "Blackhead", title: "Blackhead", desc: "There is small black or yellowish bumps that develop on the skin"),
+Type(id: 2, image: "Whitehead", title: "Whitehead", desc: "There is small lightning yellowish bumps that develop on the skin but firmer and will not be empty when squeezed"),
+Type(id: 3, image: "Pustules", title: "Pustules", desc: "Small, inflamed, tender, usually red at the base, have a white tip in the centre, caused by a build-up of pustules"),
+Type(id: 4, image: "Nodules", title: "Nodules", desc: "Relatively large, spherical, painful lesions located deeper in the skin surface"),
+Type(id: 5, image: "Cysts", title: "Cysts", desc: "Easily inflammed through specific trigger (redness, itching, burning, dryness)")
 ]
 

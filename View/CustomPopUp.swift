@@ -9,18 +9,28 @@ import SwiftUI
 
 struct CustomPopUp: View {
     var body: some View {
-        VStack(spacing: .zero){
-            fact
-            icon
-            title
-            content
-            description
-           // buttonFinish
+        ZStack {
+           
+            VStack(spacing: .zero) {
+                HStack{
+                    Spacer()
+                    
+                    xbutton
+                        .padding()
+                }
+                fact
+                icon
+                title
+                content
+                description
+            }
+            .padding()
+            .multilineTextAlignment(.center)
+            .background(background)
+            
+            
             
         }
-        .padding()
-        .multilineTextAlignment(.center)
-        .background(background)
         
     }
 }
@@ -32,8 +42,18 @@ struct CustomPopUp_Previews: PreviewProvider {
 }
 
 private extension CustomPopUp {
+    var xbutton: some View {
+        Image(systemName: "xmark")
+            .onTapGesture {
+                print("tapped")
+//                perform action: MainPageView()
+                
+            }
+        
+    }
+    
     var fact : some View {
-        Text("FACT!")
+        Text("FUNFACT!")
             .foregroundColor(Color("primaryGreen"))
             .font(.title)
             .fontWeight(.bold)
@@ -45,7 +65,7 @@ private extension CustomPopUp {
         Image("overwash")
         
     }
-    var title: some View{
+    var title: some View {
         Text("Dont Overwash")
             .font(.system(size: 20))
             .fontWeight(.bold)
@@ -61,6 +81,8 @@ private extension CustomPopUp {
     var description: some View {
         Text("Here’s a fact because you finish the skincare time, enjoy!")
             .font(.system(size: 12))
+            .padding(.bottom, 20)
+        
     }
     var buttonFinish: some View{
         Button(action: {
