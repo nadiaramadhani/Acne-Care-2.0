@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct ACNIFYApp: App {
+    
+    //DI FILE APP
+ //   @StateObject private var dataController = DataController()
+    //
+    //ContentView()
+    //.environment(\.managedObjectContext, dataController.container.viewContext)
+
     var body: some Scene {
         WindowGroup {
-            IntroView()
+IntroView()
+//                .environment(\.managedObjectContext, dataController.container.viewContext)
+
         }
     }
 }

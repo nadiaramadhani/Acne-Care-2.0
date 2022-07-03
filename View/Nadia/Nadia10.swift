@@ -1,8 +1,17 @@
-//
-//  Nadia10.swift
-//  ACNIFY
-//
-//  Created by Rahmat Maftuh Ihsan on 29/06/22.
-//
-
 import Foundation
+import CoreData
+
+class DataController: ObservableObject {
+    let container = NSPersistentContainer(name: "CoreDataNadia")
+    
+    init() {
+        container.loadPersistentStores{ description, error in
+            if let error = error {
+            
+            print("Error loading coredata \(error.localizedDescription )")
+        }
+            
+        }
+    }
+    
+}

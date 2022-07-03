@@ -62,7 +62,7 @@ struct onBoardingView: View {
                     }
                     
                 case 4:
-                    SkinTypeView()
+                    SkinType()
                         .transition(transition)
                 default:
                     MainPageView()
