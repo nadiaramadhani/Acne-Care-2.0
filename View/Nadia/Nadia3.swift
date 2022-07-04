@@ -19,7 +19,7 @@ struct BookmarkAcne: Identifiable {
 
 struct PapulesView_Previews: PreviewProvider {
     static var previews: some View {
-        NodulesView()
+        CystsView()
     }
 }
 
@@ -268,6 +268,57 @@ struct NodulesView : View {
       
     }
 }
+
+
+//MARK: CYSTS VIEW
+
+struct CystsView: View {
+    
+    let items: [BookmarkAcne] = [.tipsCysts, .toAvoidAcne, .ingredientsAcne]
+    
+    var body: some View {
+        
+        VStack{
+            ZStack{
+                
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 300, height: 380)
+                    .foregroundColor(Color("gray"))
+                    .shadow(color: .gray, radius: 5)
+                    .overlay(RoundedRectangle (cornerRadius: 25)
+                        .stroke(Color("cream"), lineWidth: 3)
+                    )
+                
+                VStack{
+                    
+                    Text("Nodules")
+                        .font(.system(size: 20))
+                        .fontWeight(.bold)
+                        .padding(.top, 15)
+                        .foregroundColor(Color("primaryGreen"))
+                    
+                    
+                    Image("Nodules")
+                        .padding()
+                    Text("Relatively large, spherical, painful lesions located deeper in the skin surface")
+                        .font(.system(size: 13))
+                        .frame(width: 280 , height: 100, alignment: .center)
+                    
+                }
+                
+                
+            }
+            List(items, children: \.items) { row in
+                
+                Image(row.icon)
+                //.padding
+                Text(row.desc)
+                    .font(.system(size: 12))
+            }
+        }
+      
+    }
+}
 extension BookmarkAcne {
     
     
@@ -280,6 +331,7 @@ extension BookmarkAcne {
     static let sun = BookmarkAcne(icon: "sun", desc: "Ultraviolet (UV) radiation")
     static let infected = BookmarkAcne(icon: "brush2", desc: "Avoid using make up in the infected area (papules acne)")
     static let salicylic = BookmarkAcne(icon: "medication", desc: "Wash your face with a salicylic acid or benzoyl peroxide cleanser")
+    static let warning = BookmarkAcne(icon: "warning", desc: "If you have any doubts or need further consultation, reach your doctor or dermatologist.")
     
     
     //MARK: BLACKHEAD
@@ -298,7 +350,11 @@ extension BookmarkAcne {
     //MARK: NODULES
     static let antibiotic = BookmarkAcne(icon: "medication", desc: "Use oral antibiotics can be used according to dermatologist prescription, as mocycline(oral)")
     static let retinoid = BookmarkAcne(icon: "suntik", desc: "Use retinoids through oral or injections directly to the nodule. This way needs to be consulted with dermatology")
-    
+    //MARK: CYSTS
+    static let surgical = BookmarkAcne(icon: "surgical", desc: "Surgical removal by health professional")
+    static let aspirate = BookmarkAcne(icon: "water", desc: "Aspirate the cysts by health professional")
+    static let stay = BookmarkAcne(icon: "stay", desc: "Stay out the sun and away from tanning bed")
+    static let dont = BookmarkAcne(icon: "hand2", desc: "Do not scrub the skin or use irritating products")
     
     //MARK: THINGS TO AVOID
     static let scrubing = BookmarkAcne(icon: "cream", desc: "Do not use scrubbing material. It may cause acne sores to rupture")
@@ -322,11 +378,10 @@ extension BookmarkAcne {
     static let toAvoidAcne = BookmarkAcne(icon: "", desc: "Things to avoid", items: [BookmarkAcne.scrubing, BookmarkAcne.pop, BookmarkAcne.touch, BookmarkAcne.cover, BookmarkAcne.workout, BookmarkAcne.overwash, BookmarkAcne.pilowcase, BookmarkAcne.washclothes])
     static let ingredientsAcne = BookmarkAcne(icon: "", desc: "Ingredients to avoid", items: [BookmarkAcne.heavy, BookmarkAcne.alcohol, BookmarkAcne.sodium, BookmarkAcne.lanolin, BookmarkAcne.isopropil])
     //MARK: TIPS
-    static let tipsPapules = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.irritation, BookmarkAcne.gentle, BookmarkAcne.water, BookmarkAcne.infected])
-    static let tipsBlackhead = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.manual, BookmarkAcne.retinol, BookmarkAcne.salicylic])
-    static let tipsWhitehead = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.oil, BookmarkAcne.manual, BookmarkAcne.salicylic])
-    static let tipsPustules = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.topical, BookmarkAcne.benzoyl])
-    static let tipsNodules = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.antibiotic, BookmarkAcne.benzoyl, BookmarkAcne.retinoid])
-    //TIPS CYSTS
-}
+    static let tipsPapules = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.irritation, BookmarkAcne.gentle, BookmarkAcne.water, BookmarkAcne.infected, BookmarkAcne.warning])
+    static let tipsBlackhead = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.manual, BookmarkAcne.retinol, BookmarkAcne.salicylic, BookmarkAcne.warning])
+    static let tipsWhitehead = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.oil, BookmarkAcne.manual, BookmarkAcne.salicylic, BookmarkAcne.warning])
+    static let tipsPustules = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.topical, BookmarkAcne.benzoyl, BookmarkAcne.warning])
+    static let tipsNodules = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.antibiotic, BookmarkAcne.benzoyl, BookmarkAcne.retinoid, BookmarkAcne.warning])
+    static let tipsCysts = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.irritation, BookmarkAcne.surgical, BookmarkAcne.aspirate, BookmarkAcne.stay, BookmarkAcne.dont, BookmarkAcne.warning])}
 

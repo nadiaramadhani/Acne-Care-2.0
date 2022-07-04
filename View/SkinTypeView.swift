@@ -105,7 +105,7 @@ struct SkinType: View {
         
         
     }
-    
+    //MARK: COREDATA
     //want to save selected skin value to coredata
     func addSkin () {
         let newSkin = SkinEntity(context: moc)

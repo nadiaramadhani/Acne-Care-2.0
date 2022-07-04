@@ -23,80 +23,105 @@ struct TakePhotos_Previews: PreviewProvider {
 struct CameraView: View{
     
     @StateObject var camera = CameraModel()
+    @State var isPhotoPreview = false
     
+    @Environment (\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var skins: FetchedResults<UpdateEntity>
+
     var body: some View{
-        ZStack{
-            //Going to be camera preview
-            CameraPreview(camera: camera)
-                .ignoresSafeArea(.all, edges: .all)
-            
-            VStack{
+        if isPhotoPreview {
+            PhotoPreview()
+        } else {
+            ZStack{
+                //Going to be camera preview
+                CameraPreview(camera: camera)
+                    .ignoresSafeArea(.all, edges: .all)
                 
-                if camera.isTaken{
+                VStack{
                     HStack{
-                        Spacer()
-                        
-                        Button(action:camera.reTake,label:{
-                            Image(systemName:"arrow.triangle.2.circlepath.camera")
-                                .foregroundColor(.black)
-                                .padding()
-                                .background(Color.white)
-                                .clipShape(Circle())
-                            
-                        })
-                        .padding(.trailing,10)
-                        
-                    
-                    }
-                    
-                }
-                
-                
-                Spacer()
-                HStack{
-                    
-                    //if taken showing save and again take button
                     if camera.isTaken{
-                        
-                        Button(action:{if !camera.isSaved{camera.savePic()}},label:{
-                            Text(camera.isSaved ? "Saved":"Save")
-                                .foregroundColor(.black)
-                                .fontWeight(.semibold)
-                                .padding(.vertical,10)
-                                .padding(.horizontal, 20)
-                                .background(Color.white)
-                                .clipShape(Capsule())
-                        })
-                        .padding(.leading)
-                        
-                        Spacer()
-                        
-                    }else{
-                        Button(action:camera.takePic,
-                               label:{
-                            ZStack{
+                        HStack{
+                            
+                            Spacer()
+                            
+                            Button(action:camera.reTake,label:{
+                                Image(systemName:"arrow.triangle.2.circlepath.camera")
+                                    .foregroundColor(.black)
+                                    .padding()
+                                    .background(Color.white)
+                                    .clipShape(Circle())
                                 
-                                Circle()
-                                    .fill(Color.white)
-                                    .frame(width:65, height:65)
-                                
-                                Circle()
-                                    .stroke(Color.white,lineWidth: 2)
-                                    .frame(width:75, height:75)
-                            }
-                        })
+                            })
+                            .padding(.trailing,10)
+                            
+                            
+                        }
+                        
                     }
                     
+
+                        
+                    }
                     
+                    Spacer()
+                    HStack{
+                        
+                        //if taken showing save and again take button
+                        if camera.isTaken{
+                            Spacer()
+                            //  Button(action:{if !camera.isSaved{camera.savePic()}},
+                            Button(action: {
+                               
+                                    camera.saveImage()
+                                    isPhotoPreview = true
+
+                                
+                            }, label: {
+                                Text("Save")
+                                    .foregroundColor(.black)
+                                    .fontWeight(.semibold)
+                                    .padding(.vertical,10)
+                                    .padding(.horizontal, 20)
+                                    .background(Color.white)
+                                    .clipShape(Capsule())
+                            })
+                            .padding(.trailing)
+                            
+                            
+                            
+                            
+                            
+                        }else{
+                            Button(action:camera.takePic,
+                                   label:{
+                                ZStack{
+                                    
+                                    Circle()
+                                        .fill(Color.white)
+                                        .frame(width:65, height:65)
+                                    
+                                    Circle()
+                                        .stroke(Color.white,lineWidth: 2)
+                                        .frame(width:75, height:75)
+                                }
+                            })
+                        }
+                        
+                        
+                        
+                        
+                    }
+                    .frame(height:75)
                 }
-                .frame(height:75)
             }
+            .onAppear(perform: {
+                
+                camera.Check()
+            })
         }
-        .onAppear(perform: {
-            
-            camera.Check()
-        })
     }
+    
+  
 }
 
 //Camera Model
@@ -117,6 +142,12 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     //Pic Data..
     @Published var isSaved = false
     @Published var picData = Data(count:0)
+    @Published var isImageSaved = false
+    @Published var imageVar = UIImage(named: "0")
+    
+    @Environment (\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: []) var skins: FetchedResults<UpdateEntity>
+
     
     func Check(){
         //first checking camera has got permission
@@ -140,7 +171,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
         default:
             return
         }
-    
+        
     }
     
     func setUp(){
@@ -152,8 +183,8 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
             
             //Camera discovery
             let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes:
-                [.builtInTrueDepthCamera, .builtInDualCamera, .builtInWideAngleCamera],
-                mediaType: .video, position: .unspecified)
+                                                                        [.builtInTrueDepthCamera, .builtInDualCamera, .builtInWideAngleCamera],
+                                                                    mediaType: .video, position: .unspecified)
             
             let devices123123123 = discoverySession.devices
             
@@ -165,9 +196,9 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
             
             //change for your own
             if let device = AVCaptureDevice.default(.builtInWideAngleCamera,
-                                                    for: .video, position: .front){
+                                                    for: .video, position: .front) {
                 let input = try AVCaptureDeviceInput(device:
-                device)
+                                                        device)
                 
                 // checking and adding to session
                 if self.session.canAddInput(input){
@@ -176,7 +207,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
                 
                 //same for output
                 
-                if self.session.canAddOutput(self.output){
+                if self.session.canAddOutput(self.output) {
                     self.session.addOutput(self.output)
                 }
                 
@@ -184,31 +215,31 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
                 
             }
             
-//            let device = AVCaptureDevice.default(.builtInDualCamera,
-//                for: .video, position: .back)
+            //            let device = AVCaptureDevice.default(.builtInDualCamera,
+            //                for: .video, position: .back)
             
-           // let device = AVCaptureDevice.default(for: .video, po )
+            // let device = AVCaptureDevice.default(for: .video, po )
             //device.position = .front
             
             
             
-
             
-//            let input = try AVCaptureDeviceInput(device:
-//            device!)
-//
-//            // checking and adding to session
-//            if self.session.canAddInput(input){
-//                self.session.addInput(input)
-//            }
-//
-//            //same for output
-//
-//            if self.session.canAddOutput(self.output){
-//                self.session.addOutput(self.output)
-//            }
-//
-//            self.session.commitConfiguration()
+            
+            //            let input = try AVCaptureDeviceInput(device:
+            //            device!)
+            //
+            //            // checking and adding to session
+            //            if self.session.canAddInput(input){
+            //                self.session.addInput(input)
+            //            }
+            //
+            //            //same for output
+            //
+            //            if self.session.canAddOutput(self.output){
+            //                self.session.addOutput(self.output)
+            //            }
+            //
+            //            self.session.commitConfiguration()
             
             
         }
@@ -216,7 +247,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
             print(error.localizedDescription)
         }
     }
-        //take and retake functions
+    //take and retake functions
     func takePic (){
         DispatchQueue.global(qos: .background).async{
             self.output.capturePhoto(with:AVCapturePhotoSettings(), delegate: self)
@@ -234,7 +265,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
             
             DispatchQueue.main.async{
                 withAnimation{self.isTaken.toggle()}
-            //clearing
+                //clearing
                 self.isSaved = false
             }
         }
@@ -247,21 +278,64 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
         }
         
         print("pic taken")
+        
         guard let imageData = photo.fileDataRepresentation() else{return}
-        self.picData = imageData
+        imageVar = UIImage(data: imageData)
+        
+   
+        
     }
     
-    func savePic(){
-        let image = UIImage(data: self.picData)!
-        
-    //Saving image
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        
-        self.isSaved = true
-        
-        print("saved Successfully")
 
+    func saveImage() {
+        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return}
+        
+        let timeStamp = Date()
+        let fileName = "Acnify\(timeStamp)"
+        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        guard let data = imageVar?.jpegData( compressionQuality: 1.0) else {return}
+        
+      //  print(timeStamp)
+        
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            do {
+                try FileManager.default.removeItem(atPath: fileURL.path)
+                print("removed old image")
+            } catch let removeError {
+                print("couldn't remove file at path", removeError)
+                
+            }
+            
+        }
+        
+        do {
+            try data.write(to: fileURL)
+            self.isImageSaved = true
+            print("image saved to document directory")
+            print("image saved to \(fileURL)")
+            
+        } catch let error {
+            print("error saving file with error", error)
+        }
+        
+        
+//        do{
+//            let newUpdate = UpdateEntity(context: moc)
+//            newUpdate.imageUpdate = fileURL
+//
+//        } catch let error {
+//            print("error saving fileURL to coredata")
+//        }
+        
     }
+    
+    
+   
+    
+   
+    
+    
+    
 }
 
 // setting view for preview

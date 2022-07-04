@@ -50,7 +50,16 @@ struct SkinResultView: View {
                         BlackheadView()
                     }
                 
-                
+                Button(action: {
+                    
+                }, label: {
+                    Text("Test again")
+                        .frame(width: 150, height: 50, alignment: .center)
+                        .foregroundColor(Color.white)
+                        .background(Color("primaryGreen"))
+                        .cornerRadius(10)
+                        .padding()
+                })
                
             } .navigationBarTitle("Results")
                     .navigationBarTitleDisplayMode(.inline)
