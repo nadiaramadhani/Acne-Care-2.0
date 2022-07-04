@@ -13,9 +13,11 @@ import SwiftUI
 struct ProductPopUpMorning: View {
     
     @State var isUnderstandMorning = false
+    @StateObject var lnManagerMorning = LocalNotificationManagerMorning()
     var body: some View {
         if isUnderstandMorning{
             morningChooseProduct()
+                .environmentObject(lnManagerMorning)
         }else{
         ZStack{
             Color.black

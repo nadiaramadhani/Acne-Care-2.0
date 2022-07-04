@@ -7,119 +7,130 @@
 
 //Ini pop up ketika di awal mau masuk ke milih produk malam
 
+//INI NOTIF PAGI
+
+import Foundation
 import SwiftUI
+import UserNotifications
+import NotificationCenter
 
-struct ProductPopUpNight: View {
+@MainActor
+class LocalNotificationManagerMorning: NSObject, ObservableObject, UNUserNotificationCenterDelegate{
+    let notificationCenter = UNUserNotificationCenter.current()
+    @Published var isGranted = false
+    @Published var pendingRequests : [UNNotificationRequest] = []
     
-    @State var isUnderstandNight = false
-    var body: some View {
-        if isUnderstandNight{
-            NightChooseProduct()
-        }else{
-        ZStack{
-            Color.black
-                .edgesIgnoringSafeArea(.all)
-                .opacity(0.3)
-            VStack(spacing: .zero){
-                
-                icon
-                content
-                content2
-                encourage
-                buttonUnderstand
-                
+    override init(){
+        super.init()
+        notificationCenter.delegate = self
+    }
+    
+    //Delegate Function
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+        await getPendingRequests()
+        return[.sound, .banner]
+    }
+    
+    func requestAuthorization () async throws{
+        try await notificationCenter
+            .requestAuthorization(options: [.sound, .badge, .alert])
+        await getCurrentSettings()
+        
+    }
+    
+    func getCurrentSettings() async{
+        let currentSettings = await notificationCenter.notificationSettings()
+        isGranted = (currentSettings.authorizationStatus == .authorized)
+//        print(isGranted)
+    }
+    
+    func openSettings() {
+        if let url = URL(string: UIApplication.openSettingsURLString){
+            if UIApplication.shared.canOpenURL(url){
+                Task{
+                    await  UIApplication.shared.open(url)
+                }
             }
-            
-            .padding()
-            .multilineTextAlignment(.center)
-            .background(background)
-        
-        }
         }
     }
-}
-
-struct ProductPopUpNight_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack{
-//            Color.black
-//                .edgesIgnoringSafeArea(.all)
-//                .opacity(0.3)
-            NightChooseProduct()
-            ProductPopUpNight()
-            
+    
+    func schedule(localNotificationMorning: LocalNotificationMorning) async {
+        let content = UNMutableNotificationContent()
+        content.title = localNotificationMorning.title
+        content.body = localNotificationMorning.body
+        content.sound = .default
+        
+        if localNotificationMorning.ScheduleType == .time{
+        guard let timeInterval = localNotificationMorning.timeInterval else {return}
+        
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: localNotificationMorning.repeats)
+            let request = UNNotificationRequest(identifier: localNotificationMorning.identifier, content: content, trigger: trigger)
+            try? await notificationCenter.add(request)
+        } else{
+            guard let dateComponents = localNotificationMorning.dateComponents else { return }
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: localNotificationMorning.repeats)
+            let request = UNNotificationRequest(identifier: localNotificationMorning
+                .identifier, content: content, trigger: trigger)
+            try? await notificationCenter.add(request)
         }
-       
-            
+        await getPendingRequests()
+        
+    }
+    
+    func getPendingRequests() async{
+        pendingRequests = await notificationCenter.pendingNotificationRequests()
+        print("Pending: \(pendingRequests.count)")
+    }
+    
+    func removeRequest(withIdentifier identifier: String){
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
+        if let index = pendingRequests.firstIndex(where: {$0.identifier == identifier}){
+            pendingRequests.remove(at:index)
+            print("Pending: \(pendingRequests.count)")
+        }
     }
 }
 
-private extension ProductPopUpNight {
 
-    
-    var icon: some View {
-        Image("girlsProductPopUp")
-            .padding(.bottom, 12)
-        
-    }
 
-    var content: some View {
-        Text("We want to help you cure your acne. Your face is compassionate now, we advise you to use only primary skincare for now which consists of : ")
-            .font(.system(size: 12))
-            .fontWeight(.light)
-           // .padding(.bottom, 20)
-            .frame(width: 282, alignment: .center)
+struct LocalNotificationMorning{
+    internal init (identifier: String,
+                   title: String,
+                   body: String,
+                   timeInterval: Double,
+                   repeats: Bool){
+        self.identifier = identifier
+        self.ScheduleType = .time
+        self.title = title
+        self.body = body
+        self.timeInterval = timeInterval
+        self.dateComponents = nil
+        self.repeats = repeats
     }
-    var content2: some View {
-        Text("Facial Wash, Moisturizer, Acne Treatment, and Sunscreen. ")
-            .font(.system(size: 12))
-            .fontWeight(.semibold)
-            .foregroundColor(Color("primaryGreen"))
-            .padding(.bottom, 20)
-            .frame(width: 282, alignment: .center)
-    }
-    
-    var encourage: some View {
-        Text("You can add more if all the products that you use work well on your skin. ")
-            .font(.system(size: 12))
-            .fontWeight(.light)
-           .padding(.bottom, 20)
-            .frame(width: 282, alignment: .center)
-    }
-        
-    var buttonUnderstand: some View{
-//        Text("Understand")
-//            .font(.system(size:14))
-//            .fontWeight(.semibold)
-//            .foregroundColor(.blue)
-//            .foregroundColor(Color("primaryGreen"))
-//            .onTapGesture{
-//              //  morningChooseProduct()
-//            }
-        Button(action: {
-            self.isUnderstandNight = true
-        }, label:{
-            Text("Understand")
-                .font(.system(size:14))
-                .fontWeight(.semibold)
-                .foregroundColor(.blue)
-                .foregroundColor(Color("primaryGreen"))
-        })
-        
+    internal init (identifier: String,
+                   title: String,
+                   body: String,
+                   dateComponents: DateComponents,
+                   repeats: Bool){
+        self.identifier = identifier
+        self.ScheduleType = .calendar
+        self.title = title
+        self.body = body
+        self.timeInterval = nil
+        self.dateComponents = dateComponents
+        self.repeats = repeats
+            }
+    enum ScheduleType{
+        case time,calendar
     }
     
     
+    var identifier: String
+    var ScheduleType: ScheduleType
+    var title: String
+    var body: String
+    var timeInterval: Double?
+    var dateComponents: DateComponents?
+    var repeats: Bool
 }
-
-private extension ProductPopUpNight {
-    var background: some View {
-        RoundedRectangle(cornerRadius: 10, style: .circular)
-            .foregroundColor(Color("beige"))
-            .shadow(color: Color("brown").opacity(0.5), radius: 3)
-            .frame(width: 306, height: 351, alignment: .center)
-            .shadow(color: .yellow, radius: 5)
-        
-    }
-}
-
 

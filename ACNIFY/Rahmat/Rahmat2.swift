@@ -5,11 +5,13 @@
 //  Created by Rahmat Maftuh Ihsan on 27/06/22.
 //
 
-//Ini untuk page milih night morning
+//Ini untuk page milih night 
 
 import Foundation
 import SwiftUI
 import CoreMedia
+import NotificationCenter
+import UserNotifications
 
 struct NightChooseProduct: View {
     
@@ -27,6 +29,8 @@ struct NightChooseProduct: View {
     @State private var addProductOilCleanserNight: Bool = false
     @State private var username: String = ""
     @State private var password: String = ""
+    @State private var textEntered = ""
+    @State private var showingAlert = false
     
     @State var isNext = false
     @State var isDone = false
@@ -34,6 +38,9 @@ struct NightChooseProduct: View {
     @State var isCancelSheetNight = false
     @State var isSaveSheetNight = false
     @State var currentTimeNight = Date()
+    @EnvironmentObject var lnManagerNight: LocalNotificationManagerNight
+    @Environment(\.scenePhase) var scenePhase
+    @State private var scheduleDate = Date()
     
     var body: some View {
         
@@ -61,16 +68,38 @@ struct NightChooseProduct: View {
                         HStack{
                             
                             Toggle("Turn on the Skincare Notification", isOn: $isEditNight
+                                   
                             ).sheet(isPresented: $isEditNight, content:{
                                 NavigationView{
                                     VStack{
-                                        Form{
-                                            Section(header: Text("")){
-                                                DatePicker("Time", selection: $currentTimeNight, displayedComponents: .hourAndMinute)
-                                            }
-                                        }
                                         
+                                        if lnManagerNight.isGranted{
+                                            
+                                            GroupBox{
+                                                DatePicker("Time", selection:$scheduleDate, displayedComponents: [.hourAndMinute])
+                                                Button("Set Notification"){
+                                                    Task{
+                                                        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: scheduleDate)
+                                                        let localNotificationNight = LocalNotificationNight(identifier: UUID().uuidString,
+                                                                                                            title: "Night Routine Reminder",
+                                                                                                            body: "Don't forget to do treatment and checklist!",
+                                                                                                            dateComponents: dateComponents,
+                                                                                                            repeats: true)
+                                                        await lnManagerNight.schedule(localNotificationNight: localNotificationNight)
+                                                    }
+                                                }
+                                                .buttonStyle(.bordered)
+                                            }
+                                            
+                                            .frame(width: 300)
+                                            
+                                         
+                                        }
+                                        else{
+
+                                        }
                                     }
+                                    .environmentObject(lnManagerNight)
                                     .navigationBarTitle("Reminder")
                                     .navigationBarTitleDisplayMode(.inline)
                                     .navigationBarItems(leading:
@@ -81,7 +110,7 @@ struct NightChooseProduct: View {
                                             Text("Cancel")
                                                 .foregroundColor(.blue)
                                                 .frame(alignment: .leading)
-                                    
+                                            
                                         }
                                         
                                     }
@@ -93,7 +122,7 @@ struct NightChooseProduct: View {
                                         Button(action: {
                                             self.isSaveSheetNight = true
                                         }){
-                                            Text("Save")
+                                            Text("Next")
                                                 .font(.headline)
                                                 .fontWeight(.semibold)
                                                 .foregroundColor(.blue)
@@ -117,9 +146,9 @@ struct NightChooseProduct: View {
                             .font(.system(size:20))
                             .fontWeight(.bold)
                             .padding(.leading,-180)
-                            
-                            
-                            
+                        
+                        
+                        
                         
                         ScrollView(.vertical, showsIndicators: false, content: {
                             VStack{
@@ -154,62 +183,9 @@ struct NightChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            Text("Add your product")
-                                                .font(.system(size:12))
-                                                .fontWeight(.light)
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .onTapGesture{
-                                                    self.addProductOilCleanserNight = true
-                                                }
-//                                            Button(action:{
-//                                                self.addProductOilCleanserNight = true
-//
-//                                            }){
-//                                                Text("Add your Product")
-//                                                    .font(.system(size:12))
-//                                                    .fontWeight(.light)
-//                                                    .foregroundColor(Color("primaryGreen"))
-//                                                    .alert(isPresented: $addProductOilCleanserNight, content:{
-//                                                        Alert(
-//
-//                                                            title: Text("Product Name"),
-//                                                            message: Text("Write a product name that you use"),
-//                                                            primaryButton:.default(Text("Save")),
-//                                                            secondaryButton:.cancel(Text("Back"))
-//
-////                                                            ,Harusnya bisa input TextField disini<<#Label: View#>>
-//                                                        )
-//                                                    })
-//
-//
-//                                            }
-                                            
-                                                    Button("Show Alert") {
-                                                        addProductOilCleanserNight = true
-                                                    }
-                                                    .font(.system(size:12))
-                                                    .foregroundColor(Color("primaryGreen"))
-                                                    .alert("Login", isPresented: $addProductOilCleanserNight, actions: {
-                                                            TextField("Username", text: $username)
-                                                            SecureField("Password", text: $password)
-                                                        
-                                                        
 
-//                                                        Button("Login", action: {})
-//                                                        Button("Cancel", role: .cancel, action: {})
-
-
-                                                    }, message: {
-                                                        Text("Please enter your username and password.")
-                                                    })
-                                                }
-                                        
-//Resource mendekati yang paling mudah https://www.youtube.com/watch?v=1FqRNf2WbJE
-                                        
-                                        
-                                        
-                                        
-                                        
+                                            addProductButton
+                                        }
                                         Toggle("",isOn: $isSelectedOilCleanserNight)
                                             .labelsHidden()
                                             .toggleStyle(NewNightToggleCheckbox())
@@ -225,7 +201,7 @@ struct NightChooseProduct: View {
                                         .cornerRadius(12)
                                         .padding(5)
                                         .shadow(radius: 5)
-
+                                    
                                     
                                     HStack{
                                         Image("nightFacialWash")
@@ -250,13 +226,8 @@ struct NightChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            Text("Add your product")
-                                                .font(.system(size:12))
-                                                .fontWeight(.light)
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .onTapGesture{
-                                                    
-                                                }
+                                            addProductButton
+                                            
                                         }
                                         
                                         
@@ -275,7 +246,7 @@ struct NightChooseProduct: View {
                                         .cornerRadius(12)
                                         .padding(5)
                                         .shadow(radius: 5)
-
+                                    
                                     
                                     HStack{
                                         Image("nightToner")
@@ -300,13 +271,7 @@ struct NightChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            Text("Add your product")
-                                                .font(.system(size:12))
-                                                .fontWeight(.light)
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .onTapGesture{
-                                                    
-                                                }
+                                            addProductButton
                                         }
                                         
                                         
@@ -327,7 +292,7 @@ struct NightChooseProduct: View {
                                         .cornerRadius(12)
                                         .padding(5)
                                         .shadow(radius: 5)
-
+                                    
                                     
                                     HStack{
                                         Image("nightSerum")
@@ -352,13 +317,7 @@ struct NightChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            Text("Add your product")
-                                                .font(.system(size:12))
-                                                .fontWeight(.light)
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .onTapGesture{
-                                                    
-                                                }
+                                            addProductButton
                                         }
                                         
                                         
@@ -381,7 +340,7 @@ struct NightChooseProduct: View {
                                         .cornerRadius(12)
                                         .padding(5)
                                         .shadow(radius: 5)
-
+                                    
                                     
                                     HStack{
                                         Image("nightMoisturizer")
@@ -406,13 +365,7 @@ struct NightChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            Text("Add your product")
-                                                .font(.system(size:12))
-                                                .fontWeight(.light)
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .onTapGesture{
-                                                    
-                                                }
+                                            addProductButton
                                         }
                                         
                                         
@@ -433,7 +386,7 @@ struct NightChooseProduct: View {
                                         .cornerRadius(12)
                                         .padding(5)
                                         .shadow(radius: 5)
-
+                                    
                                     
                                     HStack{
                                         Image("nightAcneTreatment")
@@ -458,13 +411,7 @@ struct NightChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            Text("Add your product")
-                                                .font(.system(size:12))
-                                                .fontWeight(.light)
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .onTapGesture{
-                                                    
-                                                }
+                                            addProductButton
                                         }
                                         
                                         
@@ -477,7 +424,7 @@ struct NightChooseProduct: View {
                                         
                                     }
                                 }
-                                
+                        
                                 
                                 
                                 
@@ -487,33 +434,12 @@ struct NightChooseProduct: View {
                             }
                         })
                         .padding(.leading,0)
-                      
+                        
                         .frame(width: 500, height: 630)
                         .edgesIgnoringSafeArea(.bottom)
-                        
-                        
-//                        Text("Set Reminder")
-//                            .font(.system(size:20))
-//                            .fontWeight(.bold)
-//                            .padding(.leading,-180)
-//                            .padding(.top,10)
-                        
-//                        ZStack{
-//                            Rectangle()
-//                                .fill(Color.blue)
-//                                .frame(width: 350, height: 44)
-//                                .cornerRadius(12)
-//
-//                                .padding(5)
-                            
-                            
-//                            HStack{
-//
-//                                Toggle("Skincare Notification", isOn: $isSelectedSerumNight)
-//                                
-//                            }.frame(width: 360, height: 44, alignment: .leading)
-//                            .edgesIgnoringSafeArea(.all)
                     }
+                    CustomAlert(textEntered: $textEntered, showingAlert: $showingAlert)
+                                            .opacity(showingAlert ? 1 : 0)
                 }
                 .navigationBarTitle("Edit")
                 .navigationBarTitleDisplayMode(.inline)
@@ -550,11 +476,32 @@ struct NightChooseProduct: View {
                                     
                                     
                 )
-               
+                
                 
                 
             }
+            .navigationViewStyle(.stack )
+            .task{
+                try? await lnManagerNight.requestAuthorization()
+            }
+            .onChange(of: scenePhase){newValue in
+                if newValue == .active{
+                    Task {
+                        await lnManagerNight.getCurrentSettings()
+                        // await lnManager.getPendingRequests()
+                    }
+                }
+            }
+            
         }
+    }
+    
+    private var addProductButton : some View {
+        Button("Add your product") {
+            self.showingAlert.toggle()
+            self.textEntered = ""                                                    }
+        .font(.system(size:12))
+        .foregroundColor(Color("primaryGreen"))
     }
 }
 
@@ -575,8 +522,66 @@ struct NewNightToggleCheckbox: ToggleStyle {
 struct NightChooseProduct_Previews: PreviewProvider {
     static var previews: some View {
         NightChooseProduct()
+            .environmentObject(LocalNotificationManagerNight())
     }
 }
 
+
+//MARK: Custom Alert
+struct CustomAlert: View {
+    @Binding var textEntered: String
+    @Binding var showingAlert: Bool
+    
+    var body: some View {
+        ZStack{
+            Color.gray.opacity(0.2)
+            ZStack {
+                
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(Color.white)
+                VStack {
+                    Text("Product name")
+                        .font(.system(size: 17))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.black)
+                        .padding()
+                    
+                    Text("Write a product name you use")
+                        .font(.system(size: 13))
+                    
+                    Divider()
+                    
+                    TextField("Enter text", text: $textEntered)
+                        .padding(5)
+                        .background(Color.gray.opacity(0.2))
+                        .foregroundColor(.black)
+                        .cornerRadius(10)
+//                        .padding(.horizontal, 20)
+                    
+                    
+                    Divider()
+                    
+                    HStack {
+                        
+                        Button("Dismiss") {
+                            self.showingAlert.toggle()
+                        }
+                        Spacer()
+                        Button("Save") {
+                            
+                        }
+                        
+                    }
+                    .padding()
+//                    .padding(30)
+//                    .padding(.horizontal, 40)
+                }
+                .padding()
+            }
+            .frame(width: 300, height: 160)
+            
+        }
+    }
+}
 
 //tUTORIAL local notif= https://www.youtube.com/watch?v=iRjyk1S0nvo

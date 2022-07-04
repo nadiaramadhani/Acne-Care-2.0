@@ -21,18 +21,29 @@ struct TesterPickerView: View {
     @State var isEditNight = false
     @State var isBack = false
     
+    @StateObject var lnManagerNight = LocalNotificationManagerNight()
+    @StateObject var lnManagerMorning = LocalNotificationManagerMorning()
+    
+    
     var body: some View {
         
         if isBack{
             MainPageView()
         }else if isEditMorning{
-            morningChooseProduct()
+            ProductPopUpMorning()
         }else if isEditNight{
-            NightChooseProduct()
+            ProductPopUpNight()
+//            NightChooseProduct()
+//                .environmentObject(lnManagerNight)
+                
         }else if isCreateMorning{
-            morningChooseProduct()
+            ProductPopUpMorning()
+            
         }else if isCreateNight{
-            NightChooseProduct()
+            ProductPopUpNight()
+//            NightChooseProduct()
+//                .environmentObject(lnManagerNight)
+            
         }
         else{
             

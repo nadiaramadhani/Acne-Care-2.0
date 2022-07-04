@@ -11,6 +11,8 @@
 
 import Foundation
 import SwiftUI
+import CoreMedia
+import NotificationCenter
 import UserNotifications
 
 struct morningChooseProduct: View {
@@ -26,6 +28,10 @@ struct morningChooseProduct: View {
     @State private var isSelectedSunscreenMorning: Bool = false
     @State private var isEditMorning: Bool = false
     @State private var sheetsNotificationMorning: Bool = false
+    @State private var username: String = ""
+    @State private var password: String = ""
+    @State private var textEntered = ""
+    @State private var showingAlert = false
     
 
     
@@ -35,6 +41,10 @@ struct morningChooseProduct: View {
     @State var isCancelSheet = false
     @State var isSaveSheet = false
     @State var currentTimeMorning = Date()
+    @EnvironmentObject var lnManagerMorning: LocalNotificationManagerMorning
+    @Environment(\.scenePhase) var scenePhase
+    @State private var scheduleDate = Date()
+    
     
     var body: some View {
         
@@ -52,9 +62,6 @@ struct morningChooseProduct: View {
             NavigationView{
                 
                 ZStack{
-                    
-                    
-                    
                     Color(.white)
                         .edgesIgnoringSafeArea(.all)
                     
@@ -72,16 +79,35 @@ struct morningChooseProduct: View {
                                 .sheet(isPresented: $sheetsNotificationMorning, content:{
                                     NavigationView{
                                         VStack{
-                                            
-                                            
-                                            Form{
-                                                Section(header: Text("")){
-                                                    DatePicker("Time", selection: $currentTimeMorning, displayedComponents: .hourAndMinute)
+                                            if lnManagerMorning.isGranted{
+
+                                                GroupBox{
+                                                    DatePicker("Time", selection:$scheduleDate,displayedComponents: [.hourAndMinute])
+                                                    
+                                                    Button("Set Notification"){
+                                                        Task{
+                                                            let dateComponents = Calendar.current.dateComponents([ .hour, .minute], from: scheduleDate)
+                                                            let localNotificationMorning = LocalNotificationMorning(identifier: UUID().uuidString,
+                                                                        title: "Morning Routine Reminder",
+                                                                        body: "Don't forget to do treatment and checklist!",
+                                                                        dateComponents: dateComponents,
+                                                                        repeats: true)
+                                                            await lnManagerMorning.schedule(localNotificationMorning: localNotificationMorning)
+                                                    }
                                                 }
-                                            }
-                                            
-                                            
+                                                    .buttonStyle(.bordered)
                                         }
+
+                                                .frame(width: 300)
+                                                
+
+                                                }
+                                        else{
+
+                                        }
+
+                                        }
+                                        .environmentObject(lnManagerMorning)
                                         .navigationBarTitle("Reminder")
                                         .navigationBarTitleDisplayMode(.inline)
                                         .navigationBarItems(leading:
@@ -163,13 +189,7 @@ struct morningChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            Text("Add your product")
-                                                .font(.system(size:12))
-                                                .fontWeight(.light)
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .onTapGesture{
-                                                    
-                                                }
+                                            addProductButton
                                         }
                                         
                                         //Nambahin list produk yang dicentang
@@ -217,13 +237,7 @@ struct morningChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            Text("Add your product")
-                                                .font(.system(size:12))
-                                                .fontWeight(.light)
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .onTapGesture{
-                                                    
-                                                }
+                                            addProductButton
                                         }
                                         
                                         
@@ -267,13 +281,7 @@ struct morningChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            Text("Add your product")
-                                                .font(.system(size:12))
-                                                .fontWeight(.light)
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .onTapGesture{
-                                                    
-                                                }
+                                            addProductButton
                                         }
                                         
                                         
@@ -319,13 +327,7 @@ struct morningChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            Text("Add your product")
-                                                .font(.system(size:12))
-                                                .fontWeight(.light)
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .onTapGesture{
-                                                    
-                                                }
+                                            addProductButton
                                         }
                                         
                                         
@@ -373,13 +375,7 @@ struct morningChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            Text("Add your product")
-                                                .font(.system(size:12))
-                                                .fontWeight(.light)
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .onTapGesture{
-                                                    
-                                                }
+                                            addProductButton
                                         }
                                         
                                         
@@ -425,13 +421,7 @@ struct morningChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            Text("Add your product")
-                                                .font(.system(size:12))
-                                                .fontWeight(.light)
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .onTapGesture{
-                                                    
-                                                }
+                                            addProductButton
                                         }
                                         
                                         
@@ -477,13 +467,7 @@ struct morningChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            Text("Add your product")
-                                                .font(.system(size:12))
-                                                .fontWeight(.light)
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .onTapGesture{
-                                                    
-                                                }
+                                            addProductButton
                                         }
                                         
                                         
@@ -504,6 +488,8 @@ struct morningChooseProduct: View {
                         .edgesIgnoringSafeArea(.bottom)
                            
                     }
+                    CustomAlert(textEntered: $textEntered, showingAlert: $showingAlert)
+                                            .opacity(showingAlert ? 1 : 0)
                         
                 }
                 .navigationBarTitle("Edit")
@@ -545,9 +531,29 @@ struct morningChooseProduct: View {
                 
                 
             }
+            .navigationViewStyle(.stack )
+            .task{
+                try? await lnManagerMorning.requestAuthorization()
         }
+            .onChange(of: scenePhase){newValue in
+                if newValue == .active{
+                    Task {
+                        await lnManagerMorning.getCurrentSettings()
+                       // await lnManager.getPendingRequests()
+                    }
+                }
+            }
     }
 }
+    private var addProductButton : some View {
+        Button("Add your product") {
+            self.showingAlert.toggle()
+            self.textEntered = ""                                                    }
+        .font(.system(size:12))
+        .foregroundColor(Color("primaryGreen"))
+    }
+}
+
 
 
 
@@ -566,23 +572,24 @@ struct NewToggleCheckbox: ToggleStyle {
 struct morningChooseProduct_Previews: PreviewProvider {
     static var previews: some View {
         morningChooseProduct()
+            .environmentObject(LocalNotificationManagerMorning())
     }
 }
 
 //BISA BUAT STRUCT BARU YANG ISINYA LIST PRODUCT DAN SET WAKTU
 
-class NotificationManager{
-    static let instance = NotificationManager()
-    func requestAuthorization(){
-        let options: UNAuthorizationOptions = [.alert, .sound, .badge]; UNUserNotificationCenter.current().requestAuthorization(options: options) { (success, error) in
-            if success {
-                print("All set!")
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-    }
-}
+//class NotificationManager{
+//    static let instance = NotificationManager()
+//    func requestAuthorization(){
+//        let options: UNAuthorizationOptions = [.alert, .sound, .badge]; UNUserNotificationCenter.current().requestAuthorization(options: options) { (success, error) in
+//            if success {
+//                print("All set!")
+//            } else if let error = error {
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
+//}
 
 
 
