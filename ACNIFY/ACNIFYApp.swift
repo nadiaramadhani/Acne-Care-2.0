@@ -15,10 +15,14 @@ struct ACNIFYApp: App {
     //
     //ContentView()
     //.environment(\.managedObjectContext, dataController.container.viewContext)
+ //   @StateObject private var locationManager = LocationManager()
+
 
     var body: some Scene {
         WindowGroup {
-IntroView()
+TakePhotos()
+           //     .environmentObject(locationManager)
+
 //                .environment(\.managedObjectContext, dataController.container.viewContext)
 
         }
