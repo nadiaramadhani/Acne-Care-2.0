@@ -12,6 +12,9 @@ struct PhotoPreview : View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             //Populate text with info from notification.
+            
+            //Bisa pake airtable as database, nanti di fetch
+            
             Text("Photo preview")
             if let image = loadImageFromDiskWith(fileName: "Acnify2022-07-04%2008:30:57%20+0000") {
                 

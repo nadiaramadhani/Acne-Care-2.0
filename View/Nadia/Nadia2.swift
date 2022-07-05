@@ -335,7 +335,7 @@ extension BookmarkItem {
     
     //MARK: ITEM OILY
     static let causesOily = BookmarkItem(icon: "", desc: "Causes", items: [BookmarkItem.genetic, BookmarkItem.aging, BookmarkItem.humidity])
-    static let tipsOily = BookmarkItem(icon: "", desc: "Causes", items: [BookmarkItem.sunscreen, BookmarkItem.touch, BookmarkItem.scrub, BookmarkItem.wash, BookmarkItem.oilFree, BookmarkItem.makeup])
+    static let tipsOily = BookmarkItem(icon: "", desc: "Tips", items: [BookmarkItem.sunscreen, BookmarkItem.touch, BookmarkItem.scrub, BookmarkItem.wash, BookmarkItem.oilFree, BookmarkItem.makeup])
     
     
         //MARK: COMBI SKIN

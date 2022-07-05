@@ -16,9 +16,17 @@ import SwiftUI
 //    return AcneView()
 //}
 struct SkinResultView: View {
+    @FetchRequest(sortDescriptors: []) var skins: FetchedResults<SkinEntity>
+    @State private var mainPageView : Bool = false
+    @State private var testAgain : Bool = false
     @State private var selected = 1
     @State private var data = 0
     var body: some View {
+        if mainPageView {
+            MainPageView()
+        } else if testAgain {
+            SkinType()
+        } else {
         
         NavigationView{
            
@@ -39,7 +47,7 @@ struct SkinResultView: View {
                 
                     if selected == 1 {
                         if data == 0 {
-                            DrySkinView()
+                            OilySkinView()
                             
                         } else if
                                 data == 1 {
@@ -47,14 +55,14 @@ struct SkinResultView: View {
                             }
                         
                     } else if selected == 2 {
-                        BlackheadView()
+                        PapulesView()
                     }
                 
                 Button(action: {
-                    
+                    testAgain.self = true
                 }, label: {
                     Text("Test again")
-                        .frame(width: 150, height: 50, alignment: .center)
+                        .frame(width: 150, height: 40, alignment: .center)
                         .foregroundColor(Color.white)
                         .background(Color("primaryGreen"))
                         .cornerRadius(10)
@@ -65,7 +73,8 @@ struct SkinResultView: View {
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarItems(trailing:
                                             Button(action: {
-                        print("Done")
+                        mainPageView = true
+                        
                     }) {
                         Text("Done")
                         //.fontWeight(.bold)
@@ -73,7 +82,7 @@ struct SkinResultView: View {
                     }
                     )
         }
-     
+        }
         
     }
 }

@@ -28,6 +28,8 @@ struct MainPageView: View {
 
     @State var isDailyRoutineTapped = false
     @State var updateButton = false
+    @State var skinPersona = false
+    @State var seeHistory = false
     
     var body: some View {
         if isDailyRoutineTapped{
@@ -37,6 +39,10 @@ struct MainPageView: View {
 
           //  withAnimation(TesterPickerView())
        TesterPickerView()
+        } else if skinPersona {
+            SkinResultView()
+        }else if seeHistory{
+        HistoryView()
         }
         else{
             ZStack{
@@ -170,7 +176,8 @@ struct MainPageView: View {
                             }
                                 .onTapGesture {
                                     withAnimation{
-                                    isDailyRoutineTapped = true
+                                        skinPersona = true
+//                                    isDailyRoutineTapped = true
                                     }
                                 }
                             //NavigationLink("", destination: onBoardingView(),
@@ -180,9 +187,22 @@ struct MainPageView: View {
                             Spacer()
                                 .frame(height:35)
                             
-                            Text("Activity")
-                                .font(.system(size:20, weight:.bold,design: .default))
-                                .padding(.leading,-170)
+                            HStack {
+                                Text("Acne Journey")
+                                    .font(.system(size:20, weight:.bold,design: .default))
+                             //   .padding(.leading,-170)
+                                
+                                Spacer()
+                                
+                                Text("See more")
+                                    .font(.system(size: 15))
+                                    .foregroundColor(Color("primaryGreen"))
+                                    .onTapGesture {
+                                        seeHistory = true
+                                        
+                                    }
+                            }
+                            .padding()
                             
                             Spacer()
                                 .frame(height:0)
@@ -221,9 +241,9 @@ struct MainPageView: View {
 struct BoxView: View{
     var body: some View{
         VStack{
-            Image("0")
+            Image("Image")
                 .resizable()
-                .frame(width:100, height:120)
+                .frame(width:80, height:120)
                 .cornerRadius(12) //Ini belum di set ukuran corner radiusnya
             Text("12 Juni 2022")
                 .font(.system(size:14, weight:.thin,design: .default))

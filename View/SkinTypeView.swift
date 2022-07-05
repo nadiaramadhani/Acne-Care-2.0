@@ -45,12 +45,15 @@ struct SkinType: View {
     //   var data: Type
     @Environment (\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var skins: FetchedResults<SkinEntity>
-    @State var skinResultView : Bool = false
+    @State var acneTypeView : Bool = false
     
     
     
     @State var page = 0
     var body: some View {
+        if acneTypeView {
+            AcneTypeView1()
+        } else {
             
         VStack{
             
@@ -88,11 +91,19 @@ struct SkinType: View {
             
             PageControl(page: self.$page)
             
-            
+//            TabView {
+//                        Text("First")
+//                        Text("Second")
+//                        Text("Third")
+//                        Text("Fourth")
+//                    }
+//                    .tabViewStyle(.page)
+//                    .indexViewStyle(.page(backgroundDisplayMode: .always))
+                
             Button {
                 
                 addSkin()
-                self.skinResultView = true
+                acneTypeView = true
                 
                 
             } label: {
@@ -102,7 +113,7 @@ struct SkinType: View {
                 .cornerRadius(10)
             
         }
-        
+    }
         
     }
     //MARK: COREDATA
@@ -238,9 +249,6 @@ struct Carousel: UIViewRepresentable {
             
         }
     }
-    
-    
-    
 }
 
 

@@ -14,7 +14,7 @@ struct IntroView : View {
         ZStack{
 //
             if currentUserSignedIn {
-                MainPageView()
+                SkinType()
                     .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
                 
             } else {

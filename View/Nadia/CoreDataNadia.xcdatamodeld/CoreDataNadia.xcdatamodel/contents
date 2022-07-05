@@ -14,7 +14,7 @@
         <attribute name="dateUpdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descUpdate" optional="YES" attributeType="String"/>
         <attribute name="emojiUpdate" optional="YES" attributeType="String"/>
-        <attribute name="imageUpdate" optional="YES" attributeType="Binary"/>
+        <attribute name="imageUpdate" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="SkinEntity" positionX="-63" positionY="-18" width="128" height="74"/>

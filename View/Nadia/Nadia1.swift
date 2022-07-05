@@ -29,7 +29,13 @@ struct AcneTypeView_Previews: PreviewProvider {
 struct AcneTypeView: View {
     
     @State var page = 0
+    @State var skinResultView : Bool = false
+
     var body: some View {
+        
+        if skinResultView {
+            SkinResultView()
+        } else {
 //            Color.white.edgesIgnoringSafeArea(.all)
             VStack{
               
@@ -68,7 +74,11 @@ struct AcneTypeView: View {
                 PageControl(page: self.$page)
                 
                 Button {
-                    print("tapped")
+                 //
+                    skinResultView = true
+                    
+                    
+                    //print("tapped")
                 } label: {
                     Text("Choose").foregroundColor(Color.white)
                         .frame(width: 150, height: 50, alignment: .center)
@@ -78,7 +88,8 @@ struct AcneTypeView: View {
                     
                 Spacer()
                 
-            }        
+            }
+        }
     }
 }
 

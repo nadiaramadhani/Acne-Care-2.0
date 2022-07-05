@@ -49,6 +49,7 @@
 		9BB3782928634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */; };
 		9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */; };
 		9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FE2866F3470069E86E /* SkinResultView.swift */; };
+		9BC83D032872E9BE00F2839B /* SkinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC83D022872E9BE00F2839B /* SkinViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeView.swift; sourceTree = "<group>"; };
 		9BB4B4FE2866F3470069E86E /* SkinResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinResultView.swift; sourceTree = "<group>"; };
+		9BC83D022872E9BE00F2839B /* SkinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				9A747F39286C92D300683171 /* Nadia9.swift */,
 				9A747F3B286C92DC00683171 /* Nadia10.swift */,
 				9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */,
+				9BC83D022872E9BE00F2839B /* SkinViewModel.swift */,
 			);
 			path = Nadia;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				9AE804392865246B006493A9 /* MainPageView.swift in Sources */,
 				9AF3DC3B2869C4EC007847E7 /* Nadia3.swift in Sources */,
 				9AF3DC3F2869C504007847E7 /* Nadia5.swift in Sources */,
+				9BC83D032872E9BE00F2839B /* SkinViewModel.swift in Sources */,
 				9A747F40286C92F300683171 /* Rahmat7.swift in Sources */,
 				9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */,
 				9AF3DC4A2869C588007847E7 /* Rahmat5.swift in Sources */,
@@ -599,7 +603,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ACNIFY/Preview Content\"";
-				DEVELOPMENT_TEAM = 5YH8BM5584;
+				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ACNIFY/Info.plist;
@@ -630,7 +634,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ACNIFY/Preview Content\"";
-				DEVELOPMENT_TEAM = 5YH8BM5584;
+				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ACNIFY/Info.plist;

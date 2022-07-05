@@ -49,8 +49,8 @@ struct TesterPickerView: View {
             
             NavigationView{
                 ZStack{
-                    Color("secondaryYellow3rd")
-                        .edgesIgnoringSafeArea(.all)
+//                    Color("secondaryYellow3rd")
+//                        .edgesIgnoringSafeArea(.all)
                     VStack{
                     
 
