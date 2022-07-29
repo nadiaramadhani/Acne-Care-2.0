@@ -7,39 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A747F34286C92A700683171 /* Nadia6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F33286C92A700683171 /* Nadia6.swift */; };
-		9A747F36286C92B500683171 /* Nadia7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F35286C92B500683171 /* Nadia7.swift */; };
-		9A747F38286C92C700683171 /* Nadia8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F37286C92C700683171 /* Nadia8.swift */; };
-		9A747F3A286C92D300683171 /* Nadia9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F39286C92D300683171 /* Nadia9.swift */; };
-		9A747F3C286C92DC00683171 /* Nadia10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3B286C92DC00683171 /* Nadia10.swift */; };
-		9A747F3E286C92EA00683171 /* Rahmat6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3D286C92EA00683171 /* Rahmat6.swift */; };
-		9A747F40286C92F300683171 /* Rahmat7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3F286C92F300683171 /* Rahmat7.swift */; };
-		9A747F42286C92FD00683171 /* Rahmat8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F41286C92FD00683171 /* Rahmat8.swift */; };
-		9A747F44286C930700683171 /* Rahmat9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F43286C930700683171 /* Rahmat9.swift */; };
-		9A747F46286C931200683171 /* Rahmat10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F45286C931200683171 /* Rahmat10.swift */; };
+		9A747F34286C92A700683171 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F33286C92A700683171 /* LocationManager.swift */; };
+		9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F39286C92D300683171 /* PhotoPreviewView.swift */; };
+		9A747F3C286C92DC00683171 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3B286C92DC00683171 /* DataController.swift */; };
+		9A747F3E286C92EA00683171 /* PopUpNightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3D286C92EA00683171 /* PopUpNightView.swift */; };
+		9A747F42286C92FD00683171 /* HistorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F41286C92FD00683171 /* HistorySheetView.swift */; };
+		9A747F44286C930700683171 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F43286C930700683171 /* HistoryView.swift */; };
 		9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */; };
-		9A747F4C286C935400683171 /* CoreDataRahmat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F4A286C935400683171 /* CoreDataRahmat.xcdatamodeld */; };
-		9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */; };
+		9AC747CF2867DDFB001C91F8 /* TakePhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC747CE2867DDFB001C91F8 /* TakePhotosView.swift */; };
 		9AE804392865246B006493A9 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE804382865246B006493A9 /* MainPageView.swift */; };
 		9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8043C2867724D006493A9 /* TesterPickerView.swift */; };
-		9AF3DC372869C4A3007847E7 /* Nadia1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC362869C4A3007847E7 /* Nadia1.swift */; };
-		9AF3DC392869C4E5007847E7 /* Nadia2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC382869C4E4007847E7 /* Nadia2.swift */; };
-		9AF3DC3B2869C4EC007847E7 /* Nadia3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3A2869C4EC007847E7 /* Nadia3.swift */; };
-		9AF3DC3D2869C4F6007847E7 /* Nadia4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3C2869C4F6007847E7 /* Nadia4.swift */; };
-		9AF3DC3F2869C504007847E7 /* Nadia5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3E2869C504007847E7 /* Nadia5.swift */; };
-		9AF3DC412869C53F007847E7 /* Rahmat1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC402869C53F007847E7 /* Rahmat1.swift */; };
-		9AF3DC442869C563007847E7 /* Rahmat2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC432869C563007847E7 /* Rahmat2.swift */; };
-		9AF3DC462869C56D007847E7 /* Rahmat3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC452869C56D007847E7 /* Rahmat3.swift */; };
-		9AF3DC482869C576007847E7 /* Rahmat4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC472869C576007847E7 /* Rahmat4.swift */; };
-		9AF3DC4A2869C588007847E7 /* Rahmat5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC492869C588007847E7 /* Rahmat5.swift */; };
-		9B417C652864759B00DABC05 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B417C642864759B00DABC05 /* CardModel.swift */; };
+		9AF3DC372869C4A3007847E7 /* AcneTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC362869C4A3007847E7 /* AcneTypeView.swift */; };
+		9AF3DC392869C4E5007847E7 /* SkinCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC382869C4E4007847E7 /* SkinCardView.swift */; };
+		9AF3DC3B2869C4EC007847E7 /* AcneCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3A2869C4EC007847E7 /* AcneCardView.swift */; };
+		9AF3DC3D2869C4F6007847E7 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3C2869C4F6007847E7 /* IntroView.swift */; };
+		9AF3DC3F2869C504007847E7 /* FileManagerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3E2869C504007847E7 /* FileManagerVM.swift */; };
+		9AF3DC412869C53F007847E7 /* MorningProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC402869C53F007847E7 /* MorningProductView.swift */; };
+		9AF3DC442869C563007847E7 /* NightProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC432869C563007847E7 /* NightProductsView.swift */; };
+		9AF3DC462869C56D007847E7 /* LocalNotifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC452869C56D007847E7 /* LocalNotifManager.swift */; };
+		9AF3DC482869C576007847E7 /* PopUpMorningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC472869C576007847E7 /* PopUpMorningView.swift */; };
+		9AF3DC4A2869C588007847E7 /* LocalNotifManager2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC492869C588007847E7 /* LocalNotifManager2.swift */; };
 		9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE128680B1700449BB4 /* CustomPopUp.swift */; };
-		9B86CBE42868179200449BB4 /* SheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE32868179200449BB4 /* SheetManager.swift */; };
 		9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */; };
 		9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE82868A9C600449BB4 /* PopUpModel.swift */; };
-		9B96423D286577C400662591 /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96423C286577C400662591 /* SnapCarousel.swift */; };
-		9B96423F28657A3800662591 /* SnapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96423E28657A3800662591 /* SnapView.swift */; };
-		9B96424128657AB400662591 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96424028657AB400662591 /* Card.swift */; };
 		9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */; };
 		9BB3780E28634BA0007A3640 /* onBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780D28634BA0007A3640 /* onBoardingView.swift */; };
 		9BB3781028634BA2007A3640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3780F28634BA2007A3640 /* Assets.xcassets */; };
@@ -70,40 +60,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9A747F33286C92A700683171 /* Nadia6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia6.swift; sourceTree = "<group>"; };
-		9A747F35286C92B500683171 /* Nadia7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia7.swift; sourceTree = "<group>"; };
-		9A747F37286C92C700683171 /* Nadia8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia8.swift; sourceTree = "<group>"; };
-		9A747F39286C92D300683171 /* Nadia9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia9.swift; sourceTree = "<group>"; };
-		9A747F3B286C92DC00683171 /* Nadia10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia10.swift; sourceTree = "<group>"; };
-		9A747F3D286C92EA00683171 /* Rahmat6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat6.swift; sourceTree = "<group>"; };
-		9A747F3F286C92F300683171 /* Rahmat7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat7.swift; sourceTree = "<group>"; };
-		9A747F41286C92FD00683171 /* Rahmat8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat8.swift; sourceTree = "<group>"; };
-		9A747F43286C930700683171 /* Rahmat9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat9.swift; sourceTree = "<group>"; };
-		9A747F45286C931200683171 /* Rahmat10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat10.swift; sourceTree = "<group>"; };
+		9A747F33286C92A700683171 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		9A747F39286C92D300683171 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
+		9A747F3B286C92DC00683171 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		9A747F3D286C92EA00683171 /* PopUpNightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpNightView.swift; sourceTree = "<group>"; };
+		9A747F41286C92FD00683171 /* HistorySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySheetView.swift; sourceTree = "<group>"; };
+		9A747F43286C930700683171 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		9A747F48286C933500683171 /* CoreDataNadia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataNadia.xcdatamodel; sourceTree = "<group>"; };
-		9A747F4B286C935400683171 /* CoreDataRahmat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataRahmat.xcdatamodel; sourceTree = "<group>"; };
-		9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotos.swift; sourceTree = "<group>"; };
+		9AC747CE2867DDFB001C91F8 /* TakePhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotosView.swift; sourceTree = "<group>"; };
 		9AE804382865246B006493A9 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		9AE8043C2867724D006493A9 /* TesterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesterPickerView.swift; sourceTree = "<group>"; };
-		9AF3DC362869C4A3007847E7 /* Nadia1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia1.swift; sourceTree = "<group>"; };
-		9AF3DC382869C4E4007847E7 /* Nadia2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia2.swift; sourceTree = "<group>"; };
-		9AF3DC3A2869C4EC007847E7 /* Nadia3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia3.swift; sourceTree = "<group>"; };
-		9AF3DC3C2869C4F6007847E7 /* Nadia4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia4.swift; sourceTree = "<group>"; };
-		9AF3DC3E2869C504007847E7 /* Nadia5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nadia5.swift; sourceTree = "<group>"; };
-		9AF3DC402869C53F007847E7 /* Rahmat1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat1.swift; sourceTree = "<group>"; };
-		9AF3DC432869C563007847E7 /* Rahmat2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat2.swift; sourceTree = "<group>"; };
-		9AF3DC452869C56D007847E7 /* Rahmat3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat3.swift; sourceTree = "<group>"; };
-		9AF3DC472869C576007847E7 /* Rahmat4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat4.swift; sourceTree = "<group>"; };
-		9AF3DC492869C588007847E7 /* Rahmat5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rahmat5.swift; sourceTree = "<group>"; };
-		9B417C642864759B00DABC05 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		9AF3DC362869C4A3007847E7 /* AcneTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneTypeView.swift; sourceTree = "<group>"; };
+		9AF3DC382869C4E4007847E7 /* SkinCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinCardView.swift; sourceTree = "<group>"; };
+		9AF3DC3A2869C4EC007847E7 /* AcneCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneCardView.swift; sourceTree = "<group>"; };
+		9AF3DC3C2869C4F6007847E7 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		9AF3DC3E2869C504007847E7 /* FileManagerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerVM.swift; sourceTree = "<group>"; };
+		9AF3DC402869C53F007847E7 /* MorningProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningProductView.swift; sourceTree = "<group>"; };
+		9AF3DC432869C563007847E7 /* NightProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightProductsView.swift; sourceTree = "<group>"; };
+		9AF3DC452869C56D007847E7 /* LocalNotifManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifManager.swift; sourceTree = "<group>"; };
+		9AF3DC472869C576007847E7 /* PopUpMorningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpMorningView.swift; sourceTree = "<group>"; };
+		9AF3DC492869C588007847E7 /* LocalNotifManager2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifManager2.swift; sourceTree = "<group>"; };
 		9B86CBE128680B1700449BB4 /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
-		9B86CBE32868179200449BB4 /* SheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetManager.swift; sourceTree = "<group>"; };
 		9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSkinView.swift; sourceTree = "<group>"; };
 		9B86CBE72868826700449BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9B86CBE82868A9C600449BB4 /* PopUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpModel.swift; sourceTree = "<group>"; };
-		9B96423C286577C400662591 /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
-		9B96423E28657A3800662591 /* SnapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapView.swift; sourceTree = "<group>"; };
-		9B96424028657AB400662591 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		9BB3780828634BA0007A3640 /* ACNIFY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACNIFY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYApp.swift; sourceTree = "<group>"; };
 		9BB3780D28634BA0007A3640 /* onBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingView.swift; sourceTree = "<group>"; };
@@ -144,48 +124,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9AF3DC352869C47E007847E7 /* Nadia */ = {
+		9B0208A72893CB8200AEE4D4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				9AF3DC362869C4A3007847E7 /* Nadia1.swift */,
-				9AF3DC382869C4E4007847E7 /* Nadia2.swift */,
-				9AF3DC3A2869C4EC007847E7 /* Nadia3.swift */,
-				9AF3DC3C2869C4F6007847E7 /* Nadia4.swift */,
-				9AF3DC3E2869C504007847E7 /* Nadia5.swift */,
-				9A747F33286C92A700683171 /* Nadia6.swift */,
-				9A747F35286C92B500683171 /* Nadia7.swift */,
-				9A747F37286C92C700683171 /* Nadia8.swift */,
-				9A747F39286C92D300683171 /* Nadia9.swift */,
-				9A747F3B286C92DC00683171 /* Nadia10.swift */,
-				9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */,
-				9BC83D022872E9BE00F2839B /* SkinViewModel.swift */,
 			);
-			path = Nadia;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		9AF3DC422869C54C007847E7 /* Rahmat */ = {
+		9B0208A82893CBF100AEE4D4 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				9AF3DC402869C53F007847E7 /* Rahmat1.swift */,
-				9AF3DC432869C563007847E7 /* Rahmat2.swift */,
-				9AF3DC452869C56D007847E7 /* Rahmat3.swift */,
-				9AF3DC472869C576007847E7 /* Rahmat4.swift */,
-				9AF3DC492869C588007847E7 /* Rahmat5.swift */,
-				9A747F3D286C92EA00683171 /* Rahmat6.swift */,
-				9A747F3F286C92F300683171 /* Rahmat7.swift */,
-				9A747F41286C92FD00683171 /* Rahmat8.swift */,
-				9A747F43286C930700683171 /* Rahmat9.swift */,
-				9A747F45286C931200683171 /* Rahmat10.swift */,
-				9A747F4A286C935400683171 /* CoreDataRahmat.xcdatamodeld */,
+				9AE8043C2867724D006493A9 /* TesterPickerView.swift */,
+				9AE804382865246B006493A9 /* MainPageView.swift */,
+				9AF3DC402869C53F007847E7 /* MorningProductView.swift */,
+				9AF3DC432869C563007847E7 /* NightProductsView.swift */,
+				9AF3DC472869C576007847E7 /* PopUpMorningView.swift */,
+				9A747F3D286C92EA00683171 /* PopUpNightView.swift */,
 			);
-			path = Rahmat;
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		9B0208A92893CC9800AEE4D4 /* CardPage */ = {
+			isa = PBXGroup;
+			children = (
+				9AF3DC382869C4E4007847E7 /* SkinCardView.swift */,
+				9AF3DC3A2869C4EC007847E7 /* AcneCardView.swift */,
+				9AF3DC362869C4A3007847E7 /* AcneTypeView.swift */,
+				9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */,
+				9A747F43286C930700683171 /* HistoryView.swift */,
+			);
+			path = CardPage;
+			sourceTree = "<group>";
+		};
+		9B0208AA2893CD6100AEE4D4 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				9A747F39286C92D300683171 /* PhotoPreviewView.swift */,
+			);
+			path = Testing;
 			sourceTree = "<group>";
 		};
 		9B417C612864755600DABC05 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9B86CBE32868179200449BB4 /* SheetManager.swift */,
+				9AF3DC452869C56D007847E7 /* LocalNotifManager.swift */,
+				9AF3DC492869C588007847E7 /* LocalNotifManager2.swift */,
+				9BC83D022872E9BE00F2839B /* SkinViewModel.swift */,
+				9A747F33286C92A700683171 /* LocationManager.swift */,
+				9AF3DC3E2869C504007847E7 /* FileManagerVM.swift */,
+				9A747F3B286C92DC00683171 /* DataController.swift */,
+				9B86CBE128680B1700449BB4 /* CustomPopUp.swift */,
 				9B86CBE82868A9C600449BB4 /* PopUpModel.swift */,
+				9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,11 +183,15 @@
 		9B417C622864756900DABC05 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9AF3DC352869C47E007847E7 /* Nadia */,
-				9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */,
+				9AF3DC3C2869C4F6007847E7 /* IntroView.swift */,
+				9BB3780D28634BA0007A3640 /* onBoardingView.swift */,
+				9A747F41286C92FD00683171 /* HistorySheetView.swift */,
+				9AC747CE2867DDFB001C91F8 /* TakePhotosView.swift */,
 				9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */,
-				9B86CBE128680B1700449BB4 /* CustomPopUp.swift */,
 				9BB4B4FE2866F3470069E86E /* SkinResultView.swift */,
+				9B0208A92893CC9800AEE4D4 /* CardPage */,
+				9B0208A82893CBF100AEE4D4 /* HomePage */,
+				9B0208AA2893CD6100AEE4D4 /* Testing */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,7 +199,7 @@
 		9BB377FF28634BA0007A3640 = {
 			isa = PBXGroup;
 			children = (
-				9BB4B5002866FA710069E86E /* TRASH */,
+				9B0208A72893CB8200AEE4D4 /* ViewModel */,
 				9B417C622864756900DABC05 /* View */,
 				9B417C612864755600DABC05 /* Model */,
 				9BB3780A28634BA0007A3640 /* ACNIFY */,
@@ -230,11 +224,6 @@
 			children = (
 				9B86CBE72868826700449BB4 /* Info.plist */,
 				9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */,
-				9BB3780D28634BA0007A3640 /* onBoardingView.swift */,
-				9AE804382865246B006493A9 /* MainPageView.swift */,
-				9AE8043C2867724D006493A9 /* TesterPickerView.swift */,
-				9AC747CE2867DDFB001C91F8 /* TakePhotos.swift */,
-				9AF3DC422869C54C007847E7 /* Rahmat */,
 				9BB3780F28634BA2007A3640 /* Assets.xcassets */,
 				9BB3781128634BA2007A3640 /* Preview Content */,
 			);
@@ -264,17 +253,6 @@
 				9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */,
 			);
 			path = ACNIFYUITests;
-			sourceTree = "<group>";
-		};
-		9BB4B5002866FA710069E86E /* TRASH */ = {
-			isa = PBXGroup;
-			children = (
-				9B96423C286577C400662591 /* SnapCarousel.swift */,
-				9B96423E28657A3800662591 /* SnapView.swift */,
-				9B96424028657AB400662591 /* Card.swift */,
-				9B417C642864759B00DABC05 /* CardModel.swift */,
-			);
-			path = TRASH;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,43 +385,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A747F3C286C92DC00683171 /* Nadia10.swift in Sources */,
+				9A747F3C286C92DC00683171 /* DataController.swift in Sources */,
 				9BB3780E28634BA0007A3640 /* onBoardingView.swift in Sources */,
-				9A747F3E286C92EA00683171 /* Rahmat6.swift in Sources */,
-				9AF3DC482869C576007847E7 /* Rahmat4.swift in Sources */,
-				9A747F44286C930700683171 /* Rahmat9.swift in Sources */,
-				9A747F3A286C92D300683171 /* Nadia9.swift in Sources */,
-				9B86CBE42868179200449BB4 /* SheetManager.swift in Sources */,
+				9A747F3E286C92EA00683171 /* PopUpNightView.swift in Sources */,
+				9AF3DC482869C576007847E7 /* PopUpMorningView.swift in Sources */,
+				9A747F44286C930700683171 /* HistoryView.swift in Sources */,
+				9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */,
 				9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */,
-				9AF3DC442869C563007847E7 /* Rahmat2.swift in Sources */,
-				9B96423F28657A3800662591 /* SnapView.swift in Sources */,
+				9AF3DC442869C563007847E7 /* NightProductsView.swift in Sources */,
 				9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */,
-				9A747F36286C92B500683171 /* Nadia7.swift in Sources */,
-				9AF3DC412869C53F007847E7 /* Rahmat1.swift in Sources */,
-				9A747F38286C92C700683171 /* Nadia8.swift in Sources */,
+				9AF3DC412869C53F007847E7 /* MorningProductView.swift in Sources */,
 				9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */,
-				9AF3DC372869C4A3007847E7 /* Nadia1.swift in Sources */,
-				9AF3DC392869C4E5007847E7 /* Nadia2.swift in Sources */,
+				9AF3DC372869C4A3007847E7 /* AcneTypeView.swift in Sources */,
+				9AF3DC392869C4E5007847E7 /* SkinCardView.swift in Sources */,
 				9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */,
 				9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */,
-				9A747F4C286C935400683171 /* CoreDataRahmat.xcdatamodeld in Sources */,
-				9AF3DC462869C56D007847E7 /* Rahmat3.swift in Sources */,
-				9AF3DC3D2869C4F6007847E7 /* Nadia4.swift in Sources */,
-				9A747F46286C931200683171 /* Rahmat10.swift in Sources */,
-				9A747F42286C92FD00683171 /* Rahmat8.swift in Sources */,
+				9AF3DC462869C56D007847E7 /* LocalNotifManager.swift in Sources */,
+				9AF3DC3D2869C4F6007847E7 /* IntroView.swift in Sources */,
+				9A747F42286C92FD00683171 /* HistorySheetView.swift in Sources */,
 				9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */,
-				9B96423D286577C400662591 /* SnapCarousel.swift in Sources */,
-				9B417C652864759B00DABC05 /* CardModel.swift in Sources */,
 				9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */,
-				9A747F34286C92A700683171 /* Nadia6.swift in Sources */,
-				9B96424128657AB400662591 /* Card.swift in Sources */,
+				9A747F34286C92A700683171 /* LocationManager.swift in Sources */,
 				9AE804392865246B006493A9 /* MainPageView.swift in Sources */,
-				9AF3DC3B2869C4EC007847E7 /* Nadia3.swift in Sources */,
-				9AF3DC3F2869C504007847E7 /* Nadia5.swift in Sources */,
+				9AF3DC3B2869C4EC007847E7 /* AcneCardView.swift in Sources */,
+				9AF3DC3F2869C504007847E7 /* FileManagerVM.swift in Sources */,
 				9BC83D032872E9BE00F2839B /* SkinViewModel.swift in Sources */,
-				9A747F40286C92F300683171 /* Rahmat7.swift in Sources */,
-				9AC747CF2867DDFB001C91F8 /* TakePhotos.swift in Sources */,
-				9AF3DC4A2869C588007847E7 /* Rahmat5.swift in Sources */,
+				9AC747CF2867DDFB001C91F8 /* TakePhotosView.swift in Sources */,
+				9AF3DC4A2869C588007847E7 /* LocalNotifManager2.swift in Sources */,
 				9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -782,16 +750,6 @@
 			);
 			currentVersion = 9A747F48286C933500683171 /* CoreDataNadia.xcdatamodel */;
 			path = CoreDataNadia.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		9A747F4A286C935400683171 /* CoreDataRahmat.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9A747F4B286C935400683171 /* CoreDataRahmat.xcdatamodel */,
-			);
-			currentVersion = 9A747F4B286C935400683171 /* CoreDataRahmat.xcdatamodel */;
-			path = CoreDataRahmat.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

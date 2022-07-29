@@ -93,10 +93,10 @@ struct NightChooseProduct: View {
                                             
                                             .frame(width: 300)
                                             
-                                         
+                                            
                                         }
                                         else{
-
+                                            
                                         }
                                     }
                                     .environmentObject(lnManagerNight)
@@ -183,7 +183,7 @@ struct NightChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-
+                                            
                                             addProductButton
                                         }
                                         Toggle("",isOn: $isSelectedOilCleanserNight)
@@ -424,7 +424,7 @@ struct NightChooseProduct: View {
                                         
                                     }
                                 }
-                        
+                                
                                 
                                 
                                 
@@ -439,7 +439,7 @@ struct NightChooseProduct: View {
                         .edgesIgnoringSafeArea(.bottom)
                     }
                     CustomAlert(textEntered: $textEntered, showingAlert: $showingAlert)
-                                            .opacity(showingAlert ? 1 : 0)
+                        .opacity(showingAlert ? 1 : 0)
                 }
                 .navigationBarTitle("Edit")
                 .navigationBarTitleDisplayMode(.inline)
@@ -556,7 +556,7 @@ struct CustomAlert: View {
                         .background(Color.gray.opacity(0.2))
                         .foregroundColor(.black)
                         .cornerRadius(10)
-//                        .padding(.horizontal, 20)
+                    //                        .padding(.horizontal, 20)
                     
                     
                     Divider()
@@ -573,8 +573,8 @@ struct CustomAlert: View {
                         
                     }
                     .padding()
-//                    .padding(30)
-//                    .padding(.horizontal, 40)
+                    //                    .padding(30)
+                    //                    .padding(.horizontal, 40)
                 }
                 .padding()
             }

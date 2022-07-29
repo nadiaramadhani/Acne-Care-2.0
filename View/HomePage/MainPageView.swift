@@ -41,7 +41,7 @@ struct MainPageView: View {
        TesterPickerView()
         } else if skinPersona {
             SkinResultView()
-        }else if seeHistory{
+        }else if seeHistory {
         HistoryView()
         }
         else{

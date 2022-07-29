@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct HistorySheet: View {
+struct HistorySheetView: View {
     var body: some View {
         VStack {
             HStack{
@@ -68,7 +68,7 @@ HistoryData(product1: "Cetaphil facial wash", product2: "Cetaphil toner", produc
 ]
 struct HistorySheet_Previews: PreviewProvider {
     static var previews: some View {
-        HistorySheet()
+        HistorySheetView()
         
     }
 }

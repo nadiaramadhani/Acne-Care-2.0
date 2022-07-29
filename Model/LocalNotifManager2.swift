@@ -15,7 +15,7 @@ import UserNotifications
 import NotificationCenter
 
 @MainActor
-class LocalNotificationManagerMorning: NSObject, ObservableObject, UNUserNotificationCenterDelegate{
+class LocalNotificationManagerMorning: NSObject, ObservableObject, UNUserNotificationCenterDelegate {
     let notificationCenter = UNUserNotificationCenter.current()
     @Published var isGranted = false
     @Published var pendingRequests : [UNNotificationRequest] = []
