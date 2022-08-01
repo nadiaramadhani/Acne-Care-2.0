@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9A747F34286C92A700683171 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F33286C92A700683171 /* LocationManager.swift */; };
 		9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F39286C92D300683171 /* PhotoPreviewView.swift */; };
-		9A747F3C286C92DC00683171 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3B286C92DC00683171 /* DataController.swift */; };
 		9A747F3E286C92EA00683171 /* PopUpNightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3D286C92EA00683171 /* PopUpNightView.swift */; };
 		9A747F42286C92FD00683171 /* HistorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F41286C92FD00683171 /* HistorySheetView.swift */; };
 		9A747F44286C930700683171 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F43286C930700683171 /* HistoryView.swift */; };
@@ -21,7 +20,6 @@
 		9AF3DC392869C4E5007847E7 /* SkinCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC382869C4E4007847E7 /* SkinCardView.swift */; };
 		9AF3DC3B2869C4EC007847E7 /* AcneCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3A2869C4EC007847E7 /* AcneCardView.swift */; };
 		9AF3DC3D2869C4F6007847E7 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3C2869C4F6007847E7 /* IntroView.swift */; };
-		9AF3DC3F2869C504007847E7 /* FileManagerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3E2869C504007847E7 /* FileManagerVM.swift */; };
 		9AF3DC412869C53F007847E7 /* MorningProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC402869C53F007847E7 /* MorningProductView.swift */; };
 		9AF3DC442869C563007847E7 /* NightProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC432869C563007847E7 /* NightProductsView.swift */; };
 		9AF3DC462869C56D007847E7 /* LocalNotifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC452869C56D007847E7 /* LocalNotifManager.swift */; };
@@ -31,7 +29,7 @@
 		9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */; };
 		9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE82868A9C600449BB4 /* PopUpModel.swift */; };
 		9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */; };
-		9BB3780E28634BA0007A3640 /* onBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780D28634BA0007A3640 /* onBoardingView.swift */; };
+		9BB3780E28634BA0007A3640 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780D28634BA0007A3640 /* OnBoardingView.swift */; };
 		9BB3781028634BA2007A3640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3780F28634BA2007A3640 /* Assets.xcassets */; };
 		9BB3781328634BA2007A3640 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3781228634BA2007A3640 /* Preview Assets.xcassets */; };
 		9BB3781D28634BA2007A3640 /* ACNIFYTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3781C28634BA2007A3640 /* ACNIFYTests.swift */; };
@@ -39,7 +37,7 @@
 		9BB3782928634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */; };
 		9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */; };
 		9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FE2866F3470069E86E /* SkinResultView.swift */; };
-		9BC83D032872E9BE00F2839B /* SkinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC83D022872E9BE00F2839B /* SkinViewModel.swift */; };
+		CB3DFE8B28981A48002EF675 /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3DFE8A28981A48002EF675 /* PersistanceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +60,6 @@
 /* Begin PBXFileReference section */
 		9A747F33286C92A700683171 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		9A747F39286C92D300683171 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
-		9A747F3B286C92DC00683171 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		9A747F3D286C92EA00683171 /* PopUpNightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpNightView.swift; sourceTree = "<group>"; };
 		9A747F41286C92FD00683171 /* HistorySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySheetView.swift; sourceTree = "<group>"; };
 		9A747F43286C930700683171 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -74,7 +71,6 @@
 		9AF3DC382869C4E4007847E7 /* SkinCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinCardView.swift; sourceTree = "<group>"; };
 		9AF3DC3A2869C4EC007847E7 /* AcneCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneCardView.swift; sourceTree = "<group>"; };
 		9AF3DC3C2869C4F6007847E7 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
-		9AF3DC3E2869C504007847E7 /* FileManagerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerVM.swift; sourceTree = "<group>"; };
 		9AF3DC402869C53F007847E7 /* MorningProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningProductView.swift; sourceTree = "<group>"; };
 		9AF3DC432869C563007847E7 /* NightProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightProductsView.swift; sourceTree = "<group>"; };
 		9AF3DC452869C56D007847E7 /* LocalNotifManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifManager.swift; sourceTree = "<group>"; };
@@ -86,7 +82,7 @@
 		9B86CBE82868A9C600449BB4 /* PopUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpModel.swift; sourceTree = "<group>"; };
 		9BB3780828634BA0007A3640 /* ACNIFY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACNIFY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYApp.swift; sourceTree = "<group>"; };
-		9BB3780D28634BA0007A3640 /* onBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingView.swift; sourceTree = "<group>"; };
+		9BB3780D28634BA0007A3640 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		9BB3780F28634BA2007A3640 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BB3781228634BA2007A3640 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BB3781828634BA2007A3640 /* ACNIFYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACNIFYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +92,7 @@
 		9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeView.swift; sourceTree = "<group>"; };
 		9BB4B4FE2866F3470069E86E /* SkinResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinResultView.swift; sourceTree = "<group>"; };
-		9BC83D022872E9BE00F2839B /* SkinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinViewModel.swift; sourceTree = "<group>"; };
+		CB3DFE8A28981A48002EF675 /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,38 +120,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9B0208A72893CB8200AEE4D4 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		9B0208A82893CBF100AEE4D4 /* HomePage */ = {
-			isa = PBXGroup;
-			children = (
-				9AE8043C2867724D006493A9 /* TesterPickerView.swift */,
-				9AE804382865246B006493A9 /* MainPageView.swift */,
-				9AF3DC402869C53F007847E7 /* MorningProductView.swift */,
-				9AF3DC432869C563007847E7 /* NightProductsView.swift */,
-				9AF3DC472869C576007847E7 /* PopUpMorningView.swift */,
-				9A747F3D286C92EA00683171 /* PopUpNightView.swift */,
-			);
-			path = HomePage;
-			sourceTree = "<group>";
-		};
-		9B0208A92893CC9800AEE4D4 /* CardPage */ = {
-			isa = PBXGroup;
-			children = (
-				9AF3DC382869C4E4007847E7 /* SkinCardView.swift */,
-				9AF3DC3A2869C4EC007847E7 /* AcneCardView.swift */,
-				9AF3DC362869C4A3007847E7 /* AcneTypeView.swift */,
-				9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */,
-				9A747F43286C930700683171 /* HistoryView.swift */,
-			);
-			path = CardPage;
-			sourceTree = "<group>";
-		};
 		9B0208AA2893CD6100AEE4D4 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,33 +128,9 @@
 			path = Testing;
 			sourceTree = "<group>";
 		};
-		9B417C612864755600DABC05 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				9AF3DC452869C56D007847E7 /* LocalNotifManager.swift */,
-				9AF3DC492869C588007847E7 /* LocalNotifManager2.swift */,
-				9BC83D022872E9BE00F2839B /* SkinViewModel.swift */,
-				9A747F33286C92A700683171 /* LocationManager.swift */,
-				9AF3DC3E2869C504007847E7 /* FileManagerVM.swift */,
-				9A747F3B286C92DC00683171 /* DataController.swift */,
-				9B86CBE128680B1700449BB4 /* CustomPopUp.swift */,
-				9B86CBE82868A9C600449BB4 /* PopUpModel.swift */,
-				9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		9B417C622864756900DABC05 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9AF3DC3C2869C4F6007847E7 /* IntroView.swift */,
-				9BB3780D28634BA0007A3640 /* onBoardingView.swift */,
-				9A747F41286C92FD00683171 /* HistorySheetView.swift */,
-				9AC747CE2867DDFB001C91F8 /* TakePhotosView.swift */,
-				9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */,
-				9BB4B4FE2866F3470069E86E /* SkinResultView.swift */,
-				9B0208A92893CC9800AEE4D4 /* CardPage */,
-				9B0208A82893CBF100AEE4D4 /* HomePage */,
 				9B0208AA2893CD6100AEE4D4 /* Testing */,
 			);
 			path = View;
@@ -199,9 +139,6 @@
 		9BB377FF28634BA0007A3640 = {
 			isa = PBXGroup;
 			children = (
-				9B0208A72893CB8200AEE4D4 /* ViewModel */,
-				9B417C622864756900DABC05 /* View */,
-				9B417C612864755600DABC05 /* Model */,
 				9BB3780A28634BA0007A3640 /* ACNIFY */,
 				9BB3781B28634BA2007A3640 /* ACNIFYTests */,
 				9BB3782528634BA2007A3640 /* ACNIFYUITests */,
@@ -222,6 +159,15 @@
 		9BB3780A28634BA0007A3640 /* ACNIFY */ = {
 			isa = PBXGroup;
 			children = (
+				CB3DFE8F28981C13002EF675 /* Intro */,
+				CB3DFE8428981889002EF675 /* SkinCareRoutine */,
+				CB3DFE8228981774002EF675 /* Home */,
+				CB3DFE8128981755002EF675 /* AcneJourney */,
+				CB3DFE7F289816D9002EF675 /* QuizResult */,
+				CB3DFE7D2898151E002EF675 /* Quiz */,
+				CB3DFE7A28980F81002EF675 /* Onboarding */,
+				CB3DFE7728980F3A002EF675 /* Common */,
+				9B417C622864756900DABC05 /* View */,
 				9B86CBE72868826700449BB4 /* Info.plist */,
 				9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */,
 				9BB3780F28634BA2007A3640 /* Assets.xcassets */,
@@ -253,6 +199,174 @@
 				9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */,
 			);
 			path = ACNIFYUITests;
+			sourceTree = "<group>";
+		};
+		CB3DFE7728980F3A002EF675 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CB3DFE8E28981BBB002EF675 /* Location */,
+				CB3DFE8D28981B41002EF675 /* PopUp */,
+				CB3DFE8C28981AC7002EF675 /* Notification */,
+				CB3DFE87289819FF002EF675 /* Data */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CB3DFE7A28980F81002EF675 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CB3DFE7B28980F9D002EF675 /* View */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CB3DFE7B28980F9D002EF675 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9BB3780D28634BA0007A3640 /* OnBoardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB3DFE7D2898151E002EF675 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				CB3DFE7E2898153C002EF675 /* View */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		CB3DFE7E2898153C002EF675 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AF3DC362869C4A3007847E7 /* AcneTypeView.swift */,
+				9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB3DFE7F289816D9002EF675 /* QuizResult */ = {
+			isa = PBXGroup;
+			children = (
+				CB3DFE80289816E9002EF675 /* View */,
+			);
+			path = QuizResult;
+			sourceTree = "<group>";
+		};
+		CB3DFE80289816E9002EF675 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9BB4B4FE2866F3470069E86E /* SkinResultView.swift */,
+				9AF3DC382869C4E4007847E7 /* SkinCardView.swift */,
+				9AF3DC3A2869C4EC007847E7 /* AcneCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB3DFE8128981755002EF675 /* AcneJourney */ = {
+			isa = PBXGroup;
+			children = (
+				9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */,
+				9AC747CE2867DDFB001C91F8 /* TakePhotosView.swift */,
+				9A747F41286C92FD00683171 /* HistorySheetView.swift */,
+				9A747F43286C930700683171 /* HistoryView.swift */,
+			);
+			path = AcneJourney;
+			sourceTree = "<group>";
+		};
+		CB3DFE8228981774002EF675 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CB3DFE8328981783002EF675 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CB3DFE8328981783002EF675 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AE804382865246B006493A9 /* MainPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB3DFE8428981889002EF675 /* SkinCareRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				CB3DFE852898189D002EF675 /* View */,
+			);
+			path = SkinCareRoutine;
+			sourceTree = "<group>";
+		};
+		CB3DFE852898189D002EF675 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AF3DC402869C53F007847E7 /* MorningProductView.swift */,
+				9AF3DC432869C563007847E7 /* NightProductsView.swift */,
+				9AF3DC472869C576007847E7 /* PopUpMorningView.swift */,
+				9A747F3D286C92EA00683171 /* PopUpNightView.swift */,
+				9AE8043C2867724D006493A9 /* TesterPickerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB3DFE87289819FF002EF675 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CB3DFE8828981A09002EF675 /* CoreData */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CB3DFE8828981A09002EF675 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */,
+				CB3DFE8928981A16002EF675 /* Model */,
+				CB3DFE8A28981A48002EF675 /* PersistanceController.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		CB3DFE8928981A16002EF675 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB3DFE8C28981AC7002EF675 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				9AF3DC452869C56D007847E7 /* LocalNotifManager.swift */,
+				9AF3DC492869C588007847E7 /* LocalNotifManager2.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		CB3DFE8D28981B41002EF675 /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				9B86CBE128680B1700449BB4 /* CustomPopUp.swift */,
+				9B86CBE82868A9C600449BB4 /* PopUpModel.swift */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
+		CB3DFE8E28981BBB002EF675 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				9A747F33286C92A700683171 /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		CB3DFE8F28981C13002EF675 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				9AF3DC3C2869C4F6007847E7 /* IntroView.swift */,
+			);
+			path = Intro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,8 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A747F3C286C92DC00683171 /* DataController.swift in Sources */,
-				9BB3780E28634BA0007A3640 /* onBoardingView.swift in Sources */,
+				9BB3780E28634BA0007A3640 /* OnBoardingView.swift in Sources */,
 				9A747F3E286C92EA00683171 /* PopUpNightView.swift in Sources */,
 				9AF3DC482869C576007847E7 /* PopUpMorningView.swift in Sources */,
 				9A747F44286C930700683171 /* HistoryView.swift in Sources */,
@@ -401,6 +514,7 @@
 				9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */,
 				9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */,
 				9AF3DC462869C56D007847E7 /* LocalNotifManager.swift in Sources */,
+				CB3DFE8B28981A48002EF675 /* PersistanceController.swift in Sources */,
 				9AF3DC3D2869C4F6007847E7 /* IntroView.swift in Sources */,
 				9A747F42286C92FD00683171 /* HistorySheetView.swift in Sources */,
 				9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */,
@@ -408,8 +522,6 @@
 				9A747F34286C92A700683171 /* LocationManager.swift in Sources */,
 				9AE804392865246B006493A9 /* MainPageView.swift in Sources */,
 				9AF3DC3B2869C4EC007847E7 /* AcneCardView.swift in Sources */,
-				9AF3DC3F2869C504007847E7 /* FileManagerVM.swift in Sources */,
-				9BC83D032872E9BE00F2839B /* SkinViewModel.swift in Sources */,
 				9AC747CF2867DDFB001C91F8 /* TakePhotosView.swift in Sources */,
 				9AF3DC4A2869C588007847E7 /* LocalNotifManager2.swift in Sources */,
 				9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */,

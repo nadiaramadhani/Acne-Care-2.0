@@ -11,7 +11,6 @@ import SwiftUI
 struct ACNIFYApp: App {
     
     //DI FILE APP
-   @StateObject private var dataController = DataController()
     //
     //ContentView()
     //.environment(\.managedObjectContext, dataController.container.viewContext)
@@ -23,7 +22,6 @@ struct ACNIFYApp: App {
 IntroView()
            //     .environmentObject(locationManager)
 
-                .environment(\.managedObjectContext, dataController.container.viewContext)
 
         }
     }
