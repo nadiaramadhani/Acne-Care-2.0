@@ -43,6 +43,7 @@
 		CB4FF14428992168008D78AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF14328992168008D78AC /* LoginView.swift */; };
 		CB4FF14728992762008D78AC /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF14628992762008D78AC /* BottomButtonView.swift */; };
 		CB4FF14B28992C27008D78AC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF14A28992C27008D78AC /* LoginViewModel.swift */; };
+		CB98FB6B2899539600CDF771 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98FB6A2899539600CDF771 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeView.swift; sourceTree = "<group>"; };
 		9BB4B4FE2866F3470069E86E /* SkinResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinResultView.swift; sourceTree = "<group>"; };
 		CB3DFE8A28981A48002EF675 /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
+		CB98FB682899538E00CDF771 /* ACNIFY.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ACNIFY.entitlements; sourceTree = "<group>"; };
+		CB98FB6A2899539600CDF771 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CB4FF13A28991535008D78AC /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		CB4FF13C28991607008D78AC /* OnboardingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItemView.swift; sourceTree = "<group>"; };
 		CB4FF14028991983008D78AC /* String+ToMarkdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ToMarkdown.swift"; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB98FB6B2899539600CDF771 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +157,7 @@
 				9BB3781B28634BA2007A3640 /* ACNIFYTests */,
 				9BB3782528634BA2007A3640 /* ACNIFYUITests */,
 				9BB3780928634BA0007A3640 /* Products */,
+				CB98FB692899539600CDF771 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +174,8 @@
 		9BB3780A28634BA0007A3640 /* ACNIFY */ = {
 			isa = PBXGroup;
 			children = (
+				CB98FB682899538E00CDF771 /* ACNIFY.entitlements */,
+				CB3DFE8F28981C13002EF675 /* Intro */,
 				CB4FF14228992154008D78AC /* Login */,
 				CB3DFE8428981889002EF675 /* SkinCareRoutine */,
 				CB3DFE8228981774002EF675 /* Home */,
@@ -430,6 +437,14 @@
 				CB4FF14A28992C27008D78AC /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB98FB692899539600CDF771 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB98FB6A2899539600CDF771 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -748,10 +763,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ACNIFY/ACNIFY.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ACNIFY/Preview Content\"";
-				DEVELOPMENT_TEAM = DZ5KY3PP54;
+				DEVELOPMENT_TEAM = 89TMJ964L4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ACNIFY/Info.plist;
@@ -766,7 +782,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-.ACNIFY";
+				PRODUCT_BUNDLE_IDENTIFIER = com.agusart.acnecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -779,10 +795,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ACNIFY/ACNIFY.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ACNIFY/Preview Content\"";
-				DEVELOPMENT_TEAM = DZ5KY3PP54;
+				DEVELOPMENT_TEAM = 89TMJ964L4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ACNIFY/Info.plist;
@@ -797,7 +814,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-.ACNIFY";
+				PRODUCT_BUNDLE_IDENTIFIER = com.agusart.acnecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
