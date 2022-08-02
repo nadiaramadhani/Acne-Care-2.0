@@ -14,15 +14,29 @@ struct ACNIFYApp: App {
     //
     //ContentView()
     //.environment(\.managedObjectContext, dataController.container.viewContext)
- //   @StateObject private var locationManager = LocationManager()
-
+    //   @StateObject private var locationManager = LocationManager()
+    
+    @AppStorage("FirstTimeUser") var firstTimeUser: Bool = true
+    @AppStorage("signed_in") var currentUserSignedIn: Bool = false
+    @State var isOnboardingPresented = false
+    let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
 
     var body: some Scene {
         WindowGroup {
-IntroView()
-           //     .environmentObject(locationManager)
+            if firstTimeUser {
+                OnBoardingView()
+            } else {
+                LoginView()
+                .fullScreenCover(isPresented: $currentUserSignedIn){
+                    SkinType()
+                        .transition(transition)
 
-
+                }
+            }
         }
     }
 }
+
+
+
+

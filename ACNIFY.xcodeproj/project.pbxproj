@@ -19,7 +19,6 @@
 		9AF3DC372869C4A3007847E7 /* AcneTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC362869C4A3007847E7 /* AcneTypeView.swift */; };
 		9AF3DC392869C4E5007847E7 /* SkinCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC382869C4E4007847E7 /* SkinCardView.swift */; };
 		9AF3DC3B2869C4EC007847E7 /* AcneCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3A2869C4EC007847E7 /* AcneCardView.swift */; };
-		9AF3DC3D2869C4F6007847E7 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC3C2869C4F6007847E7 /* IntroView.swift */; };
 		9AF3DC412869C53F007847E7 /* MorningProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC402869C53F007847E7 /* MorningProductView.swift */; };
 		9AF3DC442869C563007847E7 /* NightProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC432869C563007847E7 /* NightProductsView.swift */; };
 		9AF3DC462869C56D007847E7 /* LocalNotifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC452869C56D007847E7 /* LocalNotifManager.swift */; };
@@ -38,6 +37,12 @@
 		9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */; };
 		9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FE2866F3470069E86E /* SkinResultView.swift */; };
 		CB3DFE8B28981A48002EF675 /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3DFE8A28981A48002EF675 /* PersistanceController.swift */; };
+		CB4FF13B28991535008D78AC /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF13A28991535008D78AC /* OnboardingViewModel.swift */; };
+		CB4FF13D28991607008D78AC /* OnboardingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF13C28991607008D78AC /* OnboardingItemView.swift */; };
+		CB4FF14128991983008D78AC /* String+ToMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF14028991983008D78AC /* String+ToMarkdown.swift */; };
+		CB4FF14428992168008D78AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF14328992168008D78AC /* LoginView.swift */; };
+		CB4FF14728992762008D78AC /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF14628992762008D78AC /* BottomButtonView.swift */; };
+		CB4FF14B28992C27008D78AC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF14A28992C27008D78AC /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +75,6 @@
 		9AF3DC362869C4A3007847E7 /* AcneTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneTypeView.swift; sourceTree = "<group>"; };
 		9AF3DC382869C4E4007847E7 /* SkinCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinCardView.swift; sourceTree = "<group>"; };
 		9AF3DC3A2869C4EC007847E7 /* AcneCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneCardView.swift; sourceTree = "<group>"; };
-		9AF3DC3C2869C4F6007847E7 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		9AF3DC402869C53F007847E7 /* MorningProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningProductView.swift; sourceTree = "<group>"; };
 		9AF3DC432869C563007847E7 /* NightProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightProductsView.swift; sourceTree = "<group>"; };
 		9AF3DC452869C56D007847E7 /* LocalNotifManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifManager.swift; sourceTree = "<group>"; };
@@ -93,6 +97,12 @@
 		9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeView.swift; sourceTree = "<group>"; };
 		9BB4B4FE2866F3470069E86E /* SkinResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinResultView.swift; sourceTree = "<group>"; };
 		CB3DFE8A28981A48002EF675 /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
+		CB4FF13A28991535008D78AC /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		CB4FF13C28991607008D78AC /* OnboardingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItemView.swift; sourceTree = "<group>"; };
+		CB4FF14028991983008D78AC /* String+ToMarkdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ToMarkdown.swift"; sourceTree = "<group>"; };
+		CB4FF14328992168008D78AC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CB4FF14628992762008D78AC /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
+		CB4FF14A28992C27008D78AC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +169,7 @@
 		9BB3780A28634BA0007A3640 /* ACNIFY */ = {
 			isa = PBXGroup;
 			children = (
-				CB3DFE8F28981C13002EF675 /* Intro */,
+				CB4FF14228992154008D78AC /* Login */,
 				CB3DFE8428981889002EF675 /* SkinCareRoutine */,
 				CB3DFE8228981774002EF675 /* Home */,
 				CB3DFE8128981755002EF675 /* AcneJourney */,
@@ -204,6 +214,8 @@
 		CB3DFE7728980F3A002EF675 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CB4FF14528992756008D78AC /* Button */,
+				CB4FF13E2899196B008D78AC /* Extension */,
 				CB3DFE8E28981BBB002EF675 /* Location */,
 				CB3DFE8D28981B41002EF675 /* PopUp */,
 				CB3DFE8C28981AC7002EF675 /* Notification */,
@@ -215,6 +227,7 @@
 		CB3DFE7A28980F81002EF675 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				CB4FF13928991521008D78AC /* ViewModel */,
 				CB3DFE7B28980F9D002EF675 /* View */,
 			);
 			path = Onboarding;
@@ -224,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				9BB3780D28634BA0007A3640 /* OnBoardingView.swift */,
+				CB4FF13C28991607008D78AC /* OnboardingItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,12 +375,61 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
-		CB3DFE8F28981C13002EF675 /* Intro */ = {
+		CB4FF13928991521008D78AC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				9AF3DC3C2869C4F6007847E7 /* IntroView.swift */,
+				CB4FF13A28991535008D78AC /* OnboardingViewModel.swift */,
 			);
-			path = Intro;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB4FF13E2899196B008D78AC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CB4FF13F28991972008D78AC /* Foundation */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CB4FF13F28991972008D78AC /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				CB4FF14028991983008D78AC /* String+ToMarkdown.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		CB4FF14228992154008D78AC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CB4FF14928992B86008D78AC /* ViewModel */,
+				CB4FF14828992B7F008D78AC /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CB4FF14528992756008D78AC /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				CB4FF14628992762008D78AC /* BottomButtonView.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		CB4FF14828992B7F008D78AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB4FF14328992168008D78AC /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB4FF14928992B86008D78AC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB4FF14A28992C27008D78AC /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,17 +569,22 @@
 				9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */,
 				9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */,
 				9AF3DC442869C563007847E7 /* NightProductsView.swift in Sources */,
+				CB4FF13B28991535008D78AC /* OnboardingViewModel.swift in Sources */,
+				CB4FF13D28991607008D78AC /* OnboardingItemView.swift in Sources */,
 				9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */,
 				9AF3DC412869C53F007847E7 /* MorningProductView.swift in Sources */,
 				9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */,
 				9AF3DC372869C4A3007847E7 /* AcneTypeView.swift in Sources */,
+				CB4FF14128991983008D78AC /* String+ToMarkdown.swift in Sources */,
 				9AF3DC392869C4E5007847E7 /* SkinCardView.swift in Sources */,
 				9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */,
 				9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */,
+				CB4FF14B28992C27008D78AC /* LoginViewModel.swift in Sources */,
 				9AF3DC462869C56D007847E7 /* LocalNotifManager.swift in Sources */,
+				CB4FF14428992168008D78AC /* LoginView.swift in Sources */,
 				CB3DFE8B28981A48002EF675 /* PersistanceController.swift in Sources */,
-				9AF3DC3D2869C4F6007847E7 /* IntroView.swift in Sources */,
 				9A747F42286C92FD00683171 /* HistorySheetView.swift in Sources */,
+				CB4FF14728992762008D78AC /* BottomButtonView.swift in Sources */,
 				9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */,
 				9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */,
 				9A747F34286C92A700683171 /* LocationManager.swift in Sources */,

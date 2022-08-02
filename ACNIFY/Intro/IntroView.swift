@@ -7,20 +7,10 @@
 
 import SwiftUI
 struct IntroView : View {
-    @AppStorage("signed_in") var currentUserSignedIn: Bool = false
     
     var body: some View {
-        
         ZStack{
-//
-            if currentUserSignedIn {
-                SkinType()
-                    .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
-                
-            } else {
-                OnBoardingView()
-                    .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
-            }
+           MainPageView()
         }
     }
 }
