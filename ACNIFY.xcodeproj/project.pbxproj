@@ -44,6 +44,7 @@
 		CB4FF14728992762008D78AC /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF14628992762008D78AC /* BottomButtonView.swift */; };
 		CB4FF14B28992C27008D78AC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF14A28992C27008D78AC /* LoginViewModel.swift */; };
 		CB98FB6B2899539600CDF771 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98FB6A2899539600CDF771 /* CloudKit.framework */; };
+		CBBFE872289FC8250064ADF5 /* AcneCareDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBBFE870289FC8250064ADF5 /* AcneCareDB.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		CB3DFE8A28981A48002EF675 /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
 		CB98FB682899538E00CDF771 /* ACNIFY.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ACNIFY.entitlements; sourceTree = "<group>"; };
 		CB98FB6A2899539600CDF771 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		CBBFE871289FC8250064ADF5 /* AcneCare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AcneCare.xcdatamodel; sourceTree = "<group>"; };
 		CB4FF13A28991535008D78AC /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		CB4FF13C28991607008D78AC /* OnboardingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItemView.swift; sourceTree = "<group>"; };
 		CB4FF14028991983008D78AC /* String+ToMarkdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ToMarkdown.swift"; sourceTree = "<group>"; };
@@ -342,18 +344,11 @@
 		CB3DFE8828981A09002EF675 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				CBBFE870289FC8250064ADF5 /* AcneCareDB.xcdatamodeld */,
 				9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */,
-				CB3DFE8928981A16002EF675 /* Model */,
 				CB3DFE8A28981A48002EF675 /* PersistanceController.swift */,
 			);
 			path = CoreData;
-			sourceTree = "<group>";
-		};
-		CB3DFE8928981A16002EF675 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		CB3DFE8C28981AC7002EF675 /* Notification */ = {
@@ -581,6 +576,7 @@
 				9A747F3E286C92EA00683171 /* PopUpNightView.swift in Sources */,
 				9AF3DC482869C576007847E7 /* PopUpMorningView.swift in Sources */,
 				9A747F44286C930700683171 /* HistoryView.swift in Sources */,
+				CBBFE872289FC8250064ADF5 /* AcneCareDB.xcdatamodeld in Sources */,
 				9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */,
 				9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */,
 				9AF3DC442869C563007847E7 /* NightProductsView.swift in Sources */,
@@ -947,6 +943,16 @@
 			);
 			currentVersion = 9A747F48286C933500683171 /* CoreDataNadia.xcdatamodel */;
 			path = CoreDataNadia.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		CBBFE870289FC8250064ADF5 /* AcneCareDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CBBFE871289FC8250064ADF5 /* AcneCare.xcdatamodel */,
+			);
+			currentVersion = CBBFE871289FC8250064ADF5 /* AcneCare.xcdatamodel */;
+			path = AcneCareDB.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

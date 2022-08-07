@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AcneLogProducts" representedClassName="AcneLogProducts" syncable="YES" codeGenerationType="class">
+        <attribute name="acneLogID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="acneLog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AcneLogs" inverseName="products" inverseEntity="AcneLogs"/>
+    </entity>
+    <entity name="AcneLogs" representedClassName="AcneLogs" syncable="YES" codeGenerationType="class">
+        <attribute name="condition" optional="YES" attributeType="String"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="userID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="detailCondition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AcneLogsDetailCondition" inverseName="acneLog" inverseEntity="AcneLogsDetailCondition"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AcneLogProducts" inverseName="acneLog" inverseEntity="AcneLogProducts"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="acneLogs" inverseEntity="User"/>
+    </entity>
+    <entity name="AcneLogsDetailCondition" representedClassName="AcneLogsDetailCondition" syncable="YES" codeGenerationType="class">
+        <attribute name="acneLogID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="attribute" optional="YES"/>
+        <attribute name="attribute1" optional="YES"/>
+        <attribute name="attribute2" optional="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="acneLog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AcneLogs" inverseName="detailCondition" inverseEntity="AcneLogs"/>
+    </entity>
+    <entity name="SkinPersona" representedClassName="SkinPersona" syncable="YES" codeGenerationType="class">
+        <attribute name="acneType" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="skinType" optional="YES" attributeType="String"/>
+        <attribute name="userID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="skinPersona" inverseEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES"/>
+        <relationship name="acneLogs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AcneLogs" inverseName="user" inverseEntity="AcneLogs"/>
+        <relationship name="skinPersona" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SkinPersona" inverseName="user" inverseEntity="SkinPersona"/>
+    </entity>
+    <elements>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="SkinPersona" positionX="-54" positionY="18" width="128" height="119"/>
+        <element name="AcneLogs" positionX="-45" positionY="72" width="128" height="179"/>
+        <element name="AcneLogsDetailCondition" positionX="0" positionY="108" width="128" height="134"/>
+        <element name="AcneLogProducts" positionX="18" positionY="135" width="128" height="89"/>
+    </elements>
+</model>
