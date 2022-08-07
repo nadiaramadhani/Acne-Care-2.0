@@ -45,6 +45,8 @@
 		CB4FF14B28992C27008D78AC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF14A28992C27008D78AC /* LoginViewModel.swift */; };
 		CB98FB6B2899539600CDF771 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98FB6A2899539600CDF771 /* CloudKit.framework */; };
 		CBBFE872289FC8250064ADF5 /* AcneCareDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBBFE870289FC8250064ADF5 /* AcneCareDB.xcdatamodeld */; };
+		CBBFE877289FD5430064ADF5 /* QuizCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFE876289FD5430064ADF5 /* QuizCardView.swift */; };
+		CBBFE879289FDA0B0064ADF5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFE878289FDA0B0064ADF5 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		CB98FB682899538E00CDF771 /* ACNIFY.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ACNIFY.entitlements; sourceTree = "<group>"; };
 		CB98FB6A2899539600CDF771 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CBBFE871289FC8250064ADF5 /* AcneCare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AcneCare.xcdatamodel; sourceTree = "<group>"; };
+		CBBFE876289FD5430064ADF5 /* QuizCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCardView.swift; sourceTree = "<group>"; };
+		CBBFE878289FDA0B0064ADF5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CB4FF13A28991535008D78AC /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		CB4FF13C28991607008D78AC /* OnboardingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItemView.swift; sourceTree = "<group>"; };
 		CB4FF14028991983008D78AC /* String+ToMarkdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ToMarkdown.swift"; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 		CB3DFE7728980F3A002EF675 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CBBFE873289FD5020064ADF5 /* UI */,
 				CB4FF14528992756008D78AC /* Button */,
 				CB4FF13E2899196B008D78AC /* Extension */,
 				CB3DFE8E28981BBB002EF675 /* Location */,
@@ -442,6 +447,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CBBFE873289FD5020064ADF5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CBBFE874289FD50D0064ADF5 /* Views */,
+				CBBFE878289FDA0B0064ADF5 /* Constant.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CBBFE874289FD50D0064ADF5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CBBFE875289FD5240064ADF5 /* Quiz */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CBBFE875289FD5240064ADF5 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				CBBFE876289FD5430064ADF5 /* QuizCardView.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -584,6 +614,7 @@
 				CB4FF13D28991607008D78AC /* OnboardingItemView.swift in Sources */,
 				9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */,
 				9AF3DC412869C53F007847E7 /* MorningProductView.swift in Sources */,
+				CBBFE879289FDA0B0064ADF5 /* Constant.swift in Sources */,
 				9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */,
 				9AF3DC372869C4A3007847E7 /* AcneTypeView.swift in Sources */,
 				CB4FF14128991983008D78AC /* String+ToMarkdown.swift in Sources */,
@@ -596,6 +627,7 @@
 				CB3DFE8B28981A48002EF675 /* PersistanceController.swift in Sources */,
 				9A747F42286C92FD00683171 /* HistorySheetView.swift in Sources */,
 				CB4FF14728992762008D78AC /* BottomButtonView.swift in Sources */,
+				CBBFE877289FD5430064ADF5 /* QuizCardView.swift in Sources */,
 				9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */,
 				9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */,
 				9A747F34286C92A700683171 /* LocationManager.swift in Sources */,

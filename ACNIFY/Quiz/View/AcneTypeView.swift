@@ -62,12 +62,7 @@ struct AcneTypeView: View {
                 
                 GeometryReader { g in
                     
-                    AcneCarousel(width:
-                             
-                                UIScreen.main.bounds.width,
-                             
-                                
-                             page: self.$page, height: g.frame(in: .global).height)
+                   AcneList()
                     
                 }
                 
@@ -94,109 +89,17 @@ struct AcneTypeView: View {
 }
 
 struct AcneList: View {
-    @Binding var page : Int
     var body: some View {
         HStack(spacing: 10){
             ForEach(acneData){ i in
-                
-                AcneCard(page: self.$page, width: UIScreen.main.bounds.width, AcneData: i)
-                
+                QuizCardView(width: UIScreen.main.bounds.width, AcneData: i)
             }
         }
     }
 }
 
-struct AcneCard: View {
-    @Binding var page: Int
-    var width : CGFloat
-    var AcneData: Type
-    var body: some View {
-        VStack{
-            
-            VStack{
-                
-                Text(self.AcneData.title)
-                    .foregroundColor(Color("primaryGreen"))
-                    .font(.system(size: 16))
-                    .fontWeight(.bold)
-                    .padding(.bottom,20)
-        
-                Image(self.AcneData.image)
-                    .resizable()
-                    .frame(width: self.width - (220), height: 165)
-                    
-                
-                Text(self.AcneData.desc)
-                    .font(.system(size: 16))
-                    .padding(.vertical)
-                    .frame(width: 270, height: 120, alignment: .leading)
-        
-            }
-            .padding(.horizontal, 15)
-            .padding(.vertical, 25)
-            .overlay(RoundedRectangle (cornerRadius: 25)
-            .stroke(Color("cream"), lineWidth: 4)
-            )
-            .background(Color("gray"))
-            .cornerRadius(25)
-          
-            Spacer(minLength: 0)
-        }
-    //    .frame(width: 300, height: 350)
-        .frame(width: self.width, height: 500)
-    }
-}
 
-struct AcneCarousel: UIViewRepresentable {
-    func makeCoordinator() -> Coordinator {
-        return AcneCarousel.Coordinator(parent1: self)
-    }
 
-    var width: CGFloat
-    @Binding var page : Int
-    var height: CGFloat
-    
-    func makeUIView(context: Context) -> some UIView {
-        
-        let total = width * CGFloat (acneData.count)
-        let view = UIScrollView()
-        view.isPagingEnabled = true
-        view.contentSize = CGSize(width: total, height: 1.0)
-        view.bounces = true
-        view.showsVerticalScrollIndicator = false
-        view.showsHorizontalScrollIndicator = false
-        view.delegate = context.coordinator
-        let view1 = UIHostingController(rootView: AcneList(page: self.$page))
-        view1.view.frame = CGRect(x: 0, y: 0, width: total, height: self.height)
-        view1.view.backgroundColor = .clear
-    
-        view.addSubview(view1.view)
-        return view
-        
-        
-    }
-    
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        
-    }
-    
-    class Coordinator: NSObject, UIScrollViewDelegate{
-        var parent : AcneCarousel
-        init(parent1: AcneCarousel) {
-            parent = parent1
-        }
-        func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-            
-            let page = Int(scrollView.contentOffset.x / UIScreen.main.bounds.width)
-            
-            self.parent.page = page
-            
-        }
-    }
-
-    
-    
-}
 
 struct AcneType : Identifiable {
     var id: Int
