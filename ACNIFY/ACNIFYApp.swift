@@ -18,6 +18,9 @@ struct ACNIFYApp: App {
     
     @AppStorage("FirstTimeUser") var firstTimeUser: Bool = true
     @AppStorage("signed_in") var currentUserSignedIn: Bool = false
+    @AppStorage("first_quiz") var firstTimeQuiz: Bool = true
+    
+    @State var isQuisPresent = false
     @State var isOnboardingPresented = false
     let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
 
@@ -28,9 +31,13 @@ struct ACNIFYApp: App {
             } else {
                 LoginView()
                 .fullScreenCover(isPresented: $currentUserSignedIn){
-                    SkinType()
+                    
+                    if firstTimeQuiz {
+                        QuizMainView()
+                    } else{
+                    MainPageView()
                         .transition(transition)
-
+                    }
                 }
             }
         }
