@@ -13,30 +13,29 @@
 
 import SwiftUI
 
-struct AcneTypeView1: View {
-    var body: some View {
-        AcneTypeView()
-    }
-}
 
 struct AcneTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        AcneTypeView()
+        AcneTypeView(viewModel: QuizViewModel())
         
     }
 }
 
 struct AcneTypeView: View {
+    @AppStorage("first_quiz") var firstTimeQuiz: Bool = true
+    @ObservedObject var viewModel: QuizViewModel
+    @Environment(\.presentationMode) var presentation
     
-    @State var page = 0
-    @State var skinResultView : Bool = false
+    init(viewModel: QuizViewModel) {
+           UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color("primaryGreen"))
+           UIPageControl.appearance().pageIndicatorTintColor = UIColor(Color("primaryGreen")).withAlphaComponent(0.2)
+        
+            self.viewModel = viewModel
+    }
+    
+
 
     var body: some View {
-        
-        if skinResultView {
-            SkinResultView()
-        } else {
-//            Color.white.edgesIgnoringSafeArea(.all)
             VStack{
               
                     VStack{
@@ -60,20 +59,20 @@ struct AcneTypeView: View {
                     }
                 
                 
-                GeometryReader { g in
-                    
-                   AcneList()
-                    
+                GeometryReader { _ in
+                    QuizTabView(selectedIdx: $viewModel.selectedIndex, data: viewModel.getAcneData())
                 }
                 
-                PageControl(page: self.$page)
                 
                 Button {
-                 //
-                    skinResultView = true
+
+                    if firstTimeQuiz{
+                        UserDefaults.standard.set(false, forKey: "first_quiz")
+
+                    }else{
+                        self.presentation.wrappedValue.dismiss()
+                    }
                     
-                    
-                    //print("tapped")
                 } label: {
                     Text("Choose").foregroundColor(Color.white)
                         .frame(width: 150, height: 50, alignment: .center)
@@ -82,19 +81,25 @@ struct AcneTypeView: View {
 
                     
                 Spacer()
-                
+
             }
-        }
     }
 }
 
-struct AcneList: View {
+struct QuizTabView: View {
+    @Binding var selectedIdx: Int
+    var data : [QuizViewModel.QuizQuestion]
+    
     var body: some View {
-        HStack(spacing: 10){
-            ForEach(acneData){ i in
-                QuizCardView(width: UIScreen.main.bounds.width, AcneData: i)
+        TabView(selection: $selectedIdx){
+            ForEach(0..<data.count){ i in
+                VStack{
+                    QuizCardView(width: UIScreen.main.bounds.width - 100, height: (UIScreen.main.bounds.height / 2), AcneData: data[i])
+                    Spacer()
+                }.tag(i)
             }
-        }
+            
+        } .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
     }
 }
 
@@ -109,13 +114,5 @@ struct AcneType : Identifiable {
     
 }
 
-var acneData = [
 
-Type(id: 0, image: "Papules", title: "Papules", desc: "Small, inflamed lesions presenting as pink, tender"),
-Type(id: 1, image: "Blackhead", title: "Blackhead", desc: "There is small black or yellowish bumps that develop on the skin"),
-Type(id: 2, image: "Whitehead", title: "Whitehead", desc: "There is small lightning yellowish bumps that develop on the skin but firmer and will not be empty when squeezed"),
-Type(id: 3, image: "Pustules", title: "Pustules", desc: "Small, inflamed, tender, usually red at the base, have a white tip in the centre, caused by a build-up of pustules"),
-Type(id: 4, image: "Nodules", title: "Nodules", desc: "Relatively large, spherical, painful lesions located deeper in the skin surface"),
-Type(id: 5, image: "Cysts", title: "Cysts", desc: "Easily inflammed through specific trigger (redness, itching, burning, dryness)")
-]
 

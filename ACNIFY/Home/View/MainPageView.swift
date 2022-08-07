@@ -25,215 +25,169 @@ struct MainPageView: View {
     ]
     @AppStorage("name") var currentUserName: String?
     @AppStorage("signed_in") var currentUserSignedIn: Bool = false
-
-    @State var isDailyRoutineTapped = false
-    @State var updateButton = false
-    @State var skinPersona = false
-    @State var seeHistory = false
+    
     
     var body: some View {
-        if isDailyRoutineTapped{
-            
-            TesterPickerView()
-        }else if updateButton{
-
-          //  withAnimation(TesterPickerView())
-       TesterPickerView()
-        } else if skinPersona {
-            SkinResultView()
-        }else if seeHistory {
-        HistoryView()
-        }
-        else{
-            ZStack{
-                Color("secondaryYellow3rd")
-                    .edgesIgnoringSafeArea(.all)
-                VStack{
-                    
-                    Text("Welcome \(currentUserName ?? "Username")!")
-                    //.font(.title)
-                        .font(.system(size:24, weight:.bold,design: .default))
-                        .italic()
-                        .multilineTextAlignment(.leading)
-                        .foregroundColor(Color("primaryGreen"))
-                        .frame(width: 350, alignment: .leading)
-                        //.padding(.leading, 0)
-                        .padding(.top)
-                    
-                    
-                    
-                    Text("What are you looking for today?")
-                        .frame(width: 350, alignment: .leading)
-                    //                    .font(.title3)
-                        .font(.system(size:17, weight:.thin,design: .default))
-                        //.padding(.leading, 0)
-                        .padding(0)
+        NavigationView{
+ 
+                ZStack{
+                    Color("secondaryYellow3rd")
+                        .edgesIgnoringSafeArea(.all)
+                    VStack{
                         
-                    
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 40)
-                            .fill(Color(.white))
-                        // .frame(width: .infinity, height: 700)
-                            .edgesIgnoringSafeArea(.bottom)
+                        Text("Welcome \(currentUserName ?? "Username")!")
+                            .font(.system(size:24, weight:.bold,design: .default))
+                            .italic()
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(Color("primaryGreen"))
+                            .frame(width: 350, alignment: .leading)
                             .padding(.top)
-                        VStack{
-//                            HStack{
-//                                Image("girlOnHomepage")
-//                                    .padding(.trailing,5)
-//                                VStack{
-//                                    Text("Rahmat")
-//                                        .font(.system(size:14, weight:.thin,design: .default))
-//                                        .padding(.leading,0)
-//                                    Text("Rahmat")
-//                                        .font(.system(size:16, weight:.semibold,design: .default))
-//                                        .padding(.leading,0)
-//                                }
-//                            }
-//                            .padding(.leading,-160)
-                            
-                            Text("Daily Routine")
-                                .font(.system(size:20, weight:.bold,design: .default))
-                                .padding(.leading,-170)
-                                .padding(.top,40)
-                            
-                            Spacer()
-                                .frame(height:0)
-                            
-                            ZStack{
-                                Image("ICard")
-                                    .padding()
-                                    .shadow(color: .gray, radius: 2)
+                        
+                        
+                        
+                        Text("What are you looking for today?")
+                            .frame(width: 350, alignment: .leading)
+                        //                    .font(.title3)
+                            .font(.system(size:17, weight:.thin,design: .default))
+                        //.padding(.leading, 0)
+                            .padding(0)
+                        
+                        
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 40)
+                                .fill(Color(.white))
+                                .edgesIgnoringSafeArea(.bottom)
+                                .padding(.top)
+                            VStack{
                                 
                                 
-                                VStack{
-                                    Text("Skincare Time")
-                                        .font(.system(size: 16))
-                                        .fontWeight(.bold)
-                                        .padding(.trailing, 165)
-                                        
-                                    
-                                    Button(action: {
-                                        withAnimation(.spring()){
-                                            self.updateButton = true}},
-                                           label: {
-                                            Text("Update")
-                                            .font(.system(size:13))
-                                            .fontWeight(.semibold)
-                                            .foregroundColor(.white)
-                                            .padding()
-                                           .frame(width: 80, height: 41)
-
-                                            //.padding(.horizontal,6)
-    //                                        .frame(width: 80, height: 41)
-                                            .background(
-                                                Color("primaryGreen")
-                                                    .cornerRadius(10)
-                                                    .shadow(radius: 5))
-                                          //  .position(x:98, y:113)
-                                    })
-                                        .padding(.trailing,200 )
-                                    
-
-                                }
-                            }
-                           // NavigationLink("", destination: DailyLogRoutine(),
-                                          // isActive: $updateButton)
-                            
-                            
-                            Spacer()
-                                .frame(height:35)
-                            
-                            Text("Skin Information")
-                                .font(.system(size:20, weight:.bold,design: .default))
-                                .padding(.leading,-170)
-                            
-                            
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 20, style:.continuous)
-                                   .frame(width: 340, height: 92)
-                                   .foregroundColor(Color("beige"))
-//                                    .fill(Color("beige"))
-                                    .padding()
-                                    .shadow(color: .brown, radius: 2)
-                                
-                                    
-                                HStack{
-                                    Image("mySkinPersona")
-                                        .padding()
-                                        .padding(.leading, 10)
-                                    
-                                    Text("My Skin Persona")
-                                        .font(.system(size: 16))
-                                        .fontWeight(.bold)
-                                    
-                                        .padding()
-                                    Image("arrow")
-                                        .padding()
-                                        .padding(.trailing, 10)
-                                }
-                               
-    
-                            }
-                                .onTapGesture {
-                                    withAnimation{
-                                        skinPersona = true
-//                                    isDailyRoutineTapped = true
-                                    }
-                                }
-                            //NavigationLink("", destination: onBoardingView(),
-                                           //isActive: $isDailyRoutineTapped)
-                            
-                            
-                            Spacer()
-                                .frame(height:35)
-                            
-                            HStack {
-                                Text("Acne Journey")
+                                Text("Daily Routine")
                                     .font(.system(size:20, weight:.bold,design: .default))
-                             //   .padding(.leading,-170)
+                                    .padding(.leading,-170)
+                                    .padding(.top,40)
                                 
                                 Spacer()
+                                    .frame(height:0)
                                 
-                                Text("See more")
-                                    .font(.system(size: 15))
-                                    .foregroundColor(Color("primaryGreen"))
-                                    .onTapGesture {
-                                        seeHistory = true
+                                
+                                NavigationLink(destination: TesterPickerView().navigationBarHidden(true)){
+                                    ZStack{
+                                        Image("ICard")
+                                            .padding()
+                                            .shadow(color: .gray, radius: 2)
+                                        
+                                        
+                                        VStack{
+                                            Text("Skincare Time")
+                                                .font(.system(size: 16))
+                                                .fontWeight(.bold)
+                                                .padding(.trailing, 165)
+                                            
+                                            
+                                            Button(action: {
+                                                withAnimation(.spring()){
+                                                   }},
+                                                   label: {
+                                                Text("Update")
+                                                    .font(.system(size:13))
+                                                    .fontWeight(.semibold)
+                                                    .foregroundColor(.white)
+                                                    .padding()
+                                                    .frame(width: 80, height: 41)
+                                                    .background(
+                                                        Color("primaryGreen")
+                                                            .cornerRadius(10)
+                                                            .shadow(radius: 5))
+                                            })
+                                            .padding(.trailing,200 )
+                                            
+                                            
+                                        }
+                                    }
+                                }.buttonStyle(.plain)
+                              
+                
+                                
+                                
+                                Spacer()
+                                    .frame(height:35)
+                                
+                                Text("Skin Information")
+                                    .font(.system(size:20, weight:.bold,design: .default))
+                                    .padding(.leading,-170)
+                                
+                                NavigationLink(destination:  SkinResultView()      .navigationBarHidden(true)) {
+                                    ZStack{
+                                        RoundedRectangle(cornerRadius: 20, style:.continuous)
+                                            .frame(width: 340, height: 92)
+                                            .foregroundColor(Color("beige"))
+                                        //                                    .fill(Color("beige"))
+                                            .padding()
+                                            .shadow(color: .brown, radius: 2)
+                                        
+                                        
+                                        HStack{
+                                            Image("mySkinPersona")
+                                                .padding()
+                                                .padding(.leading, 10)
+                                            
+                                            Text("My Skin Persona")
+                                                .font(.system(size: 16))
+                                                .fontWeight(.bold)
+                                            
+                                                .padding()
+                                            Image("arrow")
+                                                .padding()
+                                                .padding(.trailing, 10)
+                                        }
+                                        
                                         
                                     }
-                            }
-                            .padding()
-                            
-                            Spacer()
-                                .frame(height:0)
-                            
-                        
-                            ScrollView(.horizontal){
-                                HStack{
-                                   
-                                    BoxView()
-                                    BoxView()
-                                    BoxView()
-                                    BoxView()
-                                    BoxView()
-                                    BoxView()
-                                   
+                                    
+                                }.buttonStyle(.plain)
+                                
+                                Spacer()
+                                    .frame(height:35)
+                                
+                                HStack {
+                                    Text("Acne Journey")
+                                        .font(.system(size:20, weight:.bold,design: .default))
+                                    //   .padding(.leading,-170)
+                                    
+                                    Spacer()
+                                    
+                                    NavigationLink(destination: HistoryView().navigationBarHidden(true)){
+                                        Text("See more")
+                                            .font(.system(size: 15))
+                                            .foregroundColor(Color("primaryGreen"))
+                                    }
+                                     
                                 }
-                            }.padding(20)
-                        
+                                .padding()
+                                
+                                Spacer()
+                                    .frame(height:0)
+                                
+                                
+                                ScrollView(.horizontal){
+                                    HStack{
+                                        
+                                        BoxView()
+                                        BoxView()
+                                        BoxView()
+                                        BoxView()
+                                        BoxView()
+                                        BoxView()
+                                        
+                                    }
+                                }.padding(20)
+                                
+                            }
                             
-                            
-                            
-                            
-                           
                         }
-                        
                     }
                 }
             }
-        }
-        
-        
     }
 }
 

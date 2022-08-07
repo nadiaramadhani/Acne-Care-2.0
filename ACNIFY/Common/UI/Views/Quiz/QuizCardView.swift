@@ -9,9 +9,10 @@ import SwiftUI
 
 struct QuizCardView: View {
     var width : CGFloat
-    var AcneData: Type
+    var height : CGFloat
+    
+    var AcneData: QuizViewModel.QuizQuestion
     var body: some View {
-        VStack{
             
             VStack{
                 
@@ -21,10 +22,12 @@ struct QuizCardView: View {
                     .fontWeight(.bold)
                     .padding(.bottom,20)
         
+                Spacer()
                 Image(self.AcneData.image)
                     .resizable()
-                    .frame(width: self.width - (220), height: 165)
+                    .frame(width: self.width - (140), height: self.width - (140))
                     
+                Spacer()
                 
                 Text(self.AcneData.desc)
                     .font(.system(size: 16))
@@ -32,6 +35,7 @@ struct QuizCardView: View {
                     .frame(width: 270, height: 120, alignment: .leading)
         
             }
+            .frame(width: self.width, height: self.height)
             .padding(.horizontal, 15)
             .padding(.vertical, 25)
             .overlay(RoundedRectangle (cornerRadius: 25)
@@ -40,17 +44,14 @@ struct QuizCardView: View {
             .background(Color("gray"))
             .cornerRadius(25)
           
-            Spacer(minLength: 0)
+        Spacer()
         }
-    //    .frame(width: 300, height: 350)
-        .frame(width: self.width, height: 500)
-    }
 }
 
 
 
 struct QuizCardView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizCardView(width: 400, AcneData: Type(id: 5, image: "Cysts", title: "Cysts", desc: "Easily inflammed through specific trigger (redness, itching, burning, dryness)"))
+        QuizCardView(width: 300, height: 300, AcneData: QuizViewModel.QuizQuestion(id: 5, image: "Cysts", title: "Cysts", desc: "Easily inflammed through specific trigger (redness, itching, burning, dryness)"))
     }
 }

@@ -56,7 +56,7 @@ struct OnBoardingView: View {
                 if viewModel.tabIndex == (viewModel.onboardingItems.count - 1) {
                     bottomButton
                 }else{
-                    bottomButton.opacity(0.0)
+                    bottomButton.frame(width: 0, height: 0)
                 }
                     
             }
@@ -83,7 +83,5 @@ extension OnBoardingView{
             viewModel.markAsFirstTimeUser()
         }
     }
-
-        
 }
 

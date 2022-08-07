@@ -14,6 +14,9 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @Environment(\.presentationMode) var presentation
+
+    
     var body: some View {
         NavigationView {
             
@@ -82,6 +85,15 @@ struct HistoryView: View {
                 
             }.navigationTitle("My Acne Journey")
                 .navigationBarTitleDisplayMode(.inline)
+                .navigationBarItems(trailing:
+                                        Button(action: {
+                    self.presentation.wrappedValue.dismiss()
+                }) {
+                    Text("Done")
+                    //.fontWeight(.bold)
+                        .foregroundColor(Color("primaryGreen"))
+                }
+                )
                 
     }
 }

@@ -43,6 +43,8 @@
 		CB4FF14428992168008D78AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF14328992168008D78AC /* LoginView.swift */; };
 		CB4FF14728992762008D78AC /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF14628992762008D78AC /* BottomButtonView.swift */; };
 		CB4FF14B28992C27008D78AC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF14A28992C27008D78AC /* LoginViewModel.swift */; };
+		CB8146BB289FED4F007FC63A /* QuizMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8146BA289FED4F007FC63A /* QuizMainView.swift */; };
+		CB8146BD289FEE4C007FC63A /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8146BC289FEE4C007FC63A /* QuizViewModel.swift */; };
 		CB98FB6B2899539600CDF771 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98FB6A2899539600CDF771 /* CloudKit.framework */; };
 		CBBFE872289FC8250064ADF5 /* AcneCareDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBBFE870289FC8250064ADF5 /* AcneCareDB.xcdatamodeld */; };
 		CBBFE877289FD5430064ADF5 /* QuizCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFE876289FD5430064ADF5 /* QuizCardView.swift */; };
@@ -101,17 +103,19 @@
 		9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeView.swift; sourceTree = "<group>"; };
 		9BB4B4FE2866F3470069E86E /* SkinResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinResultView.swift; sourceTree = "<group>"; };
 		CB3DFE8A28981A48002EF675 /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
-		CB98FB682899538E00CDF771 /* ACNIFY.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ACNIFY.entitlements; sourceTree = "<group>"; };
-		CB98FB6A2899539600CDF771 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		CBBFE871289FC8250064ADF5 /* AcneCare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AcneCare.xcdatamodel; sourceTree = "<group>"; };
-		CBBFE876289FD5430064ADF5 /* QuizCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCardView.swift; sourceTree = "<group>"; };
-		CBBFE878289FDA0B0064ADF5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CB4FF13A28991535008D78AC /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		CB4FF13C28991607008D78AC /* OnboardingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItemView.swift; sourceTree = "<group>"; };
 		CB4FF14028991983008D78AC /* String+ToMarkdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ToMarkdown.swift"; sourceTree = "<group>"; };
 		CB4FF14328992168008D78AC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CB4FF14628992762008D78AC /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
 		CB4FF14A28992C27008D78AC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CB8146BA289FED4F007FC63A /* QuizMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMainView.swift; sourceTree = "<group>"; };
+		CB8146BC289FEE4C007FC63A /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		CB98FB682899538E00CDF771 /* ACNIFY.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ACNIFY.entitlements; sourceTree = "<group>"; };
+		CB98FB6A2899539600CDF771 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		CBBFE871289FC8250064ADF5 /* AcneCare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AcneCare.xcdatamodel; sourceTree = "<group>"; };
+		CBBFE876289FD5430064ADF5 /* QuizCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCardView.swift; sourceTree = "<group>"; };
+		CBBFE878289FDA0B0064ADF5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				CB98FB682899538E00CDF771 /* ACNIFY.entitlements */,
-				CB3DFE8F28981C13002EF675 /* Intro */,
 				CB4FF14228992154008D78AC /* Login */,
 				CB3DFE8428981889002EF675 /* SkinCareRoutine */,
 				CB3DFE8228981774002EF675 /* Home */,
@@ -259,6 +262,7 @@
 		CB3DFE7D2898151E002EF675 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				CB8146B9289FED2A007FC63A /* ViewModel */,
 				CB3DFE7E2898153C002EF675 /* View */,
 			);
 			path = Quiz;
@@ -269,6 +273,7 @@
 			children = (
 				9AF3DC362869C4A3007847E7 /* AcneTypeView.swift */,
 				9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */,
+				CB8146BA289FED4F007FC63A /* QuizMainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,6 +444,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CB8146B9289FED2A007FC63A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB8146BC289FEE4C007FC63A /* QuizViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CB98FB692899539600CDF771 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +618,7 @@
 				9BB3780E28634BA0007A3640 /* OnBoardingView.swift in Sources */,
 				9A747F3E286C92EA00683171 /* PopUpNightView.swift in Sources */,
 				9AF3DC482869C576007847E7 /* PopUpMorningView.swift in Sources */,
+				CB8146BD289FEE4C007FC63A /* QuizViewModel.swift in Sources */,
 				9A747F44286C930700683171 /* HistoryView.swift in Sources */,
 				CBBFE872289FC8250064ADF5 /* AcneCareDB.xcdatamodeld in Sources */,
 				9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */,
@@ -619,6 +633,7 @@
 				9AF3DC372869C4A3007847E7 /* AcneTypeView.swift in Sources */,
 				CB4FF14128991983008D78AC /* String+ToMarkdown.swift in Sources */,
 				9AF3DC392869C4E5007847E7 /* SkinCardView.swift in Sources */,
+				CB8146BB289FED4F007FC63A /* QuizMainView.swift in Sources */,
 				9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */,
 				9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */,
 				CB4FF14B28992C27008D78AC /* LoginViewModel.swift in Sources */,

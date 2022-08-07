@@ -11,7 +11,7 @@ struct LoginView: View {
     @State var userName: String = ""
     @State var alertTitle: String = ""
     @State var showingAlert = false
-
+    
    
     
     @ObservedObject var viewModel = LoginViewModel()
