@@ -17,11 +17,11 @@ struct ACNIFYApp: App {
     //   @StateObject private var locationManager = LocationManager()
     
     @AppStorage("FirstTimeUser") var firstTimeUser: Bool = true
-    @AppStorage("signed_in") var currentUserSignedIn: Bool = false
     @AppStorage("first_quiz") var firstTimeQuiz: Bool = true
     
-    @State var isQuisPresent = false
-    @State var isOnboardingPresented = false
+    @ObservedObject var authentificationRepository = AuthenticationDefaultRepository.shared
+    private let skinPersonaRepository = SkinPersonaDefaultRepository()
+    
     let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
 
     var body: some Scene {
@@ -30,9 +30,9 @@ struct ACNIFYApp: App {
                 OnBoardingView()
             } else {
                 LoginView()
-                .fullScreenCover(isPresented: $currentUserSignedIn){
-                    
-                    if firstTimeQuiz {
+                    .fullScreenCover(isPresented: $authentificationRepository.isLogedIn){
+//                        skinPersonaRepository.isFirstQuiz(userID: authentificationRepository.userID ?? "")
+                        if true {
                         QuizMainView()
                     } else{
                     MainPageView()

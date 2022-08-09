@@ -36,6 +36,17 @@
 		9BB3782928634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */; };
 		9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */; };
 		9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FE2866F3470069E86E /* SkinResultView.swift */; };
+		CB3D367628A274C800D9D637 /* SkinPersonaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D367528A274C800D9D637 /* SkinPersonaRepository.swift */; };
+		CB3D367A28A2767C00D9D637 /* UserLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D367928A2767C00D9D637 /* UserLocalDataStore.swift */; };
+		CB3D367C28A2769200D9D637 /* UserDefaultLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D367B28A2769200D9D637 /* UserDefaultLocalDataStore.swift */; };
+		CB3D368028A278C200D9D637 /* AuthLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D367F28A278C200D9D637 /* AuthLocalDataStore.swift */; };
+		CB3D368228A278D600D9D637 /* AuthDefaultLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D368128A278D600D9D637 /* AuthDefaultLocalDataStore.swift */; };
+		CB3D368628A27BE700D9D637 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D368528A27BE700D9D637 /* UserRepository.swift */; };
+		CB3D368828A27C4C00D9D637 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D368728A27C4C00D9D637 /* AuthenticationRepository.swift */; };
+		CB3D368A28A27C5D00D9D637 /* AuthenticationDefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D368928A27C5D00D9D637 /* AuthenticationDefaultRepository.swift */; };
+		CB3D368D28A2839900D9D637 /* SkinPersonaLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D368C28A2839900D9D637 /* SkinPersonaLocalDataStore.swift */; };
+		CB3D368F28A284A700D9D637 /* SkinPersonaDefaultLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D368E28A284A700D9D637 /* SkinPersonaDefaultLocalDataSource.swift */; };
+		CB3D369128A2881900D9D637 /* SkinPersonaDeafultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D369028A2881900D9D637 /* SkinPersonaDeafultRepository.swift */; };
 		CB3DFE8B28981A48002EF675 /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3DFE8A28981A48002EF675 /* PersistanceController.swift */; };
 		CB4FF13B28991535008D78AC /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF13A28991535008D78AC /* OnboardingViewModel.swift */; };
 		CB4FF13D28991607008D78AC /* OnboardingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4FF13C28991607008D78AC /* OnboardingItemView.swift */; };
@@ -102,6 +113,17 @@
 		9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9BB4B4FC2866E2240069E86E /* SkinTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeView.swift; sourceTree = "<group>"; };
 		9BB4B4FE2866F3470069E86E /* SkinResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinResultView.swift; sourceTree = "<group>"; };
+		CB3D367528A274C800D9D637 /* SkinPersonaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinPersonaRepository.swift; sourceTree = "<group>"; };
+		CB3D367928A2767C00D9D637 /* UserLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalDataStore.swift; sourceTree = "<group>"; };
+		CB3D367B28A2769200D9D637 /* UserDefaultLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultLocalDataStore.swift; sourceTree = "<group>"; };
+		CB3D367F28A278C200D9D637 /* AuthLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLocalDataStore.swift; sourceTree = "<group>"; };
+		CB3D368128A278D600D9D637 /* AuthDefaultLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDefaultLocalDataStore.swift; sourceTree = "<group>"; };
+		CB3D368528A27BE700D9D637 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		CB3D368728A27C4C00D9D637 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
+		CB3D368928A27C5D00D9D637 /* AuthenticationDefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDefaultRepository.swift; sourceTree = "<group>"; };
+		CB3D368C28A2839900D9D637 /* SkinPersonaLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinPersonaLocalDataStore.swift; sourceTree = "<group>"; };
+		CB3D368E28A284A700D9D637 /* SkinPersonaDefaultLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinPersonaDefaultLocalDataSource.swift; sourceTree = "<group>"; };
+		CB3D369028A2881900D9D637 /* SkinPersonaDeafultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinPersonaDeafultRepository.swift; sourceTree = "<group>"; };
 		CB3DFE8A28981A48002EF675 /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
 		CB4FF13A28991535008D78AC /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		CB4FF13C28991607008D78AC /* OnboardingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItemView.swift; sourceTree = "<group>"; };
@@ -227,6 +249,71 @@
 			path = ACNIFYUITests;
 			sourceTree = "<group>";
 		};
+		CB3D367328A2747D00D9D637 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CBBFE870289FC8250064ADF5 /* AcneCareDB.xcdatamodeld */,
+				9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB3D367428A2748C00D9D637 /* SkinPersona */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D368B28A2836A00D9D637 /* Local */,
+				CB3D367528A274C800D9D637 /* SkinPersonaRepository.swift */,
+				CB3D369028A2881900D9D637 /* SkinPersonaDeafultRepository.swift */,
+			);
+			path = SkinPersona;
+			sourceTree = "<group>";
+		};
+		CB3D367728A2765500D9D637 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D367828A2766300D9D637 /* Local */,
+				CB3D368528A27BE700D9D637 /* UserRepository.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		CB3D367828A2766300D9D637 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D367928A2767C00D9D637 /* UserLocalDataStore.swift */,
+				CB3D367B28A2769200D9D637 /* UserDefaultLocalDataStore.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		CB3D367D28A2789300D9D637 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D367E28A278A500D9D637 /* Local */,
+				CB3D368728A27C4C00D9D637 /* AuthenticationRepository.swift */,
+				CB3D368928A27C5D00D9D637 /* AuthenticationDefaultRepository.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		CB3D367E28A278A500D9D637 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D367F28A278C200D9D637 /* AuthLocalDataStore.swift */,
+				CB3D368128A278D600D9D637 /* AuthDefaultLocalDataStore.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		CB3D368B28A2836A00D9D637 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				CB3D368C28A2839900D9D637 /* SkinPersonaLocalDataStore.swift */,
+				CB3D368E28A284A700D9D637 /* SkinPersonaDefaultLocalDataSource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		CB3DFE7728980F3A002EF675 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +433,9 @@
 		CB3DFE87289819FF002EF675 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CB3D367D28A2789300D9D637 /* Authentication */,
+				CB3D367728A2765500D9D637 /* User */,
+				CB3D367428A2748C00D9D637 /* SkinPersona */,
 				CB3DFE8828981A09002EF675 /* CoreData */,
 			);
 			path = Data;
@@ -354,8 +444,7 @@
 		CB3DFE8828981A09002EF675 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				CBBFE870289FC8250064ADF5 /* AcneCareDB.xcdatamodeld */,
-				9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */,
+				CB3D367328A2747D00D9D637 /* Model */,
 				CB3DFE8A28981A48002EF675 /* PersistanceController.swift */,
 			);
 			path = CoreData;
@@ -620,16 +709,20 @@
 				9AF3DC482869C576007847E7 /* PopUpMorningView.swift in Sources */,
 				CB8146BD289FEE4C007FC63A /* QuizViewModel.swift in Sources */,
 				9A747F44286C930700683171 /* HistoryView.swift in Sources */,
+				CB3D368A28A27C5D00D9D637 /* AuthenticationDefaultRepository.swift in Sources */,
 				CBBFE872289FC8250064ADF5 /* AcneCareDB.xcdatamodeld in Sources */,
 				9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */,
+				CB3D368D28A2839900D9D637 /* SkinPersonaLocalDataStore.swift in Sources */,
 				9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */,
 				9AF3DC442869C563007847E7 /* NightProductsView.swift in Sources */,
 				CB4FF13B28991535008D78AC /* OnboardingViewModel.swift in Sources */,
+				CB3D368F28A284A700D9D637 /* SkinPersonaDefaultLocalDataSource.swift in Sources */,
 				CB4FF13D28991607008D78AC /* OnboardingItemView.swift in Sources */,
 				9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */,
 				9AF3DC412869C53F007847E7 /* MorningProductView.swift in Sources */,
 				CBBFE879289FDA0B0064ADF5 /* Constant.swift in Sources */,
 				9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */,
+				CB3D368228A278D600D9D637 /* AuthDefaultLocalDataStore.swift in Sources */,
 				9AF3DC372869C4A3007847E7 /* AcneTypeView.swift in Sources */,
 				CB4FF14128991983008D78AC /* String+ToMarkdown.swift in Sources */,
 				9AF3DC392869C4E5007847E7 /* SkinCardView.swift in Sources */,
@@ -640,17 +733,24 @@
 				9AF3DC462869C56D007847E7 /* LocalNotifManager.swift in Sources */,
 				CB4FF14428992168008D78AC /* LoginView.swift in Sources */,
 				CB3DFE8B28981A48002EF675 /* PersistanceController.swift in Sources */,
+				CB3D367628A274C800D9D637 /* SkinPersonaRepository.swift in Sources */,
 				9A747F42286C92FD00683171 /* HistorySheetView.swift in Sources */,
 				CB4FF14728992762008D78AC /* BottomButtonView.swift in Sources */,
 				CBBFE877289FD5430064ADF5 /* QuizCardView.swift in Sources */,
 				9BB4B4FD2866E2240069E86E /* SkinTypeView.swift in Sources */,
+				CB3D367A28A2767C00D9D637 /* UserLocalDataStore.swift in Sources */,
+				CB3D368828A27C4C00D9D637 /* AuthenticationRepository.swift in Sources */,
 				9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */,
+				CB3D369128A2881900D9D637 /* SkinPersonaDeafultRepository.swift in Sources */,
+				CB3D367C28A2769200D9D637 /* UserDefaultLocalDataStore.swift in Sources */,
 				9A747F34286C92A700683171 /* LocationManager.swift in Sources */,
 				9AE804392865246B006493A9 /* MainPageView.swift in Sources */,
 				9AF3DC3B2869C4EC007847E7 /* AcneCardView.swift in Sources */,
 				9AC747CF2867DDFB001C91F8 /* TakePhotosView.swift in Sources */,
+				CB3D368628A27BE700D9D637 /* UserRepository.swift in Sources */,
 				9AF3DC4A2869C588007847E7 /* LocalNotifManager2.swift in Sources */,
 				9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */,
+				CB3D368028A278C200D9D637 /* AuthLocalDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
