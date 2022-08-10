@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class OnboardingViewModel: ObservableObject {
-    @Published var tabIndex: Int = 1
+    @Published var tabIndex: Int = 0
     @Published var onboardingItems: [OnboardingItem]
     
     init(){

@@ -33,7 +33,6 @@ final class AuthenticationDefaultRepository: AuthenticationRepository, Observabl
     }
     
      func login(name: String) -> User? {
-        isLogedIn = true
 
         do {
             guard !name.isEmpty else {return nil}
@@ -47,19 +46,25 @@ final class AuthenticationDefaultRepository: AuthenticationRepository, Observabl
                 
                 guard let userID = newUser.id else{return nil}
                 authDataStore.Login(userID: userID.uuidString)
+                self.userID = userID.uuidString
                 
+                isLogedIn = true
                 return newUser
             }
             
             guard let userID = logedInUser.id else{return nil}
             
             authDataStore.Login(userID: userID.uuidString)
+             
                         
+            isLogedIn = true
+
             return logedInUser
         } catch {
             print(error)
             return nil
         }
+         
     }
     
     func logout() {

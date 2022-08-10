@@ -14,7 +14,7 @@ final class SkinPersonaDefaultLocalDataSource: SkinPersonaLocalDataStore {
     func getSkinPersonasByUserID(id: String) throws -> [SkinPersona]? {
         let fetchRequest = SkinPersona.fetchRequest()
         fetchRequest.predicate =  NSPredicate(format: "userID == %@", id)
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
         
         return try self.container.viewContext.fetch(fetchRequest)
     }

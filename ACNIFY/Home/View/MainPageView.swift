@@ -16,6 +16,8 @@ struct Box {
 
 struct MainPageView: View {
     
+    let viewModel = HomeViewModel()
+    
     let boxes:[Box] = [
         Box(id: 0, title:"12 Juni 2022", imageUrl:"0"),
         Box(id: 1, title:"13 Juni 2022", imageUrl:"0"),
@@ -23,7 +25,6 @@ struct MainPageView: View {
         Box(id: 3, title:"15 Juni 2022", imageUrl:"0"),
         Box(id: 4, title:"16 Juni 2022", imageUrl:"0"),
     ]
-    @AppStorage("name") var currentUserName: String?
     @AppStorage("signed_in") var currentUserSignedIn: Bool = false
     
     
@@ -35,7 +36,7 @@ struct MainPageView: View {
                         .edgesIgnoringSafeArea(.all)
                     VStack{
                         
-                        Text("Welcome \(currentUserName ?? "Username")!")
+                        Text("Welcome \(viewModel.currentUser?.name ?? "Username")!")
                             .font(.system(size:24, weight:.bold,design: .default))
                             .italic()
                             .multilineTextAlignment(.leading)

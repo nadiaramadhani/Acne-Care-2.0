@@ -18,9 +18,10 @@ struct BookmarkItem: Identifiable {
 }
 
 //MARK: DRY SKIN
-struct DrySkinView: View {
+
+struct SkinCardView: View {
     
-    let items: [BookmarkItem] = [.causesDry, .tipsDry]
+    let skinType : QuizViewModel.QuizQuestion
     
     var body: some View {
         
@@ -37,16 +38,16 @@ struct DrySkinView: View {
                 
                 VStack{
                     
-                    Text("Dry")
+                    Text(skinType.title)
                         .font(.system(size: 20))
                         .fontWeight(.bold)
                         .padding(.top, 15)
                         .foregroundColor(Color("primaryGreen"))
                     
                     
-                    Image("skintype2")
+                    Image(skinType.image)
                         .padding()
-                    Text("Feels tight, scaling and flaking, feels itchy")
+                    Text(skinType.desc)
                         .font(.system(size: 13))
                         .frame(width: 280 , height: 100, alignment: .center)
                     
@@ -54,7 +55,7 @@ struct DrySkinView: View {
                 
                 
             }
-            List(items, children: \.items) { row in
+            List(BookmarkItem.getBookmarkBySkinType(skintype: skinType.title), children: \.items) { row in
                 
                 Image(row.icon)
                 //.padding
@@ -65,223 +66,17 @@ struct DrySkinView: View {
     }
 }
 
-//MARK: NORMAL SKIN
-struct NormalSkinView: View {
-    
-    let items: [BookmarkItem] = [.tipsNormal]
-    
-    var body: some View {
-        
-        VStack{
-            ZStack{
-                
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 300, height: 380)
-                    .foregroundColor(Color("gray"))
-                    .shadow(color: .gray, radius: 5)
-                    .overlay(RoundedRectangle (cornerRadius: 25)
-                        .stroke(Color("cream"), lineWidth: 3)
-                    )
-                VStack{
-                    
-                    Text("Normal")
-                        .font(.system(size: 17))
-                        .fontWeight(.bold)
-                        .padding(.top, 15)
-                        .foregroundColor(Color("primaryGreen"))
-                    
-                    Image("skintype1")
-                        .padding()
-                    
-                    Text("No severe sensitivity (no redness), barely visible pores, hydrated ")
-                        .font(.system(size: 13))
-                        .frame(width: 280 , height: 100, alignment: .center)
-                    
-                }
-                
-                
-            }
-            
-            List(items, children: \.items) { row in
-                
-                Image(row.icon)
-                //.padding
-                Text(row.desc)
-                    .font(.system(size: 12))
-                
-            }
-        }
-       
-        
-        
-    }
-}
 
-//MARK: OILY SKIN
 
-struct OilySkinView : View{
-    
-    let items: [BookmarkItem] = [.causesOily,.tipsOily]
-    
-    var body: some View {
-        
-        VStack{
-            ZStack{
-                
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 300, height: 380)
-                    .foregroundColor(Color("gray"))
-                    .shadow(color: .gray, radius: 5)
-                    .overlay(RoundedRectangle (cornerRadius: 25)
-                        .stroke(Color("cream"), lineWidth: 3)
-                    )
-                VStack{
-                    
-                    Text("Oily")
-                        .font(.system(size: 17))
-                        .fontWeight(.bold)
-                        .padding(.top, 15)
-                        .foregroundColor(Color("primaryGreen"))
-                    
-                    Image("skintype3")
-                        .padding()
-                    
-                    Text("Large pores, shiny appearance over the face mostly in T-Zone area")
-                        .font(.system(size: 13))
-                        .frame(width: 280 , height: 100, alignment: .center)
-                    
-                }
-                
-                
-            }
-            
-            List(items, children: \.items) { row in
-                
-                Image(row.icon)
-                //.padding
-                Text(row.desc)
-                    .font(.system(size: 12))
-                
-            }
-        }
-      
-    }
-}
-
-//MARK: COMBINATION SKIN
-struct CombinationSkinView : View {
-    
-    let items: [BookmarkItem] = [.causesCombi, .tipsCombi]
-    
-    var body: some View {
-        
-        VStack{
-            ZStack{
-                
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 300, height: 380)
-                    .foregroundColor(Color("gray"))
-                    .shadow(color: .gray, radius: 5)
-                    .overlay(RoundedRectangle (cornerRadius: 25)
-                        .stroke(Color("cream"), lineWidth: 3)
-                    )
-                VStack{
-                    
-                    Text("Combination")
-                        .font(.system(size: 17))
-                        .fontWeight(.bold)
-                        .padding(.top, 15)
-                        .foregroundColor(Color("primaryGreen"))
-                    
-                    Image("skintype4")
-                        .padding()
-                    
-                    Text("Shiny appearance in T-Zone (forehead, nose and chin) area, cheeks tend to be dry and tight")
-                        .font(.system(size: 13))
-                        .frame(width: 280 , height: 100, alignment: .center)
-                    
-                }
-                
-                
-            }
-            
-            List(items, children: \.items) { row in
-                
-                Image(row.icon)
-                //.padding
-                Text(row.desc)
-                    .font(.system(size: 12))
-                
-            }
-        }
-      
-    }
-}
-//MARK: SENSITIVE SKIN
-struct SensitiveSkinView : View {
-    
-    let items: [BookmarkItem] = [.causesSensi, .tipsSensi]
-    
-    var body: some View {
-        
-        VStack{
-            ZStack{
-                
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 300, height: 380)
-                    .foregroundColor(Color("gray"))
-                    .shadow(color: .gray, radius: 5)
-                    .overlay(RoundedRectangle (cornerRadius: 25)
-                        .stroke(Color("cream"), lineWidth: 3)
-                    )
-                VStack{
-                    
-                    Text("Sensitive")
-                        .font(.system(size: 17))
-                        .fontWeight(.bold)
-                        .padding(.top, 15)
-                        .foregroundColor(Color("primaryGreen"))
-                    
-                    Image("skintype5")
-                        .padding()
-                    
-                    Text("Easily inflammed through specific trigger (redness, itching, burning, dryness)")
-                        .font(.system(size: 13))
-                        .frame(width: 280 , height: 100, alignment: .center)
-                    
-                }
-                
-                
-            }
-            
-            List(items, children: \.items) { row in
-                
-                Image(row.icon)
-                //.padding
-                Text(row.desc)
-                    .font(.system(size: 12))
-                
-            }
-        }
-       
-    }
-}
-
-//MARK: PREVIEW
 
 struct DrySkinView_Previews: PreviewProvider {
     static var previews: some View {
-        CombinationSkinView()
+        SkinCardView(skinType: QuizViewModel.getSkinData().first!)
     }
 }
 
 //MARK: EXTENSION
 extension BookmarkItem {
-    
     
     
     //MARK: DRY SKIN
@@ -374,4 +169,21 @@ extension BookmarkItem {
     static let causesSensi = BookmarkItem(icon: "", desc: "", items: [BookmarkItem.highSensi, BookmarkItem.environmentSensi, BookmarkItem.cosmeticSensi])
     static let tipsSensi = BookmarkItem(icon: "", desc: "", items: [BookmarkItem.sunscreen, BookmarkItem.oralMed, BookmarkItem.topical, BookmarkItem.detergents, BookmarkItem.hypoallergenic, BookmarkItem.testing])
 
+    
+    static func getBookmarkBySkinType(skintype: String) -> [BookmarkItem]{
+        switch skintype {
+        case "Normal":
+            return [.tipsNormal]
+        case "Dry":
+            return [.causesDry, .tipsDry]
+        case "Oily":
+            return [.causesOily,.tipsOily]
+        case "Combination":
+            return [.causesCombi, .tipsCombi]
+        case "Sensitive":
+            return [.causesSensi, .tipsSensi]
+        default:
+            return []
+        }
+    }
 }

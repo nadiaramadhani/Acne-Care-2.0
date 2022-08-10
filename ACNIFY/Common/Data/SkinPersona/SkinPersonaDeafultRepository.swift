@@ -7,7 +7,11 @@
 
 import Foundation
 
-final class SkinPersonaDefaultRepository: SkinPersonaRepository {
+final class SkinPersonaDefaultRepository: SkinPersonaRepository, ObservableObject {
+    
+    static let shared = SkinPersonaDefaultRepository()
+    
+    @Published var isFirstQuiz: Bool = true
     
     private let skinPersonaLocalDataStore: SkinPersonaLocalDataStore
     private let userLocalDataStore: UserLocalDataStore
@@ -18,6 +22,10 @@ final class SkinPersonaDefaultRepository: SkinPersonaRepository {
     ){
         self.skinPersonaLocalDataStore = skinPersonaLocalDataStore
         self.userLocalDataStore = userLocalDataStore
+        
+        if let userID = AuthenticationDefaultRepository.shared.userID {
+            _ = self.isFirstQuiz(userID: userID)
+        }
     }
     
     func getUserSkinPersonas(userID: String) -> [SkinPersona] {
@@ -45,7 +53,11 @@ final class SkinPersonaDefaultRepository: SkinPersonaRepository {
     func isFirstQuiz(userID: String) -> Bool {
        let skinPersonas = self.getUserSkinPersonas(userID: userID)
         
-       return skinPersonas.count > 0
+        if skinPersonas.count != 0 {
+            self.isFirstQuiz = false
+        }
+        
+        return self.isFirstQuiz
     }
     
     

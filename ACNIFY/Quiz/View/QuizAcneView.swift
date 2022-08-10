@@ -17,7 +17,6 @@ import SwiftUI
 struct AcneTypeView_Previews: PreviewProvider {
     static var previews: some View {
         AcneTypeView(viewModel: QuizViewModel())
-        
     }
 }
 
@@ -46,7 +45,7 @@ struct AcneTypeView: View {
                              .foregroundColor(Color("primaryGreen"))
                              .padding(.top, 20)
                          
-                         Text("Question 2 of 2")
+                        Text("Question \(viewModel.selectedIndex + 1) of \(QuizViewModel.getAcneData().count)")
                              .font(.system(size: 12))
 //                             .padding(.top, 10)
                            
@@ -60,18 +59,22 @@ struct AcneTypeView: View {
                 
                 
                 GeometryReader { _ in
-                    QuizTabView(selectedIdx: $viewModel.selectedIndex, data: viewModel.getAcneData())
+                    QuizTabView(selectedIdx: $viewModel.selectedIndex, data: QuizViewModel.getAcneData())
                 }
                 
                 
                 Button {
-
+                    viewModel.pageDisplayed = .Skin
                     if firstTimeQuiz{
                         UserDefaults.standard.set(false, forKey: "first_quiz")
 
                     }else{
                         self.presentation.wrappedValue.dismiss()
                     }
+                    
+                    viewModel.selectedAcneType = QuizViewModel.getAcneData()[viewModel.selectedIndex]
+            
+                    viewModel.saveSkinPersona()
                     
                 } label: {
                     Text("Choose").foregroundColor(Color.white)

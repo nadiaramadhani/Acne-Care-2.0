@@ -12,6 +12,16 @@ class QuizViewModel: ObservableObject {
     @Published var selectedSkinType: QuizViewModel.QuizQuestion?
     @Published var selectedAcneType: QuizViewModel.QuizQuestion?
     @Published var selectedIndex: Int = 0
+    
+    private let skinPersonaRepository: SkinPersonaRepository
+    private let userRepository: UserRepository
+    
+    init(skinPersonaRepository: SkinPersonaRepository = SkinPersonaDefaultRepository(),
+         userRepository: UserRepository = UserDefaultRepository()
+    ){
+        self.skinPersonaRepository = skinPersonaRepository
+        self.userRepository = userRepository
+    }
 }
 
 
@@ -25,8 +35,27 @@ extension QuizViewModel {
         
     }
     
+   
     
-    public func getAcneData() -> [QuizViewModel.QuizQuestion] {
+    func saveSkinPersona() {
+        guard let selectedSkin = self.selectedSkinType else {return}
+       
+        guard let selectedAcne = self.selectedAcneType else {return}
+        
+        guard let logedInUserId = AuthenticationDefaultRepository.shared.userID else {return}
+        
+        let newPersona = skinPersonaRepository.createNewSkinPersona(
+            skinType: selectedSkin.title,
+            acneType: selectedAcne.title,
+            userID: logedInUserId
+        )
+        
+        userRepository.addNewUserSkinPersona(id: newPersona.userID!.uuidString, skinPersona: newPersona)
+        _ = SkinPersonaDefaultRepository.shared.isFirstQuiz(userID: logedInUserId)
+
+    }
+    
+    public static func getAcneData() -> [QuizViewModel.QuizQuestion] {
         return [
             QuizViewModel.QuizQuestion(id: 0, image: "Papules", title: "Papules", desc: "Small, inflamed lesions presenting as pink, tender"),
             QuizViewModel.QuizQuestion(id: 1, image: "Blackhead", title: "Blackhead", desc: "There is small black or yellowish bumps that develop on the skin"),
@@ -38,7 +67,7 @@ extension QuizViewModel {
     }
     
     
-    public func getSkinData() -> [QuizViewModel.QuizQuestion] {
+    public static func getSkinData() -> [QuizViewModel.QuizQuestion] {
         return [
             QuizViewModel.QuizQuestion(id: 0, image: "skintype1", title: "Normal", desc: "No severe sensitivity, barely visible pores, hydrated"),
             QuizViewModel.QuizQuestion(id: 1, image: "skintype2", title: "Dry", desc: "Feels tight, scaling and flaking, feels itchy"),

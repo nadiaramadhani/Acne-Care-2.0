@@ -10,20 +10,13 @@ import SwiftUI
 @main
 struct ACNIFYApp: App {
     
-    //DI FILE APP
-    //
-    //ContentView()
-    //.environment(\.managedObjectContext, dataController.container.viewContext)
-    //   @StateObject private var locationManager = LocationManager()
-    
     @AppStorage("FirstTimeUser") var firstTimeUser: Bool = true
-    @AppStorage("first_quiz") var firstTimeQuiz: Bool = true
     
     @ObservedObject var authentificationRepository = AuthenticationDefaultRepository.shared
-    private let skinPersonaRepository = SkinPersonaDefaultRepository()
+    @ObservedObject var skinPersonaRepository = SkinPersonaDefaultRepository.shared
     
     let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
-
+    
     var body: some Scene {
         WindowGroup {
             if firstTimeUser {
@@ -31,15 +24,23 @@ struct ACNIFYApp: App {
             } else {
                 LoginView()
                     .fullScreenCover(isPresented: $authentificationRepository.isLogedIn){
-//                        skinPersonaRepository.isFirstQuiz(userID: authentificationRepository.userID ?? "")
-                        if true {
-                        QuizMainView()
-                    } else{
-                    MainPageView()
-                        .transition(transition)
+                        
+                        if skinPersonaRepository.isFirstQuiz {
+                            QuizMainView()
+                        } else{
+                            MainPageView()
+                                .transition(transition)
+                                .onAppear{
+                                    
+                                    //debug db location
+                                    
+                                    let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+                                    print(paths[0])
+                                }
+                        }
                     }
-                }
             }
+            
         }
     }
 }
