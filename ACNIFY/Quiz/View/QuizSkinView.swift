@@ -46,7 +46,7 @@ struct SkinTypeView: View {
                     .foregroundColor(Color("primaryGreen"))
                     .padding(.top, 20)
                 
-                Text("Question 1 of 2")
+                Text("Question \(viewModel.selectedIndex + 1) of \(QuizViewModel.getSkinData().count)")
                     .font(.system(size: 12))
                 
                 
@@ -59,13 +59,13 @@ struct SkinTypeView: View {
             
             
             GeometryReader { g in
-                QuizTabView(selectedIdx: $viewModel.selectedIndex, data: viewModel.getSkinData())
+                QuizTabView(selectedIdx: $viewModel.selectedIndex, data: QuizViewModel.getSkinData())
             }
             
            
             Button {
                 viewModel.pageDisplayed = .Acne
-                viewModel.selectedAcneType = viewModel.getAcneData()[viewModel.selectedIndex]
+                viewModel.selectedSkinType = QuizViewModel.getSkinData()[viewModel.selectedIndex]
                 viewModel.selectedIndex = 0
             } label: {
                 Text("Choose").foregroundColor(Color.white)

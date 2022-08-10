@@ -10,36 +10,37 @@ import SwiftUI
 @main
 struct ACNIFYApp: App {
     
-    //DI FILE APP
-    //
-    //ContentView()
-    //.environment(\.managedObjectContext, dataController.container.viewContext)
-    //   @StateObject private var locationManager = LocationManager()
-    
     @AppStorage("FirstTimeUser") var firstTimeUser: Bool = true
-    @AppStorage("signed_in") var currentUserSignedIn: Bool = false
-    @AppStorage("first_quiz") var firstTimeQuiz: Bool = true
     
-    @State var isQuisPresent = false
-    @State var isOnboardingPresented = false
+    @ObservedObject var authentificationRepository = AuthenticationDefaultRepository.shared
+    @ObservedObject var skinPersonaRepository = SkinPersonaDefaultRepository.shared
+    
     let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
-
+    
     var body: some Scene {
         WindowGroup {
             if firstTimeUser {
                 OnBoardingView()
             } else {
                 LoginView()
-                .fullScreenCover(isPresented: $currentUserSignedIn){
-                    
-                    if firstTimeQuiz {
-                        QuizMainView()
-                    } else{
-                    MainPageView()
-                        .transition(transition)
+                    .fullScreenCover(isPresented: $authentificationRepository.isLogedIn){
+                        
+                        if skinPersonaRepository.isFirstQuiz {
+                            QuizMainView()
+                        } else{
+                            MainPageView()
+                                .transition(transition)
+                                .onAppear{
+                                    
+                                    //debug db location
+                                    
+                                    let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+                                    print(paths[0])
+                                }
+                        }
                     }
-                }
             }
+            
         }
     }
 }

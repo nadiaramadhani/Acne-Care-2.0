@@ -10,12 +10,13 @@ import SwiftUI
 
 
 class LoginViewModel: ObservableObject {
-    @AppStorage("name") var currentUserName: String?
-    @AppStorage("signed_in") var currentUserSignedIn: Bool = false
+    private var authentificationRepository: AuthenticationRepository
     
+    init(authentificationRepository: AuthenticationRepository = AuthenticationDefaultRepository.shared){
+        self.authentificationRepository = authentificationRepository
+    }
     
     func setLoginUser(for username: String){
-        currentUserName = username
-        currentUserSignedIn = true
+        let _ = authentificationRepository.login(name: username)
     }
 }

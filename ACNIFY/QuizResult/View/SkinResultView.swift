@@ -18,6 +18,8 @@ import SwiftUI
 struct SkinResultView: View {
     @State private var selected = 1
     @Environment(\.presentationMode) var presentation
+    
+    @ObservedObject var viewModel = QuizResultViewModel()
 
     var body: some View {
             NavigationView{
@@ -35,15 +37,13 @@ struct SkinResultView: View {
                     
                     
                     if selected == 1 {
-                        if true {
-                            OilySkinView()
-                            
-                        } else {
-                            NormalSkinView()
+                        if let skinType = viewModel.skinType {
+                            SkinCardView(skinType: skinType)
                         }
-                        
                     } else if selected == 2 {
-                        PapulesView()
+                        if let acneType = viewModel.acneType {
+                            AcneCardView(acneType: acneType)
+                        }
                     }
                     
                     NavigationLink(destination: QuizMainView().navigationBarHidden(true)){

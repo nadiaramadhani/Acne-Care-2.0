@@ -15,310 +15,63 @@ struct BookmarkAcne: Identifiable {
     
 }
 
+struct AcneCardView: View {
+    
+    let acneType : QuizViewModel.QuizQuestion
+    
+    var body: some View {
+        
+        VStack{
+            ZStack{
+                
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 300, height: 380)
+                    .foregroundColor(Color("gray"))
+                    .shadow(color: .gray, radius: 5)
+                    .overlay(RoundedRectangle (cornerRadius: 25)
+                        .stroke(Color("cream"), lineWidth: 3)
+                    )
+                
+                VStack{
+                    
+                    Text(acneType.title)
+                        .font(.system(size: 20))
+                        .fontWeight(.bold)
+                        .padding(.top, 15)
+                        .foregroundColor(Color("primaryGreen"))
+                    
+                    
+                    Image(acneType.image)
+                        .padding()
+                    Text(acneType.desc)
+                        .font(.system(size: 13))
+                        .frame(width: 280 , height: 100, alignment: .center)
+                    
+                }
+                
+                
+            }
+            List(BookmarkAcne.getBookmarkByAcneType(skintype: acneType.title), children: \.items) { row in
+                
+                Image(row.icon)
+                //.padding
+                Text(row.desc)
+                    .font(.system(size: 12))
+            }
+        }
+    }
+}
+
 
 
 struct PapulesView_Previews: PreviewProvider {
     static var previews: some View {
-        CystsView()
+        AcneCardView(acneType:  QuizViewModel.getAcneData().first!)
     }
 }
 
 
-// MARK: PAPULES VIEW
-struct PapulesView: View {
-    
-    let items: [BookmarkAcne] = [.tipsPapules, .toAvoidAcne, .ingredientsAcne]
-    
-    var body: some View {
-        
-        VStack{
-            ZStack{
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 300, height: 380)
-                    .foregroundColor(Color("gray"))
-                    .shadow(color: .gray, radius: 5)
-                    .overlay(RoundedRectangle (cornerRadius: 25)
-                        .stroke(Color("cream"), lineWidth: 3)
-                    )
-                
-                VStack{
-                    
-                    Text("Papules")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
-                        .padding(.top, 15)
-                        .foregroundColor(Color("primaryGreen"))
-                    
-                    
-                    Image("Papules")
-                        .padding()
-                    Text("Small, inflamed lesions presenting as pink, tender")
-                        .font(.system(size: 13))
-                        .frame(width: 280 , height: 100, alignment: .center)
-                    
-                }
-                
-                
-            }
-            List(items, children: \.items) { row in
-                
-                Image(row.icon)
-                //.padding
-                Text(row.desc)
-                    .font(.system(size: 12))
-            }
-        }
-       
-    }
-}
-//MARK: BLACKHEAD VIEW
-struct BlackheadView : View {
-    
-    let items: [BookmarkAcne] = [.tipsBlackhead, .toAvoidAcne, .ingredientsAcne]
-    
-    var body: some View {
-        
-        VStack{
-            ZStack{
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 300, height: 380)
-                    .foregroundColor(Color("gray"))
-                    .shadow(color: .gray, radius: 5)
-                    .overlay(RoundedRectangle (cornerRadius: 25)
-                        .stroke(Color("cream"), lineWidth: 3)
-                    )
-                
-                VStack{
-                    
-                    Text("Blackhead")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
-                        .padding(.top, 15)
-                        .foregroundColor(Color("primaryGreen"))
-                    
-                    
-                    Image("Blackhead")
-                        .padding()
-                    Text("There is small black or yellowish bumps that develop on the skin")
-                        .font(.system(size: 13))
-                        .frame(width: 280 , height: 100, alignment: .center)
-                    
-                }
-                
-                
-            }
-            List(items, children: \.items) { row in
-                
-                Image(row.icon)
-                //.padding
-                Text(row.desc)
-                    .font(.system(size: 12))
-            }
-        }
-      
-    }
-}
 
-//MARK: WHITEHEAD VIEW
-struct WhiteheadView: View {
-    
-    let items: [BookmarkAcne] = [.tipsWhitehead, .toAvoidAcne, .ingredientsAcne]
-    
-    var body: some View {
-        
-        VStack{
-            ZStack{
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 300, height: 380)
-                    .foregroundColor(Color("gray"))
-                    .shadow(color: .gray, radius: 5)
-                    .overlay(RoundedRectangle (cornerRadius: 25)
-                        .stroke(Color("cream"), lineWidth: 3)
-                    )
-                
-                VStack{
-                    
-                    Text("Whitehead")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
-                        .padding(.top, 15)
-                        .foregroundColor(Color("primaryGreen"))
-                    
-                    
-                    Image("Whitehead")
-                        .padding()
-                    Text("There is small lightning yellowish bumps that develop on the skin but firmer and will not be empty when squeezed")
-                        .font(.system(size: 13))
-                        .frame(width: 280 , height: 100, alignment: .center)
-                    
-                }
-                
-                
-            }
-            List(items, children: \.items) { row in
-                
-                Image(row.icon)
-                //.padding
-                Text(row.desc)
-                    .font(.system(size: 12))
-            }
-        }
-      
-    }
-}
-
-//MARK: PUSTULES VIEW
-struct PustulesView: View {
-    
-    let items: [BookmarkAcne] = [.tipsPustules, .toAvoidAcne, .ingredientsAcne]
-    
-    var body: some View {
-        
-        VStack{
-            ZStack{
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 300, height: 380)
-                    .foregroundColor(Color("gray"))
-                    .shadow(color: .gray, radius: 5)
-                    .overlay(RoundedRectangle (cornerRadius: 25)
-                        .stroke(Color("cream"), lineWidth: 3)
-                    )
-                
-                VStack{
-                    
-                    Text("Pustules")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
-                        .padding(.top, 15)
-                        .foregroundColor(Color("primaryGreen"))
-                    
-                    
-                    Image("Pustules")
-                        .padding()
-                    Text("Small, inflamed, tender, usually red at the base, have a white tip in the centre, caused by a build-up of pustule")
-                        .font(.system(size: 13))
-                        .frame(width: 280 , height: 100, alignment: .center)
-                    
-                }
-                
-                
-            }
-            List(items, children: \.items) { row in
-                
-                Image(row.icon)
-                //.padding
-                Text(row.desc)
-                    .font(.system(size: 12))
-            }
-        }
-      
-    }
-}
-
-
-//MARK: NODULES VIEW
-struct NodulesView : View {
-    
-    let items: [BookmarkAcne] = [.tipsNodules, .toAvoidAcne, .ingredientsAcne]
-    
-    var body: some View {
-        
-        VStack{
-            ZStack{
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 300, height: 380)
-                    .foregroundColor(Color("gray"))
-                    .shadow(color: .gray, radius: 5)
-                    .overlay(RoundedRectangle (cornerRadius: 25)
-                        .stroke(Color("cream"), lineWidth: 3)
-                    )
-                
-                VStack{
-                    
-                    Text("Nodules")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
-                        .padding(.top, 15)
-                        .foregroundColor(Color("primaryGreen"))
-                    
-                    
-                    Image("Nodules")
-                        .padding()
-                    Text("Relatively large, spherical, painful lesions located deeper in the skin surface")
-                        .font(.system(size: 13))
-                        .frame(width: 280 , height: 100, alignment: .center)
-                    
-                }
-                
-                
-            }
-            List(items, children: \.items) { row in
-                
-                Image(row.icon)
-                //.padding
-                Text(row.desc)
-                    .font(.system(size: 12))
-            }
-        }
-      
-    }
-}
-
-
-//MARK: CYSTS VIEW
-
-struct CystsView: View {
-    
-    let items: [BookmarkAcne] = [.tipsCysts, .toAvoidAcne, .ingredientsAcne]
-    
-    var body: some View {
-        
-        VStack{
-            ZStack{
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(width: 300, height: 380)
-                    .foregroundColor(Color("gray"))
-                    .shadow(color: .gray, radius: 5)
-                    .overlay(RoundedRectangle (cornerRadius: 25)
-                        .stroke(Color("cream"), lineWidth: 3)
-                    )
-                
-                VStack{
-                    
-                    Text("Nodules")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
-                        .padding(.top, 15)
-                        .foregroundColor(Color("primaryGreen"))
-                    
-                    
-                    Image("Nodules")
-                        .padding()
-                    Text("Relatively large, spherical, painful lesions located deeper in the skin surface")
-                        .font(.system(size: 13))
-                        .frame(width: 280 , height: 100, alignment: .center)
-                    
-                }
-                
-                
-            }
-            List(items, children: \.items) { row in
-                
-                Image(row.icon)
-                //.padding
-                Text(row.desc)
-                    .font(.system(size: 12))
-            }
-        }
-      
-    }
-}
 extension BookmarkAcne {
     
     
@@ -383,5 +136,27 @@ extension BookmarkAcne {
     static let tipsWhitehead = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.oil, BookmarkAcne.manual, BookmarkAcne.salicylic, BookmarkAcne.warning])
     static let tipsPustules = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.topical, BookmarkAcne.benzoyl, BookmarkAcne.warning])
     static let tipsNodules = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.antibiotic, BookmarkAcne.benzoyl, BookmarkAcne.retinoid, BookmarkAcne.warning])
-    static let tipsCysts = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.irritation, BookmarkAcne.surgical, BookmarkAcne.aspirate, BookmarkAcne.stay, BookmarkAcne.dont, BookmarkAcne.warning])}
+    static let tipsCysts = BookmarkAcne(icon: "", desc: "Tips", items: [BookmarkAcne.irritation, BookmarkAcne.surgical, BookmarkAcne.aspirate, BookmarkAcne.stay, BookmarkAcne.dont, BookmarkAcne.warning])
+    
+    
+    static func getBookmarkByAcneType(skintype: String) -> [BookmarkAcne]{
+        switch skintype {
+        case "Papules":
+            return [.tipsPapules, .toAvoidAcne, .ingredientsAcne]
+        case "Blackhead":
+            return [.tipsBlackhead, .toAvoidAcne, .ingredientsAcne]
+        case "Whitehead":
+            return [.tipsWhitehead, .toAvoidAcne, .ingredientsAcne]
+        case "Pustules":
+            return [.tipsPustules, .toAvoidAcne, .ingredientsAcne]
+        case "Nodules":
+            return [.tipsNodules, .toAvoidAcne, .ingredientsAcne]
+        case "Cysts":
+            return [.tipsCysts, .toAvoidAcne, .ingredientsAcne]
+        default:
+            return []
+        }
+    }
+    
+}
 

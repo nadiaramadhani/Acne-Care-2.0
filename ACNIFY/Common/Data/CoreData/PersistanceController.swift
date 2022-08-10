@@ -14,7 +14,7 @@ struct PersistenceController {
 
     init(_ storageType: StorageType = .persistent) {
 
-        container = NSPersistentContainer(name: "CoreDataNadia")
+        container = NSPersistentContainer(name: "AcneCareDB")
 
         if storageType == .inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
