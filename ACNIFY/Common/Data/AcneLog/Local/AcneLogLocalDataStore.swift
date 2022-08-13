@@ -7,7 +7,9 @@
 
 import Foundation
 
-protocol AcneLogsLocalDataStore {
-    func getAcneLogsByUserID(userId: String) throws -> [AcneLog]?
+protocol AcneLogLocalDataStore {
+    func getAcneLogsByUserID(userID: String) throws -> [AcneLog]?
     func createNewAcneLog() -> AcneLog
+    func saveChanges()
+    func rollBack()
 }

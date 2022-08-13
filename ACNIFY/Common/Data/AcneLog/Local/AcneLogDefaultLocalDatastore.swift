@@ -8,13 +8,13 @@
 import Foundation
 
 
-final class AcneLogsDefaultLocalDatastore: AcneLogsLocalDataStore {
-    
+final class AcneLogDefaultLocalDataStore: AcneLogLocalDataStore {
+ 
     private let container = PersistenceController.shared.container
     
-    func getAcneLogsByUserID(userId: String) throws -> [AcneLog]? {
+    func getAcneLogsByUserID(userID: String) throws -> [AcneLog]? {
         let fetchRequest = AcneLog.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", userId)
+        fetchRequest.predicate = NSPredicate(format: "userID == %@", userID)
         
         return try self.container.viewContext.fetch(fetchRequest)
     }
@@ -26,6 +26,13 @@ final class AcneLogsDefaultLocalDatastore: AcneLogsLocalDataStore {
         
         return newAcneLog
     }
+  
+    func saveChanges() {
+        try? self.container.viewContext.save()
+    }
     
+    func rollBack() {
+        self.container.viewContext.rollback()
+    }
     
 }

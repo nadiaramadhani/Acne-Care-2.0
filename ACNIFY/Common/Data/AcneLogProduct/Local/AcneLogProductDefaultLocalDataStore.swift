@@ -17,4 +17,19 @@ final class AcneLogProductDefaultLocalDataStore: AcneLogProductLocalDataStore {
         newAcneLogProduct.id = UUID.init()
         return newAcneLogProduct
     }
+    
+    func getAllProductByUserID(userID: String) throws -> [AcneLogProduct]? {
+        let fetchRequest = AcneLogProduct.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "userID == %@", userID)
+        
+        return try self.container.viewContext.fetch(fetchRequest)
+    }
+    
+    func saveChanges() {
+        try? self.container.viewContext.save()
+    }
+    
+    func rollBack() {
+        self.container.viewContext.rollback()
+    }
 }
