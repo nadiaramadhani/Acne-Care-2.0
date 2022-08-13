@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HomeViewModel: ObservableObject {
+final class HomeViewModel: ObservableObject {
     @Published var currentUser: User?
     
     private let userRepository: UserRepository

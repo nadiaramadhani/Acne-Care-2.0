@@ -7,7 +7,7 @@
 
 import Foundation
 
-class QuizViewModel: ObservableObject {
+final class QuizViewModel: ObservableObject {
     @Published var pageDisplayed : QuizMainView.QuizType = .Skin
     @Published var selectedSkinType: QuizViewModel.QuizQuestion?
     @Published var selectedAcneType: QuizViewModel.QuizQuestion?

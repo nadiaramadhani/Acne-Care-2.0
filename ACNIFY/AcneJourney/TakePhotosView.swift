@@ -23,7 +23,7 @@ struct TakePhotos_Previews: PreviewProvider {
 struct CameraView: View{
     
     @StateObject var camera = CameraModel()
-    @State var isPhotoPreview = false
+    @State var isPhotoPreview = true
     
     @Environment (\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var skins: FetchedResults<UpdateEntity>
@@ -214,34 +214,6 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
                 self.session.commitConfiguration()
                 
             }
-            
-            //            let device = AVCaptureDevice.default(.builtInDualCamera,
-            //                for: .video, position: .back)
-            
-            // let device = AVCaptureDevice.default(for: .video, po )
-            //device.position = .front
-            
-            
-            
-            
-            
-            //            let input = try AVCaptureDeviceInput(device:
-            //            device!)
-            //
-            //            // checking and adding to session
-            //            if self.session.canAddInput(input){
-            //                self.session.addInput(input)
-            //            }
-            //
-            //            //same for output
-            //
-            //            if self.session.canAddOutput(self.output){
-            //                self.session.addOutput(self.output)
-            //            }
-            //
-            //            self.session.commitConfiguration()
-            
-            
         }
         catch{
             print(error.localizedDescription)

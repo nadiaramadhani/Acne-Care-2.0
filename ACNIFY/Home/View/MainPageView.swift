@@ -71,7 +71,7 @@ struct MainPageView: View {
                                     .frame(height:0)
                                 
                                 
-                                NavigationLink(destination: TesterPickerView().navigationBarHidden(true)){
+                                
                                     ZStack{
                                         Image("ICard")
                                             .padding()
@@ -85,10 +85,7 @@ struct MainPageView: View {
                                                 .padding(.trailing, 165)
                                             
                                             
-                                            Button(action: {
-                                                withAnimation(.spring()){
-                                                   }},
-                                                   label: {
+                                            NavigationLink(destination: TesterPickerView().navigationBarHidden(true)){
                                                 Text("Update")
                                                     .font(.system(size:13))
                                                     .fontWeight(.semibold)
@@ -99,15 +96,10 @@ struct MainPageView: View {
                                                         Color("primaryGreen")
                                                             .cornerRadius(10)
                                                             .shadow(radius: 5))
-                                            })
-                                            .padding(.trailing,200 )
-                                            
-                                            
+                                                    .padding(.trailing,200 )
+                                            }.buttonStyle(.plain)
                                         }
                                     }
-                                }.buttonStyle(.plain)
-                              
-                
                                 
                                 
                                 Spacer()
