@@ -13,13 +13,11 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="acneLogs" inverseEntity="User"/>
     </entity>
     <entity name="AcneLogProduct" representedClassName="AcneLogProduct" syncable="YES" codeGenerationType="class">
+        <attribute name="acneLogID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="isUsed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="productDetailID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="userID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="acneLog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AcneLog" inverseName="acneLogProducts" inverseEntity="AcneLog"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="products" inverseEntity="User"/>
     </entity>
     <entity name="AcneLogsDetailCondition" representedClassName="AcneLogsDetailCondition" syncable="YES" codeGenerationType="class">
         <attribute name="acneLogID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -40,14 +38,23 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="acneLogs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AcneLog" inverseName="user" inverseEntity="AcneLog"/>
-        <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AcneLogProduct" inverseName="user" inverseEntity="AcneLogProduct"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserProduct" inverseName="user" inverseEntity="UserProduct"/>
         <relationship name="skinPersona" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SkinPersona" inverseName="user" inverseEntity="SkinPersona"/>
     </entity>
+    <entity name="UserProduct" representedClassName="UserProduct" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isUsed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="userID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="products" inverseEntity="User"/>
+    </entity>
     <elements>
-        <element name="AcneLogProduct" positionX="18" positionY="135" width="128" height="134"/>
         <element name="AcneLog" positionX="-45" positionY="72" width="128" height="179"/>
+        <element name="AcneLogProduct" positionX="18" positionY="135" width="128" height="104"/>
         <element name="AcneLogsDetailCondition" positionX="0" positionY="108" width="128" height="89"/>
         <element name="SkinPersona" positionX="-54" positionY="18" width="128" height="119"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="UserProduct" positionX="-27" positionY="108" width="128" height="119"/>
     </elements>
 </model>

@@ -8,8 +8,8 @@
 import Foundation
 
 protocol AcneLogProductLocalDataStore {
-    func createNewAcneLogProduct() -> AcneLogProduct
-    func getAllProductByUserID(userID: String) throws -> [AcneLogProduct]?
+    func createNewAcneLogProduct() -> UserProduct
+    func getAllProductByUserID(userID: String) throws -> [UserProduct]?
     func saveChanges()
     func rollBack()
 }

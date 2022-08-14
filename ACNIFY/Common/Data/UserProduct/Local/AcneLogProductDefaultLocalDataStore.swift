@@ -11,15 +11,15 @@ import Foundation
 final class AcneLogProductDefaultLocalDataStore: AcneLogProductLocalDataStore {
     private let container = PersistenceController.shared.container
 
-    func createNewAcneLogProduct() -> AcneLogProduct {
-        let newAcneLogProduct = AcneLogProduct(context: container.viewContext)
+    func createNewAcneLogProduct() -> UserProduct {
+        let newAcneLogProduct = UserProduct(context: container.viewContext)
         
         newAcneLogProduct.id = UUID.init()
         return newAcneLogProduct
     }
     
-    func getAllProductByUserID(userID: String) throws -> [AcneLogProduct]? {
-        let fetchRequest = AcneLogProduct.fetchRequest()
+    func getAllProductByUserID(userID: String) throws -> [UserProduct]? {
+        let fetchRequest = UserProduct.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "userID == %@", userID)
         
         return try self.container.viewContext.fetch(fetchRequest)

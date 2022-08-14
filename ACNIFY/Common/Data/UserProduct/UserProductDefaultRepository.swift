@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class AcneLogProductDefaultRepository: AcneLogProductRepository {
+final class UserProductDefaultRepository: UserProductRepository {
     
     private let acneLogProductLocalDataSource: AcneLogProductLocalDataStore
     
@@ -15,12 +15,12 @@ final class AcneLogProductDefaultRepository: AcneLogProductRepository {
         self.acneLogProductLocalDataSource = acneLogProductLocalDataSource
     }
     
-    func getAllUsedUserProduct(userID: String) -> [AcneLogProduct] {
+    func getAllUsedUserProduct(userID: String) -> [UserProduct] {
         let usedProducts = self.getAllAcneLogProductsByUserID(userID: userID).filter{$0.isUsed}
         return usedProducts
     }
     
-    func getAllUserProduct(userID: String) -> [AcneLogProduct] {
+    func getAllUserProduct(userID: String) -> [UserProduct] {
         let unlockedProduct = self.getAllAcneLogProductsByUserID(userID: userID)
         return unlockedProduct
     }
@@ -33,7 +33,7 @@ final class AcneLogProductDefaultRepository: AcneLogProductRepository {
         acneLogProductLocalDataSource.rollBack()
     }
     
-    private func getAllAcneLogProductsByUserID(userID: String) -> [AcneLogProduct] {
+    private func getAllAcneLogProductsByUserID(userID: String) -> [UserProduct] {
         do {
             guard let acnelogProducts = try acneLogProductLocalDataSource.getAllProductByUserID(userID: userID) else {return[]}
             

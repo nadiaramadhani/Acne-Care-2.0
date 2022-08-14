@@ -7,9 +7,9 @@
 
 import Foundation
 
-protocol AcneLogProductRepository{
-    func getAllUsedUserProduct(userID: String) -> [AcneLogProduct]
-    func getAllUserProduct(userID: String) -> [AcneLogProduct]
+protocol UserProductRepository{
+    func getAllUsedUserProduct(userID: String) -> [UserProduct]
+    func getAllUserProduct(userID: String) -> [UserProduct]
     func saveChanges()
     func rollBack()
 }
