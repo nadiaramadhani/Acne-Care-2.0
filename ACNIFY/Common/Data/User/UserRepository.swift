@@ -10,4 +10,5 @@ import Foundation
 protocol UserRepository {
     func getUserByID(id: String) -> User?
     func addNewUserSkinPersona(id: String, skinPersona: SkinPersona)
+    func addNewAcneLog(id: String, acneLog: AcneLog)
 }

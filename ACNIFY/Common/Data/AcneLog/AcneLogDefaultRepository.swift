@@ -16,8 +16,15 @@ final class AcneLogDefaultRepository: AcneLogRepository {
         self.acneLogLocalDataStore = acneLogLocalDataStore
     }
     
-    func createNewAcneLog(data: AcneLogData) {
+    func createNewAcneLog(data: AcneLogData) -> AcneLog {
+        let newAcneLog = acneLogLocalDataStore.createNewAcneLog()
         
+        newAcneLog.userID = data.userID
+        newAcneLog.id = UUID.init()
+        newAcneLog.desc = data.description
+        newAcneLog.condition = data.condition
+        
+        return newAcneLog
     }
     
     func getAcneLogsByUserID(userID: String) -> [AcneLog]? {
