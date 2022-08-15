@@ -9,15 +9,31 @@ import Foundation
 
 
 final class AcneLogDefaultRepository: AcneLogRepository {
-    
+  
     private let acneLogLocalDataStore: AcneLogLocalDataStore
+    private let userProductDataStore: UserProductLocalDataStore
+    private let acneLogProductDataStore: AcneLogProductLocalDataSource
     
-    init(acneLogLocalDataStore: AcneLogLocalDataStore = AcneLogDefaultLocalDataStore()){
+    init(
+        acneLogLocalDataStore: AcneLogLocalDataStore = AcneLogDefaultLocalDataStore(),
+        userProductDataStore: UserProductLocalDataStore = UserProductDefaultLocalDataStore(),
+        acneLogProductDataStore: AcneLogProductLocalDataSource = AcneLogProductDefaultLocalDataSource()
+    ){
         self.acneLogLocalDataStore = acneLogLocalDataStore
+        self.userProductDataStore = userProductDataStore
+        self.acneLogProductDataStore = acneLogProductDataStore
     }
     
-    func createNewAcneLog(data: AcneLogData) {
+    
+    func createNewAcneLog(data: AcneLogData) -> AcneLog {
+        let newAcneLog = acneLogLocalDataStore.createNewAcneLog()
         
+        newAcneLog.userID = data.userID
+        newAcneLog.id = UUID.init()
+        newAcneLog.desc = data.description
+        newAcneLog.condition = data.condition
+        
+        return newAcneLog
     }
     
     func getAcneLogsByUserID(userID: String) -> [AcneLog]? {
@@ -31,6 +47,19 @@ final class AcneLogDefaultRepository: AcneLogRepository {
         }
     }
     
+    func addAcneLogUnlockProductsByUserID(userID: String, acneLog: AcneLog) {
+        guard let products = try? userProductDataStore.getAllProductByUserID(userID: AuthenticationDefaultRepository.shared.userID!) else {return}
+        
+        for userProduct in products {
+            let newAcneLogProduct = acneLogProductDataStore.createNewAcneLogProduct()
+            newAcneLogProduct.acneLog = acneLog
+            
+            newAcneLogProduct.acneLogID = acneLog.id
+            newAcneLogProduct.desc = userProduct.desc
+            newAcneLogProduct.name = userProduct.name
+        }
+    }
+    
     func saveChanges() {
         acneLogLocalDataStore.saveChanges()
     }
@@ -38,7 +67,6 @@ final class AcneLogDefaultRepository: AcneLogRepository {
     func rollBack() {
         acneLogLocalDataStore.rollBack()
     }
-    
     
 }
 

@@ -40,8 +40,11 @@
 		CB19349428A3A1B0000DF7CE /* UserDefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19349328A3A1B0000DF7CE /* UserDefaultRepository.swift */; };
 		CB19349728A3CA1D000DF7CE /* QuizResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19349628A3CA1D000DF7CE /* QuizResultViewModel.swift */; };
 		CB1934A928A54629000DF7CE /* AcneLogLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1934A828A54629000DF7CE /* AcneLogLocalDataStore.swift */; };
-		CB1934AD28A5528D000DF7CE /* AcneLogProductLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1934AC28A5528D000DF7CE /* AcneLogProductLocalDataStore.swift */; };
+		CB1934AD28A5528D000DF7CE /* UserProductLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1934AC28A5528D000DF7CE /* UserProductLocalDataStore.swift */; };
 		CB21589428A8AC0A006F2EB7 /* DailyCheckListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21589328A8AC0A006F2EB7 /* DailyCheckListViewModel.swift */; };
+		CB33870128AA0E7E006B839B /* TreatmentPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870028AA0E7E006B839B /* TreatmentPhotoViewModel.swift */; };
+		CB33870528AA1C11006B839B /* AcneLogProductLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870428AA1C11006B839B /* AcneLogProductLocalDataSource.swift */; };
+		CB33870728AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870628AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift */; };
 		CB3D367628A274C800D9D637 /* SkinPersonaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D367528A274C800D9D637 /* SkinPersonaRepository.swift */; };
 		CB3D367A28A2767C00D9D637 /* UserLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D367928A2767C00D9D637 /* UserLocalDataStore.swift */; };
 		CB3D367C28A2769200D9D637 /* UserDefaultLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D367B28A2769200D9D637 /* UserDefaultLocalDataStore.swift */; };
@@ -55,7 +58,7 @@
 		CB3D369128A2881900D9D637 /* SkinPersonaDeafultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3D369028A2881900D9D637 /* SkinPersonaDeafultRepository.swift */; };
 		CB3DFE8B28981A48002EF675 /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3DFE8A28981A48002EF675 /* PersistanceController.swift */; };
 		CB46B6BF28A64430008A74A1 /* AcneLogDefaultLocalDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB46B6BE28A64430008A74A1 /* AcneLogDefaultLocalDatastore.swift */; };
-		CB4F383128A7B32E00D91F0B /* AcneLogProductDefaultLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F383028A7B32E00D91F0B /* AcneLogProductDefaultLocalDataStore.swift */; };
+		CB4F383128A7B32E00D91F0B /* UserProductDefaultLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F383028A7B32E00D91F0B /* UserProductDefaultLocalDataStore.swift */; };
 		CB4F383328A7BA0500D91F0B /* AcneLogRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F383228A7BA0500D91F0B /* AcneLogRepository.swift */; };
 		CB4F383728A7BCCA00D91F0B /* AcneLogDefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F383628A7BCCA00D91F0B /* AcneLogDefaultRepository.swift */; };
 		CB4F383928A7C09100D91F0B /* UserProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F383828A7C09100D91F0B /* UserProductRepository.swift */; };
@@ -128,8 +131,11 @@
 		CB19349328A3A1B0000DF7CE /* UserDefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultRepository.swift; sourceTree = "<group>"; };
 		CB19349628A3CA1D000DF7CE /* QuizResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewModel.swift; sourceTree = "<group>"; };
 		CB1934A828A54629000DF7CE /* AcneLogLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogLocalDataStore.swift; sourceTree = "<group>"; };
-		CB1934AC28A5528D000DF7CE /* AcneLogProductLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductLocalDataStore.swift; sourceTree = "<group>"; };
+		CB1934AC28A5528D000DF7CE /* UserProductLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProductLocalDataStore.swift; sourceTree = "<group>"; };
 		CB21589328A8AC0A006F2EB7 /* DailyCheckListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckListViewModel.swift; sourceTree = "<group>"; };
+		CB33870028AA0E7E006B839B /* TreatmentPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentPhotoViewModel.swift; sourceTree = "<group>"; };
+		CB33870428AA1C11006B839B /* AcneLogProductLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductLocalDataSource.swift; sourceTree = "<group>"; };
+		CB33870628AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductDefaultLocalDataSource.swift; sourceTree = "<group>"; };
 		CB3D367528A274C800D9D637 /* SkinPersonaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinPersonaRepository.swift; sourceTree = "<group>"; };
 		CB3D367928A2767C00D9D637 /* UserLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalDataStore.swift; sourceTree = "<group>"; };
 		CB3D367B28A2769200D9D637 /* UserDefaultLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultLocalDataStore.swift; sourceTree = "<group>"; };
@@ -143,7 +149,7 @@
 		CB3D369028A2881900D9D637 /* SkinPersonaDeafultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinPersonaDeafultRepository.swift; sourceTree = "<group>"; };
 		CB3DFE8A28981A48002EF675 /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
 		CB46B6BE28A64430008A74A1 /* AcneLogDefaultLocalDatastore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogDefaultLocalDatastore.swift; sourceTree = "<group>"; };
-		CB4F383028A7B32E00D91F0B /* AcneLogProductDefaultLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductDefaultLocalDataStore.swift; sourceTree = "<group>"; };
+		CB4F383028A7B32E00D91F0B /* UserProductDefaultLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProductDefaultLocalDataStore.swift; sourceTree = "<group>"; };
 		CB4F383228A7BA0500D91F0B /* AcneLogRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogRepository.swift; sourceTree = "<group>"; };
 		CB4F383628A7BCCA00D91F0B /* AcneLogDefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogDefaultRepository.swift; sourceTree = "<group>"; };
 		CB4F383828A7C09100D91F0B /* UserProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProductRepository.swift; sourceTree = "<group>"; };
@@ -302,8 +308,8 @@
 		CB1934AB28A55279000DF7CE /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				CB1934AC28A5528D000DF7CE /* AcneLogProductLocalDataStore.swift */,
-				CB4F383028A7B32E00D91F0B /* AcneLogProductDefaultLocalDataStore.swift */,
+				CB1934AC28A5528D000DF7CE /* UserProductLocalDataStore.swift */,
+				CB4F383028A7B32E00D91F0B /* UserProductDefaultLocalDataStore.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -314,6 +320,43 @@
 				CB21589328A8AC0A006F2EB7 /* DailyCheckListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB3386FE28AA0E5B006B839B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB33870028AA0E7E006B839B /* TreatmentPhotoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB3386FF28AA0E63006B839B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A747F39286C92D300683171 /* PhotoPreviewView.swift */,
+				9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */,
+				9AC747CE2867DDFB001C91F8 /* TakePhotosView.swift */,
+				9A747F41286C92FD00683171 /* HistorySheetView.swift */,
+				9A747F43286C930700683171 /* HistoryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB33870228AA1BEF006B839B /* AcneLogProduct */ = {
+			isa = PBXGroup;
+			children = (
+				CB33870328AA1BFF006B839B /* Local */,
+			);
+			path = AcneLogProduct;
+			sourceTree = "<group>";
+		};
+		CB33870328AA1BFF006B839B /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				CB33870428AA1C11006B839B /* AcneLogProductLocalDataSource.swift */,
+				CB33870628AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		CB3D367328A2747D00D9D637 /* Model */ = {
@@ -455,11 +498,8 @@
 		CB3DFE8128981755002EF675 /* AcneJourney */ = {
 			isa = PBXGroup;
 			children = (
-				9A747F39286C92D300683171 /* PhotoPreviewView.swift */,
-				9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */,
-				9AC747CE2867DDFB001C91F8 /* TakePhotosView.swift */,
-				9A747F41286C92FD00683171 /* HistorySheetView.swift */,
-				9A747F43286C930700683171 /* HistoryView.swift */,
+				CB3386FE28AA0E5B006B839B /* ViewModel */,
+				CB3386FF28AA0E63006B839B /* View */,
 			);
 			path = AcneJourney;
 			sourceTree = "<group>";
@@ -505,6 +545,7 @@
 		CB3DFE87289819FF002EF675 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CB33870228AA1BEF006B839B /* AcneLogProduct */,
 				CB1934AA28A55268000DF7CE /* UserProduct */,
 				CB1934A628A545FE000DF7CE /* AcneLog */,
 				CB3D367D28A2789300D9D637 /* Authentication */,
@@ -785,8 +826,9 @@
 				CB3D368A28A27C5D00D9D637 /* AuthenticationDefaultRepository.swift in Sources */,
 				CB19349428A3A1B0000DF7CE /* UserDefaultRepository.swift in Sources */,
 				CBBFE872289FC8250064ADF5 /* AcneCareDB.xcdatamodeld in Sources */,
-				CB1934AD28A5528D000DF7CE /* AcneLogProductLocalDataStore.swift in Sources */,
+				CB1934AD28A5528D000DF7CE /* UserProductLocalDataStore.swift in Sources */,
 				9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */,
+				CB33870728AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift in Sources */,
 				CB3D368D28A2839900D9D637 /* SkinPersonaLocalDataStore.swift in Sources */,
 				9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */,
 				9AF3DC442869C563007847E7 /* NightProductsView.swift in Sources */,
@@ -794,7 +836,7 @@
 				CB3D368F28A284A700D9D637 /* SkinPersonaDefaultLocalDataSource.swift in Sources */,
 				CB4FF13D28991607008D78AC /* OnboardingItemView.swift in Sources */,
 				CB19349728A3CA1D000DF7CE /* QuizResultViewModel.swift in Sources */,
-				CB4F383128A7B32E00D91F0B /* AcneLogProductDefaultLocalDataStore.swift in Sources */,
+				CB4F383128A7B32E00D91F0B /* UserProductDefaultLocalDataStore.swift in Sources */,
 				CB46B6BF28A64430008A74A1 /* AcneLogDefaultLocalDatastore.swift in Sources */,
 				9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */,
 				9AF3DC412869C53F007847E7 /* MorningProductView.swift in Sources */,
@@ -806,6 +848,7 @@
 				9AF3DC392869C4E5007847E7 /* SkinCardView.swift in Sources */,
 				CB21589428A8AC0A006F2EB7 /* DailyCheckListViewModel.swift in Sources */,
 				CB8146BB289FED4F007FC63A /* QuizMainView.swift in Sources */,
+				CB33870528AA1C11006B839B /* AcneLogProductLocalDataSource.swift in Sources */,
 				9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */,
 				9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */,
 				CB4FF14B28992C27008D78AC /* LoginViewModel.swift in Sources */,
@@ -819,6 +862,7 @@
 				CBBFE877289FD5430064ADF5 /* QuizCardView.swift in Sources */,
 				CB4F383728A7BCCA00D91F0B /* AcneLogDefaultRepository.swift in Sources */,
 				9BB4B4FD2866E2240069E86E /* QuizSkinView.swift in Sources */,
+				CB33870128AA0E7E006B839B /* TreatmentPhotoViewModel.swift in Sources */,
 				CB3D367A28A2767C00D9D637 /* UserLocalDataStore.swift in Sources */,
 				CB3D368828A27C4C00D9D637 /* AuthenticationRepository.swift in Sources */,
 				9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */,

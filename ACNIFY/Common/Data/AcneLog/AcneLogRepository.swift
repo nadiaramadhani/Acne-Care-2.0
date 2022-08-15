@@ -9,7 +9,8 @@ import Foundation
 
 protocol AcneLogRepository{
     func getAcneLogsByUserID(userID: String) -> [AcneLog]?
-    func createNewAcneLog(data: AcneLogData)
+    func createNewAcneLog(data: AcneLogData) -> AcneLog
+    func addAcneLogUnlockProductsByUserID(userID: String, acneLog: AcneLog)
     func saveChanges()
     func rollBack()
 }
