@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-class LoginViewModel: ObservableObject {
+final class LoginViewModel: ObservableObject {
     private var authentificationRepository: AuthenticationRepository
     
     init(authentificationRepository: AuthenticationRepository = AuthenticationDefaultRepository.shared){

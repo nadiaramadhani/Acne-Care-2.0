@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class OnboardingViewModel: ObservableObject {
+final class OnboardingViewModel: ObservableObject {
     @Published var tabIndex: Int = 0
     @Published var onboardingItems: [OnboardingItem]
     
