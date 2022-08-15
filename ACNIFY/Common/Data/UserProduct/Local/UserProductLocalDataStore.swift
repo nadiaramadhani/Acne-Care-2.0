@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol AcneLogProductLocalDataStore {
+protocol UserProductLocalDataStore {
     func createNewAcneLogProduct() -> UserProduct
     func getAllProductByUserID(userID: String) throws -> [UserProduct]?
     func saveChanges()

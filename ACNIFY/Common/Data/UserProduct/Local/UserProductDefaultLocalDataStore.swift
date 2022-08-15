@@ -8,7 +8,7 @@
 import Foundation
 
 
-final class AcneLogProductDefaultLocalDataStore: AcneLogProductLocalDataStore {
+final class UserProductDefaultLocalDataStore: UserProductLocalDataStore {
     private let container = PersistenceController.shared.container
 
     func createNewAcneLogProduct() -> UserProduct {

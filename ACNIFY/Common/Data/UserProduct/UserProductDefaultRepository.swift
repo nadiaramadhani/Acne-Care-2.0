@@ -9,10 +9,10 @@ import Foundation
 
 final class UserProductDefaultRepository: UserProductRepository {
     
-    private let acneLogProductLocalDataSource: AcneLogProductLocalDataStore
+    private let UserProductLocalDataSource: UserProductLocalDataStore
     
-    init(acneLogProductLocalDataSource: AcneLogProductLocalDataStore = AcneLogProductDefaultLocalDataStore()) {
-        self.acneLogProductLocalDataSource = acneLogProductLocalDataSource
+    init(acneLogProductLocalDataSource: UserProductLocalDataStore = UserProductDefaultLocalDataStore()) {
+        self.UserProductLocalDataSource = acneLogProductLocalDataSource
     }
     
     func getAllUsedUserProduct(userID: String) -> [UserProduct] {
@@ -26,18 +26,18 @@ final class UserProductDefaultRepository: UserProductRepository {
     }
     
     func saveChanges() {
-        acneLogProductLocalDataSource.saveChanges()
+        UserProductLocalDataSource.saveChanges()
     }
     
     func rollBack() {
-        acneLogProductLocalDataSource.rollBack()
+        UserProductLocalDataSource.rollBack()
     }
     
     private func getAllAcneLogProductsByUserID(userID: String) -> [UserProduct] {
         do {
-            guard let acnelogProducts = try acneLogProductLocalDataSource.getAllProductByUserID(userID: userID) else {return[]}
+            guard let products = try UserProductLocalDataSource.getAllProductByUserID(userID: userID) else {return[]}
             
-            return acnelogProducts
+            return products
         }catch{
             print(error)
             return []
