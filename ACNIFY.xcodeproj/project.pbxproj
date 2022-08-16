@@ -24,6 +24,7 @@
 		9AF3DC462869C56D007847E7 /* LocalNotifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC452869C56D007847E7 /* LocalNotifManager.swift */; };
 		9AF3DC482869C576007847E7 /* PopUpMorningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC472869C576007847E7 /* PopUpMorningView.swift */; };
 		9AF3DC4A2869C588007847E7 /* LocalNotifManager2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC492869C588007847E7 /* LocalNotifManager2.swift */; };
+		9B4590B128AB6BDD0083B405 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4590B028AB6BDD0083B405 /* HomePageView.swift */; };
 		9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE128680B1700449BB4 /* CustomPopUp.swift */; };
 		9B86CBE628684CD300449BB4 /* UpdateSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */; };
 		9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE82868A9C600449BB4 /* PopUpModel.swift */; };
@@ -111,6 +112,7 @@
 		9AF3DC452869C56D007847E7 /* LocalNotifManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifManager.swift; sourceTree = "<group>"; };
 		9AF3DC472869C576007847E7 /* PopUpMorningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpMorningView.swift; sourceTree = "<group>"; };
 		9AF3DC492869C588007847E7 /* LocalNotifManager2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifManager2.swift; sourceTree = "<group>"; };
+		9B4590B028AB6BDD0083B405 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		9B86CBE128680B1700449BB4 /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		9B86CBE528684CD300449BB4 /* UpdateSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSkinView.swift; sourceTree = "<group>"; };
 		9B86CBE72868826700449BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				9AE804382865246B006493A9 /* MainPageView.swift */,
+				9B4590B028AB6BDD0083B405 /* HomePageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -822,6 +825,7 @@
 				9A747F3E286C92EA00683171 /* PopUpNightView.swift in Sources */,
 				9AF3DC482869C576007847E7 /* PopUpMorningView.swift in Sources */,
 				CB8146BD289FEE4C007FC63A /* QuizViewModel.swift in Sources */,
+				9B4590B128AB6BDD0083B405 /* HomePageView.swift in Sources */,
 				9A747F44286C930700683171 /* HistoryView.swift in Sources */,
 				CB3D368A28A27C5D00D9D637 /* AuthenticationDefaultRepository.swift in Sources */,
 				CB19349428A3A1B0000DF7CE /* UserDefaultRepository.swift in Sources */,
