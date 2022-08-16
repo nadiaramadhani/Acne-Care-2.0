@@ -17,12 +17,7 @@ struct HomePageView: View {
     var body: some View {
         
         ZStack {
-//            Circle()
-//                .frame(width: 885, height: 885)
-//                .foregroundColor(Color("secondaryYellow3rd"))
-//                .position(x: 247, y: 709)
-//
-//
+
             VStack{
             Image("Oval2")
                     .ignoresSafeArea()
@@ -45,19 +40,26 @@ struct HomePageView: View {
                     
                     Text("It's been 3 weeks keep going!")
                         .padding(.leading)
+
                     Spacer()
                         
                 }
                 .padding(.bottom)
-                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(Color.white)
+                        .frame(width: 370, height: 364)
+                        .shadow(color: .gray, radius: 3)
+                    
                 VStack {
                     
                     Text("Today's Routine")
                         .font(.system(size: 17))
                         .fontWeight(.bold)
-                        .padding(.trailing, 200)
+                        .padding(.trailing, 220)
                     Text("Monday, 15 August")
-                        .padding(.trailing, 185)
+                        .padding(.trailing, 200)
+                        .foregroundColor(.gray)
                     ZStack {
                         
                         Image("dayCard")
@@ -141,6 +143,7 @@ struct HomePageView: View {
                         }
                     }
                     
+                }
                 }
                 Spacer()
                 
