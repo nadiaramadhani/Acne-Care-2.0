@@ -32,6 +32,7 @@ struct morningChooseProduct: View {
     @State private var password: String = ""
     @State private var textEntered = ""
     @State private var showingAlert = false
+    @State private var isLocked = false
     
 
     
@@ -56,7 +57,6 @@ struct morningChooseProduct: View {
             morningChooseProduct()
         }else if isSaveSheet{
             morningChooseProduct()
-            
         }else{
             
             NavigationView{
@@ -204,6 +204,15 @@ struct morningChooseProduct: View {
                                         
                                     }
                                 }
+                                .opacity(isLocked ? 1 : 0.5)
+                                .onTapGesture {
+                                        isLocked.toggle()
+                                        
+                                    }
+                                Toggle("",isOn: $isSelectedOilCleanserMorning)
+                                    .labelsHidden()
+                                    .toggleStyle(NewToggleCheckbox())
+                                    .font(.largeTitle)
                                 
                                 ZStack{
                                     Rectangle()
@@ -562,7 +571,7 @@ struct NewToggleCheckbox: ToggleStyle {
         Button {
             configuration.isOn.toggle()
         } label: {
-            Image(systemName: configuration.isOn ? "checkmark.square": "square")
+            Image(systemName: configuration.isOn ? "lock.open.fill": "lock.fill")
         }
         .tint(Color("primaryGreen")) //atau "primaryGreen"
         
