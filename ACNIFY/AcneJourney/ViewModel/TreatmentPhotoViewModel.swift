@@ -32,10 +32,6 @@ final class TreatmentPhotoViewModel: ObservableObject{
     
     func saveChanges(){
         guard let currentAcneLog = self.acneLog else{return}
-        
-        userRepository.addNewAcneLog(id: currentUserID, acneLog: currentAcneLog)
-        acneLogRepository.addAcneLogUnlockProductsByUserID(userID: currentUserID, acneLog: currentAcneLog)
-        
         acneLogRepository.saveChanges()
     }
     
