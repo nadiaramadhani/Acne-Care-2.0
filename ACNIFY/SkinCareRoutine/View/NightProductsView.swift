@@ -58,6 +58,8 @@ struct NightChooseProduct: View {
                 ZStack{
                     Color(.white)
                         .edgesIgnoringSafeArea(.all)
+                    
+                    
                     VStack {
                         Text("Set Reminder")
                             .font(.system(size:20))

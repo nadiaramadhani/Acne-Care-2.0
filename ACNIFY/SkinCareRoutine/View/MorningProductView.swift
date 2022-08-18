@@ -65,96 +65,17 @@ struct morningChooseProduct: View {
                     Color(.white)
                         .edgesIgnoringSafeArea(.all)
                     
+                    Image ("Oval2")
+                        .edgesIgnoringSafeArea(.all)
+                        .position(x:200, y:110)
+                    
                     
                     VStack {
-                        Text("Set Reminder")
-                            .font(.system(size:20))
-                            .fontWeight(.bold)
-                            .padding(.top,50)
-                            .padding(.leading,-180)
-                        
-                        HStack{
-                            
-                            Toggle("Turn on the Skincare Notification", isOn: $sheetsNotificationMorning)
-                                .sheet(isPresented: $sheetsNotificationMorning, content:{
-                                    NavigationView{
-                                        VStack{
-                                            if lnManagerMorning.isGranted{
-
-                                                GroupBox{
-                                                    DatePicker("Time", selection:$scheduleDate,displayedComponents: [.hourAndMinute])
-                                                    
-                                                    Button("Set Notification"){
-                                                        Task{
-                                                            let dateComponents = Calendar.current.dateComponents([ .hour, .minute], from: scheduleDate)
-                                                            let localNotificationMorning = LocalNotificationMorning(identifier: UUID().uuidString,
-                                                                        title: "Morning Routine Reminder",
-                                                                        body: "Don't forget to do treatment and checklist!",
-                                                                        dateComponents: dateComponents,
-                                                                        repeats: true)
-                                                            await lnManagerMorning.schedule(localNotificationMorning: localNotificationMorning)
-                                                    }
-                                                }
-                                                    .buttonStyle(.bordered)
-                                        }
-
-                                                .frame(width: 300)
-                                                
-
-                                                }
-                                        else{
-
-                                        }
-
-                                        }
-                                        .environmentObject(lnManagerMorning)
-                                        .navigationBarTitle("Reminder")
-                                        .navigationBarTitleDisplayMode(.inline)
-                                        .navigationBarItems(leading:
-                                                                HStack{
-                                            Button(action: {
-                                                self.isCancelSheet = true
-                                            }){
-                                                Text("Cancel")
-                                                    .foregroundColor(.blue)
-                                                    .frame(alignment: .leading)
-                                        
-                                            }
-                                            
-                                        }
-                                                            
-                                                            
-                                        )
-                                        .navigationBarItems(trailing:
-                                                                HStack{
-                                            Button(action: {
-                                                self.isSaveSheet = true
-                                            }){
-                                                Text("Save")
-                                                    .font(.headline)
-                                                    .fontWeight(.semibold)
-                                                    .foregroundColor(.blue)
-                                                    .frame(alignment: .leading)
-                                                
-                                                
-                                            }
-                                            
-                                        }
-                                                            
-                                                            
-                                        )
-                                        
-                                    }
-                                })
-                            
-                            
-                        }.frame(width: 360, height: 44, alignment: .leading)
-                            .edgesIgnoringSafeArea(.all)
-                        
                         Text("Product Type")
-                            .font(.system(size:20))
+                            .font(.system(size:17))
                             .fontWeight(.bold)
                             .padding(.leading,-180)
+                            .padding(.top,40)
                         
                         ScrollView(.vertical, showsIndicators: false, content: {
                             VStack{
@@ -204,15 +125,12 @@ struct morningChooseProduct: View {
                                         
                                     }
                                 }
-                                .opacity(isLocked ? 1 : 0.5)
-                                .onTapGesture {
-                                        isLocked.toggle()
-                                        
-                                    }
-                                Toggle("",isOn: $isSelectedOilCleanserMorning)
-                                    .labelsHidden()
-                                    .toggleStyle(NewToggleCheckbox())
-                                    .font(.largeTitle)
+//                                .opacity(isLocked ? 1 : 0.5)
+//                                .onTapGesture {
+//                                        isLocked.toggle()
+//
+//                                    }
+                                
                                 
                                 ZStack{
                                     Rectangle()
@@ -243,11 +161,13 @@ struct morningChooseProduct: View {
                                                 .frame(width: 217,alignment: .leading)
                                             
                                             
+                                            
                                             Spacer()
                                                 .frame(height:20)
                                             
                                             addProductButton
                                         }
+                                        
                                         
                                         
                                         Toggle("",isOn: $isSelectedFacialMorning)
@@ -256,6 +176,10 @@ struct morningChooseProduct: View {
                                             .font(.largeTitle)
                                         
                                     }
+                                }
+                                .opacity(isLocked ? 1 : 0.5)
+                                .onTapGesture {
+                                    isLocked.toggle()
                                 }
                                 
                                 ZStack{
@@ -491,52 +415,42 @@ struct morningChooseProduct: View {
                                 }
                                 
                             }
+                            //.padding(.bottom,500)
                         })
                         .padding(.leading,0)
-                        .frame(width: 500, height: 630)
                         .edgesIgnoringSafeArea(.bottom)
+//                        .padding(.top,25)
+                        .frame( height: 710)
+                        
                            
                     }
                     CustomAlert(textEntered: $textEntered, showingAlert: $showingAlert)
                                             .opacity(showingAlert ? 1 : 0)
                         
                 }
-                .navigationBarTitle("Edit")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(leading:
                                         HStack{
                     Button(action: {
                         self.isBack = true
                     }){
-                        Text("Cancel")
-                            .foregroundColor(.blue)
-                            .frame(alignment: .leading)
+                        HStack{
+                            Image (systemName: "chevron.backward")
+                            .font(.system(size:22))
+                            .foregroundColor(Color ("primaryGreen") )
+                            
+                            Text("Your Skincare Product")
+                                .foregroundColor(Color("primaryGreen"))
+                                .font(.system(size:20))
+                                .fontWeight(.bold)
+                                .frame(alignment: .leading)
+                        }
                 
                     }
                     
                 }
                                     
-                                    
                 )
-                .navigationBarItems(trailing:
-                                        HStack{
-                    Button(action: {
-                        self.isDone = true
-                    }){
-                        Text("Done")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.blue)
-                            .frame(alignment: .leading)
-                        
-                        
-                    }
-                    
-                }
-                                    
-                                    
-                )
-//                .sheet(isPresented: $show, content: )
                 
                 
             }
@@ -573,9 +487,11 @@ struct NewToggleCheckbox: ToggleStyle {
         } label: {
             Image(systemName: configuration.isOn ? "lock.open.fill": "lock.fill")
         }
-        .tint(Color("primaryGreen")) //atau "primaryGreen"
+        .tint(Color("primaryGreen"))
+        
         
     }
+        
 }
 
 struct morningChooseProduct_Previews: PreviewProvider {
@@ -584,28 +500,3 @@ struct morningChooseProduct_Previews: PreviewProvider {
             .environmentObject(LocalNotificationManagerMorning())
     }
 }
-
-//BISA BUAT STRUCT BARU YANG ISINYA LIST PRODUCT DAN SET WAKTU
-
-//class NotificationManager{
-//    static let instance = NotificationManager()
-//    func requestAuthorization(){
-//        let options: UNAuthorizationOptions = [.alert, .sound, .badge]; UNUserNotificationCenter.current().requestAuthorization(options: options) { (success, error) in
-//            if success {
-//                print("All set!")
-//            } else if let error = error {
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
-//}
-
-
-
-//struct sheetsNotificationMorning: View{
-//    var body: some View{
-//        .sheet
-//        
-//    }
-//}
-//tUTORIAL local notif= https://www.youtube.com/watch?v=iRjyk1S0nvo
