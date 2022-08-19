@@ -199,10 +199,7 @@ struct morningChooseProduct: View {
                                         
                                         
                                         
-                                        Toggle("",isOn: $isSelectedToner)
-                                            .labelsHidden()
-                                            .toggleStyle(NewToggleCheckbox())
-                                            .font(.largeTitle)
+                                  
                                         
                                     }
                                 }
@@ -245,11 +242,7 @@ struct morningChooseProduct: View {
                                         
                                         
                                         
-                                        Toggle("",isOn: $isSelectedSerum)
-                                            .labelsHidden()
-                                            .toggleStyle(NewToggleCheckbox())
-                                            .font(.largeTitle)
-                                        
+                                    
                                     }
                                 }
                                 
@@ -293,10 +286,7 @@ struct morningChooseProduct: View {
                                         
                                         
                                         
-                                        Toggle("",isOn: $isSelectedMoisturizerMorning)
-                                            .labelsHidden()
-                                            .toggleStyle(NewToggleCheckbox())
-                                            .font(.largeTitle)
+                               
                                         
                                     }
                                 }
@@ -339,11 +329,7 @@ struct morningChooseProduct: View {
                                         
                                         
                                         
-                                        Toggle("",isOn: $isSelectedAcneTreatmentMorning)
-                                            .labelsHidden()
-                                            .toggleStyle(NewToggleCheckbox())
-                                            .font(.largeTitle)
-                                        
+                                     
                                     }
                                 }
                                 
@@ -385,11 +371,7 @@ struct morningChooseProduct: View {
                                         
                                         
                                         
-                                        Toggle("",isOn: $isSelectedSunscreenMorning)
-                                            .labelsHidden()
-                                            .toggleStyle(NewToggleCheckbox())
-                                            .font(.largeTitle)
-                                        
+                                   
                                     }
                                 }
 //                                .opacity(isLocked ? 1 : 0.5)
