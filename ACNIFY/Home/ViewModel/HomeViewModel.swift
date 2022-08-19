@@ -15,6 +15,6 @@ final class HomeViewModel: ObservableObject {
     init(userRepository: UserRepository = UserDefaultRepository()){
         self.userRepository = userRepository
         let logedinUserID  = AuthenticationDefaultRepository.shared.userID
-        currentUser = userRepository.getUserByID(id: logedinUserID!)
+        //currentUser = userRepository.getUserByID(id: logedinUserID!)
     }
 }
