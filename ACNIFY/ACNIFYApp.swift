@@ -28,7 +28,7 @@ struct ACNIFYApp: App {
                         if skinPersonaRepository.isFirstUserQuiz {
                             QuizMainView()
                         } else{
-                            HomePageView()
+                            MainPageView()
                                 .transition(transition)
                                 .onAppear{
                                     let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
