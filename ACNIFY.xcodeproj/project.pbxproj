@@ -28,6 +28,8 @@
 		9B4590B128AB6BDD0083B405 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4590B028AB6BDD0083B405 /* HomePageView.swift */; };
 		9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE128680B1700449BB4 /* CustomPopUp.swift */; };
 		9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE82868A9C600449BB4 /* PopUpModel.swift */; };
+		9BA6864928AEFDF8001CD564 /* SkinQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6864828AEFDF8001CD564 /* SkinQuizView.swift */; };
+		9BA6864B28AEFE97001CD564 /* IntroQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6864A28AEFE97001CD564 /* IntroQuizView.swift */; };
 		9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */; };
 		9BB3780E28634BA0007A3640 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3780D28634BA0007A3640 /* OnBoardingView.swift */; };
 		9BB3781028634BA2007A3640 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB3780F28634BA2007A3640 /* Assets.xcassets */; };
@@ -117,6 +119,8 @@
 		9B86CBE128680B1700449BB4 /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		9B86CBE72868826700449BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9B86CBE82868A9C600449BB4 /* PopUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpModel.swift; sourceTree = "<group>"; };
+		9BA6864828AEFDF8001CD564 /* SkinQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinQuizView.swift; sourceTree = "<group>"; };
+		9BA6864A28AEFE97001CD564 /* IntroQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroQuizView.swift; sourceTree = "<group>"; };
 		9BB3780828634BA0007A3640 /* ACNIFY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACNIFY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB3780B28634BA0007A3640 /* ACNIFYApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYApp.swift; sourceTree = "<group>"; };
 		9BB3780D28634BA0007A3640 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
@@ -474,6 +478,8 @@
 				9AF3DC362869C4A3007847E7 /* QuizAcneView.swift */,
 				9BB4B4FC2866E2240069E86E /* QuizSkinView.swift */,
 				CB8146BA289FED4F007FC63A /* QuizMainView.swift */,
+				9BA6864828AEFDF8001CD564 /* SkinQuizView.swift */,
+				9BA6864A28AEFE97001CD564 /* IntroQuizView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -851,6 +857,7 @@
 				9AF3DC372869C4A3007847E7 /* QuizAcneView.swift in Sources */,
 				CB4FF14128991983008D78AC /* String+ToMarkdown.swift in Sources */,
 				9AF3DC392869C4E5007847E7 /* SkinCardView.swift in Sources */,
+				9BA6864928AEFDF8001CD564 /* SkinQuizView.swift in Sources */,
 				CB21589428A8AC0A006F2EB7 /* DailyCheckListViewModel.swift in Sources */,
 				CB8146BB289FED4F007FC63A /* QuizMainView.swift in Sources */,
 				CB33870528AA1C11006B839B /* AcneLogProductLocalDataSource.swift in Sources */,
@@ -882,6 +889,7 @@
 				CB3D368628A27BE700D9D637 /* UserRepository.swift in Sources */,
 				9AF3DC4A2869C588007847E7 /* LocalNotifManager2.swift in Sources */,
 				9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */,
+				9BA6864B28AEFE97001CD564 /* IntroQuizView.swift in Sources */,
 				CB3D368028A278C200D9D637 /* AuthLocalDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
