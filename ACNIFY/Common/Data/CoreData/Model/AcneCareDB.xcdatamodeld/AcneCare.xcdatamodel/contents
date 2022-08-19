@@ -42,10 +42,13 @@
         <relationship name="skinPersona" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SkinPersona" inverseName="user" inverseEntity="SkinPersona"/>
     </entity>
     <entity name="UserProduct" representedClassName="UserProduct" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isUsed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="unlocked_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="userID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="products" inverseEntity="User"/>
     </entity>
@@ -55,6 +58,6 @@
         <element name="AcneLogsDetailCondition" positionX="0" positionY="108" width="128" height="89"/>
         <element name="SkinPersona" positionX="-54" positionY="18" width="128" height="119"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="119"/>
-        <element name="UserProduct" positionX="-27" positionY="108" width="128" height="119"/>
+        <element name="UserProduct" positionX="-27" positionY="108" width="128" height="164"/>
     </elements>
 </model>

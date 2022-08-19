@@ -9,6 +9,8 @@ import Foundation
 
 
 final class AcneLogDefaultRepository: AcneLogRepository {
+   
+    
     private let acneLogLocalDataStore: AcneLogLocalDataStore
     private let userProductDataStore: UserProductLocalDataStore
     private let acneLogProductDataStore: AcneLogProductLocalDataSource
@@ -83,6 +85,25 @@ final class AcneLogDefaultRepository: AcneLogRepository {
         }
     }
     
+    
+    func getAcneLogPhotosByDate(userID: String, date: Date) -> Data? {
+        do {
+            guard let acneLogs = try acneLogLocalDataStore.getTodayAcneLogByUserID(userID: userID) else {return nil}
+            
+            let log  = acneLogs.filter{$0.type == "night"}
+                .filter{
+                    ($0.time ?? Date.now).dayAfter < date && ($0.time ?? Date.now).dayBefore > date
+                    
+                }.first
+            
+            return log?.image
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+   
+    
     func saveChanges() {
         acneLogLocalDataStore.saveChanges()
     }
@@ -90,6 +111,7 @@ final class AcneLogDefaultRepository: AcneLogRepository {
     func rollBack() {
         acneLogLocalDataStore.rollBack()
     }
+
     
 }
 
