@@ -21,7 +21,6 @@ struct AcneTypeView_Previews: PreviewProvider {
 }
 
 struct AcneTypeView: View {
-    @AppStorage("first_quiz") var firstTimeQuiz: Bool = true
     @ObservedObject var viewModel: QuizViewModel
     @Environment(\.presentationMode) var presentation
     
@@ -65,10 +64,7 @@ struct AcneTypeView: View {
                 
                 Button {
                     viewModel.pageDisplayed = .Skin
-                    if firstTimeQuiz{
-                        UserDefaults.standard.set(false, forKey: "first_quiz")
-
-                    }else{
+                    if !SkinPersonaDefaultRepository.shared.isFirstUserQuiz {
                         self.presentation.wrappedValue.dismiss()
                     }
                     

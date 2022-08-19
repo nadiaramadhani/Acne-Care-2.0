@@ -25,15 +25,12 @@ struct ACNIFYApp: App {
                 LoginView()
                     .fullScreenCover(isPresented: $authentificationRepository.isLogedIn){
                         
-                        if skinPersonaRepository.isFirstQuiz {
+                        if skinPersonaRepository.isFirstUserQuiz {
                             QuizMainView()
                         } else{
                             MainPageView()
                                 .transition(transition)
                                 .onAppear{
-                                    
-                                    //debug db location
-                                    
                                     let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
                                     print(paths[0])
                                 }

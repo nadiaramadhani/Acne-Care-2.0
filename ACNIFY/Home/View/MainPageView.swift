@@ -72,7 +72,7 @@ struct MainPageView: View {
                                     .frame(height:0)
                                 
                                 
-                                NavigationLink(destination: TesterPickerView().navigationBarHidden(true)){
+                                
                                     ZStack{
                                         Image("ICard")
                                             .padding()
@@ -108,13 +108,13 @@ struct MainPageView: View {
 
                                             })
                                             .padding(.trailing,200 )
-                                            
-                                            
+
+
                                         }
                                     }
                                 }.buttonStyle(.plain)
-                              
-                
+
+
                                 
                                 
                                 Spacer()
