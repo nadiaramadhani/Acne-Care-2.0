@@ -25,6 +25,10 @@ struct morningChooseProduct: View {
     @State private var showingAlert = false
     @State private var isLocked = false
     
+
+    
+    @State var isNext = false
+    @State var isDone = false
     @State var isBack = false
     @EnvironmentObject var lnManagerMorning: LocalNotificationManagerMorning
     @Environment(\.scenePhase) var scenePhase
@@ -97,6 +101,291 @@ struct morningChooseProduct: View {
                                         
                                         
                                         Toggle("",isOn: $isSelectedOilCleanserMorning)
+                                            .labelsHidden()
+                                            .toggleStyle(NewToggleCheckbox())
+                                            .font(.largeTitle)
+                                        
+                                    }
+                                }
+                                .opacity(isLocked ? 1 : 0.5)
+                                .onTapGesture {
+                                        isLocked.toggle()
+                                        
+                                    }
+                                Toggle("",isOn: $isSelectedOilCleanserMorning)
+                                    .labelsHidden()
+                                    .toggleStyle(NewToggleCheckbox())
+                                    .font(.largeTitle)
+                                
+                                ZStack{
+                                    Rectangle()
+                                        .fill(Color.white)
+                                        .frame(width: 355, height: 115)
+                                        .cornerRadius(12)
+                                        .padding(5)
+                                        .shadow(radius: 5)
+
+                                    
+                                    HStack{
+                                        Image("Day")
+                                            .frame(width:40, height: 90)
+                                            .padding()
+                                        
+                                        VStack(alignment: .leading){
+                                            Text("Facial Wash")
+                                                .font(.system(size:16))
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(Color("primaryGreen"))
+                                            
+                                            
+                                            Text("Wash your face with gentle face wash")
+                                            
+                                                .font(.system(size:14))
+                                                .fontWeight(.light)
+                                                .multilineTextAlignment(.leading)
+                                                .frame(width: 217,alignment: .leading)
+                                            
+                                            
+                                            Spacer()
+                                                .frame(height:20)
+                                            
+                                            addProductButton
+                                        }
+                                        
+                                        
+                                        Toggle("",isOn: $isSelectedFacialMorning)
+                                            .labelsHidden()
+                                            .toggleStyle(NewToggleCheckbox())
+                                            .font(.largeTitle)
+                                        
+                                    }
+                                }
+                                
+                                ZStack{
+                                    Rectangle()
+                                        .fill(Color.white)
+                                        .frame(width: 355, height: 115)
+                                        .cornerRadius(12)
+                                        .padding(5)
+                                        .shadow(radius: 5)
+
+                                    
+                                    HStack{
+                                        Image("dayToner")
+                                            .frame(width:40, height: 90)
+                                            .padding()
+                                        
+                                        VStack(alignment: .leading){
+                                            Text("Toner")
+                                                .font(.system(size:16))
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(Color("primaryGreen"))
+                                            
+                                            
+                                            Text("Gently refresh your skin without stripping it of its natural moisture.")
+                                            
+                                                .font(.system(size:14))
+                                                .fontWeight(.light)
+                                                .multilineTextAlignment(.leading)
+                                                .frame(width: 215,alignment: .leading)
+                                            
+                                            
+                                            Spacer()
+                                                .frame(height:20)
+                                            
+                                            addProductButton
+                                        }
+                                        
+                                        
+                                        
+                                        
+                                        Toggle("",isOn: $isSelectedToner)
+                                            .labelsHidden()
+                                            .toggleStyle(NewToggleCheckbox())
+                                            .font(.largeTitle)
+                                        
+                                    }
+                                }
+                                
+                                ZStack{
+                                    Rectangle()
+                                        .fill(Color.white)
+                                        .frame(width: 355, height: 115)
+                                        .cornerRadius(12)
+                                        .padding(5)
+                                        .shadow(radius: 5)
+
+                                    
+                                    HStack{
+                                        Image("daySerum")
+                                            .frame(width:40, height: 90)
+                                            .padding()
+                                        
+                                        VStack(alignment: .leading){
+                                            Text("Serum")
+                                                .font(.system(size:16))
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(Color("primaryGreen"))
+                                            
+                                            
+                                            Text("Contain a higher concentration of active ingredients")
+                                            
+                                                .font(.system(size:14))
+                                                .fontWeight(.light)
+                                                .multilineTextAlignment(.leading)
+                                                .frame(width: 215,alignment: .leading)
+                                            
+                                            
+                                            Spacer()
+                                                .frame(height:20)
+                                            
+                                            addProductButton
+                                        }
+                                        
+                                        
+                                        
+                                        
+                                        Toggle("",isOn: $isSelectedSerum)
+                                            .labelsHidden()
+                                            .toggleStyle(NewToggleCheckbox())
+                                            .font(.largeTitle)
+                                        
+                                    }
+                                }
+                                
+                                
+                                
+                                ZStack{
+                                    Rectangle()
+                                        .fill(Color.white)
+                                        .frame(width: 355, height: 115)
+                                        .cornerRadius(12)
+                                        .padding(5)
+                                        .shadow(radius: 5)
+
+                                    
+                                    HStack{
+                                        Image("Moisturizer")
+                                            .frame(width:40, height: 90)
+                                            .padding()
+                                        
+                                        VStack(alignment: .leading){
+                                            Text("Moisturizer")
+                                                .font(.system(size:16))
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(Color("primaryGreen"))
+                                            
+                                            
+                                            Text("Always make sure to hydrated your skin")
+                                            
+                                                .font(.system(size:14))
+                                                .fontWeight(.light)
+                                                .multilineTextAlignment(.leading)
+                                                .frame(width: 215,alignment: .leading)
+                                            
+                                            
+                                            Spacer()
+                                                .frame(height:20)
+                                            
+                                            addProductButton
+                                        }
+                                        
+                                        
+                                        
+                                        
+                                        Toggle("",isOn: $isSelectedMoisturizerMorning)
+                                            .labelsHidden()
+                                            .toggleStyle(NewToggleCheckbox())
+                                            .font(.largeTitle)
+                                        
+                                    }
+                                }
+                                
+                                ZStack{
+                                    Rectangle()
+                                        .fill(Color.white)
+                                        .frame(width: 355, height: 115)
+                                        .cornerRadius(12)
+                                        .padding(5)
+                                        .shadow(radius: 5)
+
+                                    
+                                    HStack{
+                                        Image("dayAcneTreatment")
+                                            .frame(width:40, height: 90)
+                                            .padding()
+                                        
+                                        VStack(alignment: .leading){
+                                            Text("Acne Treatment")
+                                                .font(.system(size:16))
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(Color("primaryGreen"))
+                                            
+                                            
+                                            Text("Clear away bacteria and dry up the excess oils that lead to acne")
+                                            
+                                                .font(.system(size:14))
+                                                .fontWeight(.light)
+                                                .multilineTextAlignment(.leading)
+                                                .frame(width: 217,alignment: .leading)
+                                            
+                                            
+                                            Spacer()
+                                                .frame(height:20)
+                                            
+                                            addProductButton
+                                        }
+                                        
+                                        
+                                        
+                                        
+                                        Toggle("",isOn: $isSelectedAcneTreatmentMorning)
+                                            .labelsHidden()
+                                            .toggleStyle(NewToggleCheckbox())
+                                            .font(.largeTitle)
+                                        
+                                    }
+                                }
+                                
+                                ZStack{
+                                    Rectangle()
+                                        .fill(Color.white)
+                                        .frame(width: 355, height: 115)
+                                        .cornerRadius(12)
+                                        .padding(5)
+                                        .shadow(radius: 5)
+
+                                    
+                                    HStack{
+                                        Image("daySunscreen")
+                                            .frame(width:40, height: 90)
+                                            .padding()
+                                        
+                                        VStack(alignment: .leading){
+                                            Text("Sunscreen")
+                                                .font(.system(size:16))
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(Color("primaryGreen"))
+                                            
+                                            
+                                            Text("Protect the skin from the harmful effects of the sun")
+                                            
+                                                .font(.system(size:14))
+                                                .fontWeight(.light)
+                                                .multilineTextAlignment(.leading)
+                                                .frame(width: 217,alignment: .leading)
+                                            
+                                            
+                                            Spacer()
+                                                .frame(height:20)
+                                            
+                                            addProductButton
+                                        }
+                                        
+                                        
+                                        
+                                        
+                                        Toggle("",isOn: $isSelectedSunscreenMorning)
                                             .labelsHidden()
                                             .toggleStyle(NewToggleCheckbox())
                                             .font(.largeTitle)
@@ -235,7 +524,7 @@ struct NewToggleCheckbox: ToggleStyle {
         Button {
             configuration.isOn.toggle()
         } label: {
-            Image(systemName: configuration.isOn ? "checkmark.square": "square")
+            Image(systemName: configuration.isOn ? "lock.open.fill": "lock.fill")
         }
         .tint(Color("primaryGreen"))
         
