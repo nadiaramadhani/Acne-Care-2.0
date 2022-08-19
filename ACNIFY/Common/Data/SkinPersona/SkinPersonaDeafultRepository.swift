@@ -11,7 +11,7 @@ final class SkinPersonaDefaultRepository: SkinPersonaRepository, ObservableObjec
     
     static let shared = SkinPersonaDefaultRepository()
     
-    @Published var isFirstQuiz: Bool = true
+    @Published var isFirstUserQuiz: Bool = true
     
     private let skinPersonaLocalDataStore: SkinPersonaLocalDataStore
     private let userLocalDataStore: UserLocalDataStore
@@ -53,11 +53,10 @@ final class SkinPersonaDefaultRepository: SkinPersonaRepository, ObservableObjec
     func isFirstQuiz(userID: String) -> Bool {
        let skinPersonas = self.getUserSkinPersonas(userID: userID)
         
-        if skinPersonas.count != 0 {
-            self.isFirstQuiz = false
-        }
+       self.isFirstUserQuiz = skinPersonas.count == 0
         
-        return self.isFirstQuiz
+        
+       return self.isFirstUserQuiz
     }
     
     

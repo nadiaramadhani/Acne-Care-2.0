@@ -26,7 +26,6 @@ struct MainPageView: View {
         Box(id: 3, title:"15 Juni 2022", imageUrl:"0"),
         Box(id: 4, title:"16 Juni 2022", imageUrl:"0"),
     ]
-    @AppStorage("signed_in") var currentUserSignedIn: Bool = false
     
     
     var body: some View {
