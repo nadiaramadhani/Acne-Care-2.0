@@ -26,4 +26,8 @@ extension Date {
     var isLastDayOfMonth: Bool {
         return dayAfter.month != month
     }
+    
+    func days(sinceDate: Date) -> Int? {
+            return Calendar.current.dateComponents([.day], from: sinceDate, to: self).day
+        }
 }

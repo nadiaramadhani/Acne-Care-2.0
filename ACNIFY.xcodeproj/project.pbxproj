@@ -44,7 +44,7 @@
 		CB19349728A3CA1D000DF7CE /* QuizResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19349628A3CA1D000DF7CE /* QuizResultViewModel.swift */; };
 		CB1934A928A54629000DF7CE /* AcneLogLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1934A828A54629000DF7CE /* AcneLogLocalDataStore.swift */; };
 		CB1934AD28A5528D000DF7CE /* UserProductLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1934AC28A5528D000DF7CE /* UserProductLocalDataStore.swift */; };
-		CB21589428A8AC0A006F2EB7 /* DailyCheckListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21589328A8AC0A006F2EB7 /* DailyCheckListViewModel.swift */; };
+		CB21589428A8AC0A006F2EB7 /* ChooseProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21589328A8AC0A006F2EB7 /* ChooseProductViewModel.swift */; };
 		CB33870128AA0E7E006B839B /* TreatmentPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870028AA0E7E006B839B /* TreatmentPhotoViewModel.swift */; };
 		CB33870528AA1C11006B839B /* AcneLogProductLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870428AA1C11006B839B /* AcneLogProductLocalDataSource.swift */; };
 		CB33870728AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870628AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift */; };
@@ -77,6 +77,7 @@
 		CB98FB6B2899539600CDF771 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98FB6A2899539600CDF771 /* CloudKit.framework */; };
 		CBBFE872289FC8250064ADF5 /* AcneCareDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBBFE870289FC8250064ADF5 /* AcneCareDB.xcdatamodeld */; };
 		CBBFE877289FD5430064ADF5 /* QuizCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFE876289FD5430064ADF5 /* QuizCardView.swift */; };
+		CBD812DA28B0F12300EDE2CE /* ProductCardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD812D928B0F12300EDE2CE /* ProductCardItemView.swift */; };
 		CBFB988B28AE7D2D005D05A1 /* Date+FormattedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB988A28AE7D2D005D05A1 /* Date+FormattedString.swift */; };
 		CBFB988D28AE7D42005D05A1 /* Date+Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB988C28AE7D42005D05A1 /* Date+Interval.swift */; };
 /* End PBXBuildFile section */
@@ -140,7 +141,7 @@
 		CB19349628A3CA1D000DF7CE /* QuizResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewModel.swift; sourceTree = "<group>"; };
 		CB1934A828A54629000DF7CE /* AcneLogLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogLocalDataStore.swift; sourceTree = "<group>"; };
 		CB1934AC28A5528D000DF7CE /* UserProductLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProductLocalDataStore.swift; sourceTree = "<group>"; };
-		CB21589328A8AC0A006F2EB7 /* DailyCheckListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckListViewModel.swift; sourceTree = "<group>"; };
+		CB21589328A8AC0A006F2EB7 /* ChooseProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProductViewModel.swift; sourceTree = "<group>"; };
 		CB33870028AA0E7E006B839B /* TreatmentPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentPhotoViewModel.swift; sourceTree = "<group>"; };
 		CB33870428AA1C11006B839B /* AcneLogProductLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductLocalDataSource.swift; sourceTree = "<group>"; };
 		CB33870628AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductDefaultLocalDataSource.swift; sourceTree = "<group>"; };
@@ -174,6 +175,7 @@
 		CB98FB6A2899539600CDF771 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CBBFE871289FC8250064ADF5 /* AcneCare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AcneCare.xcdatamodel; sourceTree = "<group>"; };
 		CBBFE876289FD5430064ADF5 /* QuizCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCardView.swift; sourceTree = "<group>"; };
+		CBD812D928B0F12300EDE2CE /* ProductCardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardItemView.swift; sourceTree = "<group>"; };
 		CBFB988A28AE7D2D005D05A1 /* Date+FormattedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FormattedString.swift"; sourceTree = "<group>"; };
 		CBFB988C28AE7D42005D05A1 /* Date+Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Interval.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				CB98FB682899538E00CDF771 /* ACNIFY.entitlements */,
+				CBD812D728B0F0E200EDE2CE /* UserProduct */,
 				CB4FF14228992154008D78AC /* Login */,
 				CB3DFE8428981889002EF675 /* SkinCareRoutine */,
 				CB3DFE8228981774002EF675 /* Home */,
@@ -327,7 +330,7 @@
 		CB21589228A8ABEF006F2EB7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CB21589328A8AC0A006F2EB7 /* DailyCheckListViewModel.swift */,
+				CB21589328A8AC0A006F2EB7 /* ChooseProductViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -535,7 +538,6 @@
 		CB3DFE8428981889002EF675 /* SkinCareRoutine */ = {
 			isa = PBXGroup;
 			children = (
-				CB21589228A8ABEF006F2EB7 /* ViewModel */,
 				CB3DFE852898189D002EF675 /* View */,
 			);
 			path = SkinCareRoutine;
@@ -550,7 +552,6 @@
 				9AF3DC472869C576007847E7 /* PopUpMorningView.swift */,
 				9A747F3D286C92EA00683171 /* PopUpNightView.swift */,
 				9AE8043C2867724D006493A9 /* TesterPickerView.swift */,
-				9AD9049D28AF2E0C00E4F6E4 /* ChooseProductMainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -702,6 +703,24 @@
 			path = Quiz;
 			sourceTree = "<group>";
 		};
+		CBD812D728B0F0E200EDE2CE /* UserProduct */ = {
+			isa = PBXGroup;
+			children = (
+				CBD812D828B0F10E00EDE2CE /* View */,
+				CB21589228A8ABEF006F2EB7 /* ViewModel */,
+			);
+			path = UserProduct;
+			sourceTree = "<group>";
+		};
+		CBD812D828B0F10E00EDE2CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AD9049D28AF2E0C00E4F6E4 /* ChooseProductMainView.swift */,
+				CBD812D928B0F12300EDE2CE /* ProductCardItemView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CBFB988828AE7CDD005D05A1 /* String */ = {
 			isa = PBXGroup;
 			children = (
@@ -851,6 +870,7 @@
 			files = (
 				9B33ADE228ABC31300751F4A /* PhotoAndUpdateView.swift in Sources */,
 				9BB3780E28634BA0007A3640 /* OnBoardingView.swift in Sources */,
+				CBD812DA28B0F12300EDE2CE /* ProductCardItemView.swift in Sources */,
 				9A747F3E286C92EA00683171 /* PopUpNightView.swift in Sources */,
 				9AF3DC482869C576007847E7 /* PopUpMorningView.swift in Sources */,
 				CB8146BD289FEE4C007FC63A /* QuizViewModel.swift in Sources */,
@@ -880,7 +900,7 @@
 				CB4FF14128991983008D78AC /* String+ToMarkdown.swift in Sources */,
 				CBFB988D28AE7D42005D05A1 /* Date+Interval.swift in Sources */,
 				9AF3DC392869C4E5007847E7 /* SkinCardView.swift in Sources */,
-				CB21589428A8AC0A006F2EB7 /* DailyCheckListViewModel.swift in Sources */,
+				CB21589428A8AC0A006F2EB7 /* ChooseProductViewModel.swift in Sources */,
 				CB8146BB289FED4F007FC63A /* QuizMainView.swift in Sources */,
 				CB33870528AA1C11006B839B /* AcneLogProductLocalDataSource.swift in Sources */,
 				9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */,

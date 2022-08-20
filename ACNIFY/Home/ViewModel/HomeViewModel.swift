@@ -9,8 +9,9 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
     @Published var currentUser: User?
-    @Published var morningLog: AcneLog?
+    @Published var dayLog: AcneLog?
     @Published var nightLog: AcneLog?
+    @Published var totalWeekSinceFirstLog = ""
     
     private let userRepository: UserRepository
     private let acneLogRepository: AcneLogRepository
@@ -23,7 +24,7 @@ final class HomeViewModel: ObservableObject {
         self.acneLogRepository = acneLogRepository
         let logedinUserID  = AuthenticationDefaultRepository.shared.userID
         
-        self.morningLog = acneLogRepository.getMorningAcneLogsByUserID(userID: logedinUserID!)
+        self.dayLog = acneLogRepository.getDayAcneLogsByUserID(userID: logedinUserID!)
         self.nightLog = acneLogRepository.getNightAcneLogsByUserID(userID: logedinUserID!)
         self.currentUser = userRepository.getUserByID(id: logedinUserID!)
     }
@@ -44,11 +45,12 @@ final class HomeViewModel: ObservableObject {
         return data
     }
     
-    func doMorningChecklist(){
-        guard morningLog == nil else {return}
+    func doDayChecklist(){
+        guard dayLog == nil else {return}
         
         let acnelogData = AcneLogData()
-        acnelogData.type = "morning"
+        acnelogData.type = "day"
+        acnelogData.userID = (currentUser?.id)!
         
         let newAcnelog = acneLogRepository.createNewAcneLog(data: acnelogData)
         
@@ -56,6 +58,7 @@ final class HomeViewModel: ObservableObject {
         acneLogRepository.addAcneLogUnlockProductsByUserID(userID: (currentUser?.id)!.uuidString, acneLog: newAcnelog)
         
         acneLogRepository.saveChanges()
+        self.dayLog = newAcnelog
     }
     
     func doNightChecklist(){
@@ -63,12 +66,26 @@ final class HomeViewModel: ObservableObject {
         
         let acnelogData = AcneLogData()
         acnelogData.type = "night"
+        acnelogData.userID = (currentUser?.id)!
         
         let newAcnelog = acneLogRepository.createNewAcneLog(data: acnelogData)
         userRepository.addNewAcneLog(id: (currentUser?.id)!.uuidString, acneLog: newAcnelog)
         acneLogRepository.addAcneLogUnlockProductsByUserID(userID: (currentUser?.id)!.uuidString, acneLog: newAcnelog)
         
+        
         acneLogRepository.saveChanges()
+        self.nightLog = newAcnelog
+    }
+    
+    func getTotalWeekElapsed(){
+        guard let userID = currentUser?.id?.uuidString else {return}
+        let totalDaySinceFirstLog = acneLogRepository.getDayCountSinceFirstLog(userID: userID)
+        
+        if totalDaySinceFirstLog < 7 {
+            totalWeekSinceFirstLog = "This is your first week journey"
+        } else {
+            totalWeekSinceFirstLog = "It's been \(totalDaySinceFirstLog / 7) weeks keep going!"
+        }
     }
     
     

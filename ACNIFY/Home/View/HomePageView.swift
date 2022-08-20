@@ -17,10 +17,10 @@ struct HomePageView: View {
     
     @State private var isMorningCard = false
     @State private var isNightCard = false
-    @State private var isIntroPresented = true
     @State private var nightViewCheck = false
     @State private var TakePhotosonAlert = false
     
+    @ObservedObject var viewModel = HomeViewModel()
     
     var body: some View {
         NavigationView{
@@ -35,7 +35,7 @@ struct HomePageView: View {
                     }
                     VStack{
                         HStack{
-                            Text("Welcome Afita!")
+                            Text("Welcome \(viewModel.currentUser?.name ?? "User")!")
                                 .font(.title3)
                                 .fontWeight(.bold)
                                 .italic()
@@ -46,7 +46,7 @@ struct HomePageView: View {
                         }
                         HStack{
                             
-                            Text("It's been 3 weeks keep going!")
+                            Text(viewModel.totalWeekSinceFirstLog)
                                 .padding(.leading)
                             Spacer()
                             
@@ -68,7 +68,7 @@ struct HomePageView: View {
                                     .padding(.trailing, 200)
                                     .foregroundColor(.gray)
                                 
-                                NavigationLink(destination: IntroProductView(isIntroPresented: $isIntroPresented, displayedChooseProduct: .Morning)
+                                NavigationLink(destination: IntroProductView()
                                     .navigationBarHidden(true)){
                                         ZStack {
                                             
@@ -101,7 +101,7 @@ struct HomePageView: View {
                                                     .frame(width:35)
                                                 
                                                 Button {
-                                                    
+                                                    viewModel.doDayChecklist()
                                                 } label: {
                                                     Text("Done")
                                                         .font(.system(size: 13))
@@ -112,6 +112,7 @@ struct HomePageView: View {
                                                 .background(Color("yellow"))
                                                 .cornerRadius(12)
                                                 .padding(.leading, 60)
+                                                .opacity(viewModel.dayLog == nil ? 1 : 0.6)
                                                 
                                                 
                                                 
@@ -124,7 +125,7 @@ struct HomePageView: View {
                                 
                                 
                                 NavigationLink(
-                                    destination: IntroProductView(isIntroPresented: $isIntroPresented, displayedChooseProduct: .Night)
+                                    destination: IntroProductView()
                                         .navigationBarHidden(true)
                                 ){
                                     ZStack{
@@ -154,6 +155,7 @@ struct HomePageView: View {
                                             .foregroundColor(Color.white)
                                             
                                             Button {
+                                                viewModel.doNightChecklist()
                                                 self.nightViewCheck = true
                                             } label: {
                                                 Text("Done")
@@ -165,6 +167,7 @@ struct HomePageView: View {
                                             .background(Color.white)
                                             .cornerRadius(12)
                                             .padding(.leading, 60)
+                                            .opacity(viewModel.nightLog == nil ? 1 : 0.6)
                                             .alert(isPresented: $nightViewCheck, content:{
                                                 Alert(title: Text("Would you like to take a photo to record today's progress?"),
                                                       primaryButton: .destructive(Text("Skip"), action:{
@@ -185,7 +188,11 @@ struct HomePageView: View {
                         
                     }
                     
-                }.navigationBarHidden(true)
+                }
+                .navigationBarHidden(true)
+                .onAppear{
+                    viewModel.getTotalWeekElapsed()
+                }
             }
         }
     }

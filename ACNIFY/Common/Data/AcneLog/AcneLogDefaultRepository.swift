@@ -9,7 +9,6 @@ import Foundation
 
 
 final class AcneLogDefaultRepository: AcneLogRepository {
-   
     
     private let acneLogLocalDataStore: AcneLogLocalDataStore
     private let userProductDataStore: UserProductLocalDataStore
@@ -63,11 +62,11 @@ final class AcneLogDefaultRepository: AcneLogRepository {
         }
     }
     
-    func getMorningAcneLogsByUserID(userID: String) -> AcneLog? {
+    func getDayAcneLogsByUserID(userID: String) -> AcneLog? {
         do {
             guard let acneLogs = try acneLogLocalDataStore.getTodayAcneLogByUserID(userID: userID) else {return nil}
             
-            return acneLogs.filter{$0.type == "morning"}.first
+            return acneLogs.filter{$0.type == "day"}.first
         } catch {
             print(error)
             return nil
@@ -103,6 +102,12 @@ final class AcneLogDefaultRepository: AcneLogRepository {
         }
     }
    
+    func getDayCountSinceFirstLog(userID: String) -> Int {
+        guard let acnelog = try? acneLogLocalDataStore.getOldestAcneLogByUserID(userID: userID) else {return 0}
+        
+        return Date.now.days(sinceDate: acnelog.time ?? Date.now) ?? 0
+    }
+    
     
     func saveChanges() {
         acneLogLocalDataStore.saveChanges()

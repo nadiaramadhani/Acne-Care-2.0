@@ -10,8 +10,9 @@ import Foundation
 protocol AcneLogRepository{
     func getAcneLogsByUserID(userID: String) -> [AcneLog]?
     func getAcneLogPhotosByDate(userID: String, date: Date) -> Data?
-    func getMorningAcneLogsByUserID(userID: String) -> AcneLog?
+    func getDayAcneLogsByUserID(userID: String) -> AcneLog?
     func getNightAcneLogsByUserID(userID: String) -> AcneLog?
+    func getDayCountSinceFirstLog(userID: String) -> Int
     func createNewAcneLog(data: AcneLogData) -> AcneLog
     func addAcneLogUnlockProductsByUserID(userID: String, acneLog: AcneLog)
     func saveChanges()
