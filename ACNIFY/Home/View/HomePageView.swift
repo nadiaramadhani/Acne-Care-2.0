@@ -19,9 +19,10 @@ struct HomePageView: View {
     @State private var isNightCard = false
     @State private var nightViewCheck = false
     @State private var TakePhotosonAlert = false
-    
+    @State private var summaryPageFromGraphic = false
+
     @ObservedObject var viewModel = HomeViewModel()
-    
+
     var body: some View {
         NavigationView{
             ZStack {
@@ -40,153 +41,175 @@ struct HomePageView: View {
                             .padding(.leading)
                             .foregroundColor(Color("primaryGreen"))
                         Spacer()
-                        
+
                     }
                     HStack{
-                        
+
                         Text(viewModel.totalWeekSinceFirstLog)
                             .padding(.leading)
                         Spacer()
-                        
+
                     }
                     .padding(.bottom)
                     ZStack{
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(Color.white)
-                            .frame(width: 370, height: 364)
-                            .shadow(color: .gray, radius: 3)
-                        
-                        VStack {
-                            
-                            Text("Today's Routine")
-                                .font(.system(size: 17))
-                                .fontWeight(.bold)
-                                .padding(.trailing, 220)
-                            Text("Monday, 15 August")
-                                .padding(.trailing, 200)
-                                .foregroundColor(.gray)
-                            
-                            NavigationLink(destination: IntroProductView(pageDisplayed: .Day)
-                                .navigationBarHidden(true)){
-                                    ZStack {
-                                        
-                                        Image("dayCard")
-                                            .frame(width: 325, height: 143)
-                                        HStack{
-                                            VStack(alignment: .leading){
+                        Section{
+                                RoundedRectangle(cornerRadius: 10)
+                                    .foregroundColor(Color.white)
+                                    .frame(width: 370, height: 364)
+                                    .shadow(color: .gray, radius: 3)
+
+                                VStack {
+
+                                    Text("Today's Routine")
+                                        .font(.system(size: 17))
+                                        .fontWeight(.bold)
+                                        .padding(.trailing, 220)
+                                    Text("Monday, 15 August")
+                                        .padding(.trailing, 200)
+                                        .foregroundColor(.gray)
+
+                                    NavigationLink(destination: IntroProductView(pageDisplayed: .Day)
+                                        .navigationBarHidden(true)){
+                                            ZStack {
+
+                                                Image("dayCard")
+                                                    .frame(width: 325, height: 143)
                                                 HStack{
-                                                    
-                                                    Image("day")
-                                                    Text("Day Routine")
-                                                        .font(.system(size: 16))
-                                                        .fontWeight(.bold)
+                                                    VStack(alignment: .leading){
+                                                        HStack{
+
+                                                            Image("day")
+                                                            Text("Day Routine")
+                                                                .font(.system(size: 16))
+                                                                .fontWeight(.bold)
+                                                        }
+                                                        Text("Facewash")
+                                                            .font(.system(size: 17))
+                                                            .padding(.leading, 35)
+
+                                                        Text("Moisturizer")
+                                                            .font(.system(size: 17))
+                                                            .padding(.leading, 35)
+
+                                                        Text("Sunscreen")
+                                                            .font(.system(size: 17))
+                                                            .padding(.leading, 35)
+
+
+                                                    }
+                                                    Spacer()
+                                                        .frame(width:35)
+
+                                                    Button {
+                                                        viewModel.doDayChecklist()
+                                                    } label: {
+                                                        Text("Done")
+                                                            .font(.system(size: 13))
+                                                            .fontWeight(.semibold)
+                                                    }
+                                                    .foregroundColor(Color.white)
+                                                    .frame(width: 80, height: 41)
+                                                    .background(Color("yellow"))
+                                                    .cornerRadius(12)
+                                                    .padding(.leading, 60).opacity(viewModel.dayLog == nil ? 1 : 0.6)
+
+
+
+
                                                 }
-                                                Text("Facewash")
-                                                    .font(.system(size: 17))
-                                                    .padding(.leading, 35)
-                                                
-                                                Text("Moisturizer")
-                                                    .font(.system(size: 17))
-                                                    .padding(.leading, 35)
-                                                
-                                                Text("Sunscreen")
-                                                    .font(.system(size: 17))
-                                                    .padding(.leading, 35)
-                                                
-                                                
                                             }
-                                            Spacer()
-                                                .frame(width:35)
-                                            
-                                            Button {
-                                                viewModel.doDayChecklist()
-                                            } label: {
-                                                Text("Done")
-                                                    .font(.system(size: 13))
-                                                    .fontWeight(.semibold)
-                                            }
-                                            .foregroundColor(Color.white)
-                                            .frame(width: 80, height: 41)
-                                            .background(Color("yellow"))
-                                            .cornerRadius(12)
-                                            .padding(.leading, 60)
-                                            .opacity(viewModel.dayLog == nil ? 1 : 0.6)
-                                            
-                                            
-                                            
-                                            
-                                        }
-                                    }
-                                }.buttonStyle(.plain)
-                            
-                            
-                            
-                            
-                            NavigationLink(
-                                destination: IntroProductView(pageDisplayed: .Night)
-                                    .navigationBarHidden(true)
-                            ){
-                                ZStack{
-                                    Image("nightCard")
-                                    HStack{
-                                        VStack(alignment: .leading){
+                                        }.buttonStyle(.plain)
+
+
+
+
+                                    NavigationLink(
+                                        destination: IntroProductView(pageDisplayed: .Night)
+                                            .navigationBarHidden(true)
+                                    ){
+                                        ZStack{
+                                            Image("nightCard")
                                             HStack{
-                                                Image("night")
-                                                Text("Night Routine")
-                                                    .font(.system(size: 16))
-                                                    .fontWeight(.bold)
-                                            }
-                                            Text("Facewash")
-                                                .font(.system(size: 17))
-                                                .padding(.leading, 35)
-                                            
-                                            Text("Moisturizer")
-                                                .font(.system(size: 17))
-                                                .padding(.leading, 35)
-                                            
-                                            Text("Acne Treatment")
-                                                .font(.system(size: 17))
-                                                .padding(.leading, 35)
-                                            
-                                            
-                                        }
-                                        .foregroundColor(Color.white)
-                                        
-                                        Button {
-                                            viewModel.doNightChecklist()
-                                            self.nightViewCheck = true
-                                        } label: {
-                                            Text("Done")
-                                                .font(.system(size: 13))
-                                                .fontWeight(.semibold)
-                                        }
-                                        .foregroundColor(Color.black)
-                                        .frame(width: 80, height: 41)
-                                        .background(Color.white)
-                                        .cornerRadius(12)
-                                        .padding(.leading, 60)
-                                        .opacity(viewModel.nightLog == nil ? 1 : 0.6)
+                                                VStack(alignment: .leading){
+                                                    HStack{
+                                                        Image("night")
+                                                        Text("Night Routine")
+                                                            .font(.system(size: 16))
+                                                            .fontWeight(.bold)
+                                                    }
+                                                    Text("Facewash")
+                                                        .font(.system(size: 17))
+                                                        .padding(.leading, 35)
+
+                                                    Text("Moisturizer")
+                                                        .font(.system(size: 17))
+                                                        .padding(.leading, 35)
+
+                                                    Text("Acne Treatment")
+                                                        .font(.system(size: 17))
+                                                        .padding(.leading, 35)
+
+
+                                                }
+                                                .foregroundColor(Color.white)
+
+                                                Button {
+                                                    viewModel.doNightChecklist()
+                                                    self.nightViewCheck = true
+                                                } label: {
+                                                    Text("Done")
+                                                        .font(.system(size: 13))
+                                                        .fontWeight(.semibold)
+                                                }
+                                                .foregroundColor(Color.black)
+                                                .frame(width: 80, height: 41)
+                                                .background(Color.white)
+                                                .cornerRadius(12)
+                                                .padding(.leading, 60)
+                                                .opacity(viewModel.nightLog == nil ? 1 : 0.6)
                                         .alert(isPresented: $nightViewCheck, content:{
-                                            Alert(title: Text("Would you like to take a photo to record today's progress?"),
-                                                  primaryButton: .destructive(Text("Skip"), action:{
-                                                print("Skip has been selected")
-                                                print(viewModel.nightLog?.image)
-                                            }), secondaryButton: .default(Text("Take Photos"), action:{
-                                                self.TakePhotosonAlert = true
-                                            }))
-                                        })
+                                                    Alert(title: Text("Would you like to take a photo to record today's progress?"),
+                                                          primaryButton: .destructive(Text("Skip"), action:{
+                                                        print("Skip has been selected")
+                                                    print(viewModel.nightLog?.image)}), secondaryButton: .default(Text("Take Photos"), action:{
+                                                        self.TakePhotosonAlert = true
+                                                    }))
+                                                })
+                                            }
+                                        }
                                     }
+
+
+
+
+
+                                }
+
+                            }
+                        }
+                        Section{
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 10)
+                                    .foregroundColor(Color.white)
+                                    .frame(width: 370, height: 250)
+                                    .shadow(color: .gray, radius: 3)
+                                VStack{
+                                    GraphicView()
+                                        .onTapGesture {
+                                            summaryPageFromGraphic.toggle()
+                                        }
+                                    NavigationLink("",destination: (SummaryPageView()),isActive: $summaryPageFromGraphic)
+                                        .navigationBarHidden(true)
                                 }
                             }
-                            
-                            
-                            
                         }
+
+
+
+
                     }
-                    Spacer()
-                    
-                }
-                
+
+
             }
             .navigationBarHidden(true)
             .onAppear{
@@ -194,11 +217,10 @@ struct HomePageView: View {
             }
         }
     }
+
+
+    //    }
 }
-
-
-//    }
-
 
 struct HomePageView_Previews: PreviewProvider {
     static var previews: some View {
