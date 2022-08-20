@@ -40,6 +40,8 @@ struct NightChooseProduct: View {
     @State var currentTimeNight = Date()
     @EnvironmentObject var lnManagerNight: LocalNotificationManagerNight
     @Environment(\.scenePhase) var scenePhase
+    @Environment(\.presentationMode) var presentation
+    
     @State private var scheduleDate = Date()
     
     var body: some View {
@@ -58,94 +60,18 @@ struct NightChooseProduct: View {
                 ZStack{
                     Color(.white)
                         .edgesIgnoringSafeArea(.all)
+                    
+                    Image ("Oval2")
+                        .edgesIgnoringSafeArea(.all)
+                        .position(x:250, y:110)
+                    
+                    
                     VStack {
-                        Text("Set Reminder")
-                            .font(.system(size:20))
-                            .fontWeight(.bold)
-                            .padding(.top,50)
-                            .padding(.leading,-180)
-                        
-                        HStack{
-                            
-                            Toggle("Turn on the Skincare Notification", isOn: $isEditNight
-                                   
-                            ).sheet(isPresented: $isEditNight, content:{
-                                NavigationView{
-                                    VStack{
-                                        
-                                        if lnManagerNight.isGranted{
-                                            
-                                            GroupBox{
-                                                DatePicker("Time", selection:$scheduleDate, displayedComponents: [.hourAndMinute])
-                                                Button("Set Notification"){
-                                                    Task{
-                                                        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: scheduleDate)
-                                                        let localNotificationNight = LocalNotificationNight(identifier: UUID().uuidString,
-                                                                                                            title: "Night Routine Reminder",
-                                                                                                            body: "Don't forget to do treatment and checklist!",
-                                                                                                            dateComponents: dateComponents,
-                                                                                                            repeats: true)
-                                                        await lnManagerNight.schedule(localNotificationNight: localNotificationNight)
-                                                    }
-                                                }
-                                                .buttonStyle(.bordered)
-                                            }
-                                            
-                                            .frame(width: 300)
-                                            
-                                            
-                                        }
-                                        else{
-                                            
-                                        }
-                                    }
-                                    .environmentObject(lnManagerNight)
-                                    .navigationBarTitle("Reminder")
-                                    .navigationBarTitleDisplayMode(.inline)
-                                    .navigationBarItems(leading:
-                                                            HStack{
-                                        Button(action: {
-                                            self.isCancelSheetNight = true
-                                        }){
-                                            Text("Cancel")
-                                                .foregroundColor(.blue)
-                                                .frame(alignment: .leading)
-                                            
-                                        }
-                                        
-                                    }
-                                                        
-                                                        
-                                    )
-                                    .navigationBarItems(trailing:
-                                                            HStack{
-                                        Button(action: {
-                                            self.isSaveSheetNight = true
-                                        }){
-                                            Text("Next")
-                                                .font(.headline)
-                                                .fontWeight(.semibold)
-                                                .foregroundColor(.blue)
-                                                .frame(alignment: .leading)
-                                            
-                                            
-                                        }
-                                        
-                                    }
-                                                        
-                                                        
-                                    )
-                                    
-                                }
-                            })
-                            
-                        }.frame(width: 360, height: 44, alignment: .leading)
-                            .edgesIgnoringSafeArea(.all)
-                        
                         Text("Product Type")
-                            .font(.system(size:20))
+                            .font(.system(size:17))
                             .fontWeight(.bold)
                             .padding(.leading,-180)
+                            .padding(.top,40)
                         
                         
                         
@@ -204,9 +130,16 @@ struct NightChooseProduct: View {
                                     
                                     
                                     HStack{
+                                     
+                                        Spacer()
+                                            .frame(width: 16)
+                                        
                                         Image("nightFacialWash")
                                             .frame(width:40, height: 90)
-                                            .padding()
+                                            .padding(.leading,-45)
+                                        
+                                        Spacer()
+                                            .frame(width: 16)
                                         
                                         VStack(alignment: .leading){
                                             Text("Facial Wash")
@@ -226,263 +159,56 @@ struct NightChooseProduct: View {
                                             Spacer()
                                                 .frame(height:20)
                                             
-                                            addProductButton
-                                            
-                                        }
-                                        
-                                        
-                                        Toggle("",isOn: $isSelectedFacialNight)
-                                            .labelsHidden()
-                                            .toggleStyle(NewNightToggleCheckbox())
-                                            .font(.largeTitle)
-                                        
-                                    }
-                                }
-                                
-                                ZStack{
-                                    Rectangle()
-                                        .fill(Color.white)
-                                        .frame(width: 355, height: 115)
-                                        .cornerRadius(12)
-                                        .padding(5)
-                                        .shadow(radius: 5)
-                                    
-                                    
-                                    HStack{
-                                        Image("nightToner")
-                                            .frame(width:40, height: 90)
-                                            .padding()
-                                        
-                                        VStack(alignment: .leading){
-                                            Text("Toner")
-                                                .font(.system(size:16))
-                                                .fontWeight(.semibold)
+                                            Text("Product can be opened in 7 days")
+                                                .frame(width: 215,alignment: .leading)
+                                                .font(.system(size:12))
                                                 .foregroundColor(Color("primaryGreen"))
                                             
-                                            
-                                            Text("Gently refresh your skin without stripping it of its natural moisture.")
-                                            
-                                                .font(.system(size:14))
-                                                .fontWeight(.light)
-                                                .multilineTextAlignment(.leading)
-                                                .frame(width: 215,alignment: .leading)
-                                            
-                                            
-                                            Spacer()
-                                                .frame(height:20)
-                                            
-                                            addProductButton
                                         }
                                         
                                         
-                                        
-                                        
-                                        Toggle("",isOn: $isSelectedTonerNight)
-                                            .labelsHidden()
-                                            .toggleStyle(NewNightToggleCheckbox())
-                                            .font(.largeTitle)
-                                        
                                     }
-                                }
+                                }.opacity(0.5)
                                 
-                                ZStack{
-                                    Rectangle()
-                                        .fill(Color.white)
-                                        .frame(width: 355, height: 115)
-                                        .cornerRadius(12)
-                                        .padding(5)
-                                        .shadow(radius: 5)
-                                    
-                                    
-                                    HStack{
-                                        Image("nightSerum")
-                                            .frame(width:40, height: 90)
-                                            .padding()
-                                        
-                                        VStack(alignment: .leading){
-                                            Text("Serum")
-                                                .font(.system(size:16))
-                                                .fontWeight(.semibold)
-                                                .foregroundColor(Color("primaryGreen"))
-                                            
-                                            
-                                            Text("Contain a higher concentration of active ingredients")
-                                            
-                                                .font(.system(size:14))
-                                                .fontWeight(.light)
-                                                .multilineTextAlignment(.leading)
-                                                .frame(width: 215,alignment: .leading)
-                                            
-                                            
-                                            Spacer()
-                                                .frame(height:20)
-                                            
-                                            addProductButton
-                                        }
-                                        
-                                        
-                                        
-                                        
-                                        Toggle("",isOn: $isSelectedSerumNight)
-                                            .labelsHidden()
-                                            .toggleStyle(NewNightToggleCheckbox())
-                                            .font(.largeTitle)
-                                        
-                                    }
-                                }
-                                
-                                
-                                
-                                ZStack{
-                                    Rectangle()
-                                        .fill(Color.white)
-                                        .frame(width: 355, height: 115)
-                                        .cornerRadius(12)
-                                        .padding(5)
-                                        .shadow(radius: 5)
-                                    
-                                    
-                                    HStack{
-                                        Image("nightMoisturizer")
-                                            .frame(width:40, height: 90)
-                                            .padding()
-                                        
-                                        VStack(alignment: .leading){
-                                            Text("Moisturizer")
-                                                .font(.system(size:16))
-                                                .fontWeight(.semibold)
-                                                .foregroundColor(Color("primaryGreen"))
-                                            
-                                            
-                                            Text("Always make sure to hydrated your skin")
-                                            
-                                                .font(.system(size:14))
-                                                .fontWeight(.light)
-                                                .multilineTextAlignment(.leading)
-                                                .frame(width: 215,alignment: .leading)
-                                            
-                                            
-                                            Spacer()
-                                                .frame(height:20)
-                                            
-                                            addProductButton
-                                        }
-                                        
-                                        
-                                        
-                                        
-                                        Toggle("",isOn: $isSelectedMoisturizerNight)
-                                            .labelsHidden()
-                                            .toggleStyle(NewNightToggleCheckbox())
-                                            .font(.largeTitle)
-                                        
-                                    }
-                                }
-                                
-                                ZStack{
-                                    Rectangle()
-                                        .fill(Color.white)
-                                        .frame(width: 355, height: 115)
-                                        .cornerRadius(12)
-                                        .padding(5)
-                                        .shadow(radius: 5)
-                                    
-                                    
-                                    HStack{
-                                        Image("nightAcneTreatment")
-                                            .frame(width:40, height: 90)
-                                            .padding()
-                                        
-                                        VStack(alignment: .leading){
-                                            Text("Acne Treatment")
-                                                .font(.system(size:16))
-                                                .fontWeight(.semibold)
-                                                .foregroundColor(Color("primaryGreen"))
-                                            
-                                            
-                                            Text("Clear away bacteria and dry up the excess oils that lead to acne")
-                                            
-                                                .font(.system(size:14))
-                                                .fontWeight(.light)
-                                                .multilineTextAlignment(.leading)
-                                                .frame(width: 215,alignment: .leading)
-                                            
-                                            
-                                            Spacer()
-                                                .frame(height:20)
-                                            
-                                            addProductButton
-                                        }
-                                        
-                                        
-                                        
-                                        
-                                        Toggle("",isOn: $isSelectedAcneTreatmentNight)
-                                            .labelsHidden()
-                                            .toggleStyle(NewNightToggleCheckbox())
-                                            .font(.largeTitle)
-                                        
-                                    }
-                                }
-                                
-                                
-                                
-                                
-                                
-                                
-                                
+
                             }
                         })
                         .padding(.leading,0)
                         
-                        .frame(width: 500, height: 630)
+                        .frame(width: 500, height: 710)
                         .edgesIgnoringSafeArea(.bottom)
                     }
-                    CustomAlert(textEntered: $textEntered, showingAlert: $showingAlert)
-                        .opacity(showingAlert ? 1 : 0)
+                  
                 }
-                .navigationBarTitle("Edit")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(leading:
                                         HStack{
                     Button(action: {
-                        self.isBack = true
+//                        self.isBack = true
+                        self.presentation.wrappedValue.dismiss()
                     }){
-                        Text("Cancel")
-                            .foregroundColor(.blue)
-                            .frame(alignment: .leading)
-                        
+                        HStack{
+                            Image (systemName: "chevron.backward")
+                            .font(.system(size:22))
+                            .foregroundColor(Color ("primaryGreen"))
+                            
+                            Text("Your Skincare Product")
+                                .foregroundColor(Color("primaryGreen"))
+                                .font(.system(size:20))
+                                .fontWeight(.bold)
+                                .frame(alignment: .leading)
+                        }
+                
                     }
                     
                 }
                                     
-                                    
                 )
-                .navigationBarItems(trailing:
-                                        HStack{
-                    Button(action: {
-                        self.isDone = true
-                    }){
-                        Text("Done")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.blue)
-                            .frame(alignment: .leading)
-                        
-                        
-                    }
-                    
-                }
-                                    
-                                    
-                )
-                
-                
                 
             }
             .navigationViewStyle(.stack )
             .task{
-                try? await lnManagerNight.requestAuthorization()
+//                try? await lnManagerNight.requestAuthorization()
             }
             .onChange(of: scenePhase){newValue in
                 if newValue == .active{
@@ -526,62 +252,3 @@ struct NightChooseProduct_Previews: PreviewProvider {
     }
 }
 
-
-//MARK: Custom Alert
-struct CustomAlert: View {
-    @Binding var textEntered: String
-    @Binding var showingAlert: Bool
-    
-    var body: some View {
-        ZStack{
-            Color.gray.opacity(0.2)
-            ZStack {
-                
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(Color.white)
-                VStack {
-                    Text("Product name")
-                        .font(.system(size: 17))
-                        .fontWeight(.semibold)
-                        .foregroundColor(.black)
-                        .padding()
-                    
-                    Text("Write a product name you use")
-                        .font(.system(size: 13))
-                    
-                    Divider()
-                    
-                    TextField("Enter text", text: $textEntered)
-                        .padding(5)
-                        .background(Color.gray.opacity(0.2))
-                        .foregroundColor(.black)
-                        .cornerRadius(10)
-                    //                        .padding(.horizontal, 20)
-                    
-                    
-                    Divider()
-                    
-                    HStack {
-                        
-                        Button("Dismiss") {
-                            self.showingAlert.toggle()
-                        }
-                        Spacer()
-                        Button("Save") {
-                            
-                        }
-                        
-                    }
-                    .padding()
-                    //                    .padding(30)
-                    //                    .padding(.horizontal, 40)
-                }
-                .padding()
-            }
-            .frame(width: 300, height: 160)
-            
-        }
-    }
-}
-
-//tUTORIAL local notif= https://www.youtube.com/watch?v=iRjyk1S0nvo

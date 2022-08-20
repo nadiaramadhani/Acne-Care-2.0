@@ -16,7 +16,7 @@ final class QuizViewModel: ObservableObject {
     private let skinPersonaRepository: SkinPersonaRepository
     private let userRepository: UserRepository
     
-    init(skinPersonaRepository: SkinPersonaRepository = SkinPersonaDefaultRepository(),
+    init(skinPersonaRepository: SkinPersonaRepository = SkinPersonaDefaultRepository.shared,
          userRepository: UserRepository = UserDefaultRepository()
     ){
         self.skinPersonaRepository = skinPersonaRepository
@@ -50,8 +50,9 @@ extension QuizViewModel {
             userID: logedInUserId
         )
         
-        userRepository.addNewUserSkinPersona(id: newPersona.userID!.uuidString, skinPersona: newPersona)
+        
         _ = SkinPersonaDefaultRepository.shared.isFirstQuiz(userID: logedInUserId)
+        userRepository.addNewUserSkinPersona(id: newPersona.userID!.uuidString, skinPersona: newPersona)
 
     }
     

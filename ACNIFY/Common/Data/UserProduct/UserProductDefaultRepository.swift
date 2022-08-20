@@ -8,11 +8,16 @@
 import Foundation
 
 final class UserProductDefaultRepository: UserProductRepository {
+   
+    private let userProductLocalDataSource: UserProductLocalDataStore
+    private let userLocalDataStore: UserLocalDataStore
     
-    private let UserProductLocalDataSource: UserProductLocalDataStore
-    
-    init(acneLogProductLocalDataSource: UserProductLocalDataStore = UserProductDefaultLocalDataStore()) {
-        self.UserProductLocalDataSource = acneLogProductLocalDataSource
+    init(
+        acneLogProductLocalDataSource: UserProductLocalDataStore = UserProductDefaultLocalDataStore(),
+        userLocalDataStore: UserLocalDataStore = UserDefaultLocalDataStore()
+    ) {
+        self.userProductLocalDataSource = acneLogProductLocalDataSource
+        self.userLocalDataStore = userLocalDataStore
     }
     
     func getAllUsedUserProduct(userID: String) -> [UserProduct] {
@@ -26,21 +31,56 @@ final class UserProductDefaultRepository: UserProductRepository {
     }
     
     func saveChanges() {
-        UserProductLocalDataSource.saveChanges()
+        userProductLocalDataSource.saveChanges()
     }
     
     func rollBack() {
-        UserProductLocalDataSource.rollBack()
+        userProductLocalDataSource.rollBack()
     }
     
     private func getAllAcneLogProductsByUserID(userID: String) -> [UserProduct] {
         do {
-            guard let products = try UserProductLocalDataSource.getAllProductByUserID(userID: userID) else {return[]}
+            guard let products = try userProductLocalDataSource.getAllProductByUserID(userID: userID) else {return[]}
             
             return products
         }catch{
             print(error)
             return []
         }
+    }
+    
+    func createDefaultProduct(userID: String) {
+        
+        guard let currentUser = try? userLocalDataStore.getUserByID(id: userID) else {return}
+        
+        guard let listProducts = try? userProductLocalDataSource.getAllProductByUserID(userID: userID) else {return}
+        
+        guard listProducts.isEmpty else {return}
+        
+        
+        let productDefaults = UserProductDetail.getDefaultProduct()
+        for productDetail in productDefaults {
+            let newProductDay = userProductLocalDataSource.createNewAcneLogProduct()
+            newProductDay.routineType = UserProduct.dayRoutineType
+            newProductDay.userID = UUID.init(uuidString: userID)
+            newProductDay.isUsed = true
+            newProductDay.created_at = Date.now
+            newProductDay.productDetailID = Int16(productDetail.ID)
+            newProductDay.user = currentUser
+            currentUser.addToProducts(newProductDay)
+        }
+        
+        for productDetail in productDefaults {
+            let newProductDay = userProductLocalDataSource.createNewAcneLogProduct()
+            newProductDay.routineType = UserProduct.nightRoutineType
+            newProductDay.userID = UUID.init(uuidString: userID)
+            newProductDay.isUsed = true
+            newProductDay.created_at = Date.now
+            newProductDay.productDetailID = Int16(productDetail.ID)
+            newProductDay.user = currentUser
+            currentUser.addToProducts(newProductDay)
+        }
+        
+        userProductLocalDataSource.saveChanges()
     }
 }

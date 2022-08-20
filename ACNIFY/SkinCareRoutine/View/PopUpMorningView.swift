@@ -14,6 +14,8 @@ struct ProductPopUpMorning: View {
     
     @State var isUnderstandMorning = false
     @StateObject var lnManagerMorning = LocalNotificationManagerMorning()
+    @Environment(\.presentationMode) var presentation
+
     var body: some View {
         if isUnderstandMorning{
             morningChooseProduct()

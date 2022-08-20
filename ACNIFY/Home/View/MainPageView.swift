@@ -15,7 +15,8 @@ struct Box {
 
 
 struct MainPageView: View {
-    
+    @State private var morningViewCheck = false
+
     let viewModel = HomeViewModel()
     
     let boxes:[Box] = [
@@ -25,7 +26,6 @@ struct MainPageView: View {
         Box(id: 3, title:"15 Juni 2022", imageUrl:"0"),
         Box(id: 4, title:"16 Juni 2022", imageUrl:"0"),
     ]
-    @AppStorage("signed_in") var currentUserSignedIn: Bool = false
     
     
     var body: some View {
@@ -71,7 +71,7 @@ struct MainPageView: View {
                                     .frame(height:0)
                                 
                                 
-                                
+                                NavigationLink(destination: TesterPickerView().navigationBarHidden(true)){
                                     ZStack{
                                         Image("ICard")
                                             .padding()
@@ -85,7 +85,9 @@ struct MainPageView: View {
                                                 .padding(.trailing, 165)
                                             
                                             
-                                            NavigationLink(destination: TesterPickerView().navigationBarHidden(true)){
+                                            Button(action: {
+                                                self.morningViewCheck = true},
+                                                   label: {
                                                 Text("Update")
                                                     .font(.system(size:13))
                                                     .fontWeight(.semibold)
@@ -96,10 +98,22 @@ struct MainPageView: View {
                                                         Color("primaryGreen")
                                                             .cornerRadius(10)
                                                             .shadow(radius: 5))
-                                                    .padding(.trailing,200 )
-                                            }.buttonStyle(.plain)
+                                                    .alert(isPresented: $morningViewCheck, content:{
+                                                        Alert(title: Text("Kamu mau update foto hari ini ga?"),
+                                                              primaryButton: .destructive(Text("Skip"), action:{
+                                                            print("Skip has been selected")
+                                                        }), secondaryButton: .default(Text("Take Photos"), action:{print("Photos Selected")}))
+                                                    })
+
+                                            })
+                                            .padding(.trailing,200 )
+                                            
+                                            
                                         }
                                     }
+                                }.buttonStyle(.plain)
+                              
+                
                                 
                                 
                                 Spacer()

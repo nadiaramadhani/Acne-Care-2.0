@@ -11,12 +11,21 @@ import SwiftUI
 
 final class LoginViewModel: ObservableObject {
     private var authentificationRepository: AuthenticationRepository
+    private var userProductRepository: UserProductRepository
     
-    init(authentificationRepository: AuthenticationRepository = AuthenticationDefaultRepository.shared){
+    init(
+        authentificationRepository: AuthenticationRepository = AuthenticationDefaultRepository.shared,
+        userProductRepository: UserProductRepository = UserProductDefaultRepository()
+    ){
         self.authentificationRepository = authentificationRepository
+        self.userProductRepository = userProductRepository
     }
     
     func setLoginUser(for username: String){
-        let _ = authentificationRepository.login(name: username)
+        let logedInUser = authentificationRepository.login(name: username)
+        
+        guard let userId = logedInUser?.id else {return}
+        
+        userProductRepository.createDefaultProduct(userID: userId.uuidString)
     }
 }
