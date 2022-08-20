@@ -279,6 +279,55 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9A8C429828B114BD006E0134 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9A8C429928B114D8006E0134 /* View Model */,
+				9A8C429A28B114E5006E0134 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		9A8C429928B114D8006E0134 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		9A8C429A28B114E5006E0134 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A8C429B28B1150C006E0134 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AD904A328AF892C00E4F6E4 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				9AD904A428AF893C00E4F6E4 /* ViewModel */,
+				9AD904A528AF894400E4F6E4 /* View */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		9AD904A428AF893C00E4F6E4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9AD904A528AF894400E4F6E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AD904A828AF9D2700E4F6E4 /* SummaryPageView.swift */,
+				9A8C429628B0CB36006E0134 /* GraphicProgressView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9B9E7FD028AF3B3A004AA291 /* New View */ = {
 			isa = PBXGroup;
 			children = (
@@ -991,12 +1040,14 @@
 				CB3D368D28A2839900D9D637 /* SkinPersonaLocalDataStore.swift in Sources */,
 				9A8C429728B0CB36006E0134 /* GraphicProgressView.swift in Sources */,
 				9B00AE8028B09A7A0052D1E6 /* SkinQuizItemView.swift in Sources */,
+				9A8C429728B0CB36006E0134 /* GraphicProgressView.swift in Sources */,
 				9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */,
 				9AF3DC442869C563007847E7 /* NightProductsView.swift in Sources */,
 				CB4FF13B28991535008D78AC /* OnboardingViewModel.swift in Sources */,
 				CB3D368F28A284A700D9D637 /* SkinPersonaDefaultLocalDataSource.swift in Sources */,
 				CB4FF13D28991607008D78AC /* OnboardingItemView.swift in Sources */,
 				CBCE6EEE28B2825600F1468B /* SkinQuizMainView.swift in Sources */,
+				9AD904A928AF9D2700E4F6E4 /* SummaryPageView.swift in Sources */,
 				9AD904A928AF9D2700E4F6E4 /* SummaryPageView.swift in Sources */,
 				CB19349728A3CA1D000DF7CE /* QuizResultViewModel.swift in Sources */,
 				CB4F383128A7B32E00D91F0B /* UserProductDefaultLocalDataStore.swift in Sources */,
