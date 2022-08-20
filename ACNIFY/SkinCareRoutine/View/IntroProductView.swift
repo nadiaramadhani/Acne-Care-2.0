@@ -11,13 +11,14 @@ struct IntroProductView: View {
     
     @State private var isCancel = false
     @State private var isReadyMorning = false
+    var pageDisplayed: ChooseProductMainView.PageDisplayed
     @AppStorage("firstTimeIntro") var firstIntro: Bool = true
     
     @ObservedObject var viewModel = ChooseProductViewModel()
     
     var body: some View {
         if !firstIntro{
-            ChooseProductMainView(viewModel: viewModel).onAppear{
+            ChooseProductMainView(viewModel: viewModel, pageDisplayed: pageDisplayed).onAppear{
                 viewModel.getAllUserProducts()
             }
         }else{
@@ -87,6 +88,6 @@ struct IntroProductView: View {
 
 struct IntroProductMorning_Previews: PreviewProvider {
     static var previews: some View {
-        IntroProductView()
+        IntroProductView(pageDisplayed: .Day)
     }
 }

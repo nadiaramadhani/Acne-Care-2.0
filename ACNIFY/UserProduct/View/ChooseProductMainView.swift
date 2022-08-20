@@ -11,6 +11,7 @@ struct ChooseProductMainView: View {
     @ObservedObject var viewModel : ChooseProductViewModel
     @State var isSelectedOilCleanserNight = false
     @Environment(\.presentationMode) var presentation
+    @State var pageDisplayed: ChooseProductMainView.PageDisplayed = .Day
     
     var body: some View {
         NavigationView{
@@ -32,13 +33,24 @@ struct ChooseProductMainView: View {
                     
                     ScrollView(.vertical, showsIndicators: false, content: {
                         VStack{
-                            
-                            ForEach(0..<viewModel.userDayProducts.count, id: \.self) { index in
-                                let userProduct = viewModel.userDayProducts[index]
-                                let productDetail = UserProductDetail.getDefaultProduct().filter{$0.ID ==  userProduct.productDetailID}
-                                    .first!
-                                ProductCardItemView(isChecked: $viewModel.productDayChecked[index], productDetail: productDetail, product: userProduct)
+                            if pageDisplayed == .Day {
+                                ForEach(0..<viewModel.userDayProducts.count, id: \.self) { index in
+                                    let userProduct = viewModel.userDayProducts[index]
+                                    let productDetail = UserProductDetail.getDefaultProduct().filter{$0.ID ==  userProduct.productDetailID}
+                                        .first!
+                                    ProductCardItemView(isChecked: $viewModel.productDayChecked[index], productDetail: productDetail, product: userProduct)
+                                }
                             }
+                            
+                            if pageDisplayed == .Night {
+                                ForEach(0..<viewModel.userNightProducts.count, id: \.self) { index in
+                                    let userProduct = viewModel.userNightProducts[index]
+                                    let productDetail = UserProductDetail.getDefaultProduct().filter{$0.ID ==  userProduct.productDetailID}
+                                        .first!
+                                    ProductCardItemView(isChecked: $viewModel.productDayChecked[index], productDetail: productDetail, product: userProduct)
+                                }
+                            }
+                           
                             
                         }
                     })
@@ -92,4 +104,10 @@ struct ChooseProductMainView_Previews: PreviewProvider {
 }
 
 
+extension ChooseProductMainView{
+    enum PageDisplayed{
+        case Night
+        case Day
+    }
+}
 

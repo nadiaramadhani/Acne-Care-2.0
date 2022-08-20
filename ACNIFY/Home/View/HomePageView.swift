@@ -66,7 +66,7 @@ struct HomePageView: View {
                                 .padding(.trailing, 200)
                                 .foregroundColor(.gray)
                             
-                            NavigationLink(destination: IntroProductView()
+                            NavigationLink(destination: IntroProductView(pageDisplayed: .Day)
                                 .navigationBarHidden(true)){
                                     ZStack {
                                         
@@ -123,7 +123,7 @@ struct HomePageView: View {
                             
                             
                             NavigationLink(
-                                destination: IntroProductView()
+                                destination: IntroProductView(pageDisplayed: .Night)
                                     .navigationBarHidden(true)
                             ){
                                 ZStack{
