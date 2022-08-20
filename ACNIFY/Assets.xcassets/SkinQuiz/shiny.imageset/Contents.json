@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "poresQuiz.png",
+      "filename" : "shiny.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "poresQuiz@2x.png",
+      "filename" : "shiny@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "poresQuiz@3x.png",
+      "filename" : "shiny@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
