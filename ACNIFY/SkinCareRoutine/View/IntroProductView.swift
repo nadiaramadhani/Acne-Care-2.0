@@ -11,12 +11,16 @@ struct IntroProductView: View {
     
     @State private var isCancel = false
     @State private var isReadyMorning = false
-    @Binding var isIntroPresented: Bool
-    var displayedChooseProduct: ChooseProductMainView.ShowPage
+    var pageDisplayed: ChooseProductMainView.PageDisplayed
+    @AppStorage("firstTimeIntro") var firstIntro: Bool = true
+    
+    @ObservedObject var viewModel = ChooseProductViewModel()
     
     var body: some View {
-        if !isIntroPresented{
-            ChooseProductMainView(displayedScreen: displayedChooseProduct)
+        if !firstIntro{
+            ChooseProductMainView(viewModel: viewModel, pageDisplayed: pageDisplayed).onAppear{
+                viewModel.getAllUserProducts()
+            }
         }else{
             //        if isCancel{
             //            HomePageView()
@@ -58,7 +62,7 @@ struct IntroProductView: View {
                 
                 Spacer()
                 Button(action: {
-                    self.isIntroPresented = false
+                    UserDefaults.standard.set(false, forKey: "firstTimeIntro")
                 },
                        label: {
                     Text("Ready")
@@ -84,6 +88,6 @@ struct IntroProductView: View {
 
 struct IntroProductMorning_Previews: PreviewProvider {
     static var previews: some View {
-        IntroProductView(isIntroPresented: .constant(false), displayedChooseProduct: .Morning)
+        IntroProductView(pageDisplayed: .Day)
     }
 }

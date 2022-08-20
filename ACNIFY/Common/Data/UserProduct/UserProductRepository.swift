@@ -61,4 +61,21 @@ struct UserProductDetail {
 extension UserProduct {
     static let dayRoutineType: String = "day"
     static let nightRoutineType: String = "night"
+    
+    func isLocked() -> Bool {
+        return self.dayCountToUnlocked() > 0
+    }
+    
+    func dayCountToUnlocked() -> Int {
+        
+        guard let createdDate = self.created_at else  {return 0}
+        
+        let totalDateElapsed = Date.now.days(sinceDate: createdDate) ?? 0
+        
+        let productDetail = UserProductDetail.getDefaultProduct().filter{
+            $0.ID == self.productDetailID
+        }.first!
+        
+        return productDetail.daysCountToUnlock - totalDateElapsed
+    }
 }

@@ -9,28 +9,31 @@ import SwiftUI
 import AVFoundation
 
 struct TakePhotos: View {
+    @ObservedObject var viewModel : TreatmentPhotoViewModel
     var body: some View {
-        CameraView()
+        CameraView(viewModel: viewModel)
     }
 }
 
 struct TakePhotos_Previews: PreviewProvider {
     static var previews: some View {
-        TakePhotos()
+        TakePhotos(viewModel: TreatmentPhotoViewModel(acneLog: nil))
     }
 }
 
 struct CameraView: View{
     
     @StateObject var camera = CameraModel()
-    @State var isPhotoPreview = true
+    @State var isPhotoPreview = false
+    @ObservedObject var viewModel : TreatmentPhotoViewModel
+
     
     @Environment (\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var skins: FetchedResults<UpdateEntity>
 
     var body: some View{
         if isPhotoPreview {
-            PhotoPreview()
+            PhotoPreview(data:viewModel.acneLog?.image)
         } else {
             ZStack{
                 //Going to be camera preview
@@ -71,10 +74,10 @@ struct CameraView: View{
                             Spacer()
                             //  Button(action:{if !camera.isSaved{camera.savePic()}},
                             Button(action: {
-                               
-                                    camera.saveImage()
+                                    viewModel.acneLog?.image = camera.picData
+                                
                                     isPhotoPreview = true
-
+                                    viewModel.saveChanges()
                                 
                             }, label: {
                                 Text("Save")
@@ -145,8 +148,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     @Published var isImageSaved = false
     @Published var imageVar = UIImage(named: "0")
     
-    @Environment (\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var skins: FetchedResults<UpdateEntity>
+
 
     
     func Check(){
@@ -252,54 +254,11 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
         print("pic taken")
         
         guard let imageData = photo.fileDataRepresentation() else{return}
-        imageVar = UIImage(data: imageData)
-        
-   
-        
+        self.picData = imageData
     }
     
 
-    func saveImage() {
-        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return}
-        
-        let timeStamp = Date()
-        let fileName = "Acnify\(timeStamp)"
-        let fileURL = documentsDirectory.appendingPathComponent(fileName)
-        guard let data = imageVar?.jpegData( compressionQuality: 1.0) else {return}
-        
-      //  print(timeStamp)
-        
-        if FileManager.default.fileExists(atPath: fileURL.path) {
-            do {
-                try FileManager.default.removeItem(atPath: fileURL.path)
-                print("removed old image")
-            } catch let removeError {
-                print("couldn't remove file at path", removeError)
-                
-            }
-            
-        }
-        
-        do {
-            try data.write(to: fileURL)
-            self.isImageSaved = true
-            print("image saved to document directory")
-            print("image saved to \(fileURL)")
-            
-        } catch let error {
-            print("error saving file with error", error)
-        }
-        
-        
-//        do{
-//            let newUpdate = UpdateEntity(context: moc)
-//            newUpdate.imageUpdate = fileURL
-//
-//        } catch let error {
-//            print("error saving fileURL to coredata")
-//        }
-        
-    }
+
     
     
    
@@ -321,12 +280,10 @@ struct CameraPreview: UIViewRepresentable{
         camera.preview = AVCaptureVideoPreviewLayer(session: camera.session)
         camera.preview.frame = view.frame
         
-        //Own Properties
         camera.preview.videoGravity = .resizeAspectFill
         view.layer.addSublayer(camera.preview)
         
         
-        //starting session
         camera.session.startRunning()
         
         return view
