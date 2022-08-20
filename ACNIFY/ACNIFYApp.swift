@@ -24,7 +24,6 @@ struct ACNIFYApp: App {
             } else {
                 LoginView()
                     .fullScreenCover(isPresented: $authentificationRepository.isLogedIn){
-            
                         if skinPersonaRepository.isFirstUserQuiz {
                             QuizMainView()
                         } else{
