@@ -26,6 +26,7 @@
 		9AF3DC462869C56D007847E7 /* LocalNotifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC452869C56D007847E7 /* LocalNotifManager.swift */; };
 		9AF3DC482869C576007847E7 /* PopUpMorningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC472869C576007847E7 /* PopUpMorningView.swift */; };
 		9AF3DC4A2869C588007847E7 /* LocalNotifManager2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC492869C588007847E7 /* LocalNotifManager2.swift */; };
+		9B00AE8028B09A7A0052D1E6 /* SkinQuizItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00AE7F28B09A7A0052D1E6 /* SkinQuizItemView.swift */; };
 		9B33ADE228ABC31300751F4A /* PhotoAndUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B33ADE128ABC31300751F4A /* PhotoAndUpdateView.swift */; };
 		9B4590B128AB6BDD0083B405 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4590B028AB6BDD0083B405 /* HomePageView.swift */; };
 		9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE128680B1700449BB4 /* CustomPopUp.swift */; };
@@ -41,6 +42,7 @@
 		9BB3782928634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */; };
 		9BB4B4FD2866E2240069E86E /* QuizSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FC2866E2240069E86E /* QuizSkinView.swift */; };
 		9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FE2866F3470069E86E /* SkinResultView.swift */; };
+		9BB6562D28B0E70200F374E8 /* AcneQuizItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6562C28B0E70200F374E8 /* AcneQuizItemView.swift */; };
 		CB19349128A3A0F5000DF7CE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19349028A3A0F5000DF7CE /* HomeViewModel.swift */; };
 		CB19349428A3A1B0000DF7CE /* UserDefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19349328A3A1B0000DF7CE /* UserDefaultRepository.swift */; };
 		CB19349728A3CA1D000DF7CE /* QuizResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19349628A3CA1D000DF7CE /* QuizResultViewModel.swift */; };
@@ -121,6 +123,7 @@
 		9AF3DC452869C56D007847E7 /* LocalNotifManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifManager.swift; sourceTree = "<group>"; };
 		9AF3DC472869C576007847E7 /* PopUpMorningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpMorningView.swift; sourceTree = "<group>"; };
 		9AF3DC492869C588007847E7 /* LocalNotifManager2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifManager2.swift; sourceTree = "<group>"; };
+		9B00AE7F28B09A7A0052D1E6 /* SkinQuizItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinQuizItemView.swift; sourceTree = "<group>"; };
 		9B33ADE128ABC31300751F4A /* PhotoAndUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAndUpdateView.swift; sourceTree = "<group>"; };
 		9B4590B028AB6BDD0083B405 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		9B86CBE128680B1700449BB4 /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 		9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNIFYUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9BB4B4FC2866E2240069E86E /* QuizSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSkinView.swift; sourceTree = "<group>"; };
 		9BB4B4FE2866F3470069E86E /* SkinResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinResultView.swift; sourceTree = "<group>"; };
+		9BB6562C28B0E70200F374E8 /* AcneQuizItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneQuizItemView.swift; sourceTree = "<group>"; };
 		CB19349028A3A0F5000DF7CE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CB19349328A3A1B0000DF7CE /* UserDefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultRepository.swift; sourceTree = "<group>"; };
 		CB19349628A3CA1D000DF7CE /* QuizResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewModel.swift; sourceTree = "<group>"; };
@@ -210,6 +214,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B9E7FD028AF3B3A004AA291 /* New View */ = {
+			isa = PBXGroup;
+			children = (
+				9BA6864A28AEFE97001CD564 /* IntroQuizView.swift */,
+				9BA6864828AEFDF8001CD564 /* SkinQuizView.swift */,
+			);
+			path = "New View";
+			sourceTree = "<group>";
+		};
 		9BB377FF28634BA0007A3640 = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +288,16 @@
 				9BB3782828634BA2007A3640 /* ACNIFYUITestsLaunchTests.swift */,
 			);
 			path = ACNIFYUITests;
+			sourceTree = "<group>";
+		};
+		9BB6562E28B0ED2500F374E8 /* Old View */ = {
+			isa = PBXGroup;
+			children = (
+				9BB4B4FC2866E2240069E86E /* QuizSkinView.swift */,
+				9AF3DC362869C4A3007847E7 /* QuizAcneView.swift */,
+				CB8146BA289FED4F007FC63A /* QuizMainView.swift */,
+			);
+			path = "Old View";
 			sourceTree = "<group>";
 		};
 		CB19349228A3A0F9000DF7CE /* ViewModel */ = {
@@ -486,11 +509,8 @@
 		CB3DFE7E2898153C002EF675 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9AF3DC362869C4A3007847E7 /* QuizAcneView.swift */,
-				9BB4B4FC2866E2240069E86E /* QuizSkinView.swift */,
-				CB8146BA289FED4F007FC63A /* QuizMainView.swift */,
-				9BA6864828AEFDF8001CD564 /* SkinQuizView.swift */,
-				9BA6864A28AEFE97001CD564 /* IntroQuizView.swift */,
+				9BB6562E28B0ED2500F374E8 /* Old View */,
+				9B9E7FD028AF3B3A004AA291 /* New View */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -704,6 +724,8 @@
 		CBBFE875289FD5240064ADF5 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				9B00AE7F28B09A7A0052D1E6 /* SkinQuizItemView.swift */,
+				9BB6562C28B0E70200F374E8 /* AcneQuizItemView.swift */,
 				CBBFE876289FD5430064ADF5 /* QuizCardView.swift */,
 			);
 			path = Quiz;
@@ -889,6 +911,7 @@
 				9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */,
 				CB33870728AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift in Sources */,
 				CB3D368D28A2839900D9D637 /* SkinPersonaLocalDataStore.swift in Sources */,
+				9B00AE8028B09A7A0052D1E6 /* SkinQuizItemView.swift in Sources */,
 				9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */,
 				9AF3DC442869C563007847E7 /* NightProductsView.swift in Sources */,
 				CB4FF13B28991535008D78AC /* OnboardingViewModel.swift in Sources */,
@@ -910,6 +933,7 @@
 				CB21589428A8AC0A006F2EB7 /* DailyCheckListViewModel.swift in Sources */,
 				CB21589428A8AC0A006F2EB7 /* ChooseProductViewModel.swift in Sources */,
 				CB8146BB289FED4F007FC63A /* QuizMainView.swift in Sources */,
+				9BB6562D28B0E70200F374E8 /* AcneQuizItemView.swift in Sources */,
 				CB33870528AA1C11006B839B /* AcneLogProductLocalDataSource.swift in Sources */,
 				9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */,
 				CB4FF14B28992C27008D78AC /* LoginViewModel.swift in Sources */,
