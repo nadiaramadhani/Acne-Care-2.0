@@ -6,23 +6,17 @@
 //
 import SwiftUI
 struct PhotoPreview : View {
-//    let image = UIImage(data: self.picData)!
-
+    var data: Data?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            //Populate text with info from notification.
-            
-            //Bisa pake airtable as database, nanti di fetch
-            
             Text("Photo preview")
-            if let image = loadImageFromDiskWith(fileName: "Acnify2022-07-04%2008:30:57%20+0000") {
+            if let dataImage = data {
                 
-                Image(uiImage: image)
+                Image(uiImage: UIImage(data: dataImage)!)
                     .resizable()
                     .scaledToFit()
             } else {
-               // Put some placeholder image here
             }
         }
     }
@@ -47,6 +41,6 @@ struct PhotoPreview : View {
 
 struct PhotoPreview_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoPreview()
+        PhotoPreview(data: nil)
     }
 }
