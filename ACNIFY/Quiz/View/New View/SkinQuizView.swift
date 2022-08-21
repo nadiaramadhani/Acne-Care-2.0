@@ -20,7 +20,8 @@ struct skinQuizModel {
 struct SkinQuizView: View {
     @State var progressValue: Float = 0.11
     @State var questionState: Int = 1
-    @ObservedObject var viewModel = NewQuizViewModel()
+    @ObservedObject var viewModel: NewQuizViewModel
+    @Binding var displayedPage: SkinQuizMainView.DisplayedPage
     
     var body: some View {
         NavigationView{
@@ -76,8 +77,8 @@ struct SkinQuizView: View {
                             
                         
                         if questionState == 9 {
-                            NavigationLink {
-                                HomePageView()
+                            Button {
+                                displayedPage = .ResultPage
                             } label: {
                                 Text("Next")
                                     .fontWeight(.semibold)
@@ -139,19 +140,19 @@ struct SkinQuizView: View {
     }
     
     private var questionFive: some View {
-        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[0])
+        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[0], selectedAcne: $viewModel.acneSeverityMap)
     }
     private var questionSix: some View {
-        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[1])
+        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[1], selectedAcne: $viewModel.acneSeverityMap)
     }
     private var questionSeven: some View {
-        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[2])
+        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[2], selectedAcne: $viewModel.acneSeverityMap)
     }
     private var questionEight: some View {
-        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[3])
+        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[3], selectedAcne: $viewModel.acneSeverityMap)
     }
     private var questionNine: some View {
-        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[4])
+        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[4], selectedAcne: $viewModel.acneSeverityMap)
     }
 
 }
@@ -183,6 +184,6 @@ struct ProgressBar: View {
 }
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        SkinQuizView()
+        SkinQuizView(viewModel: NewQuizViewModel(), displayedPage: .constant(.IntroPage))
     }
 }

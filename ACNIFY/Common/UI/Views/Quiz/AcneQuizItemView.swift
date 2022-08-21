@@ -9,9 +9,14 @@ import SwiftUI
 
 struct AcneQuizItemView: View {
     var acneData: AcneQuizItemView.AcneLocation?
+    @State var selectedIndex:Int = 0
+    @Binding var selectedAcne: [String:NewQuizViewModel.AcneType]
+    
     var body: some View {
         ScrollView{
-            VStack{
+            HStack{
+                Spacer()
+                VStack{
                 Text(acneData?.location ?? "Forehead")
                     .font(.system(size: 17))
                     .fontWeight(.semibold)
@@ -27,12 +32,26 @@ struct AcneQuizItemView: View {
                 HStack{
                     VStack{
                         Image("whitehead")
+                            .overlay(RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.orange, lineWidth: 4)
+                                .opacity(0 == selectedIndex ? 1 : 0))
+                            .onTapGesture {
+                                selectedIndex = 0
+                                selectedAcne[acneData?.location ?? "Forehead"] = .Comedones
+                            }
                         Text("Whitehead")
                             .fontWeight(.semibold)
 
                     }
                     VStack{
                         Image("blackhead")
+                            .overlay(RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.orange, lineWidth: 4)
+                                .opacity(1 == selectedIndex ? 1 : 0))
+                            .onTapGesture {
+                                selectedIndex = 1
+                                selectedAcne[acneData?.location ?? "Forehead"] = .Comedones
+                            }
                         Text("Blackhead")
                             .fontWeight(.semibold)
 
@@ -42,12 +61,26 @@ struct AcneQuizItemView: View {
                 HStack{
                     VStack{
                         Image("papules")
+                            .overlay(RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.orange, lineWidth: 4)
+                                .opacity(2 == selectedIndex ? 1 : 0))
+                            .onTapGesture {
+                                selectedIndex = 2
+                                selectedAcne[acneData?.location ?? "Forehead"] = .Papule
+                            }
                         Text("Papule")
                             .fontWeight(.semibold)
 
                     }
                     VStack{
                         Image("pustules")
+                            .overlay(RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.orange, lineWidth: 4)
+                                .opacity(3 == selectedIndex ? 1 : 0))
+                            .onTapGesture {
+                                selectedIndex = 3
+                                selectedAcne[acneData?.location ?? "Forehead"] = .Pustule
+                            }
                         Text("Pustule")
                             .fontWeight(.semibold)
 
@@ -58,12 +91,26 @@ struct AcneQuizItemView: View {
                 HStack{
                     VStack{
                         Image("nodules")
+                            .overlay(RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.orange, lineWidth: 4)
+                                .opacity(4 == selectedIndex ? 1 : 0))
+                            .onTapGesture {
+                                selectedIndex = 4
+                                selectedAcne[acneData?.location ?? "Forehead"] = .Nodule
+                            }
                         Text("Nodule")
                             .fontWeight(.semibold)
 
                     }
                     VStack{
                         Image("cysts")
+                            .overlay(RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.orange, lineWidth: 4)
+                                .opacity(5 == selectedIndex ? 1 : 0))
+                            .onTapGesture {
+                                selectedIndex = 5
+                                selectedAcne[acneData?.location ?? "Forehead"] = .Nodule
+                            }
                         Text("Cyst")
                             .fontWeight(.semibold)
 
@@ -74,6 +121,13 @@ struct AcneQuizItemView: View {
                 HStack{
                     VStack{
                         Image("none")
+                            .overlay(RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.orange, lineWidth: 4)
+                                .opacity(6 == selectedIndex ? 1 : 0))
+                            .onTapGesture {
+                                selectedIndex = 6
+                                selectedAcne[acneData?.location ?? "Forehead"] = .NoLesion
+                            }
                         Text("None")
                             .fontWeight(.semibold)
 
@@ -83,6 +137,10 @@ struct AcneQuizItemView: View {
                 .font(.system(size: 15))
 
             }
+                Spacer()
+            }
+        }.onAppear{
+            selectedAcne[acneData?.location ?? "Forehead"] = .Comedones
         }
     }
 }
@@ -94,11 +152,11 @@ extension AcneQuizItemView {
     }
     
     static func getAcneLocation() -> [AcneQuizItemView.AcneLocation] {
-        let loc1 = AcneLocation( location: "Forehead")
-        let loc2 = AcneLocation(location: "Right cheek")
-        let loc3 = AcneLocation( location: "Left cheek")
-        let loc4 = AcneLocation(location: "Nose")
-        let loc5 = AcneLocation(location: "Chin")
+        let loc1 = AcneLocation( location: NewQuizViewModel.Forehead)
+        let loc2 = AcneLocation(location: NewQuizViewModel.RightCheek)
+        let loc3 = AcneLocation( location: NewQuizViewModel.LeftCheek)
+        let loc4 = AcneLocation(location: NewQuizViewModel.Nose)
+        let loc5 = AcneLocation(location: NewQuizViewModel.Chin)
         
         
         return [loc1, loc2, loc3, loc4, loc5]
@@ -110,6 +168,6 @@ extension AcneQuizItemView {
 
 struct AcneQuizItem_Previews: PreviewProvider {
     static var previews: some View {
-        AcneQuizItemView()
+        AcneQuizItemView(selectedAcne: .constant([String:NewQuizViewModel.AcneType]()))
     }
 }

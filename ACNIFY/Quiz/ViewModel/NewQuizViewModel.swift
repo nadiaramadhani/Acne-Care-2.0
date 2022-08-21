@@ -14,6 +14,31 @@ final class NewQuizViewModel: ObservableObject {
     @Published var shinySkinAnswer = ""
     @Published var oilyCertainAreaSkinAnswer = ""
     @Published var acneSeverityMap = [String:NewQuizViewModel.AcneType]()
+    
+    private let skinPersonaRepository: SkinPersonaRepository
+    private let userRepository: UserRepository
+    
+    init(skinPersonaRepository: SkinPersonaRepository = SkinPersonaDefaultRepository.shared,
+         userRepository: UserRepository = UserDefaultRepository()
+    ){
+        self.skinPersonaRepository = skinPersonaRepository
+        self.userRepository = userRepository
+    }
+    
+    func saveSkinPersona() {
+        guard let logedInUserId = AuthenticationDefaultRepository.shared.userID else {return}
+        
+        let newPersona = skinPersonaRepository.createNewSkinPersona(
+            skinType: getSkinType(),
+            acneType: getAcneSeverity(),
+            userID: logedInUserId
+        )
+        
+        
+        _ = SkinPersonaDefaultRepository.shared.isFirstQuiz(userID: logedInUserId)
+        userRepository.addNewUserSkinPersona(id: newPersona.userID!.uuidString, skinPersona: newPersona)
+
+    }
         
     func getSkinType() -> String {
         guard !poresSkinAnswer.isEmpty && !tightSkinAnswer.isEmpty && !shinySkinAnswer.isEmpty && !oilyCertainAreaSkinAnswer.isEmpty else {return NewQuizViewModel.normalSkinType}
@@ -38,18 +63,22 @@ final class NewQuizViewModel: ObservableObject {
     func getAcneSeverity()-> String {
         var totalSeverity = 0
         for key in acneSeverityMap.keys {
-            totalSeverity += acneSeverityMap[key].hashValue * NewQuizViewModel.getForeheadMultiplier(position: key)
+            if let value = acneSeverityMap[key]?.rawValue {
+                totalSeverity += value * NewQuizViewModel.getMultiplier(position: key)
+                print(value * NewQuizViewModel.getMultiplier(position: key))
+                print(key)
+            }
         }
         
-        if totalSeverity > 38{
+        if totalSeverity >= 32{
             return NewQuizViewModel.acneConditionVerySevere
         }
         
-        if totalSeverity >= 31 {
+        if totalSeverity >= 25 {
             return NewQuizViewModel.acneConditionSevere
         }
         
-        if totalSeverity >= 30 {
+        if totalSeverity >= 13 {
             return NewQuizViewModel.acneConditionModerate
         }
         
@@ -136,7 +165,7 @@ extension NewQuizViewModel {
     static let ChinMultipler  = 1
     static let ChestAndUpperBackMultipler  = 3
     
-    static func getForeheadMultiplier(position: String) -> Int {
+    static func getMultiplier(position: String) -> Int {
         switch position {
         case Forehead:
             return ForeheadMultipler
@@ -148,6 +177,8 @@ extension NewQuizViewModel {
             return NoseMultipler
         case ChestAndUpperBack:
             return ChestAndUpperBackMultipler
+        case Chin:
+            return ChinMultipler
         default:
             return 0
         }
@@ -155,11 +186,11 @@ extension NewQuizViewModel {
     
     
     static let Forehead = "Forehead"
-    static let RightCheek = "RightCheek"
-    static let LeftCheek = "LeftCheek"
+    static let RightCheek = "Right Cheek"
+    static let LeftCheek = "Left Cheek"
     static let Nose = "Nose"
     static let Chin = "Chin"
-    static let ChestAndUpperBack = "ChestAndUpperBack"
+    static let ChestAndUpperBack = "Chest And Upper Back"
   
     enum AcneType: Int {
         case NoLesion = 0

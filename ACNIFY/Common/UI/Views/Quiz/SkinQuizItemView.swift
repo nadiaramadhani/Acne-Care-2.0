@@ -49,6 +49,11 @@ struct SkinQuizItemView: View {
             }
         }
         .padding(.bottom, 100)
+        .onAppear{
+            if let answers = data?.answerList {
+                selectedAnswer = answers[selectedIndex].answer
+            }
+        }
         
     }
 }
