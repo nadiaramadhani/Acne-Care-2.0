@@ -2,11 +2,12 @@
 //  SummaryPageView.swift
 //  ACNIFY
 //
-//  Created by Rahmat Maftuh Ihsan on 19/08/22.
+//  Created by Rahmat Maftuh Ihsan on 21/08/22.
 //
 
-import SwiftUICharts
+
 import SwiftUI
+import SwiftUICharts
 
 struct SummaryPageView: View {
     
@@ -18,140 +19,25 @@ struct SummaryPageView: View {
             NavigationView{
                 ScrollView{
                     VStack{
+                        Spacer()
+                            .frame(height: 24)
+                            
                         GraphicView()
                         
-                        Section{
-                            VStack{
-                                Text ("Look at your progress")
-                                    .foregroundColor(Color("primaryGreen"))
-                                    .font(.system(size: 17).bold())
-                                //                                .Color("primaryGreen")
-                                    .padding(.trailing,210-26)
-                                
-                                Spacer()
-                                    .frame(height:8)
-                                
-                                Text("Choose the date to see the details")
-                                    .font(.system(size: 12))
-                                    .fontWeight(.regular)
-                                    .padding(.trailing,190-26)
-                                
-                                Rectangle()
-                                    .frame(width:338, height: 245)
-                                
-                                Spacer()
-                                    .frame(height:24)
-                                
-                                VStack{
-                                    HStack{
-                                        Image("PhotoTake")
-                                        Text("Photo Taken")
-                                            
-                                    }
-                                    .padding(.trailing,220)
-                                    
-                                    Spacer()
-                                        .frame(height:8)
-                                    
-                                    HStack{
-                                        Image("DayRing")
-                                        Text("Completed Day Routine")
-                                    }
-                                    .padding(.trailing,130)
-                                    
-                                    Spacer()
-                                        .frame(height:8)
-                                    
-                                    HStack{
-                                        Image("NightRing")
-                                        Text("Completed Night Routine")
-                                    }
-                                    .padding(.trailing,120)
-                                    
-                                    Spacer()
-                                        .frame(height:8)
-                                    
-                                    HStack{
-                                        Image("CompleteRing")
-                                        Text("Completed Day & Night Routine")
-                                    }
-                                    .padding(.trailing,75)
-
-                                }
-                                
-                                
-                            }
-                            
-                            
-                        }
+                        Spacer()
+                            .frame(height: 32)
+                        CalendarView()
                         
-                        Section{
-                            VStack{
-                                Text ("Review")
-                                    .foregroundColor(Color("primaryGreen"))
-                                    .font(.system(size: 17).bold())
-                                //                                .Color("primaryGreen")
-                                    .padding(.trailing,210-26)
-                                
-                                HStack{
-                                    Image ("GirlExample")
-                                    
-                                    VStack{
-                                        Section{
-                                            Text ("Acne Spot")
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .font(.system(size: 12))
-                                                .fontWeight(.regular)
-                                            
-                                            Text ("12 Acne")
-                                                .font(.system(size: 14))
-                                                .fontWeight(.semibold)
-                                        }
-                                        
-                                        Spacer()
-                                            .frame(height:16)
-                                        
-                                        Section{
-                                            Text ("Your Feeling")
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .font(.system(size: 12))
-                                                .fontWeight(.regular)
-                                            
-                                            Text ("😁")
-                                                .font(.system(size: 14))
-                                                .fontWeight(.semibold)
-                                        
-                                        Spacer()
-                                            .frame(height:16)
-                                            
-                                        Section{
-                                            Text ("Description")
-                                                .foregroundColor(Color("primaryGreen"))
-                                                .font(.system(size: 12))
-                                                    .fontWeight(.regular)
-                                                
-                                            Text ("jerawat masi cukup banyak tapi sudah tidak meradang seperti sebelumnya")
-                                                .multilineTextAlignment(.leading)
-                                                .font(.system(size: 14))
-                                        }
-                                                
-                                        }
-                                    }
-                                    .padding(.leading)
-                                
-                                }
-                            }
-                        }
+                        Spacer()
+                            .frame(height: 40)
                         
-                        Section{
-                            Text ("Your Product")
-                                .foregroundColor(Color("primaryGreen"))
-                                .font(.system(size: 17).bold())
-                            //                                .Color("primaryGreen")
-                                .padding(.trailing,210-26)
+                        ReviewView()
+                        
+                        Spacer()
+                            .frame(height: 32)
                         
                         DropdownView()
-                        }
+                        
                     }
                     .navigationBarTitle("Summary")
                     .navigationBarTitleDisplayMode(.inline)
@@ -191,32 +77,202 @@ struct GraphicView: View{
     var body: some View{
         
         VStack{
+            //MARK: Ini cara buat grafik pake resource yang ini https://github.com/AfrazCodes/SwiftUICharts
             // Legend
             Text ("Skin Progress")
                 .foregroundColor(Color("primaryGreen"))
                 .font(.system(size: 17).bold())
             //                                .Color("primaryGreen")
-                .padding(.trailing,210-26)
+                .padding(.trailing,235)
             
-            let iphone10 = Legend(color: Color("gray"), label: "iPhone10")
+            ZStack{
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(Color.white)
+                    .frame(width: 338, height: 200)
+                    .shadow(color: .gray, radius: 3)
+                
+                Section{
+                    let iphone10 = Legend(color: Color("cream"), label: "")
+
+                    // DataPoint
+                    let points: [DataPoint] = [
+                        .init(value: 2, label:"Week 1", legend: iphone10),
+                        .init(value: 1, label:"Week 2", legend: iphone10),
+                        .init(value: 3, label:"Week 3", legend: iphone10),
+                        .init(value: 1, label:"Week 4", legend: iphone10)
+
+                    ]
+
+                    // Line
+                    LineChartView(dataPoints: points)
+                        .padding()
+                        .frame(width: 338, height: 100, alignment: .leading)
+                }
+            }
             
-            // DataPoint
-            let points: [DataPoint] = [
-                .init(value: 2, label:"Week 1", legend: iphone10),
-                .init(value: 1, label:"Week 2", legend: iphone10),
-                .init(value: 3, label:"Week 3", legend: iphone10),
-                .init(value: 1, label:"Week 4", legend: iphone10)
-              
-            ]
-            
-            // Line
-            LineChartView(dataPoints: points)
-                .padding()
-                .frame(width: 338, height: 181, alignment: .leading)
+            //MARK: iIni cara buat grafik pake resource ini https://www.youtube.com/watch?v=0CG1pKOw1sw&t=912s
+//            LineView(data: [2,3,1,3,2], title: "Your Skin", legend: "Aaaa")
+//                .padding()
+//                .frame(width: 338, height: 181, alignment: .leading)
+
         }
         //
         
-        //Resource: https://github.com/AfrazCodes/SwiftUICharts
+       
+        
+    }
+}
+
+struct CalendarView: View{
+    var body: some View{
+        
+            VStack{
+                Text ("Look at your progress")
+                    .foregroundColor(Color("primaryGreen"))
+                    .font(.system(size: 17).bold())
+                //                                .Color("primaryGreen")
+                    .padding(.trailing,170)
+                
+                Spacer()
+                    .frame(height:8)
+                
+                Text("Choose the date to see the details")
+                    .font(.system(size: 12))
+                    .fontWeight(.regular)
+                    .padding(.trailing,150)
+                
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(Color.white)
+                        .frame(width: 338, height: 245)
+                        .shadow(color: .gray, radius: 3)
+                    
+                    
+                }
+                
+                Spacer()
+                    .frame(height: 24)
+                
+                VStack{
+                        HStack{
+                            Image("PhotoTake")
+                            Text("Photo Taken")
+                                
+                        }
+                        .padding(.trailing,220)
+                        
+                        Spacer()
+                            .frame(height:8)
+                        
+                        HStack{
+                            Image("DayRing")
+                            Text("Completed Day Routine")
+                        }
+                        .padding(.trailing,130)
+                        
+                        Spacer()
+                            .frame(height:8)
+                        
+                        HStack{
+                            Image("NightRing")
+                            Text("Completed Night Routine")
+                        }
+                        .padding(.trailing,120)
+                        
+                        Spacer()
+                            .frame(height:8)
+                        
+                        HStack{
+                            Image("CompleteRing")
+                            Text("Completed Day & Night Routine")
+                        }
+                        .padding(.trailing,75)
+
+                    
+                }
+            }
+            
+            
+        
+    }
+}
+
+struct ReviewView: View{
+    var body: some View{
+       
+            VStack{
+                Text ("Review")
+                    .foregroundColor(Color("primaryGreen"))
+                    .font(.system(size: 17).bold())
+                //                                .Color("primaryGreen")
+                    .padding(.trailing,285)
+                
+                HStack{
+                    Image ("GirlExample")
+                        .padding(.leading)
+                    
+                    Spacer()
+                        .frame(width:24)
+                    
+                    VStack{
+                        Section{
+                            Text ("Acne Spot")
+                                .foregroundColor(Color("primaryGreen"))
+                                .font(.system(size: 12))
+                                .fontWeight(.regular)
+                                .frame(width: 200, alignment: .leading)
+                            
+                            Text ("12 Acne")
+                                .font(.system(size: 14))
+                                .fontWeight(.semibold)
+                                .frame(width: 200, alignment: .leading)
+                            
+                            
+                        }
+                        
+                        Spacer()
+                            .frame(height:16)
+                        
+                        Section{
+                            Text ("Your Feeling")
+                                .foregroundColor(Color("primaryGreen"))
+                                .font(.system(size: 12))
+                                .fontWeight(.regular)
+                                .frame(width: 200, alignment: .leading)
+                            
+                         
+                            
+                            Text ("😁")
+                                .font(.system(size: 14))
+                                .fontWeight(.semibold)
+                                .frame(width: 200, alignment: .leading)
+                        
+                        Spacer()
+                            .frame(height:16)
+                            
+                        Section{
+                            Text ("Description")
+                                .foregroundColor(Color("primaryGreen"))
+                                .font(.system(size: 12))
+                                .frame(width: 200, alignment: .leading)
+                            
+                                
+                            Text ("jerawat masi cukup banyak tapi sudah tidak meradang seperti sebelumnya")
+                                .frame(width: 200, alignment: .leading)
+                                .multilineTextAlignment(.leading)
+                                .font(.system(size: 14))
+                        }
+                                
+                        }
+                    }
+                    //width: 338-24-132 = 182 ~ 180
+                //height: 245,184
+                    .frame(width: 200, height: 180)
+                    
+                
+                }
+            }
+        
     }
 }
 
@@ -227,6 +283,17 @@ struct DropdownView: View{
     @State private var isExpandedNight = false
     var body: some View{
         VStack{
+            Section{
+                Text ("Your Product")
+                    .foregroundColor(Color("primaryGreen"))
+                    .font(.system(size: 17).bold())
+                //                                .Color("primaryGreen")
+                    .padding(.trailing,240)
+            }
+
+            Spacer()
+                .frame(height: 0)
+            
             Section{
                 DisclosureGroup(isExpanded: $isExpandedDay)
                     {
@@ -260,8 +327,8 @@ struct DropdownView: View{
                     .accentColor(.black)
             }
             
-         
-            
+            Spacer()
+                .frame(height: -16)
             
             Section{
                 DisclosureGroup(isExpanded: $isExpandedNight)
@@ -298,3 +365,4 @@ struct DropdownView: View{
         }
     }
 }
+

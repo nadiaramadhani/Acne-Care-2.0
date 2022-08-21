@@ -15,7 +15,7 @@ struct MainTabView: View {
                 .tabItem{
                     Image(systemName: "house")
                     Text("Progress")
-                }
+                }.tag(0)
             
             ProfileView()
            
@@ -23,11 +23,15 @@ struct MainTabView: View {
                     Image(systemName: "person.crop.circle")
                     Text("Profile")
 
-                }
+                }.tag(1)
+                
         }
-        .edgesIgnoringSafeArea(.bottom)
+        .accentColor(Color("primaryGreen"))
+
+        
         
     }
+    
 }
 
 struct MainTabView_Previews: PreviewProvider {
