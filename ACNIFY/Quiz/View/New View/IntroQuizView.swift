@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct IntroQuizView: View {
+    @Binding var displayedPage: SkinQuizMainView.DisplayedPage
     var body: some View {
         
         VStack{
@@ -16,7 +17,7 @@ struct IntroQuizView: View {
                 .frame(width: 22, height: 22)
                 .padding(.leading, 300)
                 .onTapGesture {
-                    
+                    SkinPersonaDefaultRepository.shared.isFirstUserQuiz.toggle()
                 }
             
             Spacer()
@@ -37,7 +38,7 @@ Acne healing will take two to six months.
             .padding()
             
             Button {
-
+                displayedPage = .QuizPage
             } label: {
                 Text("Ready")
                     .font(.system(size: 13))
@@ -57,6 +58,6 @@ Acne healing will take two to six months.
 
 struct IntroQuizView_Previews: PreviewProvider {
     static var previews: some View {
-        IntroQuizView()
+        IntroQuizView(displayedPage: .constant(.IntroPage))
     }
 }

@@ -20,6 +20,9 @@ struct skinQuizModel {
 struct SkinQuizView: View {
     @State var progressValue: Float = 0.11
     @State var questionState: Int = 1
+    @ObservedObject var viewModel: NewQuizViewModel
+    @Binding var displayedPage: SkinQuizMainView.DisplayedPage
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -49,13 +52,13 @@ struct SkinQuizView: View {
                     VStack{
                         switch questionState {
                         case 1:
-                            questionOne
+                            poresSkinQuestion
                         case 2 :
-                            questionTwo
+                            tightSkinQuestion
                         case 3:
-                            questionThree
+                            shinySkinQuestion
                         case 4:
-                            questionFour
+                            oilySkinQuestion
                         case 5:
                             questionFive
                         case 6:
@@ -74,8 +77,8 @@ struct SkinQuizView: View {
                             
                         
                         if questionState == 9 {
-                            NavigationLink {
-                                HomePageView()
+                            Button {
+                                displayedPage = .ResultPage
                             } label: {
                                 Text("Next")
                                     .fontWeight(.semibold)
@@ -122,34 +125,34 @@ struct SkinQuizView: View {
     func handleNexButton() {
         questionState += 1
     }
-    private var questionOne: some View {
-        SkinQuizItemView(data: SkinQuizItemView.getQuestionList().first!)
+    private var poresSkinQuestion: some View {
+        SkinQuizItemView(data: NewQuizViewModel.getQuestionList().first!, selectedAnswer: $viewModel.poresSkinAnswer)
     }
     
-    private var questionTwo: some View {
-        SkinQuizItemView(data: SkinQuizItemView.getQuestionList()[1])
+    private var tightSkinQuestion: some View {
+        SkinQuizItemView(data: NewQuizViewModel.getQuestionList()[1], selectedAnswer: $viewModel.tightSkinAnswer)
     }
-    private var questionThree: some View {
-        SkinQuizItemView(data: SkinQuizItemView.getQuestionList()[2])
+    private var shinySkinQuestion: some View {
+        SkinQuizItemView(data: NewQuizViewModel.getQuestionList()[2], selectedAnswer: $viewModel.shinySkinAnswer)
     }
-    private var questionFour: some View {
-        SkinQuizItemView(data: SkinQuizItemView.getQuestionList()[3])
+    private var oilySkinQuestion: some View {
+        SkinQuizItemView(data: NewQuizViewModel.getQuestionList()[3], selectedAnswer: $viewModel.oilyCertainAreaSkinAnswer)
     }
     
     private var questionFive: some View {
-        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[0])
+        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[0], selectedAcne: $viewModel.acneSeverityMap)
     }
     private var questionSix: some View {
-        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[1])
+        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[1], selectedAcne: $viewModel.acneSeverityMap)
     }
     private var questionSeven: some View {
-        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[2])
+        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[2], selectedAcne: $viewModel.acneSeverityMap)
     }
     private var questionEight: some View {
-        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[3])
+        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[3], selectedAcne: $viewModel.acneSeverityMap)
     }
     private var questionNine: some View {
-        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[4])
+        AcneQuizItemView(acneData: AcneQuizItemView.getAcneLocation()[4], selectedAcne: $viewModel.acneSeverityMap)
     }
 
 }
@@ -181,6 +184,6 @@ struct ProgressBar: View {
 }
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        SkinQuizView()
+        SkinQuizView(viewModel: NewQuizViewModel(), displayedPage: .constant(.IntroPage))
     }
 }
