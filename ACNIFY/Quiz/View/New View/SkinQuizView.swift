@@ -20,6 +20,8 @@ struct skinQuizModel {
 struct SkinQuizView: View {
     @State var progressValue: Float = 0.11
     @State var questionState: Int = 1
+    @ObservedObject var viewModel = NewQuizViewModel()
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -49,13 +51,13 @@ struct SkinQuizView: View {
                     VStack{
                         switch questionState {
                         case 1:
-                            questionOne
+                            poresSkinQuestion
                         case 2 :
-                            questionTwo
+                            tightSkinQuestion
                         case 3:
-                            questionThree
+                            shinySkinQuestion
                         case 4:
-                            questionFour
+                            oilySkinQuestion
                         case 5:
                             questionFive
                         case 6:
@@ -122,18 +124,18 @@ struct SkinQuizView: View {
     func handleNexButton() {
         questionState += 1
     }
-    private var questionOne: some View {
-        SkinQuizItemView(data: SkinQuizItemView.getQuestionList().first!)
+    private var poresSkinQuestion: some View {
+        SkinQuizItemView(data: NewQuizViewModel.getQuestionList().first!, selectedAnswer: $viewModel.poresSkinAnswer)
     }
     
-    private var questionTwo: some View {
-        SkinQuizItemView(data: SkinQuizItemView.getQuestionList()[1])
+    private var tightSkinQuestion: some View {
+        SkinQuizItemView(data: NewQuizViewModel.getQuestionList()[1], selectedAnswer: $viewModel.tightSkinAnswer)
     }
-    private var questionThree: some View {
-        SkinQuizItemView(data: SkinQuizItemView.getQuestionList()[2])
+    private var shinySkinQuestion: some View {
+        SkinQuizItemView(data: NewQuizViewModel.getQuestionList()[2], selectedAnswer: $viewModel.shinySkinAnswer)
     }
-    private var questionFour: some View {
-        SkinQuizItemView(data: SkinQuizItemView.getQuestionList()[3])
+    private var oilySkinQuestion: some View {
+        SkinQuizItemView(data: NewQuizViewModel.getQuestionList()[3], selectedAnswer: $viewModel.oilyCertainAreaSkinAnswer)
     }
     
     private var questionFive: some View {

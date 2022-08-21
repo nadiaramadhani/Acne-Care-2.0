@@ -52,7 +52,7 @@ struct ProductCardItemView: View {
                         .font(.system(size:12))
                         .foregroundColor(Color("primaryGreen"))
                     }else{
-                        Text("\(product.dayCountToUnlocked() ?? 0) days To unlock").font(.system(size:12))
+                        Text("\(product.dayCountToUnlocked()) days To unlock").font(.system(size:12))
                             .foregroundColor(Color("primaryGreen"))
                     }
                    

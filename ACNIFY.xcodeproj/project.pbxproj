@@ -86,6 +86,7 @@
 		CB98FB6B2899539600CDF771 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB98FB6A2899539600CDF771 /* CloudKit.framework */; };
 		CBBFE872289FC8250064ADF5 /* AcneCareDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBBFE870289FC8250064ADF5 /* AcneCareDB.xcdatamodeld */; };
 		CBBFE877289FD5430064ADF5 /* QuizCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFE876289FD5430064ADF5 /* QuizCardView.swift */; };
+		CBCE6EEC28B23F9500F1468B /* NewQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE6EEB28B23F9500F1468B /* NewQuizViewModel.swift */; };
 		CBD812DA28B0F12300EDE2CE /* ProductCardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD812D928B0F12300EDE2CE /* ProductCardItemView.swift */; };
 		CBFB988B28AE7D2D005D05A1 /* Date+FormattedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB988A28AE7D2D005D05A1 /* Date+FormattedString.swift */; };
 		CBFB988D28AE7D42005D05A1 /* Date+Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB988C28AE7D42005D05A1 /* Date+Interval.swift */; };
@@ -192,6 +193,7 @@
 		CB98FB6A2899539600CDF771 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CBBFE871289FC8250064ADF5 /* AcneCare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AcneCare.xcdatamodel; sourceTree = "<group>"; };
 		CBBFE876289FD5430064ADF5 /* QuizCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCardView.swift; sourceTree = "<group>"; };
+		CBCE6EEB28B23F9500F1468B /* NewQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuizViewModel.swift; sourceTree = "<group>"; };
 		CBD812D928B0F12300EDE2CE /* ProductCardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardItemView.swift; sourceTree = "<group>"; };
 		CBFB988A28AE7D2D005D05A1 /* Date+FormattedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FormattedString.swift"; sourceTree = "<group>"; };
 		CBFB988C28AE7D42005D05A1 /* Date+Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Interval.swift"; sourceTree = "<group>"; };
@@ -755,6 +757,7 @@
 			isa = PBXGroup;
 			children = (
 				CB8146BC289FEE4C007FC63A /* QuizViewModel.swift */,
+				CBCE6EEB28B23F9500F1468B /* NewQuizViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1001,7 +1004,7 @@
 				CBFB988D28AE7D42005D05A1 /* Date+Interval.swift in Sources */,
 				9AF3DC392869C4E5007847E7 /* SkinCardView.swift in Sources */,
 				9BA6864928AEFDF8001CD564 /* SkinQuizView.swift in Sources */,
-				CB21589428A8AC0A006F2EB7 /* DailyCheckListViewModel.swift in Sources */,
+				CB21589428A8AC0A006F2EB7 /* ChooseProductViewModel.swift in Sources */,
 				CB21589428A8AC0A006F2EB7 /* ChooseProductViewModel.swift in Sources */,
 				CB8146BB289FED4F007FC63A /* QuizMainView.swift in Sources */,
 				9BB6562D28B0E70200F374E8 /* AcneQuizItemView.swift in Sources */,
@@ -1009,6 +1012,7 @@
 				9BB3780C28634BA0007A3640 /* ACNIFYApp.swift in Sources */,
 				CB4FF14B28992C27008D78AC /* LoginViewModel.swift in Sources */,
 				9AF3DC462869C56D007847E7 /* LocalNotifManager.swift in Sources */,
+				CBCE6EEC28B23F9500F1468B /* NewQuizViewModel.swift in Sources */,
 				CB4FF14428992168008D78AC /* LoginView.swift in Sources */,
 				CB3DFE8B28981A48002EF675 /* PersistanceController.swift in Sources */,
 				CB3D367628A274C800D9D637 /* SkinPersonaRepository.swift in Sources */,

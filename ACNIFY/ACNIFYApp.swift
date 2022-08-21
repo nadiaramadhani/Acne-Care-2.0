@@ -19,23 +19,25 @@ struct ACNIFYApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if firstTimeUser {
-                OnBoardingView()
-            } else {
-                LoginView()
-                    .fullScreenCover(isPresented: $authentificationRepository.isLogedIn){
-                        if skinPersonaRepository.isFirstUserQuiz {
-                            QuizMainView()
-                        } else{
-                            HomePageView()
-                                .transition(transition)
-                                .onAppear{
-                                    let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-                                    print(paths[0])
-                                }
-                        }
-                    }
-            }
+            
+            SkinQuizView()
+//            if firstTimeUser {
+//                OnBoardingView()
+//            } else {
+//                LoginView()
+//                    .fullScreenCover(isPresented: $authentificationRepository.isLogedIn){
+//                        if skinPersonaRepository.isFirstUserQuiz {
+//                            QuizMainView()
+//                        } else{
+//                            HomePageView()
+//                                .transition(transition)
+//                                .onAppear{
+//                                    let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+//                                    print(paths[0])
+//                                }
+//                        }
+//                    }
+//            }
             
         }
     }
