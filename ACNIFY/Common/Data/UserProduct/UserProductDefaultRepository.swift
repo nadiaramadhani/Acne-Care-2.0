@@ -8,7 +8,7 @@
 import Foundation
 
 final class UserProductDefaultRepository: UserProductRepository {
-   
+ 
     private let userProductLocalDataSource: UserProductLocalDataStore
     private let userLocalDataStore: UserLocalDataStore
     
@@ -50,18 +50,22 @@ final class UserProductDefaultRepository: UserProductRepository {
     }
     
     func createDefaultProduct(userID: String) {
-        
+//        self.createNightDefaultProduct(userID: userID)
+//        self.createDayDefaultProduct(userID: userID)
+    }
+    
+    func createNightDefaultProduct(userID: String) {
         guard let currentUser = try? userLocalDataStore.getUserByID(id: userID) else {return}
         
         guard let listProducts = try? userProductLocalDataSource.getAllProductByUserID(userID: userID) else {return}
         
-        guard listProducts.isEmpty else {return}
+        guard listProducts.filter({$0.routineType == UserProduct.nightRoutineType}).isEmpty else {return}
         
         
         let productDefaults = UserProductDetail.getDefaultProduct()
         for productDetail in productDefaults {
             let newProductDay = userProductLocalDataSource.createNewAcneLogProduct()
-            newProductDay.routineType = UserProduct.dayRoutineType
+            newProductDay.routineType = UserProduct.nightRoutineType
             newProductDay.userID = UUID.init(uuidString: userID)
             newProductDay.isUsed = true
             newProductDay.created_at = Date.now
@@ -70,9 +74,24 @@ final class UserProductDefaultRepository: UserProductRepository {
             currentUser.addToProducts(newProductDay)
         }
         
+   
+        
+        userProductLocalDataSource.saveChanges()
+    }
+    
+    func createDayDefaultProduct(userID: String) {
+        guard let currentUser = try? userLocalDataStore.getUserByID(id: userID) else {return}
+        
+        guard let listProducts = try? userProductLocalDataSource.getAllProductByUserID(userID: userID) else {return}
+        
+        guard listProducts.filter({$0.routineType == UserProduct.dayRoutineType}).isEmpty else {return}
+        
+        
+        let productDefaults = UserProductDetail.getDefaultProduct()
+        
         for productDetail in productDefaults {
             let newProductDay = userProductLocalDataSource.createNewAcneLogProduct()
-            newProductDay.routineType = UserProduct.nightRoutineType
+            newProductDay.routineType = UserProduct.dayRoutineType
             newProductDay.userID = UUID.init(uuidString: userID)
             newProductDay.isUsed = true
             newProductDay.created_at = Date.now
