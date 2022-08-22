@@ -12,14 +12,14 @@ struct MainTabView: View {
         NavigationView{
         TabView{
             HomePageView()
-          
+                .navigationBarHidden(true)
                 .tabItem{
                     Image(systemName: "house")
                     Text("Progress")
                 }.tag(0)
             
             ProfileView()
-           
+                .navigationBarHidden(true)
                 .tabItem{
                     Image(systemName: "person.crop.circle")
                     Text("Profile")
@@ -31,8 +31,9 @@ struct MainTabView: View {
         }
         
 
+   
         
-        
+        }
     }
     
 }

@@ -25,12 +25,20 @@ struct SummaryPageView: View {
                     VStack{
                         Spacer()
                             .frame(height: 24)
-                            
+                        HStack{
+                        Text ("Skin Progress")
+                            .font(.system(size: 17).bold())
+                            .bold()
+                            Spacer()
+                           
+                        }.padding(.leading, 26)
+                            .padding(.top, 5)
+                        
                         GraphicView()
                         
                         Spacer()
                             .frame(height: 32)
-                       
+
 
                         Section{
                             VStack{
@@ -154,51 +162,26 @@ struct SummaryPageView_Previews: PreviewProvider {
 struct GraphicView: View{
     var body: some View{
         
-        VStack{
-            //MARK: Ini cara buat grafik pake resource yang ini https://github.com/AfrazCodes/SwiftUICharts
-            // Legend
-            Text ("Skin Progress")
+        ZStack{
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(Color.white)
+                .frame(width: 338, height: 181)
+                .shadow(color: .gray, radius: 3)
+        VStack(alignment:.leading){
+
+            Text ("Your Acne")
                 .foregroundColor(Color("primaryGreen"))
-                .font(.system(size: 17).bold())
-            //                                .Color("primaryGreen")
-                .padding(.trailing,235)
+                .font(.system(size: 11).bold())
+                .bold()
+                .padding(.bottom)
+                            
             
-            ZStack{
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(Color.white)
-                    .frame(width: 338, height: 200)
-                    .shadow(color: .gray, radius: 3)
-                
-                Section{
-                    let iphone10 = Legend(color: Color("primaryGreen"), label: "")
-                        
+            LineChartDemoView()
+                .frame(width: 300, height: 100, alignment: .center)
 
-                    // DataPoint
-                    let points: [DataPoint] = [
-                        .init(value: 2, label:"Week 1", legend: iphone10),
-                        .init(value: 1, label:"Week 2", legend: iphone10),
-                        .init(value: 3, label:"Week 3", legend: iphone10),
-                        .init(value: 1, label:"Week 4", legend: iphone10)
-
-                    ]
-
-                    // Line
-                    LineChartView(dataPoints: points)
-                        .padding()
-                        .frame(width: 338, height: 100, alignment: .leading)
-                }
-            }
-            
-            //MARK: iIni cara buat grafik pake resource ini https://www.youtube.com/watch?v=0CG1pKOw1sw&t=912s
-//            LineView(data: [2,3,1,3,2], title: "Your Skin", legend: "Aaaa")
-//                .padding()
-//                .frame(width: 338, height: 181, alignment: .leading)
-
-        }
-        //
-        
        
-        
+        }
+        }
     }
 }
 
