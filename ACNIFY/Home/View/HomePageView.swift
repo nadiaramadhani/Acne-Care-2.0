@@ -24,7 +24,7 @@ struct HomePageView: View {
     @ObservedObject var viewModel = HomeViewModel()
 
     var body: some View {
-        NavigationView{
+       
             ZStack {
                 NavigationLink(destination: TakePhotos(viewModel: TreatmentPhotoViewModel(acneLog: viewModel.nightLog)).navigationBarHidden(true), isActive: self.$TakePhotosonAlert) { EmptyView() }
                 VStack{
@@ -215,7 +215,7 @@ struct HomePageView: View {
             .onAppear{
                 viewModel.getTotalWeekElapsed()
             }
-        }
+        
     }
 
 

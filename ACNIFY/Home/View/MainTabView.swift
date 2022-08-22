@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
+        NavigationView{
         TabView{
             HomePageView()
           
@@ -27,6 +28,8 @@ struct MainTabView: View {
                 
         }
         .accentColor(Color("primaryGreen"))
+        }
+        
 
         
         

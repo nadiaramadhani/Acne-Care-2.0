@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A4A85E728B3A76A009E2F6F /* ComparingSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A85E628B3A76A009E2F6F /* ComparingSkinView.swift */; };
+		9A4A85E928B3B1BD009E2F6F /* SkinConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A85E828B3B1BD009E2F6F /* SkinConditionsView.swift */; };
 		9A747F34286C92A700683171 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F33286C92A700683171 /* LocationManager.swift */; };
 		9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F39286C92D300683171 /* PhotoPreviewView.swift */; };
 		9A747F3E286C92EA00683171 /* PopUpNightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3D286C92EA00683171 /* PopUpNightView.swift */; };
@@ -115,6 +117,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A4A85E628B3A76A009E2F6F /* ComparingSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparingSkinView.swift; sourceTree = "<group>"; };
+		9A4A85E828B3B1BD009E2F6F /* SkinConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinConditionsView.swift; sourceTree = "<group>"; };
 		9A57F9AD28B3118D001A4173 /* LocalNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationView.swift; sourceTree = "<group>"; };
 		9A747F33286C92A700683171 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		9A747F39286C92D300683171 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 			children = (
 				9BC77FF128B338C90094FF57 /* LocalNotificationView.swift */,
 				9A8C429B28B1150C006E0134 /* ProfileView.swift */,
+				9A4A85E828B3B1BD009E2F6F /* SkinConditionsView.swift */,
+				9A4A85E628B3A76A009E2F6F /* ComparingSkinView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1006,7 +1012,6 @@
 				CB19349428A3A1B0000DF7CE /* UserDefaultRepository.swift in Sources */,
 				CBBFE872289FC8250064ADF5 /* AcneCareDB.xcdatamodeld in Sources */,
 				9A8C429C28B1150C006E0134 /* ProfileView.swift in Sources */,
-				9A57F9AE28B3118D001A4173 /* LocalNotificationView.swift in Sources */,
 				CB1934AD28A5528D000DF7CE /* UserProductLocalDataStore.swift in Sources */,
 				9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */,
 				CB33870728AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift in Sources */,
@@ -1046,7 +1051,9 @@
 				CB3D367628A274C800D9D637 /* SkinPersonaRepository.swift in Sources */,
 				9BC77FF228B338C90094FF57 /* LocalNotificationView.swift in Sources */,
 				9A747F42286C92FD00683171 /* HistorySheetView.swift in Sources */,
+				9A4A85E728B3A76A009E2F6F /* ComparingSkinView.swift in Sources */,
 				9A8C42A028B11640006E0134 /* MainTabView.swift in Sources */,
+				9A4A85E928B3B1BD009E2F6F /* SkinConditionsView.swift in Sources */,
 				CB4FF14728992762008D78AC /* BottomButtonView.swift in Sources */,
 				CBCE6EFD28B32F6800F1468B /* SummaryPageView.swift in Sources */,
 				CB4F383B28A7C31800D91F0B /* UserProductDefaultRepository.swift in Sources */,
