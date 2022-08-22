@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A57F9AE28B3118D001A4173 /* LocalNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57F9AD28B3118D001A4173 /* LocalNotificationView.swift */; };
 		9A747F34286C92A700683171 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F33286C92A700683171 /* LocationManager.swift */; };
 		9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F39286C92D300683171 /* PhotoPreviewView.swift */; };
 		9A747F3E286C92EA00683171 /* PopUpNightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3D286C92EA00683171 /* PopUpNightView.swift */; };
@@ -31,6 +30,8 @@
 		9AF3DC482869C576007847E7 /* PopUpMorningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC472869C576007847E7 /* PopUpMorningView.swift */; };
 		9AF3DC4A2869C588007847E7 /* LocalNotifManager2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF3DC492869C588007847E7 /* LocalNotifManager2.swift */; };
 		9B00AE8028B09A7A0052D1E6 /* SkinQuizItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00AE7F28B09A7A0052D1E6 /* SkinQuizItemView.swift */; };
+		9B0ED36028B25D5D007DFAF7 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0ED35F28B25D5D007DFAF7 /* CalendarModel.swift */; };
+		9B0ED36228B25DD1007DFAF7 /* CustomCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0ED36128B25DD1007DFAF7 /* CustomCalendar.swift */; };
 		9B33ADE228ABC31300751F4A /* PhotoAndUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B33ADE128ABC31300751F4A /* PhotoAndUpdateView.swift */; };
 		9B4590B128AB6BDD0083B405 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4590B028AB6BDD0083B405 /* HomePageView.swift */; };
 		9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE128680B1700449BB4 /* CustomPopUp.swift */; };
@@ -47,6 +48,8 @@
 		9BB4B4FD2866E2240069E86E /* QuizSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FC2866E2240069E86E /* QuizSkinView.swift */; };
 		9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4B4FE2866F3470069E86E /* SkinResultView.swift */; };
 		9BB6562D28B0E70200F374E8 /* AcneQuizItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6562C28B0E70200F374E8 /* AcneQuizItemView.swift */; };
+		9BC77FEC28B3028B0094FF57 /* QuizResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC77FEB28B3028B0094FF57 /* QuizResultView.swift */; };
+		9BC77FF228B338C90094FF57 /* LocalNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC77FF128B338C90094FF57 /* LocalNotificationView.swift */; };
 		CB19349128A3A0F5000DF7CE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19349028A3A0F5000DF7CE /* HomeViewModel.swift */; };
 		CB19349428A3A1B0000DF7CE /* UserDefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19349328A3A1B0000DF7CE /* UserDefaultRepository.swift */; };
 		CB19349728A3CA1D000DF7CE /* QuizResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19349628A3CA1D000DF7CE /* QuizResultViewModel.swift */; };
@@ -136,6 +139,8 @@
 		9AF3DC472869C576007847E7 /* PopUpMorningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpMorningView.swift; sourceTree = "<group>"; };
 		9AF3DC492869C588007847E7 /* LocalNotifManager2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifManager2.swift; sourceTree = "<group>"; };
 		9B00AE7F28B09A7A0052D1E6 /* SkinQuizItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinQuizItemView.swift; sourceTree = "<group>"; };
+		9B0ED35F28B25D5D007DFAF7 /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
+		9B0ED36128B25DD1007DFAF7 /* CustomCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendar.swift; sourceTree = "<group>"; };
 		9B33ADE128ABC31300751F4A /* PhotoAndUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAndUpdateView.swift; sourceTree = "<group>"; };
 		9B4590B028AB6BDD0083B405 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		9B86CBE128680B1700449BB4 /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
@@ -156,6 +161,8 @@
 		9BB4B4FC2866E2240069E86E /* QuizSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSkinView.swift; sourceTree = "<group>"; };
 		9BB4B4FE2866F3470069E86E /* SkinResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinResultView.swift; sourceTree = "<group>"; };
 		9BB6562C28B0E70200F374E8 /* AcneQuizItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneQuizItemView.swift; sourceTree = "<group>"; };
+		9BC77FEB28B3028B0094FF57 /* QuizResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultView.swift; sourceTree = "<group>"; };
+		9BC77FF128B338C90094FF57 /* LocalNotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationView.swift; sourceTree = "<group>"; };
 		CB19349028A3A0F5000DF7CE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CB19349328A3A1B0000DF7CE /* UserDefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultRepository.swift; sourceTree = "<group>"; };
 		CB19349628A3CA1D000DF7CE /* QuizResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewModel.swift; sourceTree = "<group>"; };
@@ -250,6 +257,7 @@
 		9A8C429A28B114E5006E0134 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9BC77FF128B338C90094FF57 /* LocalNotificationView.swift */,
 				9A8C429B28B1150C006E0134 /* ProfileView.swift */,
 			);
 			path = View;
@@ -267,6 +275,7 @@
 		9AD904A428AF893C00E4F6E4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9B0ED35F28B25D5D007DFAF7 /* CalendarModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -275,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				CBCE6EFC28B32F6800F1468B /* SummaryPageView.swift */,
+				9B0ED36128B25DD1007DFAF7 /* CustomCalendar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,6 +296,7 @@
 				9BA6864828AEFDF8001CD564 /* SkinQuizView.swift */,
 				CBCE6EED28B2825600F1468B /* SkinQuizMainView.swift */,
 				CBCE6EEF28B2830300F1468B /* ResultQuizView.swift */,
+				9BC77FEB28B3028B0094FF57 /* QuizResultView.swift */,
 			);
 			path = "New View";
 			sourceTree = "<group>";
@@ -1012,7 +1023,6 @@
 				CB46B6BF28A64430008A74A1 /* AcneLogDefaultLocalDatastore.swift in Sources */,
 				9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */,
 				9AF3DC412869C53F007847E7 /* MorningProductView.swift in Sources */,
-				9A7B82AC28B228EE00FA44A7 /* SummaryPageView.swift in Sources */,
 				9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */,
 				CB3D368228A278D600D9D637 /* AuthDefaultLocalDataStore.swift in Sources */,
 				CB19349128A3A0F5000DF7CE /* HomeViewModel.swift in Sources */,
@@ -1034,6 +1044,7 @@
 				CB4FF14428992168008D78AC /* LoginView.swift in Sources */,
 				CB3DFE8B28981A48002EF675 /* PersistanceController.swift in Sources */,
 				CB3D367628A274C800D9D637 /* SkinPersonaRepository.swift in Sources */,
+				9BC77FF228B338C90094FF57 /* LocalNotificationView.swift in Sources */,
 				9A747F42286C92FD00683171 /* HistorySheetView.swift in Sources */,
 				9A8C42A028B11640006E0134 /* MainTabView.swift in Sources */,
 				CB4FF14728992762008D78AC /* BottomButtonView.swift in Sources */,
@@ -1049,10 +1060,12 @@
 				9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */,
 				CB4F383928A7C09100D91F0B /* UserProductRepository.swift in Sources */,
 				CB3D369128A2881900D9D637 /* SkinPersonaDeafultRepository.swift in Sources */,
+				9BC77FEC28B3028B0094FF57 /* QuizResultView.swift in Sources */,
 				CB3D367C28A2769200D9D637 /* UserDefaultLocalDataStore.swift in Sources */,
 				CB1934A928A54629000DF7CE /* AcneLogLocalDataStore.swift in Sources */,
 				CB4F383328A7BA0500D91F0B /* AcneLogRepository.swift in Sources */,
 				9AD9049A28AEB45100E4F6E4 /* IntroProductView.swift in Sources */,
+				9B0ED36028B25D5D007DFAF7 /* CalendarModel.swift in Sources */,
 				CBFB988B28AE7D2D005D05A1 /* Date+FormattedString.swift in Sources */,
 				9A747F34286C92A700683171 /* LocationManager.swift in Sources */,
 				9AE804392865246B006493A9 /* MainPageView.swift in Sources */,
@@ -1061,6 +1074,7 @@
 				CB3D368628A27BE700D9D637 /* UserRepository.swift in Sources */,
 				9AF3DC4A2869C588007847E7 /* LocalNotifManager2.swift in Sources */,
 				9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */,
+				9B0ED36228B25DD1007DFAF7 /* CustomCalendar.swift in Sources */,
 				9BA6864B28AEFE97001CD564 /* IntroQuizView.swift in Sources */,
 				CB3D368028A278C200D9D637 /* AuthLocalDataStore.swift in Sources */,
 			);

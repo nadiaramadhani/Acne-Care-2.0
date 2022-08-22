@@ -12,6 +12,10 @@ import SwiftUICharts
 struct SummaryPageView: View {
     
     @State var isBack = false
+    @State var currentDate: Date = Date()
+    @State var progressDay : Float = 0.5
+    @State var progressNight: Float = 1.0
+    
     var body: some View {
         if isBack{
             HomePageView()
@@ -27,6 +31,80 @@ struct SummaryPageView: View {
                         Spacer()
                             .frame(height: 32)
                         CalendarView()
+
+                        Section{
+                            VStack{
+                                Text ("Look at your progress")
+                                    .foregroundColor(Color("primaryGreen"))
+                                    .font(.system(size: 17).bold())
+                                //                                .Color("primaryGreen")
+                                    .padding(.trailing,210-26)
+                                
+                                Spacer()
+                                    .frame(height:8)
+                                
+                                Text("Choose the date to see the details")
+                                    .font(.system(size: 12))
+                                    .fontWeight(.regular)
+                                    .padding(.trailing,190-26)
+                                
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .frame(width: 350, height: 400)
+                                        .foregroundColor(.white)
+                                        .shadow(color: .gray, radius: 2)
+                                    
+                                    CustomCalendar(currentDate: $currentDate, progressDay: $progressDay, progressNight: $progressNight)
+                                        .frame(width: 338, height: 245)
+                                        
+                                }
+                                .padding()
+
+                                Spacer()
+                                    .frame(height:24)
+                                
+                                VStack{
+                                    HStack{
+                                        Image("PhotoTake")
+                                        Text("Photo Taken")
+                                            
+                                    }
+                                    .padding(.trailing,220)
+                                    
+                                    Spacer()
+                                        .frame(height:8)
+                                    
+                                    HStack{
+                                        Image("DayRing")
+                                        Text("Completed Day Routine")
+                                    }
+                                    .padding(.trailing,130)
+                                    
+                                    Spacer()
+                                        .frame(height:8)
+                                    
+                                    HStack{
+                                        Image("NightRing")
+                                        Text("Completed Night Routine")
+                                    }
+                                    .padding(.trailing,120)
+                                    
+                                    Spacer()
+                                        .frame(height:8)
+                                    
+                                    HStack{
+                                        Image("CompleteRing")
+                                        Text("Completed Day & Night Routine")
+                                    }
+                                    .padding(.trailing,75)
+
+                                }
+                                
+                                
+                            }
+                            
+                            
+                        }
                         
                         Spacer()
                             .frame(height: 40)
