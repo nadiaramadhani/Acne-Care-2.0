@@ -14,7 +14,6 @@
 		9A747F42286C92FD00683171 /* HistorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F41286C92FD00683171 /* HistorySheetView.swift */; };
 		9A747F44286C930700683171 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F43286C930700683171 /* HistoryView.swift */; };
 		9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */; };
-		9A7B82AC28B228EE00FA44A7 /* SummaryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7B82AB28B228EE00FA44A7 /* SummaryPageView.swift */; };
 		9A7B82B628B22B4F00FA44A7 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 9A7B82B528B22B4F00FA44A7 /* SwiftUICharts */; };
 		9A8C429C28B1150C006E0134 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C429B28B1150C006E0134 /* ProfileView.swift */; };
 		9A8C42A028B11640006E0134 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C429F28B11640006E0134 /* MainTabView.swift */; };
@@ -89,6 +88,7 @@
 		CBCE6EEC28B23F9500F1468B /* NewQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE6EEB28B23F9500F1468B /* NewQuizViewModel.swift */; };
 		CBCE6EEE28B2825600F1468B /* SkinQuizMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE6EED28B2825600F1468B /* SkinQuizMainView.swift */; };
 		CBCE6EF028B2830300F1468B /* ResultQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE6EEF28B2830300F1468B /* ResultQuizView.swift */; };
+		CBCE6EFD28B32F6800F1468B /* SummaryPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCE6EFC28B32F6800F1468B /* SummaryPageView.swift */; };
 		CBD812DA28B0F12300EDE2CE /* ProductCardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD812D928B0F12300EDE2CE /* ProductCardItemView.swift */; };
 		CBFB988B28AE7D2D005D05A1 /* Date+FormattedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB988A28AE7D2D005D05A1 /* Date+FormattedString.swift */; };
 		CBFB988D28AE7D42005D05A1 /* Date+Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB988C28AE7D42005D05A1 /* Date+Interval.swift */; };
@@ -198,6 +198,7 @@
 		CBCE6EEB28B23F9500F1468B /* NewQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuizViewModel.swift; sourceTree = "<group>"; };
 		CBCE6EED28B2825600F1468B /* SkinQuizMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinQuizMainView.swift; sourceTree = "<group>"; };
 		CBCE6EEF28B2830300F1468B /* ResultQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultQuizView.swift; sourceTree = "<group>"; };
+		CBCE6EFC28B32F6800F1468B /* SummaryPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryPageView.swift; sourceTree = "<group>"; };
 		CBD812D928B0F12300EDE2CE /* ProductCardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardItemView.swift; sourceTree = "<group>"; };
 		CBFB988A28AE7D2D005D05A1 /* Date+FormattedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FormattedString.swift"; sourceTree = "<group>"; };
 		CBFB988C28AE7D42005D05A1 /* Date+Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Interval.swift"; sourceTree = "<group>"; };
@@ -250,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				9A8C429B28B1150C006E0134 /* ProfileView.swift */,
-				9A57F9AD28B3118D001A4173 /* LocalNotificationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -274,56 +274,7 @@
 		9AD904A528AF894400E4F6E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9A7B82AB28B228EE00FA44A7 /* SummaryPageView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		9A8C429828B114BD006E0134 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				9A8C429928B114D8006E0134 /* View Model */,
-				9A8C429A28B114E5006E0134 /* View */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		9A8C429928B114D8006E0134 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Model";
-			sourceTree = "<group>";
-		};
-		9A8C429A28B114E5006E0134 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9A8C429B28B1150C006E0134 /* ProfileView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		9AD904A328AF892C00E4F6E4 /* Summary */ = {
-			isa = PBXGroup;
-			children = (
-				9AD904A428AF893C00E4F6E4 /* ViewModel */,
-				9AD904A528AF894400E4F6E4 /* View */,
-			);
-			path = Summary;
-			sourceTree = "<group>";
-		};
-		9AD904A428AF893C00E4F6E4 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		9AD904A528AF894400E4F6E4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9AD904A828AF9D2700E4F6E4 /* SummaryPageView.swift */,
-				9A8C429628B0CB36006E0134 /* GraphicProgressView.swift */,
+				CBCE6EFC28B32F6800F1468B /* SummaryPageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,6 +298,7 @@
 				9BB3782528634BA2007A3640 /* ACNIFYUITests */,
 				9BB3780928634BA0007A3640 /* Products */,
 				CB98FB692899539600CDF771 /* Frameworks */,
+				CBCE6EF928B32DE500F1468B /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -851,6 +803,15 @@
 			path = Quiz;
 			sourceTree = "<group>";
 		};
+		CBCE6EF928B32DE500F1468B /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				9A57F9AD28B3118D001A4173 /* LocalNotificationView.swift */,
+				9A7B82AB28B228EE00FA44A7 /* SummaryPageView.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		CBD812D728B0F0E200EDE2CE /* UserProduct */ = {
 			isa = PBXGroup;
 			children = (
@@ -1039,17 +1000,13 @@
 				9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */,
 				CB33870728AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift in Sources */,
 				CB3D368D28A2839900D9D637 /* SkinPersonaLocalDataStore.swift in Sources */,
-				9A8C429728B0CB36006E0134 /* GraphicProgressView.swift in Sources */,
 				9B00AE8028B09A7A0052D1E6 /* SkinQuizItemView.swift in Sources */,
-				9A8C429728B0CB36006E0134 /* GraphicProgressView.swift in Sources */,
 				9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */,
 				9AF3DC442869C563007847E7 /* NightProductsView.swift in Sources */,
 				CB4FF13B28991535008D78AC /* OnboardingViewModel.swift in Sources */,
 				CB3D368F28A284A700D9D637 /* SkinPersonaDefaultLocalDataSource.swift in Sources */,
 				CB4FF13D28991607008D78AC /* OnboardingItemView.swift in Sources */,
 				CBCE6EEE28B2825600F1468B /* SkinQuizMainView.swift in Sources */,
-				9AD904A928AF9D2700E4F6E4 /* SummaryPageView.swift in Sources */,
-				9AD904A928AF9D2700E4F6E4 /* SummaryPageView.swift in Sources */,
 				CB19349728A3CA1D000DF7CE /* QuizResultViewModel.swift in Sources */,
 				CB4F383128A7B32E00D91F0B /* UserProductDefaultLocalDataStore.swift in Sources */,
 				CB46B6BF28A64430008A74A1 /* AcneLogDefaultLocalDatastore.swift in Sources */,
@@ -1080,6 +1037,7 @@
 				9A747F42286C92FD00683171 /* HistorySheetView.swift in Sources */,
 				9A8C42A028B11640006E0134 /* MainTabView.swift in Sources */,
 				CB4FF14728992762008D78AC /* BottomButtonView.swift in Sources */,
+				CBCE6EFD28B32F6800F1468B /* SummaryPageView.swift in Sources */,
 				CB4F383B28A7C31800D91F0B /* UserProductDefaultRepository.swift in Sources */,
 				CBBFE877289FD5430064ADF5 /* QuizCardView.swift in Sources */,
 				CB4F383728A7BCCA00D91F0B /* AcneLogDefaultRepository.swift in Sources */,
