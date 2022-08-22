@@ -26,6 +26,12 @@ struct HomePageView: View {
     @State var isDayLinkActive = false
     
     var body: some View {
+       
+            ZStack {
+                NavigationLink(destination: TakePhotos(viewModel: TreatmentPhotoViewModel(acneLog: viewModel.nightLog)).navigationBarHidden(true), isActive: self.$TakePhotosonAlert) { EmptyView() }
+                VStack{
+                    Image("Oval2")
+                        .ignoresSafeArea()
         ZStack {
             NavigationLink(destination: IntroProductView(pageDisplayed: .Night)
                 .navigationBarHidden(true), isActive: $isNightLinkActive) {EmptyView()}
@@ -46,6 +52,7 @@ struct HomePageView: View {
                         .italic()
                         .padding(.leading)
                         .foregroundColor(Color("primaryGreen"))
+
                     Spacer()
                     
                 }
@@ -236,6 +243,7 @@ struct HomePageView: View {
                 }
                 
             }
+
             
             
             
@@ -245,6 +253,7 @@ struct HomePageView: View {
             viewModel.getTotalWeekElapsed()
             viewModel.checkChecklistAvailablility()
         }
+
     }
 }
 

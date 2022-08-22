@@ -28,6 +28,8 @@ struct MainTabView: View {
                 
         }
         .accentColor(Color("primaryGreen"))
+        }
+        
 
    
         

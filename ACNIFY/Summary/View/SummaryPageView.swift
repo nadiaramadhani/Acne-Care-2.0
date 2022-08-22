@@ -39,6 +39,7 @@ struct SummaryPageView: View {
                         Spacer()
                             .frame(height: 32)
 
+
                         Section{
                             VStack{
                                 Text ("Look at your progress")
@@ -184,79 +185,7 @@ struct GraphicView: View{
     }
 }
 
-struct CalendarView: View{
-    var body: some View{
-        
-            VStack{
-                Text ("Look at your progress")
-                    .foregroundColor(Color("primaryGreen"))
-                    .font(.system(size: 17).bold())
-                //                                .Color("primaryGreen")
-                    .padding(.trailing,170)
-                
-                Spacer()
-                    .frame(height:8)
-                
-                Text("Choose the date to see the details")
-                    .font(.system(size: 12))
-                    .fontWeight(.regular)
-                    .padding(.trailing,150)
-                
-                ZStack{
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(Color.white)
-                        .frame(width: 338, height: 245)
-                        .shadow(color: .gray, radius: 3)
-                    
-                    
-                }
-                
-                Spacer()
-                    .frame(height: 24)
-                
-                VStack{
-                        HStack{
-                            Image("PhotoTake")
-                            Text("Photo Taken")
-                                
-                        }
-                        .padding(.trailing,220)
-                        
-                        Spacer()
-                            .frame(height:8)
-                        
-                        HStack{
-                            Image("DayRing")
-                            Text("Completed Day Routine")
-                        }
-                        .padding(.trailing,130)
-                        
-                        Spacer()
-                            .frame(height:8)
-                        
-                        HStack{
-                            Image("NightRing")
-                            Text("Completed Night Routine")
-                        }
-                        .padding(.trailing,120)
-                        
-                        Spacer()
-                            .frame(height:8)
-                        
-                        HStack{
-                            Image("CompleteRing")
-                            Text("Completed Day & Night Routine")
-                        }
-                        .padding(.trailing,75)
 
-                    
-                }
-            }
-            
-            
-        
-    }
-}
 
 struct ReviewView: View{
     var body: some View{
