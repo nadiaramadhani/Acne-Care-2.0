@@ -12,21 +12,27 @@ final class HomeViewModel: ObservableObject {
     @Published var dayLog: AcneLog?
     @Published var nightLog: AcneLog?
     @Published var totalWeekSinceFirstLog = ""
-    
+    @Published var isNightProductCreated = false
+    @Published var isDayProductCreated = false
+
     private let userRepository: UserRepository
     private let acneLogRepository: AcneLogRepository
+    private let userProductRepository: UserProductRepository
     
     init(
         userRepository: UserRepository = UserDefaultRepository(),
-        acneLogRepository: AcneLogRepository = AcneLogDefaultRepository()
+        acneLogRepository: AcneLogRepository = AcneLogDefaultRepository(),
+        userProductRepository: UserProductRepository = UserProductDefaultRepository()
     ){
         self.userRepository = userRepository
         self.acneLogRepository = acneLogRepository
+        self.userProductRepository = userProductRepository
         let logedinUserID  = AuthenticationDefaultRepository.shared.userID
         
         self.dayLog = acneLogRepository.getDayAcneLogsByUserID(userID: logedinUserID!)
         self.nightLog = acneLogRepository.getNightAcneLogsByUserID(userID: logedinUserID!)
         self.currentUser = userRepository.getUserByID(id: logedinUserID!)
+        
     }
     
     func getGraphicData() -> [Date:Int]?{
@@ -88,6 +94,27 @@ final class HomeViewModel: ObservableObject {
         }
     }
     
+    func createNightProduct(){
+        userProductRepository.createNightDefaultProduct(userID: (currentUser?.id)!.uuidString)
+    }
+    
+    func createDayProduct(){
+        userProductRepository.createDayDefaultProduct(userID: (currentUser?.id)!.uuidString)
+    }
+    
+    
+    func checkChecklistAvailablility(){
+        let userProducts  = userProductRepository.getAllUsedUserProduct(userID: AuthenticationDefaultRepository.shared.userID!)
+
+        
+        if userProducts.filter({$0.routineType == UserProduct.dayRoutineType}).count > 0 {
+            isDayProductCreated = true
+        }
+        
+        if userProducts.filter({$0.routineType == UserProduct.nightRoutineType}).count > 0 {
+            isNightProductCreated = true
+        }
+    }
     
     private func logConditionToNumber(condition: String) -> Int {
         switch condition.lowercased(){

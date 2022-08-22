@@ -12,6 +12,7 @@ struct ChooseProductMainView: View {
     @State var isSelectedOilCleanserNight = false
     @Environment(\.presentationMode) var presentation
     @State var pageDisplayed: ChooseProductMainView.PageDisplayed = .Day
+    @State var isShowingAlert = false
     
     var body: some View {
         NavigationView{
@@ -38,7 +39,8 @@ struct ChooseProductMainView: View {
                                     let userProduct = viewModel.userDayProducts[index]
                                     let productDetail = UserProductDetail.getDefaultProduct().filter{$0.ID ==  userProduct.productDetailID}
                                         .first!
-                                    ProductCardItemView(isChecked: $viewModel.productDayChecked[index], productDetail: productDetail, product: userProduct)
+                                    ProductCardItemView(isChecked: $viewModel.productDayChecked[index], addProduct: $isShowingAlert, selectedProductId: $viewModel.selectedProductId, productDetail: productDetail, product: userProduct)
+                                       
                                 }
                             }
                             
@@ -47,7 +49,9 @@ struct ChooseProductMainView: View {
                                     let userProduct = viewModel.userNightProducts[index]
                                     let productDetail = UserProductDetail.getDefaultProduct().filter{$0.ID ==  userProduct.productDetailID}
                                         .first!
-                                    ProductCardItemView(isChecked: $viewModel.productDayChecked[index], productDetail: productDetail, product: userProduct)
+                                    ProductCardItemView(isChecked: $viewModel.productDayChecked[index], addProduct: $isShowingAlert, selectedProductId: $viewModel.selectedProductId, productDetail: productDetail, product: userProduct)
+                                    
+                                        
                                 }
                             }
                            
@@ -58,7 +62,7 @@ struct ChooseProductMainView: View {
                     
                     .frame(width: 500, height: 710)
                     .edgesIgnoringSafeArea(.bottom)
-                }
+                } 
                 
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -85,10 +89,11 @@ struct ChooseProductMainView: View {
                 
             }
                                 
-            )
-            
+            ).overlay(Color(uiColor: UIColor(red: 0.0 / 255.0, green: 0.0 / 255.0, blue: 0.0 / 255.0, alpha: 0.2)).opacity(isShowingAlert ? 1 : 0).ignoresSafeArea())
+           
+        }.textFieldAlert(isShowing: $isShowingAlert, text: $viewModel.currentProductName, title: "Product Name", subtitle: "Write a product name that you use"){
+            self.viewModel.updateSelectedProductName()
         }
-        .navigationViewStyle(.stack )
     }
     
     

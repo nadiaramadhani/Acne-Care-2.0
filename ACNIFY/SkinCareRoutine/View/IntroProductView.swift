@@ -18,6 +18,7 @@ struct IntroProductView: View {
     
     var body: some View {
         if !firstIntro{
+            
             ChooseProductMainView(viewModel: viewModel, pageDisplayed: pageDisplayed).onAppear{
                 viewModel.getAllUserProducts()
             }
@@ -76,6 +77,9 @@ struct IntroProductView: View {
                 })
                 Spacer()
                 
+            }
+            .onTapGesture {
+                viewModel.getAllUserProducts()
             }
     }
 }

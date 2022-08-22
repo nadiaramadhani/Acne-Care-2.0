@@ -33,7 +33,8 @@ struct CameraView: View{
 
     var body: some View{
         if isPhotoPreview {
-            PhotoPreview(data:viewModel.acneLog?.image)
+//            PhotoPreview(data:viewModel.acneLog?.image)
+            PhotoAndUpdateView(viewModel: viewModel)
         } else {
             ZStack{
                 //Going to be camera preview

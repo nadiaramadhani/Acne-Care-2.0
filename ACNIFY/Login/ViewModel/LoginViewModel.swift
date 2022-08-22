@@ -23,9 +23,5 @@ final class LoginViewModel: ObservableObject {
     
     func setLoginUser(for username: String){
         let logedInUser = authentificationRepository.login(name: username)
-        
-        guard let userId = logedInUser?.id else {return}
-        
-        userProductRepository.createDefaultProduct(userID: userId.uuidString)
     }
 }
