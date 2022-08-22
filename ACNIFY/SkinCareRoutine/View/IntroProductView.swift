@@ -22,11 +22,7 @@ struct IntroProductView: View {
                 viewModel.getAllUserProducts()
             }
         }else{
-            //        if isCancel{
-            //            HomePageView()
-            //        }else if isReadyMorning{
-            //            morningChooseProduct()
-            //        }else{
+  
             VStack{
                 Button(
                     action: {
