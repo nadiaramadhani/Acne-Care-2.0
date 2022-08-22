@@ -92,7 +92,8 @@ struct GraphicView: View{
                     .shadow(color: .gray, radius: 3)
                 
                 Section{
-                    let iphone10 = Legend(color: Color("cream"), label: "")
+                    let iphone10 = Legend(color: Color("primaryGreen"), label: "")
+                        
 
                     // DataPoint
                     let points: [DataPoint] = [
@@ -282,7 +283,7 @@ struct DropdownView: View{
     @State private var isExpandedDay = false
     @State private var isExpandedNight = false
     var body: some View{
-        VStack{
+        VStack(spacing:8 ){
             Section{
                 Text ("Your Product")
                     .foregroundColor(Color("primaryGreen"))
@@ -290,25 +291,35 @@ struct DropdownView: View{
                 //                                .Color("primaryGreen")
                     .padding(.trailing,240)
             }
-
-            Spacer()
-                .frame(height: 0)
             
             Section{
                 DisclosureGroup(isExpanded: $isExpandedDay)
                     {
                     VStack{
-                        Text ("Rahmat")
-                        Text ("Rahmat")
-                        Text ("Rahmat")
-                        Text ("Rahmat")
+                        HStack{
+                            Circle()
+                                .foregroundColor(Color("kuningTerang"))
+                                .frame(width: 11, height: 11)
+                            
+                            Spacer()
+                                .frame(width: 12)
+                            
+                            Text ("Facial Wash")
+                        }
+                        
+                       
+                       
                     }
-                    .padding(.trailing,190)
-                    .frame(width: 360)
-                    .background(.green)
+                    .padding(.trailing,140)
+                    .frame(width: 345)
+                    
+                    
                     
                         
-                    }label: {
+                    }
+                
+            
+                    label: {
                         HStack{
                             Image("dayDailyRoutine2")
                                 .resizable()
@@ -317,31 +328,40 @@ struct DropdownView: View{
                                 .font(.system(size: 16))
                                 .fontWeight(.bold)
                         }
+                        
                     }
-    //                .frame(width: 358, height: 44)
+                    .frame(width: 310)
+                    .padding(.all)
                     .font(.system(size: 16))
                     .foregroundColor(.black)
                     .background(Color("secondaryYellow3rd"))
-                    .padding(.all)
                     .cornerRadius(8)
+                    
                     .accentColor(.black)
-            }
+                    
+            }.shadow(color: .gray, radius: 3)
             
-            Spacer()
-                .frame(height: -16)
-            
+                        
             Section{
                 DisclosureGroup(isExpanded: $isExpandedNight)
                     {
                     VStack{
-                        Text ("Rahmat")
-                        Text ("Rahmat")
-                        Text ("Rahmat")
-                        Text ("Rahmat")
+                        HStack{
+                            Circle()
+                                .foregroundColor(Color("kuningTerang"))
+                                .frame(width: 11, height: 11,alignment: .leading)
+                            
+                            Spacer()
+                                .frame(width: 12)
+                                
+                            Text ("Facial Wash")
+                                .foregroundColor(.white)
+                        }
+                      
                     }
-                    .padding(.trailing,190)
-                    .frame(width: 360)
-                    .background(.green)
+                    .padding(.trailing,140)
+                    .frame(width: 345)
+                    
                     
                         
                     }label: {
@@ -349,19 +369,20 @@ struct DropdownView: View{
                             Image("nightSummary")
                                 .resizable()
                                 .frame(width: 28, height: 28)
-                            Text("Day Routine")
+                            Text("Night Routine")
                                 .font(.system(size: 16))
                                 .fontWeight(.bold)
                         }
                     }
-    //                .frame(width: 358, height: 44)
+                    .frame(width: 310)
+                    .padding(.all)
                     .font(.system(size: 16))
                     .foregroundColor(.white)
                     .background(Color("purpleSummary"))
-                    .padding(.all)
                     .cornerRadius(8)
                     .accentColor(.white)
             }
+            .shadow(color: .gray, radius: 9)
         }
     }
 }
