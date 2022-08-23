@@ -51,6 +51,7 @@
 		9BB6562D28B0E70200F374E8 /* AcneQuizItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6562C28B0E70200F374E8 /* AcneQuizItemView.swift */; };
 		9BC77FEC28B3028B0094FF57 /* QuizResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC77FEB28B3028B0094FF57 /* QuizResultView.swift */; };
 		9BC77FF228B338C90094FF57 /* LocalNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC77FF128B338C90094FF57 /* LocalNotificationView.swift */; };
+		9BC77FF428B35B120094FF57 /* SetReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC77FF328B35B120094FF57 /* SetReminderView.swift */; };
 		CB19349128A3A0F5000DF7CE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19349028A3A0F5000DF7CE /* HomeViewModel.swift */; };
 		CB19349428A3A1B0000DF7CE /* UserDefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19349328A3A1B0000DF7CE /* UserDefaultRepository.swift */; };
 		CB19349728A3CA1D000DF7CE /* QuizResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19349628A3CA1D000DF7CE /* QuizResultViewModel.swift */; };
@@ -171,6 +172,7 @@
 		9BB6562C28B0E70200F374E8 /* AcneQuizItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneQuizItemView.swift; sourceTree = "<group>"; };
 		9BC77FEB28B3028B0094FF57 /* QuizResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultView.swift; sourceTree = "<group>"; };
 		9BC77FF128B338C90094FF57 /* LocalNotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationView.swift; sourceTree = "<group>"; };
+		9BC77FF328B35B120094FF57 /* SetReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetReminderView.swift; sourceTree = "<group>"; };
 		CB19349028A3A0F5000DF7CE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CB19349328A3A1B0000DF7CE /* UserDefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultRepository.swift; sourceTree = "<group>"; };
 		CB19349628A3CA1D000DF7CE /* QuizResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewModel.swift; sourceTree = "<group>"; };
@@ -271,8 +273,11 @@
 			children = (
 				9BC77FF128B338C90094FF57 /* LocalNotificationView.swift */,
 				9A8C429B28B1150C006E0134 /* ProfileView.swift */,
+
+				9BC77FF328B35B120094FF57 /* SetReminderView.swift */,
 				9A4A85E828B3B1BD009E2F6F /* SkinConditionsView.swift */,
 				9A4A85E628B3A76A009E2F6F /* ComparingSkinView.swift */,
+
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1069,6 +1074,7 @@
 				CBCE6EEE28B2825600F1468B /* SkinQuizMainView.swift in Sources */,
 				CB19349728A3CA1D000DF7CE /* QuizResultViewModel.swift in Sources */,
 				CB4F383128A7B32E00D91F0B /* UserProductDefaultLocalDataStore.swift in Sources */,
+				9BC77FF428B35B120094FF57 /* SetReminderView.swift in Sources */,
 				CB46B6BF28A64430008A74A1 /* AcneLogDefaultLocalDatastore.swift in Sources */,
 				CB2399E628B3737D0001DBC1 /* TextFieldAlert.swift in Sources */,
 				9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */,

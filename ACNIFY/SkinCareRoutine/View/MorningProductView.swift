@@ -30,8 +30,8 @@ struct morningChooseProduct: View {
     @State var isNext = false
     @State var isDone = false
     @State var isBack = false
-    @EnvironmentObject var lnManagerMorning: LocalNotificationManagerMorning
-    @Environment(\.scenePhase) var scenePhase
+//    @EnvironmentObject var lnManagerMorning: LocalNotificationManagerMorning
+//    @Environment(\.scenePhase) var scenePhase
     @Environment(\.presentationMode) var presentation
     
     
@@ -205,17 +205,17 @@ struct morningChooseProduct: View {
                 
             }
             .navigationViewStyle(.stack )
-            .task{
-//                try? await lnManagerMorning.requestAuthorization()
-        }
-            .onChange(of: scenePhase){newValue in
-                if newValue == .active{
-                    Task {
-                        await lnManagerMorning.getCurrentSettings()
-                       // await lnManager.getPendingRequests()
-                    }
-                }
-            }
+//            .task{
+////                try? await lnManagerMorning.requestAuthorization()
+//        }
+//            .onChange(of: scenePhase){newValue in
+//                if newValue == .active{
+//                    Task {
+//                        await lnManagerMorning.getCurrentSettings()
+//                       // await lnManager.getPendingRequests()
+//                    }
+//                }
+//            }
     }
 }
     private var addProductButton : some View {

@@ -9,8 +9,11 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var selected = 1
+
+    @StateObject var lnManager = LocalNotificationManagerMorning()
+
     @State private var isDone = false
-    
+
     var body: some View {
         ZStack(alignment: .top){
             Color(.white)
@@ -79,6 +82,30 @@ struct ProfileView: View {
                 .position(x: 185, y: 25)
                 .frame(width: 360,height: 170)
                 
+
+                        
+            }.navigationBarItems(trailing:
+//                                    HStack{
+//                Button(action: {
+////                    self.isDone = true
+//                }){
+//                    Image(systemName: "bell.fill")
+//                        .foregroundColor(Color("primaryGreen"))
+//
+//                }
+                
+                NavigationLink {
+                    SetReminderView()
+                    .environmentObject(lnManager)
+                    
+                } label: {
+                    Image(systemName: "bell.fill")
+                                           .foregroundColor(Color("primaryGreen"))
+                
+
+            })
+            
+
                 
                 
                 //MARK: Section Skin Conditions and Comparing Skin
@@ -90,6 +117,7 @@ struct ProfileView: View {
                     ComparingSkinView()
                 }
             }
+
         }
     }
     
