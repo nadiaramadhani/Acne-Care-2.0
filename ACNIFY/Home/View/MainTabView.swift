@@ -9,30 +9,31 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        TabView{
-            HomePageView()
-          
-                .tabItem{
-                    Image(systemName: "house")
-                    Text("Progress")
-                }.tag(0)
-            
-            ProfileView()
-           
-                .tabItem{
-                    Image(systemName: "person.crop.circle")
-                    Text("Profile")
-
-                }.tag(1)
+        NavigationView{
+            TabView{
+                HomePageView()
+                    .navigationBarHidden(true)
+                    .tabItem{
+                        Image(systemName: "house")
+                        Text("Progress")
+                    }.tag(0)
                 
+                ProfileView()
+                    .navigationBarHidden(true)
+                    .tabItem{
+                        Image(systemName: "person.crop.circle")
+                        Text("Profile")
+                        
+                    }.tag(1)
+                
+            }
+            .accentColor(Color("primaryGreen"))
         }
-        .accentColor(Color("primaryGreen"))
-
-        
         
     }
-    
 }
+
+
 
 struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {

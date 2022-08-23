@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ProductCardItemView: View {
+    @State var isAlertShowing = false
     @Binding var isChecked: Bool
+    @Binding var addProduct: Bool
+    @Binding var selectedProductId: UUID?
     var productDetail: UserProductDetail
     var product: UserProduct
     
@@ -46,11 +49,22 @@ struct ProductCardItemView: View {
                     
                     
                     if !product.isLocked() {
-                        Button("Add your product") {
-                            
+                        if let name = product.name{
+                            Button(name) {
+                                addProduct.toggle()
+                                selectedProductId = product.id
+                            }
+                            .font(.system(size:12))
+                            .foregroundColor(Color("primaryGreen"))
+                        }else{
+                            Button("Add your product") {
+                                addProduct.toggle()
+                                selectedProductId = product.id
+                            }
+                            .font(.system(size:12))
+                            .foregroundColor(Color("primaryGreen"))
                         }
-                        .font(.system(size:12))
-                        .foregroundColor(Color("primaryGreen"))
+                        
                     }else{
                         Text("\(product.dayCountToUnlocked()) days To unlock").font(.system(size:12))
                             .foregroundColor(Color("primaryGreen"))
@@ -83,3 +97,4 @@ struct ToogleCheckBoxStyle: ToggleStyle {
         
     }
 }
+

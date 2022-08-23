@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A4A85E728B3A76A009E2F6F /* ComparingSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A85E628B3A76A009E2F6F /* ComparingSkinView.swift */; };
+		9A4A85E928B3B1BD009E2F6F /* SkinConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A85E828B3B1BD009E2F6F /* SkinConditionsView.swift */; };
 		9A747F34286C92A700683171 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F33286C92A700683171 /* LocationManager.swift */; };
 		9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F39286C92D300683171 /* PhotoPreviewView.swift */; };
 		9A747F3E286C92EA00683171 /* PopUpNightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3D286C92EA00683171 /* PopUpNightView.swift */; };
 		9A747F42286C92FD00683171 /* HistorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F41286C92FD00683171 /* HistorySheetView.swift */; };
 		9A747F44286C930700683171 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F43286C930700683171 /* HistoryView.swift */; };
 		9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */; };
-		9A7B82B628B22B4F00FA44A7 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 9A7B82B528B22B4F00FA44A7 /* SwiftUICharts */; };
 		9A8C429C28B1150C006E0134 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C429B28B1150C006E0134 /* ProfileView.swift */; };
 		9A8C42A028B11640006E0134 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C429F28B11640006E0134 /* MainTabView.swift */; };
 		9AC747CF2867DDFB001C91F8 /* TakePhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC747CE2867DDFB001C91F8 /* TakePhotosView.swift */; };
@@ -57,6 +58,11 @@
 		CB1934A928A54629000DF7CE /* AcneLogLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1934A828A54629000DF7CE /* AcneLogLocalDataStore.swift */; };
 		CB1934AD28A5528D000DF7CE /* UserProductLocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1934AC28A5528D000DF7CE /* UserProductLocalDataStore.swift */; };
 		CB21589428A8AC0A006F2EB7 /* ChooseProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB21589328A8AC0A006F2EB7 /* ChooseProductViewModel.swift */; };
+		CB2399E628B3737D0001DBC1 /* TextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2399E528B3737D0001DBC1 /* TextFieldAlert.swift */; };
+		CB2399EA28B375480001DBC1 /* Binding+To+Unwrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2399E928B375480001DBC1 /* Binding+To+Unwrapped.swift */; };
+		CB2399ED28B3945F0001DBC1 /* Color+from+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2399EC28B3945F0001DBC1 /* Color+from+hex.swift */; };
+		CB2399F228B3AD370001DBC1 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2399F128B3AD370001DBC1 /* ChartView.swift */; };
+		CB2399FA28B3B3250001DBC1 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = CB2399F928B3B3250001DBC1 /* SwiftUICharts */; };
 		CB33870128AA0E7E006B839B /* TreatmentPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870028AA0E7E006B839B /* TreatmentPhotoViewModel.swift */; };
 		CB33870528AA1C11006B839B /* AcneLogProductLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870428AA1C11006B839B /* AcneLogProductLocalDataSource.swift */; };
 		CB33870728AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870628AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift */; };
@@ -116,6 +122,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A4A85E628B3A76A009E2F6F /* ComparingSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparingSkinView.swift; sourceTree = "<group>"; };
+		9A4A85E828B3B1BD009E2F6F /* SkinConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinConditionsView.swift; sourceTree = "<group>"; };
 		9A57F9AD28B3118D001A4173 /* LocalNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationView.swift; sourceTree = "<group>"; };
 		9A747F33286C92A700683171 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		9A747F39286C92D300683171 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
@@ -171,6 +179,10 @@
 		CB1934A828A54629000DF7CE /* AcneLogLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogLocalDataStore.swift; sourceTree = "<group>"; };
 		CB1934AC28A5528D000DF7CE /* UserProductLocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProductLocalDataStore.swift; sourceTree = "<group>"; };
 		CB21589328A8AC0A006F2EB7 /* ChooseProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProductViewModel.swift; sourceTree = "<group>"; };
+		CB2399E528B3737D0001DBC1 /* TextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlert.swift; sourceTree = "<group>"; };
+		CB2399E928B375480001DBC1 /* Binding+To+Unwrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+To+Unwrapped.swift"; sourceTree = "<group>"; };
+		CB2399EC28B3945F0001DBC1 /* Color+from+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+from+hex.swift"; sourceTree = "<group>"; };
+		CB2399F128B3AD370001DBC1 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		CB33870028AA0E7E006B839B /* TreatmentPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentPhotoViewModel.swift; sourceTree = "<group>"; };
 		CB33870428AA1C11006B839B /* AcneLogProductLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductLocalDataSource.swift; sourceTree = "<group>"; };
 		CB33870628AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductDefaultLocalDataSource.swift; sourceTree = "<group>"; };
@@ -219,7 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB98FB6B2899539600CDF771 /* CloudKit.framework in Frameworks */,
-				9A7B82B628B22B4F00FA44A7 /* SwiftUICharts in Frameworks */,
+				CB2399FA28B3B3250001DBC1 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +273,11 @@
 			children = (
 				9BC77FF128B338C90094FF57 /* LocalNotificationView.swift */,
 				9A8C429B28B1150C006E0134 /* ProfileView.swift */,
+
 				9BC77FF328B35B120094FF57 /* SetReminderView.swift */,
+				9A4A85E828B3B1BD009E2F6F /* SkinConditionsView.swift */,
+				9A4A85E628B3A76A009E2F6F /* ComparingSkinView.swift */,
+
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -288,6 +304,7 @@
 			children = (
 				CBCE6EFC28B32F6800F1468B /* SummaryPageView.swift */,
 				9B0ED36128B25DD1007DFAF7 /* CustomCalendar.swift */,
+				CB2399F128B3AD370001DBC1 /* ChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -446,6 +463,39 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CB2399E428B373660001DBC1 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				CB2399E528B3737D0001DBC1 /* TextFieldAlert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		CB2399E728B3752C0001DBC1 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				CB2399EB28B3944C0001DBC1 /* Color */,
+				CB2399E828B375370001DBC1 /* Binding */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		CB2399E828B375370001DBC1 /* Binding */ = {
+			isa = PBXGroup;
+			children = (
+				CB2399E928B375480001DBC1 /* Binding+To+Unwrapped.swift */,
+			);
+			path = Binding;
+			sourceTree = "<group>";
+		};
+		CB2399EB28B3944C0001DBC1 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				CB2399EC28B3945F0001DBC1 /* Color+from+hex.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		CB3386FE28AA0E5B006B839B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,6 +602,7 @@
 		CB3DFE7728980F3A002EF675 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CB2399E428B373660001DBC1 /* Alert */,
 				CBBFE873289FD5020064ADF5 /* UI */,
 				CB4FF14528992756008D78AC /* Button */,
 				CB4FF13E2899196B008D78AC /* Extension */,
@@ -727,6 +778,7 @@
 		CB4FF13E2899196B008D78AC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				CB2399E728B3752C0001DBC1 /* SwiftUI */,
 				CB4FF13F28991972008D78AC /* Foundation */,
 			);
 			path = Extension;
@@ -878,7 +930,7 @@
 			);
 			name = ACNIFY;
 			packageProductDependencies = (
-				9A7B82B528B22B4F00FA44A7 /* SwiftUICharts */,
+				CB2399F928B3B3250001DBC1 /* SwiftUICharts */,
 			);
 			productName = ACNIFY;
 			productReference = 9BB3780828634BA0007A3640 /* ACNIFY.app */;
@@ -953,7 +1005,7 @@
 			);
 			mainGroup = 9BB377FF28634BA0007A3640;
 			packageReferences = (
-				9A7B82B428B22B4F00FA44A7 /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
+				CB2399F828B3B3250001DBC1 /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
 			);
 			productRefGroup = 9BB3780928634BA0007A3640 /* Products */;
 			projectDirPath = "";
@@ -1024,6 +1076,7 @@
 				CB4F383128A7B32E00D91F0B /* UserProductDefaultLocalDataStore.swift in Sources */,
 				9BC77FF428B35B120094FF57 /* SetReminderView.swift in Sources */,
 				CB46B6BF28A64430008A74A1 /* AcneLogDefaultLocalDatastore.swift in Sources */,
+				CB2399E628B3737D0001DBC1 /* TextFieldAlert.swift in Sources */,
 				9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */,
 				9AF3DC412869C53F007847E7 /* MorningProductView.swift in Sources */,
 				9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */,
@@ -1036,6 +1089,7 @@
 				9AF3DC392869C4E5007847E7 /* SkinCardView.swift in Sources */,
 				9BA6864928AEFDF8001CD564 /* SkinQuizView.swift in Sources */,
 				CB21589428A8AC0A006F2EB7 /* ChooseProductViewModel.swift in Sources */,
+				CB2399F228B3AD370001DBC1 /* ChartView.swift in Sources */,
 				CB21589428A8AC0A006F2EB7 /* ChooseProductViewModel.swift in Sources */,
 				CB8146BB289FED4F007FC63A /* QuizMainView.swift in Sources */,
 				9BB6562D28B0E70200F374E8 /* AcneQuizItemView.swift in Sources */,
@@ -1049,7 +1103,9 @@
 				CB3D367628A274C800D9D637 /* SkinPersonaRepository.swift in Sources */,
 				9BC77FF228B338C90094FF57 /* LocalNotificationView.swift in Sources */,
 				9A747F42286C92FD00683171 /* HistorySheetView.swift in Sources */,
+				9A4A85E728B3A76A009E2F6F /* ComparingSkinView.swift in Sources */,
 				9A8C42A028B11640006E0134 /* MainTabView.swift in Sources */,
+				9A4A85E928B3B1BD009E2F6F /* SkinConditionsView.swift in Sources */,
 				CB4FF14728992762008D78AC /* BottomButtonView.swift in Sources */,
 				CBCE6EFD28B32F6800F1468B /* SummaryPageView.swift in Sources */,
 				CB4F383B28A7C31800D91F0B /* UserProductDefaultRepository.swift in Sources */,
@@ -1068,6 +1124,7 @@
 				CB1934A928A54629000DF7CE /* AcneLogLocalDataStore.swift in Sources */,
 				CB4F383328A7BA0500D91F0B /* AcneLogRepository.swift in Sources */,
 				9AD9049A28AEB45100E4F6E4 /* IntroProductView.swift in Sources */,
+				CB2399EA28B375480001DBC1 /* Binding+To+Unwrapped.swift in Sources */,
 				9B0ED36028B25D5D007DFAF7 /* CalendarModel.swift in Sources */,
 				CBFB988B28AE7D2D005D05A1 /* Date+FormattedString.swift in Sources */,
 				9A747F34286C92A700683171 /* LocationManager.swift in Sources */,
@@ -1077,6 +1134,7 @@
 				CB3D368628A27BE700D9D637 /* UserRepository.swift in Sources */,
 				9AF3DC4A2869C588007847E7 /* LocalNotifManager2.swift in Sources */,
 				9AE8043D2867724D006493A9 /* TesterPickerView.swift in Sources */,
+				CB2399ED28B3945F0001DBC1 /* Color+from+hex.swift in Sources */,
 				9B0ED36228B25DD1007DFAF7 /* CustomCalendar.swift in Sources */,
 				9BA6864B28AEFE97001CD564 /* IntroQuizView.swift in Sources */,
 				CB3D368028A278C200D9D637 /* AuthLocalDataStore.swift in Sources */,
@@ -1412,20 +1470,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9A7B82B428B22B4F00FA44A7 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+		CB2399F828B3B3250001DBC1 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AfrazCodes/SwiftUICharts";
+			repositoryURL = "https://github.com/willdale/SwiftUICharts";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.5.2;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9A7B82B528B22B4F00FA44A7 /* SwiftUICharts */ = {
+		CB2399F928B3B3250001DBC1 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9A7B82B428B22B4F00FA44A7 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			package = CB2399F828B3B3250001DBC1 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
 			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */

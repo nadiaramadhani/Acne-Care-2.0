@@ -10,12 +10,10 @@ import SwiftUI
 struct PhotoAndUpdateView: View {
     
     @State var description : String = ""
-    @Environment (\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var skins: FetchedResults<UpdateEntity>
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var viewModel : TreatmentPhotoViewModel
     
-    var emojiBetter : String = "😁"
-    var emojiNormal : String = "🙂"
-    var emojiWorst : String = "🙁"
+
     
     var body: some View {
         VStack{
@@ -36,36 +34,46 @@ struct PhotoAndUpdateView: View {
                 .padding(.trailing, 150)
             HStack{
                 VStack{
-                    Text(emojiBetter)
+                    Text(TreatmentPhotoViewModel.emojiBetter)
                         .font(.system(size: 40))
+                        .overlay(RoundedRectangle(cornerRadius: 5)
+                            .stroke(Color.orange, lineWidth: 4)
+                            .opacity(TreatmentPhotoViewModel.emojiBetter == viewModel.selectedEmoji ? 1 : 0))
                     Text("Better")
                         .font(.system(size: 16))
                 }
                 .padding(.horizontal)
                 .onTapGesture {
-                    addEmoji(savedEmoji: emojiBetter)
+                    addEmoji(savedEmoji: TreatmentPhotoViewModel.emojiBetter)
                     
                 }
                 
                 VStack{
-                    Text(emojiNormal)
+                    Text(TreatmentPhotoViewModel.emojiNormal)
                         .font(.system(size: 40))
+                        .overlay(RoundedRectangle(cornerRadius: 5)
+                            .stroke(Color.orange, lineWidth: 4)
+                            .opacity(TreatmentPhotoViewModel.emojiNormal == viewModel.selectedEmoji ? 1 : 0))
+                    
                     Text("Same")
                         .font(.system(size: 16))
                 }
                 .padding(.horizontal)
                 .onTapGesture {
-                    addEmoji(savedEmoji: emojiNormal)
+                    addEmoji(savedEmoji: TreatmentPhotoViewModel.emojiNormal)
                 }
                 VStack{
-                    Text(emojiWorst)
+                    Text(TreatmentPhotoViewModel.emojiWorst)
                         .font(.system(size: 40))
+                        .overlay(RoundedRectangle(cornerRadius: 5)
+                            .stroke(Color.orange, lineWidth: 4)
+                            .opacity(TreatmentPhotoViewModel.emojiWorst == viewModel.selectedEmoji ? 1 : 0))
                     Text("Worst")
                         .font(.system(size: 16))
                 }
                 .padding(.horizontal)
                 .onTapGesture {
-                    addEmoji(savedEmoji: emojiWorst)
+                    addEmoji(savedEmoji: TreatmentPhotoViewModel.emojiWorst)
                 }
                 
                 
@@ -81,59 +89,59 @@ struct PhotoAndUpdateView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 133, height: 40)
                             .foregroundColor(.white)
-                            .shadow(color: .gray, radius: 1)
-                        Text("Acne was gone")
+                            .shadow(color: viewModel.isAcneGoneQuickAnswerSelected ? .orange: .gray, radius: 1)
+                        Text(TreatmentPhotoViewModel.acneGoneQuickAnswer)
                             .font(.system(size: 16))
                     }
                     .onTapGesture {
-                        
+                        viewModel.isAcneGoneQuickAnswerSelected.toggle()
                     }
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 173, height: 40)
                             .foregroundColor(.white)
-                            .shadow(color: .gray, radius: 1)
-                        Text("My face get drier")
+                            .shadow(color: viewModel.isAcneGetDryerQuickAnswerSelected ? .orange: .gray, radius: 1)
+                        Text(TreatmentPhotoViewModel.acneGetDryerQuickAnswer)
                             .font(.system(size: 16))
                     }
                 }
                 .onTapGesture {
-                    
+                    viewModel.isAcneGetDryerQuickAnswerSelected.toggle()
                 }
                 HStack{
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 69, height: 40)
                             .foregroundColor(.white)
-                            .shadow(color: .gray, radius: 1)
-                        Text("Streak")
+                            .shadow(color: viewModel.isAcneStreakQuickAnswerSelected ? .orange: .gray, radius: 1)
+                        Text(TreatmentPhotoViewModel.acneStreakQuickAnswer)
                             .font(.system(size: 16))
                     }
                     .onTapGesture {
-                        
+                        viewModel.isAcneStreakQuickAnswerSelected.toggle()
                     }
                     
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 147, height: 40)
                             .foregroundColor(.white)
-                            .shadow(color: .gray, radius: 1)
-                        Text("A pimple appears")
+                            .shadow(color: viewModel.isAcneAPimpleAppearsQuickAnswerSelected ? .orange: .gray, radius: 1)
+                        Text(TreatmentPhotoViewModel.acneAPimpleAppearsQuickAnswer)
                             .font(.system(size: 16))
                     }
                     .onTapGesture {
-                        
+                        viewModel.isAcneAPimpleAppearsQuickAnswerSelected.toggle()
                     }
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 100, height: 40)
                             .foregroundColor(.white)
-                            .shadow(color: .gray, radius: 1)
-                        Text("Red pimple")
+                            .shadow(color: viewModel.isAcneRedPimpleQuickAnswerSelected ? .orange: .gray, radius: 1)
+                        Text(TreatmentPhotoViewModel.acneRedPimpleQuickAnswer)
                             .font(.system(size: 16))
                     }
                     .onTapGesture {
-                        
+                        viewModel.isAcneRedPimpleQuickAnswerSelected .toggle()
                     }
                     
                 }
@@ -146,15 +154,15 @@ struct PhotoAndUpdateView: View {
                 Text("Describe Your Skin Today")
                     .font(.body)
                     .fontWeight(.bold)
-                TextField("A new pimple appears on the cheek...", text: $description)
+                TextField("A new pimple appears on the cheek...", text: $viewModel.acneLogDesc)
                     .padding()
                     .frame(width: 350, height: 76)
                     .cornerRadius(10)
                     .border(Color.gray)
             }
             Button {
-                addDesc()
-                
+                viewModel.saveChanges()
+                presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("Finish")
                     .font(.system(size: 13))
@@ -169,27 +177,17 @@ struct PhotoAndUpdateView: View {
     }
     
     func addEmoji(savedEmoji : String) {
-        let newUpdate = UpdateEntity(context: moc)
-        
-        newUpdate.emojiUpdate = savedEmoji
-        
-        try? moc.save()
-        
+        self.viewModel.acneLogCondition = TreatmentPhotoViewModel.getEmojiName(emoji: savedEmoji)
+        self.viewModel.selectedEmoji = savedEmoji
     }
     
-    func addDesc () {
-        let newUpdate = UpdateEntity(context: moc)
-        newUpdate.descUpdate = description
-        
-        try? moc.save()
-        
-    }
+  
     
    
 }
 
 struct PhotoAndUpdateView_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoAndUpdateView()
+        PhotoAndUpdateView(viewModel: TreatmentPhotoViewModel(acneLog: AcneLog(context: PersistenceController.shared.container.viewContext)))
     }
 }

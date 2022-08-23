@@ -10,6 +10,8 @@ import Foundation
 protocol UserProductRepository{
     func getAllUsedUserProduct(userID: String) -> [UserProduct]
     func createDefaultProduct(userID: String)
+    func createNightDefaultProduct(userID: String)
+    func createDayDefaultProduct(userID: String)
     func getAllUserProduct(userID: String) -> [UserProduct]
     func saveChanges()
     func rollBack()

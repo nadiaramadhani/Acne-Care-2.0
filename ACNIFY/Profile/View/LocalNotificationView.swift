@@ -45,6 +45,7 @@ struct LocalNotificationView: View {
                                 
             )
         }
+        .navigationBarHidden(true)
     }
 }
 
