@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var selected = 1
-    
+    @StateObject var lnManager = LocalNotificationManagerMorning()
     var body: some View {
         NavigationView{
             ZStack(alignment: .top){
@@ -60,14 +60,25 @@ struct ProfileView: View {
                 
                         
             }.navigationBarItems(trailing:
-                                    HStack{
-                Button(action: {
-//                    self.isDone = true
-                }){
+//                                    HStack{
+//                Button(action: {
+////                    self.isDone = true
+//                }){
+//                    Image(systemName: "bell.fill")
+//                        .foregroundColor(Color("primaryGreen"))
+//
+//                }
+                
+                NavigationLink {
+                    SetReminderView()
+                    .environmentObject(lnManager)
+                    
+                } label: {
                     Image(systemName: "bell.fill")
-                        .foregroundColor(Color("primaryGreen"))
-                       
-                }})
+                                           .foregroundColor(Color("primaryGreen"))
+                
+
+            })
             
         }
         
