@@ -16,14 +16,13 @@ struct SummaryPageView: View {
     @State var progressDay : Float = 0.5
     @State var progressNight: Float = 1.0
     @ObservedObject var viewModel = SummaryViewModel()
-    @State var graphSource: GraphProviderAble
+    @Binding var graphData: LineChartData
+    
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        if isBack{
-            HomePageView()
-        }else{
-            NavigationView{
                 ScrollView{
+                    ScrollViewReader { value in
                     VStack{
                         Spacer()
                             .frame(height: 24)
@@ -48,7 +47,7 @@ struct SummaryPageView: View {
                         }.padding(.leading, 26)
                             .padding(.top, 5)
                         
-                        GraphicView(graphSource: graphSource)
+                        GraphicView(graphSource: $graphData)
                         
                         Spacer()
                             .frame(height: 32)
@@ -76,8 +75,17 @@ struct SummaryPageView: View {
                                         .foregroundColor(.white)
                                         .shadow(color: .gray, radius: 2)
                                     
-                                    CustomCalendar(currentDate: $currentDate, progressDay: $progressDay, progressNight: $progressNight)
-                                        .frame(width: 338, height: 245)
+                                    CustomCalendar(currentDate: $currentDate, progressDay: $progressDay, progressNight: $progressNight, acneLogList: $viewModel.acneLogList, dateSelected: $viewModel.selectedDate){
+                                        viewModel.getAcnelogData()
+                                        
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                            value.scrollTo(1)
+                                            
+                                        }
+                                       
+                                    }
+                                    .frame(width: 338, height: 245)
+                                       
                                         
                                 }
                                 .padding()
@@ -128,23 +136,31 @@ struct SummaryPageView: View {
                             
                         }
                         
-                        Spacer()
-                            .frame(height: 40)
-                        
-                        ReviewView()
-                        
-                        Spacer()
-                            .frame(height: 32)
-                        
-                        DropdownView()
+                        if viewModel.selectedAcneLog != nil {
+                            VStack{
+                            Spacer()
+                                .frame(height: 40)
+                            
+                                ReviewView(acnelog: viewModel.selectedAcneLog!)
+                              
+                            
+                            Spacer()
+                                .frame(height: 32)
+                            
+                            DropdownView(acnelog: viewModel.selectedAcneLog!)
+                                    
+                            }.id(1)
+                        }
+                       
                         
                     }
                     .navigationBarTitle("Summary")
                     .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarBackButtonHidden(true)
                     .navigationBarItems(leading:
                                             HStack{
                         Button(action: {
-                            self.isBack = true
+                            presentationMode.wrappedValue.dismiss()
                         }){
                             Image(systemName: "chevron.left")
                                 .foregroundColor(Color("primaryGreen"))
@@ -158,18 +174,18 @@ struct SummaryPageView: View {
                     )
                 }
             }
-            .navigationBarHidden(true)
-    }
+            .
+            onAppear{
+                viewModel.getAcnelogData()
+            }
+         
+        }
         
-        
-        
-        
-    }
-}
+        }
 
 
 struct GraphicView: View{
-    @State var graphSource: GraphProviderAble
+    @Binding var graphSource: LineChartData
     var body: some View{
         
         ZStack{
@@ -186,7 +202,7 @@ struct GraphicView: View{
                 .padding(.bottom)
                             
             
-            LineChartDemoView(data: graphSource.getGraphLineData())
+            LineChartDemoView(data: $graphSource)
                 .frame(width: 300, height: 100, alignment: .center)
 
        
@@ -198,6 +214,7 @@ struct GraphicView: View{
 
 
 struct ReviewView: View{
+    var acnelog: AcneLog
     var body: some View{
        
             VStack{
@@ -208,7 +225,9 @@ struct ReviewView: View{
                     .padding(.trailing,285)
                 
                 HStack{
-                    Image ("GirlExample")
+                    Image(uiImage: UIImage(data: acnelog.image!)!)
+                        .resizable()
+                        .frame(width: 132, height: 184)
                         .padding(.leading)
                     
                     Spacer()
@@ -242,7 +261,7 @@ struct ReviewView: View{
                             
                          
                             
-                            Text ("😁")
+                            Text (TreatmentPhotoViewModel.conditionToEmoji(condition: acnelog.condition ?? ""))
                                 .font(.system(size: 14))
                                 .fontWeight(.semibold)
                                 .frame(width: 200, alignment: .leading)
@@ -257,7 +276,7 @@ struct ReviewView: View{
                                 .frame(width: 200, alignment: .leading)
                             
                                 
-                            Text ("jerawat masi cukup banyak tapi sudah tidak meradang seperti sebelumnya")
+                            Text (acnelog.desc ?? "jerawat masi cukup banyak tapi sudah tidak meradang seperti sebelumnya")
                                 .frame(width: 200, alignment: .leading)
                                 .multilineTextAlignment(.leading)
                                 .font(.system(size: 14))
@@ -277,8 +296,7 @@ struct ReviewView: View{
 }
 
 struct DropdownView: View{
-    
-    
+    var acnelog: AcneLog
     @State private var isExpandedDay = false
     @State private var isExpandedNight = false
     var body: some View{
@@ -311,9 +329,6 @@ struct DropdownView: View{
                     }
                     .padding(.trailing,140)
                     .frame(width: 345)
-                    
-                    
-                    
                         
                     }
                 

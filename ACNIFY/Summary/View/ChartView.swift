@@ -11,7 +11,7 @@ import Combine
 
 struct LineChartDemoView: View {
     
-    let data: LineChartData
+    @Binding var data: LineChartData
     
     var body: some View {
         LineChart(chartData: data)

@@ -38,7 +38,7 @@ struct HomePageView: View {
                         .navigationBarHidden(true), isActive: $isNightLinkActive) {EmptyView()}
                     NavigationLink(destination: IntroProductView(pageDisplayed: .Day)
                         .navigationBarHidden(true), isActive: $isDayLinkActive) {EmptyView()}
-                    NavigationLink("",destination: (SummaryPageView(graphSource: viewModel)),isActive: $summaryPageFromGraphic)
+                    NavigationLink("",destination: (SummaryPageView(graphData: $viewModel.chartData)),isActive: $summaryPageFromGraphic)
                         .navigationBarHidden(true)
                     NavigationLink(destination: TakePhotos(viewModel: TreatmentPhotoViewModel(acneLog: viewModel.nightLog)).navigationBarHidden(true), isActive: self.$TakePhotosonAlert) { EmptyView() }
                     VStack{
@@ -167,7 +167,7 @@ struct HomePageView: View {
                                                     self.nightViewCheck = true
                                                 }else{
                                                     viewModel.createNightProduct()
-                                                    isDayLinkActive.toggle()
+                                                    isNightLinkActive.toggle()
                                                 }
                                                 
                                             } label: {
@@ -229,7 +229,7 @@ struct HomePageView: View {
                                         .padding(.trailing, 26)
                                 }
                             }
-                            GraphicView(graphSource: viewModel)
+                            GraphicView(graphSource: $viewModel.chartData)
                                 .onTapGesture {
                                     summaryPageFromGraphic.toggle()
                                 }
@@ -242,6 +242,7 @@ struct HomePageView: View {
                     viewModel.getTotalWeekElapsed()
                     viewModel.getProductNameUsed()
                     viewModel.checkChecklistAvailablility()
+                    viewModel.getGraphLineData()
                 }
                 
             }

@@ -12,6 +12,10 @@ struct CustomCalendar: View {
     @State var currentMonth: Int = 0
     @Binding var progressDay: Float
     @Binding var progressNight: Float
+    @Binding var acneLogList: [AcneLog]?
+    @Binding var dateSelected: Date?
+    
+    var action: () -> ()
 
     
     var body: some View {
@@ -75,7 +79,24 @@ struct CustomCalendar: View {
             
             LazyVGrid(columns: columns, spacing: 0) {
                 ForEach(extractDate()) { value in
-                    CardView(value: value)
+                    let todayLogs = acneLogList?.filter{
+                        $0.time! < value.date.dayAfter && $0.time! > value.date.dayBefore
+                    }
+                    
+                    let dayLog = todayLogs?.filter{
+                        $0.type == UserProduct.dayRoutineType
+                    }.first
+                    
+                    let nightLog = todayLogs?.filter{
+                        $0.type == UserProduct.nightRoutineType
+                    }
+                    .first
+                    
+                    CardView(value: DateValue(isSelected: value.date == dateSelected, dayLog: dayLog, nightLog: nightLog, id: value.id, day: value.day, date: value.date))
+                        .onTapGesture {
+                            dateSelected = value.date
+                            action()
+                        }
                 }
             }
           
@@ -101,19 +122,25 @@ struct CustomCalendar: View {
                     Circle()
                         .frame(width: 8, height: 8)
                         .foregroundColor(Color("tosca"))
-                        .padding(.leading, 15)
+                        .padding(.leading, 15).opacity(value.nightLog?.image != nil ? 1 : 0)
                 ZStack{
+                    if value.isSelected {
+                    RoundedRectangle(cornerRadius: 4)
+                               .stroke(.red, lineWidth: 2)
+                               .frame(width: 30, height: 30)
+                    }
                     Circle()
                         .trim(from: 0.0, to: CGFloat(min(self.progressDay, 0.5)))
                         .stroke(style: StrokeStyle(lineWidth: 3.0, lineCap: .round, lineJoin: .round))
-                        .foregroundColor(Color("yellow"))
+                        .foregroundColor(value.dayLog != nil ? Color("yellow") : Color.gray)
                         .rotationEffect(Angle(degrees: 270))
                     
                     Circle()
                         .trim(from: 0.5, to: CGFloat(min(self.progressNight, 1.0)))
                         .stroke(style: StrokeStyle(lineWidth: 3.0, lineCap: .round, lineJoin: .round))
-                        .foregroundColor(Color("purpleSummary"))
+                        .foregroundColor(value.dayLog != nil ? Color("purpleSummary"): Color.gray)
                         .rotationEffect(Angle(degrees: 270))
+                        
                     
                 Text("\(value.day)")
                         .font(.system(size: 11))
@@ -122,8 +149,11 @@ struct CustomCalendar: View {
                 }
             }
         }
+        
         .padding(.vertical, 10)
-            .frame(height: 60, alignment: .top)
+        .frame(height: 60, alignment: .top)
+        
+        
     }
     
     

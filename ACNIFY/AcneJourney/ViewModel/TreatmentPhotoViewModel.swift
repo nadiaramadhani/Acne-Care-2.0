@@ -91,4 +91,18 @@ extension TreatmentPhotoViewModel {
             return "worst"
         }
     }
+    
+    
+    static func conditionToEmoji(condition: String) -> String {
+        switch condition {
+        case "worst":
+            return emojiWorst
+        case "normal":
+            return emojiNormal
+        case "better":
+            return emojiBetter
+        default:
+            return emojiWorst
+        }
+    }
 }

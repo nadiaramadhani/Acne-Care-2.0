@@ -10,7 +10,7 @@ import SwiftUI
 import SwiftUICharts
 import Combine
 
-final class HomeViewModel: ObservableObject, GraphProviderAble {
+final class HomeViewModel: ObservableObject {
    
     @Published var currentUser: User?
     @Published var dayLog: AcneLog?
@@ -20,6 +20,7 @@ final class HomeViewModel: ObservableObject, GraphProviderAble {
     @Published var isDayProductCreated = false
     @Published var productUsedNightNames: [String] = []
     @Published var productUsedDayNames: [String] = []
+    @Published var chartData: LineChartData = LineChartData(dataSets: LineDataSet(dataPoints: []))
 
     private let userRepository: UserRepository
     private let acneLogRepository: AcneLogRepository
@@ -78,7 +79,7 @@ final class HomeViewModel: ObservableObject, GraphProviderAble {
         
         let acnelogData = AcneLogData()
         acnelogData.type = "night"
-        acnelogData.userID = (currentUser?.id)!
+        acnelogData.userID = UUID.init(uuidString: AuthenticationDefaultRepository.shared.userID!)
         
         let newAcnelog = acneLogRepository.createNewAcneLog(data: acnelogData)
         userRepository.addNewAcneLog(id: (currentUser?.id)!.uuidString, acneLog: newAcnelog)
@@ -124,32 +125,59 @@ final class HomeViewModel: ObservableObject, GraphProviderAble {
     
  
     
-    func getGraphLineData() -> LineChartData {
+    func getGraphLineData() {
         guard let logs = acneLogRepository.getAcneLogsByUserID(userID: AuthenticationDefaultRepository.shared.userID!) else {
-            return LineChartData(dataSets: LineDataSet(dataPoints: []))
+            return
         }
+
+
+        print(logs.count)
+        var dataPoints: [LineChartDataPoint] = []
+        dataPoints.append(LineChartDataPoint(value: 1, xAxisLabel: "M", description: "Monday"   ))
+
+        for log in logs {
         
-        let dataPoints = logs.filter{
-            $0.condition != nil
-        }.map{
-            LineChartDataPoint(value: logConditionToNumber(condition: $0.condition ?? ""), xAxisLabel: nil, description: nil)
+            if log.condition == nil {
+                continue
+            }
+            
+            let number = logConditionToNumber(condition: log.condition!)
+            
+            guard let firstitem  = dataPoints.first else {
+                continue
+            }
+            
+            if dataPoints.count == 1 {
+                if number == firstitem .value{
+                    continue
+                }
+                dataPoints.append(LineChartDataPoint(value: number, xAxisLabel: "M", description: "Monday"   ))
+            }
+            
+            dataPoints.append(LineChartDataPoint(value: number, xAxisLabel: "M", description: "Monday"   ))
+
         }
-        
+
+
+        guard dataPoints.count != 0 else {
+            return
+        }
+
         let data = LineDataSet(dataPoints: dataPoints,
                                legendTitle: "Acne Conditions",
                                pointStyle: PointStyle(),
                                style: LineStyle(lineColour: ColourStyle(colour: Color(hex: "#006255")), lineType: .line))
-        
+
         let gridStyle = GridStyle(numberOfLines: 3,
                                   lineColour   : Color(.lightGray).opacity(0.5),
                                   lineWidth    : 1,
                                   dash         : [10],
                                   dashPhase    : 2)
-        
-     
-        
-        
-        
+
+
+
+
+
         let chartStyle = LineChartStyle(infoBoxPlacement    : .infoBox(isStatic: false),
                                         infoBoxContentAlignment: .vertical,
                                         infoBoxBorderColour : Color.primary,
@@ -161,17 +189,16 @@ final class HomeViewModel: ObservableObject, GraphProviderAble {
                                         yAxisLabelColour    : Color(hex: "#006255"), yAxisNumberOfLabels : 3,
                                         yAxisLabelType: .custom,
                                         globalAnimation     : .easeOut(duration: 1))
-        
-        
-        
+
+
+
         let chartData = LineChartData(dataSets: data,
                                       metadata: ChartMetadata(title: "Your acne", subtitle: "A Week"),
-                                      xAxisLabels: ["W1", "W2", "W3", "W4"],
+                                      xAxisLabels: [Int](0..<dataPoints.count).map{"W\($0+1)"},
                                       yAxisLabels: ["Bad", "Balance", "Great"],
                                       chartStyle: chartStyle)
         
-        
-        return chartData
+        self.chartData = chartData
     }
     
     func getProductNameUsed(){
@@ -197,8 +224,13 @@ final class HomeViewModel: ObservableObject, GraphProviderAble {
             return 2
         case "worst":
             return 1
+        case "firstcomer":
+            return 2
         default:
             return 1
         }
     }
 }
+
+
+
