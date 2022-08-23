@@ -14,15 +14,20 @@ final class NewQuizViewModel: ObservableObject {
     @Published var shinySkinAnswer = ""
     @Published var oilyCertainAreaSkinAnswer = ""
     @Published var acneSeverityMap = [String:NewQuizViewModel.AcneType]()
+    @Published var firstAcneLog: AcneLog?
     
     private let skinPersonaRepository: SkinPersonaRepository
     private let userRepository: UserRepository
+    private let acneLogRepository: AcneLogRepository
     
     init(skinPersonaRepository: SkinPersonaRepository = SkinPersonaDefaultRepository.shared,
-         userRepository: UserRepository = UserDefaultRepository()
+         userRepository: UserRepository = UserDefaultRepository(),
+         acneLogRepository: AcneLogRepository = AcneLogDefaultRepository()
     ){
         self.skinPersonaRepository = skinPersonaRepository
         self.userRepository = userRepository
+        self.acneLogRepository = acneLogRepository
+       
     }
     
     func saveSkinPersona() {
@@ -83,6 +88,14 @@ final class NewQuizViewModel: ObservableObject {
         }
         
         return NewQuizViewModel.acneConditionMild
+    }
+    
+    func createAcneLogdata(){
+        let data = AcneLogData()
+        data.userID = UUID.init(uuidString: AuthenticationDefaultRepository.shared.userID!)
+        data.type = "firstcomer"
+        
+        self.firstAcneLog = acneLogRepository.createNewAcneLog(data: data)
     }
 }
 
@@ -198,6 +211,61 @@ extension NewQuizViewModel {
         case Papule = 2
         case Pustule = 3
         case Nodule = 4
+    }
+    
+}
+
+
+
+extension NewQuizViewModel {
+    struct SkinConditionDescription{
+        var name = ""
+        var desc = ""
+        var source = ""
+    }
+    
+    static let oilySkinConditionDescription = SkinConditionDescription(name: "Oily", desc: "Oily skin may has enlarged pores, dull or shiny, thick complexion, blackheads, pimples, or other blemishes. Oiliness can change depending upon the time of year or the weather. Things that can cause or worsen it include, puberty or other hormonal imbalances, stress, heat or too much humidity", source: "https://www.webmd.com/beauty/whats-your-skin-type")
+    
+    static let normalConditionDescription = SkinConditionDescription(name: "Normal", desc: "Normal skin not too dry and not too oily, normal skin has, no or few imperfections, no severe sensitivity, barely visible pores, and a radiant complexion", source: "https://www.webmd.com/beauty/whats-your-skin-type")
+    
+    static let combinationSkinConditionDescription = SkinConditionDescription(name: "Combination", desc: "Our skin can be dry or normal in some areas and oily in others, such as the T-zone (nose, forehead, and chin). Many people have this type. It may need slightly different care in different areas. Combination skin can have pores that look larger than normal because they’re more open, blackheads and shiny skin", source: "https://www.webmd.com/beauty/whats-your-skin-type")
+    
+    static let drySkinConditionDescription = SkinConditionDescription(name: "Dry", desc: "Dry skin may has almost invisible pores,dull, rough complexion, red patches, less elastic skin, more visible lines, your skin can crack, peel, or become itchy, irritated, or inflamed. If it’s very dry, it can become rough and scaly, especially on the backs of your hands, arms, and legs. ", source: "https://www.webmd.com/beauty/whats-your-skin-type")
+    
+    
+    static let mildSkinConditionDescription = SkinConditionDescription(name: "Mild", desc: "Mild acne consist of open and closed comedones with few inflammatory papules and pustules", source: "https://www.nhs.uk/conditions/acne/diagnosis")
+    
+    static let severeConditionDescription = SkinConditionDescription(name: "Severe", desc: "Severe acne consist lots of large, painful papules, pustules, nodules or cysts; you might also have some scarring", source: "https://www.nhs.uk/conditions/acne/diagnosis")
+    
+    static let moderateSkinConditionDescription = SkinConditionDescription(name: "Moderate", desc: "Moderate acne severity consist of more widespread whiteheads and blackheads, with many papules and pustules", source: "https://www.nhs.uk/conditions/acne/diagnosis")
+    
+  
+    static func getSkinTypeDesc(type: String) -> SkinConditionDescription {
+        switch type {
+        case NewQuizViewModel.drySkinType:
+            return NewQuizViewModel.drySkinConditionDescription
+        case NewQuizViewModel.oilyAnswerNo:
+            return NewQuizViewModel.oilySkinConditionDescription
+        case NewQuizViewModel.combinationSkinType:
+            return NewQuizViewModel.combinationSkinConditionDescription
+        case NewQuizViewModel.normalSkinType:
+            return NewQuizViewModel.normalConditionDescription
+        default:
+            return NewQuizViewModel.normalConditionDescription
+        }
+    }
+    
+    static func getAcneSevereDesc(type: String) -> SkinConditionDescription {
+        switch type {
+        case NewQuizViewModel.acneConditionMild:
+            return NewQuizViewModel.mildSkinConditionDescription
+        case NewQuizViewModel.acneConditionSevere:
+            return NewQuizViewModel.severeConditionDescription
+        case NewQuizViewModel.acneConditionModerate:
+            return NewQuizViewModel.moderateSkinConditionDescription
+        default:
+            return NewQuizViewModel.moderateSkinConditionDescription
+        }
     }
     
 }

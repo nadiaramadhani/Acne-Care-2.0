@@ -53,7 +53,8 @@ final class SkinPersonaDefaultRepository: SkinPersonaRepository, ObservableObjec
     func isFirstQuiz(userID: String) -> Bool {
        let skinPersonas = self.getUserSkinPersonas(userID: userID)
         
-       self.isFirstUserQuiz = skinPersonas.count == 0
+        
+       self.isFirstUserQuiz = skinPersonas.count == 0 
         
         
        return self.isFirstUserQuiz

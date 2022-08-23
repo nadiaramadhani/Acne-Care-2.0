@@ -93,7 +93,6 @@ struct SkinQuizView: View {
                         Button {
                             addProgress()
                             handleNexButton()
-                           
                         } label: {
                             Text("Next")
                                 .fontWeight(.semibold)
@@ -104,6 +103,10 @@ struct SkinQuizView: View {
                         .cornerRadius(12)
                         .padding(.bottom, 60)
                         .padding(.top)
+                        .onTapGesture{
+                                addProgress()
+                                handleNexButton()
+                            }
                         }
                         
                         

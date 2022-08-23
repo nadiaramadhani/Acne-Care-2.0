@@ -41,8 +41,10 @@ final class TreatmentPhotoViewModel: ObservableObject{
     }
     
     func saveChanges(){
-        acneLog?.condition = self.acneLogCondition
-        acneLog?.desc = self.acneLogDesc
+        guard let acneLog = self.acneLog else {return}
+        
+        acneLog.condition = self.acneLogCondition
+        acneLog.desc = self.acneLogDesc
         acneLogRepository.saveChanges()
 }
     
