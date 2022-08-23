@@ -17,12 +17,12 @@ struct AcneQuizItemView: View {
             HStack{
                 Spacer()
                 VStack{
-                Text(acneData?.location ?? "Forehead")
-                    .font(.system(size: 17))
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color("primaryGreen"))
-                    .padding(.top, 36)
-                Text("What type of acne that exist or most dominant in this area?")
+//                Text(acneData?.location ?? "Forehead")
+//                    .font(.system(size: 17))
+//                    .fontWeight(.semibold)
+//                    .foregroundColor(Color("primaryGreen"))
+//                    .padding(.top, 36)
+                    Text("What is the most dominant pimple on your \(acneData?.location ?? "forehead")?")
                     .font(.system(size: 20))
                     .fontWeight(.semibold)
                     .foregroundColor(Color("quizFont"))
@@ -60,7 +60,7 @@ struct AcneQuizItemView: View {
                 .font(.system(size: 15))
                 HStack{
                     VStack{
-                        Image("papules")
+                        Image("papule")
                             .overlay(RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.orange, lineWidth: 4)
                                 .opacity(2 == selectedIndex ? 1 : 0))
@@ -73,7 +73,7 @@ struct AcneQuizItemView: View {
 
                     }
                     VStack{
-                        Image("pustules")
+                        Image("pustule")
                             .overlay(RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.orange, lineWidth: 4)
                                 .opacity(3 == selectedIndex ? 1 : 0))
@@ -103,7 +103,7 @@ struct AcneQuizItemView: View {
 
                     }
                     VStack{
-                        Image("cysts")
+                        Image("cyst")
                             .overlay(RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.orange, lineWidth: 4)
                                 .opacity(5 == selectedIndex ? 1 : 0))

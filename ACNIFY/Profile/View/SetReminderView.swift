@@ -135,8 +135,7 @@ struct SetReminderView: View {
                                              
                         )
                     
-                        .navigationBarTitle("Reminder")
-                        .navigationBarTitleDisplayMode(.inline)
+                        
                     
                 }
                 
@@ -145,6 +144,7 @@ struct SetReminderView: View {
             
             
         }.navigationTitle("Reminder")
+            .navigationBarTitleDisplayMode(.inline)
             .task{
                 try? await lnManagerMorning.requestAuthorization()
             }

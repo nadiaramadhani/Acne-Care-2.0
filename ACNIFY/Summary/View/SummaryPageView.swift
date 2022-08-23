@@ -25,8 +25,20 @@ struct SummaryPageView: View {
                     VStack{
                         Spacer()
                             .frame(height: 24)
+                        
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 8)
+                                .frame(width: 338, height: 40)
+                                .foregroundColor(Color("yellow2"))
+                              
+                                .shadow(color: Color("yellow2s"), radius: 2)
+                            Text("Your skin is getting better, keep going")
+                                .font(.caption)
+                        }
+                       
                         HStack{
                         Text ("Skin Progress")
+                                .foregroundColor(Color("primaryGreen"))
                             .font(.system(size: 17).bold())
                             .bold()
                             Spacer()

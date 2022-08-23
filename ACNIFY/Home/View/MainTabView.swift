@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        NavigationView{
+    //    NavigationView{
             TabView{
                 HomePageView()
                     .navigationBarHidden(true)
@@ -18,7 +18,7 @@ struct MainTabView: View {
                         Text("Progress")
                     }.tag(0)
                 
-                ProfileView()
+                ProfilePageView()
                     .navigationBarHidden(true)
                     .tabItem{
                         Image(systemName: "person.crop.circle")
@@ -28,7 +28,7 @@ struct MainTabView: View {
                 
             }
             .accentColor(Color("primaryGreen"))
-        }
+       // }
         
     }
 }

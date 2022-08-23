@@ -26,8 +26,12 @@ struct IntroQuizView: View {
             Text("Let us know more about your skin condition!")
                 .font(.system(size: 20))
                 .fontWeight(.bold)
+                .frame(width: 350, height: 48)
+                .multilineTextAlignment(.leading)
+                .padding(.trailing)
+            
             Text("""
-Worry no more beautiful! We will be with you to accompany your acne healing process
+Worry no more beautiful! We will be with you to accompany your acne healing process.
 Only instant ramen noodles have immediate results. Everything needs action, perseverance, and consistency to bear the prize, my friend.
 Acne healing will take two to six months.
 """)
@@ -35,7 +39,6 @@ Acne healing will take two to six months.
             .font(.body)
             .foregroundColor(Color("grayFont"))
             
-            .padding()
             
             Button {
                 displayedPage = .QuizPage
@@ -48,6 +51,7 @@ Acne healing will take two to six months.
             .frame(width: 153, height: 50)
             .background(Color("yellow"))
             .cornerRadius(12)
+            .padding(.top)
 
             Spacer()
             

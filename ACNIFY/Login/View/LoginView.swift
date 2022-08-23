@@ -33,6 +33,7 @@ struct LoginView: View {
                 .frame(width: 340, alignment: .leading)
             
             TextField("Name", text: $userName)
+                .disableAutocorrection(true)
                 .colorMultiply(Color.white)
                 .frame(width: 300,alignment: .leading)
                 .padding()
