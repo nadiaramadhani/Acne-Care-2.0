@@ -23,6 +23,7 @@ final class ChooseProductViewModel: ObservableObject {
     init(userProductRepository: UserProductRepository = UserProductDefaultRepository()){
         self.logedInUserID = AuthenticationDefaultRepository.shared.userID!
         self.userProductRepository = userProductRepository
+        self.getAllUserProducts()
     }
     
     public func getAllUserProducts() {

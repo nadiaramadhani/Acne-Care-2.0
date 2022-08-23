@@ -60,6 +60,9 @@
 		CB2399F228B3AD370001DBC1 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2399F128B3AD370001DBC1 /* ChartView.swift */; };
 		CB2399FA28B3B3250001DBC1 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = CB2399F928B3B3250001DBC1 /* SwiftUICharts */; };
 		CB2399FC28B4A55B0001DBC1 /* FirstQuizFoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2399FB28B4A55B0001DBC1 /* FirstQuizFoto.swift */; };
+		CB2399FF28B4CFB60001DBC1 /* GraphProviderAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2399FE28B4CFB60001DBC1 /* GraphProviderAble.swift */; };
+		CB239A0128B4D0D10001DBC1 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB239A0028B4D0D10001DBC1 /* SummaryViewModel.swift */; };
+		CB239A0328B4E1400001DBC1 /* Date+Today+Display+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB239A0228B4E1400001DBC1 /* Date+Today+Display+Time.swift */; };
 		CB33870128AA0E7E006B839B /* TreatmentPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870028AA0E7E006B839B /* TreatmentPhotoViewModel.swift */; };
 		CB33870528AA1C11006B839B /* AcneLogProductLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870428AA1C11006B839B /* AcneLogProductLocalDataSource.swift */; };
 		CB33870728AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870628AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift */; };
@@ -176,6 +179,9 @@
 		CB2399EC28B3945F0001DBC1 /* Color+from+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+from+hex.swift"; sourceTree = "<group>"; };
 		CB2399F128B3AD370001DBC1 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		CB2399FB28B4A55B0001DBC1 /* FirstQuizFoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstQuizFoto.swift; sourceTree = "<group>"; };
+		CB2399FE28B4CFB60001DBC1 /* GraphProviderAble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphProviderAble.swift; sourceTree = "<group>"; };
+		CB239A0028B4D0D10001DBC1 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
+		CB239A0228B4E1400001DBC1 /* Date+Today+Display+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Today+Display+Time.swift"; sourceTree = "<group>"; };
 		CB33870028AA0E7E006B839B /* TreatmentPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentPhotoViewModel.swift; sourceTree = "<group>"; };
 		CB33870428AA1C11006B839B /* AcneLogProductLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductLocalDataSource.swift; sourceTree = "<group>"; };
 		CB33870628AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductDefaultLocalDataSource.swift; sourceTree = "<group>"; };
@@ -285,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				9B0ED35F28B25D5D007DFAF7 /* CalendarModel.swift */,
+				CB239A0028B4D0D10001DBC1 /* SummaryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -336,6 +343,7 @@
 		9BB3780A28634BA0007A3640 /* ACNIFY */ = {
 			isa = PBXGroup;
 			children = (
+				CB2399FD28B4CFA20001DBC1 /* Graph */,
 				CB98FB682899538E00CDF771 /* ACNIFY.entitlements */,
 				CBD812D728B0F0E200EDE2CE /* UserProduct */,
 				CB4FF14228992154008D78AC /* Login */,
@@ -484,6 +492,14 @@
 				CB2399EC28B3945F0001DBC1 /* Color+from+hex.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		CB2399FD28B4CFA20001DBC1 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				CB2399FE28B4CFB60001DBC1 /* GraphProviderAble.swift */,
+			);
+			path = Graph;
 			sourceTree = "<group>";
 		};
 		CB3386FE28AA0E5B006B839B /* ViewModel */ = {
@@ -895,6 +911,7 @@
 			children = (
 				CBFB988A28AE7D2D005D05A1 /* Date+FormattedString.swift */,
 				CBFB988C28AE7D42005D05A1 /* Date+Interval.swift */,
+				CB239A0228B4E1400001DBC1 /* Date+Today+Display+Time.swift */,
 			);
 			path = Date;
 			sourceTree = "<group>";
@@ -1063,9 +1080,11 @@
 				CB2399E628B3737D0001DBC1 /* TextFieldAlert.swift in Sources */,
 				9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */,
 				9AF3DC412869C53F007847E7 /* MorningProductView.swift in Sources */,
+				CB239A0328B4E1400001DBC1 /* Date+Today+Display+Time.swift in Sources */,
 				9BB4B4FF2866F3470069E86E /* SkinResultView.swift in Sources */,
 				CB3D368228A278D600D9D637 /* AuthDefaultLocalDataStore.swift in Sources */,
 				CB19349128A3A0F5000DF7CE /* HomeViewModel.swift in Sources */,
+				CB239A0128B4D0D10001DBC1 /* SummaryViewModel.swift in Sources */,
 				9AF3DC372869C4A3007847E7 /* QuizAcneView.swift in Sources */,
 				CB4FF14128991983008D78AC /* String+ToMarkdown.swift in Sources */,
 				CBFB988D28AE7D42005D05A1 /* Date+Interval.swift in Sources */,
@@ -1113,6 +1132,7 @@
 				9AF3DC3B2869C4EC007847E7 /* AcneCardView.swift in Sources */,
 				9AC747CF2867DDFB001C91F8 /* TakePhotosView.swift in Sources */,
 				CB2399FC28B4A55B0001DBC1 /* FirstQuizFoto.swift in Sources */,
+				CB2399FF28B4CFB60001DBC1 /* GraphProviderAble.swift in Sources */,
 				CB3D368628A27BE700D9D637 /* UserRepository.swift in Sources */,
 				9AF3DC4A2869C588007847E7 /* LocalNotifManager2.swift in Sources */,
 				CB2399ED28B3945F0001DBC1 /* Color+from+hex.swift in Sources */,

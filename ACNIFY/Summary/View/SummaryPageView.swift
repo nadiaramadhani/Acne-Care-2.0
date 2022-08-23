@@ -15,6 +15,8 @@ struct SummaryPageView: View {
     @State var currentDate: Date = Date()
     @State var progressDay : Float = 0.5
     @State var progressNight: Float = 1.0
+    @ObservedObject var viewModel = SummaryViewModel()
+    @State var graphSource: GraphProviderAble
     
     var body: some View {
         if isBack{
@@ -46,7 +48,7 @@ struct SummaryPageView: View {
                         }.padding(.leading, 26)
                             .padding(.top, 5)
                         
-                        GraphicView()
+                        GraphicView(graphSource: graphSource)
                         
                         Spacer()
                             .frame(height: 32)
@@ -165,13 +167,9 @@ struct SummaryPageView: View {
     }
 }
 
-struct SummaryPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        SummaryPageView()
-    }
-}
 
 struct GraphicView: View{
+    @State var graphSource: GraphProviderAble
     var body: some View{
         
         ZStack{
@@ -188,7 +186,7 @@ struct GraphicView: View{
                 .padding(.bottom)
                             
             
-            LineChartDemoView()
+            LineChartDemoView(data: graphSource.getGraphLineData())
                 .frame(width: 300, height: 100, alignment: .center)
 
        

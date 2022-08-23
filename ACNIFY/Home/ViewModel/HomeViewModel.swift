@@ -6,14 +6,20 @@
 //
 
 import Foundation
+import SwiftUI
+import SwiftUICharts
+import Combine
 
-final class HomeViewModel: ObservableObject {
+final class HomeViewModel: ObservableObject, GraphProviderAble {
+   
     @Published var currentUser: User?
     @Published var dayLog: AcneLog?
     @Published var nightLog: AcneLog?
     @Published var totalWeekSinceFirstLog = ""
     @Published var isNightProductCreated = false
     @Published var isDayProductCreated = false
+    @Published var productUsedNightNames: [String] = []
+    @Published var productUsedDayNames: [String] = []
 
     private let userRepository: UserRepository
     private let acneLogRepository: AcneLogRepository
@@ -45,7 +51,7 @@ final class HomeViewModel: ObservableObject {
                 continue
             }
             
-            data[log.time!] = logConditionToNumber(condition: log.condition!)
+            data[log.time!] = Int(logConditionToNumber(condition: log.condition!))
         }
         
         return data
@@ -95,11 +101,11 @@ final class HomeViewModel: ObservableObject {
     }
     
     func createNightProduct(){
-        userProductRepository.createNightDefaultProduct(userID: (currentUser?.id)!.uuidString)
+        userProductRepository.createNightDefaultProduct(userID: AuthenticationDefaultRepository.shared.userID!)
     }
     
     func createDayProduct(){
-        userProductRepository.createDayDefaultProduct(userID: (currentUser?.id)!.uuidString)
+        userProductRepository.createDayDefaultProduct(userID: AuthenticationDefaultRepository.shared.userID!)
     }
     
     
@@ -116,7 +122,74 @@ final class HomeViewModel: ObservableObject {
         }
     }
     
-    private func logConditionToNumber(condition: String) -> Int {
+ 
+    
+    func getGraphLineData() -> LineChartData {
+        guard let logs = acneLogRepository.getAcneLogsByUserID(userID: AuthenticationDefaultRepository.shared.userID!) else {
+            return LineChartData(dataSets: LineDataSet(dataPoints: []))
+        }
+        
+        let dataPoints = logs.filter{
+            $0.condition != nil
+        }.map{
+            LineChartDataPoint(value: logConditionToNumber(condition: $0.condition ?? ""), xAxisLabel: nil, description: nil)
+        }
+        
+        let data = LineDataSet(dataPoints: dataPoints,
+                               legendTitle: "Acne Conditions",
+                               pointStyle: PointStyle(),
+                               style: LineStyle(lineColour: ColourStyle(colour: Color(hex: "#006255")), lineType: .line))
+        
+        let gridStyle = GridStyle(numberOfLines: 3,
+                                  lineColour   : Color(.lightGray).opacity(0.5),
+                                  lineWidth    : 1,
+                                  dash         : [10],
+                                  dashPhase    : 2)
+        
+     
+        
+        
+        
+        let chartStyle = LineChartStyle(infoBoxPlacement    : .infoBox(isStatic: false),
+                                        infoBoxContentAlignment: .vertical,
+                                        infoBoxBorderColour : Color.primary,
+                                        infoBoxBorderStyle  : StrokeStyle(lineWidth: 1),
+                                        markerType: .vertical(attachment: .line(dot: .style(DotStyle()))),
+                                        xAxisLabelColour    : Color(hex: "#757575"),
+                                        xAxisLabelsFrom: .chartData(rotation: .degrees(0)),
+                                        yAxisGridStyle      : gridStyle, yAxisLabelPosition  : .trailing,
+                                        yAxisLabelColour    : Color(hex: "#006255"), yAxisNumberOfLabels : 3,
+                                        yAxisLabelType: .custom,
+                                        globalAnimation     : .easeOut(duration: 1))
+        
+        
+        
+        let chartData = LineChartData(dataSets: data,
+                                      metadata: ChartMetadata(title: "Your acne", subtitle: "A Week"),
+                                      xAxisLabels: ["W1", "W2", "W3", "W4"],
+                                      yAxisLabels: ["Bad", "Balance", "Great"],
+                                      chartStyle: chartStyle)
+        
+        
+        return chartData
+    }
+    
+    func getProductNameUsed(){
+        let userProducts = userProductRepository.getAllUsedUserProduct(userID: AuthenticationDefaultRepository.shared.userID!)
+        
+        self.productUsedDayNames = userProducts.filter{$0.routineType == "day" && $0.isUsed && !$0.isLocked()}.map{
+            let productId = Int($0.productDetailID)
+            return UserProductDetail.getDefaultProduct().filter{$0.ID == productId}.first!.title
+        }
+       
+        self.productUsedNightNames = userProducts.filter{$0.routineType == "night" && $0.isUsed && !$0.isLocked()}.map{
+            let productId = Int($0.productDetailID)
+            return UserProductDetail.getDefaultProduct().filter{$0.ID == productId}.first!.title
+        }
+       
+    }
+
+    private func logConditionToNumber(condition: String) -> Double {
         switch condition.lowercased(){
         case "better":
             return 3
