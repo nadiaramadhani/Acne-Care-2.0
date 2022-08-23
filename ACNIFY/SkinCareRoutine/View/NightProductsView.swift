@@ -47,13 +47,7 @@ struct NightChooseProduct: View {
     var body: some View {
         
         if isBack{
-            TesterPickerView()
-        }else if isDone{
-            TesterPickerView()
-        }else if isCancelSheetNight {
-            NightChooseProduct()
-        }else if isSaveSheetNight{
-            NightChooseProduct()
+            HomePageView()
         }else{
             NavigationView{
                 

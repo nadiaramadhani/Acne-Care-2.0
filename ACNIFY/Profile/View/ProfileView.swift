@@ -9,37 +9,43 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var selected = 1
-
     @StateObject var lnManager = LocalNotificationManagerMorning()
-
     @State private var isDone = false
-
+    
     var body: some View {
+        NavigationView{
         ZStack(alignment: .top){
-            Color(.white)
-                .edgesIgnoringSafeArea(.all)
-            
             Image ("Oval2")
                 .edgesIgnoringSafeArea(.all)
-            
-           
 
             VStack{
-                //MARK: Section Profile
-                ZStack(alignment: .top){
-                    HStack{
-                        Spacer()
-                        NavigationLink(destination: LocalNotificationView()){
-                                Image(systemName: "bell.fill")
-                                .resizable()
-                                .foregroundColor(Color("primaryGreen"))
-                                .frame(width: 30 , height: 30)
-                        }.padding([.top, .trailing])
+                HStack{
+                    Spacer()
+                    NavigationLink(destination: SetReminderView() .environmentObject(lnManager)
+                                   
+                    ){
+                        Image(systemName: "bell.fill")
+                            .resizable()
+                            .foregroundColor(Color("primaryGreen"))
+                            .font(.system(size: 20))
+                            .frame(width: 30 , height: 30)
                     }
+                }
+                //MARK: Section Profile
+                //                 ZStack(alignment: .top){
+//                HStack{
+//                    Spacer()
+//
+////                    .padding(.trailing)
+////                        .padding(.top)
+//
+                
+//                }
                 VStack{
                     
                     Image("GirlExample")
                         .clipShape(Circle())
+                        
                     Spacer()
                         .frame(height:1)
                     
@@ -78,53 +84,28 @@ struct ProfileView: View {
                         
                     }
                 }
-                    
-                }
+                
+                //      }
                 .position(x: 185, y: 25)
                 .frame(width: 360,height: 170)
+                //MARK: Section Skin Conditions and Comparing Skin
                 if selected == 1{
                     SkinConditionsView()
                 }else if selected == 2{
                     ComparingSkinView()
                 }
-
-                        
+                
+                
             }
             
             
-            .navigationBarItems(trailing:
-//                                    HStack{
-//                Button(action: {
-////                    self.isDone = true
-//                }){
-//                    Image(systemName: "bell.fill")
-//                        .foregroundColor(Color("primaryGreen"))
-//
-//                }
-                
-                NavigationLink {
-                    SetReminderView()
-                    .environmentObject(lnManager)
-                    
-                } label: {
-                    Image(systemName: "bell.fill")
-                                           .foregroundColor(Color("primaryGreen"))
-                
-
-            })
-            
-
-                
-                
-                //MARK: Section Skin Conditions and Comparing Skin
-                
-                
-               
-            }
+        }
+        .navigationBarHidden(true)
 
         }
     }
-    
+}
+
 
 
 

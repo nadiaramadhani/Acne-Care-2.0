@@ -157,7 +157,6 @@ struct SetReminderView: View {
                 }
             }
         
-        
     }
 }
 

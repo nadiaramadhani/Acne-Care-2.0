@@ -22,7 +22,13 @@ struct IntroProductView: View {
             ChooseProductMainView(viewModel: viewModel, pageDisplayed: pageDisplayed).onAppear{
                 viewModel.getAllUserProducts()
             }
-        }else{
+        }else if isCancel {
+            withAnimation(.easeInOut){
+                HomePageView()
+            }
+            
+        }
+        else{
   
             VStack{
                 Button(
