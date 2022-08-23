@@ -212,17 +212,21 @@ struct HomePageView: View {
                             .fill(Color(hex: "#EDECED"))
                             .frame(height: 8)
                             .edgesIgnoringSafeArea(.horizontal)
-                        HStack{
-                            Text ("Skin Progress")
-                                .font(.system(size: 17).bold())
-                                .bold()
-                            Spacer()
-                            
-                        }.padding(.leading, 26)
-                            .padding(.top, 5)
+//                        HStack{
+//
+//                            Spacer()
+//
+//                        }.padding(.leading, 26)
+//                            .padding(.top, 5)
                         
                         VStack{
                             HStack{
+                                
+                                Text ("Skin Progress")
+                                    .font(.system(size: 17).bold())
+                                    .bold()
+                                    .padding()
+                                
                                 Spacer()
                                 Button{
                                     
