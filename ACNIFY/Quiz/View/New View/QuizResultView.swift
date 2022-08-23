@@ -8,66 +8,69 @@
 import SwiftUI
 
 struct QuizResultView: View {
-   
+    @ObservedObject var viewModel: NewQuizViewModel
+    @Binding var displayedPage: SkinQuizMainView.DisplayedPage
+    
+    @State var selectedIndex = 0
+    
     var body: some View {
         ZStack{
-              
+            
             Image("womanOily")
                 .padding(.bottom, 300)
+                .ignoresSafeArea(.all)
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundColor(.white)
                     .frame(width: 390, height: 479)
                     .shadow(color: .gray, radius: 2)
-                   
-//
-                VStack{
-                TabView{
-                    SkinResulView()
-                        .tag(0)
-                    
-                    AcneResultView()
-                        .tag(1)
-                }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                .onAppear{
-                    setupAppearance()
-                }
                 
+                //
+                VStack{
+                    TabView(selection: $selectedIndex){
+                        SkinResulView(data: NewQuizViewModel.getSkinTypeDesc(type: viewModel.getSkinType()))
+                            .tag(0)
+                        
+                        AcneResultView(data: NewQuizViewModel.getAcneSevereDesc(type: viewModel.getAcneSeverity()))
+                            .tag(1)
+                    }
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                    .onAppear{
+                        setupAppearance()
+                    }
+                    
+                    VStack{
                     
                     Text("*Take your first photo to compare later")
                         .font(.system(size: 13))
                         .italic()
-                Button {
+                    Button {
+                        viewModel.createAcneLogdata()
+                        displayedPage = .FirstTakePhoto
+                    } label: {
+                        Text("Take Photo")
+                            .fontWeight(.semibold)
+                    }
+                    .foregroundColor(Color.white)
+                    .frame(width: 325, height: 50)
+                    .background(Color("yellow"))
+                    .cornerRadius(12)
                     
-                } label: {
-                    Text("Take Photo")
-                        .fontWeight(.semibold)
-                }
-                .foregroundColor(Color.white)
-                .frame(width: 325, height: 50)
-                .background(Color("yellow"))
-                .cornerRadius(12)
-                    
-                Button {
-                    
-                } label: {
-                    Text("Not Now")
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color.black)
-                }
-                .cornerRadius(12)
-                .frame(width: 325, height: 50)
-                .overlay(
-                            RoundedRectangle(cornerRadius: 12)
-                                .stroke(Color("yellow"), lineWidth: 2)
-                        )
-                .padding(.bottom)
-                
-
-
-                
-                
+                    Button {
+                        viewModel.saveSkinPersona()
+                    } label: {
+                        Text("Not Now")
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.black)
+                    }
+                    .cornerRadius(12)
+                    .frame(width: 325, height: 50)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color("yellow"), lineWidth: 2)
+                    )
+                    .padding(.bottom)
+                    }.opacity(selectedIndex == 1 ? 1:0)
                 }
             }
             .padding(.top, 350)
@@ -76,26 +79,23 @@ struct QuizResultView: View {
     func setupAppearance() {
         UIPageControl.appearance().currentPageIndicatorTintColor = .orange
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
-      }
+    }
 }
 
 struct SkinResulView: View {
-    var skinType: String = "Oily"
-    var skinResult: String = "Oily skin may has enlarged pores, dull or shiny, thick complexion, blackheads, pimples, or other blemishes. Oiliness can change depending upon the time of year or the weather. Things that can cause or worsen it include, puberty or other hormonal imbalances, stress, heat or too much humidity"
-    
-    var sources: String = "dr. Firman (dermatologist)"
+    var data : NewQuizViewModel.SkinConditionDescription
     var body: some View {
         VStack{
-            Text("Your Skin Type: \(skinType)")
+            Text("Your Skin Type: \(data.name)")
                 .font(.title)
                 .foregroundColor(Color("primaryGreen"))
                 .bold()
             
-            Text("\(skinResult)")
+            Text("\(data.desc)")
                 .multilineTextAlignment(.center)
                 .frame(width: 342, height: 154)
             
-            Text("\(sources)")
+            Text("\(data.source)")
                 .font(.system(size: 13))
                 .foregroundColor(Color("primaryGreen"))
                 .italic()
@@ -106,22 +106,24 @@ struct SkinResulView: View {
 
 
 struct AcneResultView: View {
+    var data : NewQuizViewModel.SkinConditionDescription
+
     var acneSeverity: String = "Mild"
     var acneDesc: String = "Mild acne mostly whiteheads and blackheads, with a few papules and pustules"
     
     var body: some View {
         VStack{
-            Text("Acne Severity: \(acneSeverity)")
+            Text("Acne Severity: \(data.name)")
                 .font(.title)
                 .foregroundColor(Color("primaryGreen"))
                 .bold()
             
             
-            Text("\(acneDesc)")
+            Text("\(data.desc)")
                 .multilineTextAlignment(.center)
                 .frame(width: 342, height: 154)
             
-            Text("dr. Firman (dermatologist)")
+            Text(data.source)
                 .font(.system(size: 13))
                 .foregroundColor(Color("primaryGreen"))
                 .italic()
@@ -132,6 +134,6 @@ struct AcneResultView: View {
 
 struct QuizResultView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizResultView()
+        QuizResultView(viewModel: NewQuizViewModel(), displayedPage: .constant(.IntroPage))
     }
 }
