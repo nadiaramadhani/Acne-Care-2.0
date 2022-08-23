@@ -12,6 +12,7 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct HomePageView: View {
     
@@ -37,7 +38,8 @@ struct HomePageView: View {
                         .navigationBarHidden(true), isActive: $isNightLinkActive) {EmptyView()}
                     NavigationLink(destination: IntroProductView(pageDisplayed: .Day)
                         .navigationBarHidden(true), isActive: $isDayLinkActive) {EmptyView()}
-                    
+                    NavigationLink("",destination: (SummaryPageView(graphData: $viewModel.chartData)),isActive: $summaryPageFromGraphic)
+                        .navigationBarHidden(true)
                     NavigationLink(destination: TakePhotos(viewModel: TreatmentPhotoViewModel(acneLog: viewModel.nightLog)).navigationBarHidden(true), isActive: self.$TakePhotosonAlert) { EmptyView() }
                     VStack{
                         Image("Oval2")
@@ -77,7 +79,7 @@ struct HomePageView: View {
                                         .font(.system(size: 17))
                                         .fontWeight(.bold)
                                         .padding(.trailing, 220)
-                                    Text("Monday, 15 August")
+                                    Text(Date().getDisplayedTime())
                                         .padding(.trailing, 200)
                                         .foregroundColor(.gray)
                                     
@@ -95,17 +97,11 @@ struct HomePageView: View {
                                                         .font(.system(size: 16))
                                                         .fontWeight(.bold)
                                                 }
-                                                Text("Facewash")
-                                                    .font(.system(size: 17))
-                                                    .padding(.leading, 35)
-                                                
-                                                Text("Moisturizer")
-                                                    .font(.system(size: 17))
-                                                    .padding(.leading, 35)
-                                                
-                                                Text("Sunscreen")
-                                                    .font(.system(size: 17))
-                                                    .padding(.leading, 35)
+                                                ForEach(viewModel.productUsedDayNames, id:\.self){ name in
+                                                    Text(name)
+                                                        .font(.system(size: 17))
+                                                        .padding(.leading, 35)
+                                                }
                                                 
                                                 
                                             }
@@ -154,18 +150,13 @@ struct HomePageView: View {
                                                         .font(.system(size: 16))
                                                         .fontWeight(.bold)
                                                 }
-                                                Text("Facewash")
-                                                    .font(.system(size: 17))
-                                                    .padding(.leading, 35)
                                                 
-                                                Text("Moisturizer")
-                                                    .font(.system(size: 17))
-                                                    .padding(.leading, 35)
-                                                
-                                                Text("Acne Treatment")
-                                                    .font(.system(size: 17))
-                                                    .padding(.leading, 35)
-                                                
+                                                ForEach(viewModel.productUsedNightNames, id:\.self){ name in
+                                                    Text(name)
+                                                        .font(.system(size: 17))
+                                                        .padding(.leading, 35)
+                                                }
+                                              
                                                 
                                             }
                                             .foregroundColor(Color.white)
@@ -176,7 +167,7 @@ struct HomePageView: View {
                                                     self.nightViewCheck = true
                                                 }else{
                                                     viewModel.createNightProduct()
-                                                    isDayLinkActive.toggle()
+                                                    isNightLinkActive.toggle()
                                                 }
                                                 
                                             } label: {
@@ -238,19 +229,20 @@ struct HomePageView: View {
                                         .padding(.trailing, 26)
                                 }
                             }
-                            GraphicView()
+                            GraphicView(graphSource: $viewModel.chartData)
                                 .onTapGesture {
                                     summaryPageFromGraphic.toggle()
                                 }
-                            NavigationLink("",destination: (SummaryPageView()),isActive: $summaryPageFromGraphic)
-                                .navigationBarHidden(true)
+                            
                         }
                         
                     }
                 }
                 .onAppear{
                     viewModel.getTotalWeekElapsed()
+                    viewModel.getProductNameUsed()
                     viewModel.checkChecklistAvailablility()
+                    viewModel.getGraphLineData()
                 }
                 
             }

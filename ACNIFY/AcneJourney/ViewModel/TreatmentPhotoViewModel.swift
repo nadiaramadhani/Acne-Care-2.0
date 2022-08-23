@@ -13,6 +13,7 @@ final class TreatmentPhotoViewModel: ObservableObject{
     @Published var acneLogDesc: String = ""
     @Published var acneLogCondition: String = ""
     @Published var selectedEmoji: String = ""
+    @Published var data: Data?
     
     @Published var isAcneGoneQuickAnswerSelected: Bool = false
     @Published var isAcneGetDryerQuickAnswerSelected : Bool = false
@@ -45,6 +46,7 @@ final class TreatmentPhotoViewModel: ObservableObject{
         
         acneLog.condition = self.acneLogCondition
         acneLog.desc = self.acneLogDesc
+        acneLog.image = self.data
         acneLogRepository.saveChanges()
 }
     
@@ -89,6 +91,20 @@ extension TreatmentPhotoViewModel {
             return "better"
         default:
             return "worst"
+        }
+    }
+    
+    
+    static func conditionToEmoji(condition: String) -> String {
+        switch condition {
+        case "worst":
+            return emojiWorst
+        case "normal":
+            return emojiNormal
+        case "better":
+            return emojiBetter
+        default:
+            return emojiWorst
         }
     }
 }

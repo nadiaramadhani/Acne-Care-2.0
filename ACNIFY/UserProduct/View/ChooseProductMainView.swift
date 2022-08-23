@@ -49,7 +49,7 @@ struct ChooseProductMainView: View {
                                     let userProduct = viewModel.userNightProducts[index]
                                     let productDetail = UserProductDetail.getDefaultProduct().filter{$0.ID ==  userProduct.productDetailID}
                                         .first!
-                                    ProductCardItemView(isChecked: $viewModel.productDayChecked[index], addProduct: $isShowingAlert, selectedProductId: $viewModel.selectedProductId, productDetail: productDetail, product: userProduct)
+                                    ProductCardItemView(isChecked: $viewModel.productNightChecked[index], addProduct: $isShowingAlert, selectedProductId: $viewModel.selectedProductId, productDetail: productDetail, product: userProduct)
                                     
                                         
                                 }
@@ -90,9 +90,11 @@ struct ChooseProductMainView: View {
             }
                                 
             ).overlay(Color(uiColor: UIColor(red: 0.0 / 255.0, green: 0.0 / 255.0, blue: 0.0 / 255.0, alpha: 0.2)).opacity(isShowingAlert ? 1 : 0).ignoresSafeArea())
+    
            
         }.textFieldAlert(isShowing: $isShowingAlert, text: $viewModel.currentProductName, title: "Product Name", subtitle: "Write a product name that you use"){
             self.viewModel.updateSelectedProductName()
+                
         }
     }
     

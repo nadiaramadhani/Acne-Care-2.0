@@ -27,14 +27,10 @@ struct CameraView: View{
     @StateObject var camera = CameraModel()
     @State var isPhotoPreview = false
     @ObservedObject var viewModel : TreatmentPhotoViewModel
-
-    var isUsedReview = false
     
-    @Environment (\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var skins: FetchedResults<UpdateEntity>
 
     var body: some View{
-        if isPhotoPreview && isUsedReview {
+        if isPhotoPreview{
 //            PhotoPreview(data:viewModel.acneLog?.image)
             PhotoAndUpdateView(viewModel: viewModel)
         } else {
@@ -72,14 +68,11 @@ struct CameraView: View{
                     Spacer()
                     HStack{
                         
-                        //if taken showing save and again take button
                         if camera.isTaken{
                             Spacer()
-                            //  Button(action:{if !camera.isSaved{camera.savePic()}},
                             Button(action: {
-                                viewModel.acneLog?.image = camera.picData
+                                viewModel.data = camera.picData
                                 isPhotoPreview = true
-                                viewModel.saveChanges()
                                 
                             }, label: {
                                 Text("Save")
@@ -200,7 +193,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
             
             //change for your own
             if let device = AVCaptureDevice.default(.builtInWideAngleCamera,
-                                                    for: .video, position: .front) {
+                                                    for: .video, position: .back) {
                 let input = try AVCaptureDeviceInput(device:
                                                         device)
                 
