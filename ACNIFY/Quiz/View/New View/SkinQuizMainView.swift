@@ -16,7 +16,9 @@ struct SkinQuizMainView: View {
         case .QuizPage:
             SkinQuizView(viewModel: viewModel, displayedPage: $displayedPage)
         case .ResultPage:
-            ResultQuizView(viewModel: viewModel, displayedPage: $displayedPage)
+            QuizResultView(viewModel: viewModel, displayedPage: $displayedPage)
+        case .FirstTakePhoto:
+            FirstQuizFoto(viewModel: TreatmentPhotoViewModel(acneLog: viewModel.firstAcneLog), quizViewModel:  viewModel)
         default:
             IntroQuizView(displayedPage: $displayedPage)
         }
@@ -28,6 +30,7 @@ extension SkinQuizMainView{
         case IntroPage
         case QuizPage
         case ResultPage
+        case FirstTakePhoto
     }
 }
 

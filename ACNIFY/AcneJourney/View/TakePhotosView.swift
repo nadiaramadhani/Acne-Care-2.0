@@ -10,6 +10,7 @@ import AVFoundation
 
 struct TakePhotos: View {
     @ObservedObject var viewModel : TreatmentPhotoViewModel
+
     var body: some View {
         CameraView(viewModel: viewModel)
     }
@@ -27,12 +28,13 @@ struct CameraView: View{
     @State var isPhotoPreview = false
     @ObservedObject var viewModel : TreatmentPhotoViewModel
 
+    var isUsedReview = false
     
     @Environment (\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var skins: FetchedResults<UpdateEntity>
 
     var body: some View{
-        if isPhotoPreview {
+        if isPhotoPreview && isUsedReview {
 //            PhotoPreview(data:viewModel.acneLog?.image)
             PhotoAndUpdateView(viewModel: viewModel)
         } else {
@@ -75,10 +77,9 @@ struct CameraView: View{
                             Spacer()
                             //  Button(action:{if !camera.isSaved{camera.savePic()}},
                             Button(action: {
-                                    viewModel.acneLog?.image = camera.picData
-                                
-                                    isPhotoPreview = true
-                                    viewModel.saveChanges()
+                                viewModel.acneLog?.image = camera.picData
+                                isPhotoPreview = true
+                                viewModel.saveChanges()
                                 
                             }, label: {
                                 Text("Save")

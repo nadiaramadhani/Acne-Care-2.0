@@ -11,7 +11,7 @@ struct ProfileView: View {
     @State private var selected = 1
     @StateObject var lnManager = LocalNotificationManagerMorning()
     @State private var isDone = false
-    
+
     var body: some View {
         NavigationView{
         ZStack(alignment: .top){
@@ -22,7 +22,7 @@ struct ProfileView: View {
                 HStack{
                     Spacer()
                     NavigationLink(destination: SetReminderView() .environmentObject(lnManager)
-                                   
+
                     ){
                         Image(systemName: "bell.fill")
                             .resizable()
@@ -39,13 +39,13 @@ struct ProfileView: View {
 ////                    .padding(.trailing)
 ////                        .padding(.top)
 //
-                
+
 //                }
                 VStack{
                     
                     Image("GirlExample")
                         .clipShape(Circle())
-                        
+
                     Spacer()
                         .frame(height:1)
                     
@@ -84,7 +84,7 @@ struct ProfileView: View {
                         
                     }
                 }
-                
+
                 //      }
                 .position(x: 185, y: 25)
                 .frame(width: 360,height: 170)
@@ -94,11 +94,11 @@ struct ProfileView: View {
                 }else if selected == 2{
                     ComparingSkinView()
                 }
-                
-                
+
+
             }
-            
-            
+
+
         }
         .navigationBarHidden(true)
 
