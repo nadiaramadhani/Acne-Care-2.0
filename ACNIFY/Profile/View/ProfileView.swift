@@ -78,13 +78,21 @@ struct ProfileView: View {
                         
                     }
                 }
+                    
                 }
                 .position(x: 185, y: 25)
                 .frame(width: 360,height: 170)
-                
+                if selected == 1{
+                    SkinConditionsView()
+                }else if selected == 2{
+                    ComparingSkinView()
+                }
 
                         
-            }.navigationBarItems(trailing:
+            }
+            
+            
+            .navigationBarItems(trailing:
 //                                    HStack{
 //                Button(action: {
 ////                    self.isDone = true
@@ -111,11 +119,7 @@ struct ProfileView: View {
                 //MARK: Section Skin Conditions and Comparing Skin
                 
                 
-                if selected == 1{
-                    SkinConditionsView()
-                }else if selected == 2{
-                    ComparingSkinView()
-                }
+               
             }
 
         }

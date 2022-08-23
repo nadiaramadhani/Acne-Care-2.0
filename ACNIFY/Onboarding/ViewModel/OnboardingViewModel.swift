@@ -15,18 +15,18 @@ final class OnboardingViewModel: ObservableObject {
     init(){
         onboardingItems = [
             OnboardingViewModel.OnboardingItem(
-                Title: "**Daily Progress of The Treatment**",
-                Subtitle: "Have a better understanding of your skin condition to find suitable product",
+                Title: "**Identify your skin condition**",
+                Subtitle: "Understand your skin and your acne. So you know what to do next",
                 ImageName: "firstOnboard"
             ),
             OnboardingViewModel.OnboardingItem(
-                Title: "**Check the suitable ingredients**",
-                Subtitle: "Get to know your acne with its characteristics and recommendation ingredients that suitable for you",
+                Title: "**Acne treatment routine**",
+                Subtitle: "Create your skincare commitment, find the most suitable products, and stay consistence with Acne Care",
                 ImageName: "secondOnboard"
             ),
             OnboardingViewModel.OnboardingItem(
-                Title: "**Daily Progress of The Treatment**",
-                Subtitle: "Track and trace your daily treatment progress to maintain the skin condition",
+                Title: "**Healing process**",
+                Subtitle: "No matter how small it is, check your progress and stay motivated",
                 ImageName: "thirdOnboard"
             ),
         ]
