@@ -26,7 +26,7 @@ struct HomePageView: View {
     @State var isDayLinkActive = false
     
     var body: some View {
-        
+        NavigationView{
         ZStack {
             NavigationLink(destination: TakePhotos(viewModel: TreatmentPhotoViewModel(acneLog: viewModel.nightLog)).navigationBarHidden(true), isActive: self.$TakePhotosonAlert) { EmptyView() }
             Image("Oval2")
@@ -255,6 +255,7 @@ struct HomePageView: View {
                 
             }
         }
+    }
     }
 
 }

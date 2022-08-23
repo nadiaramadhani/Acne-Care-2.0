@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9A4A85E728B3A76A009E2F6F /* ComparingSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A85E628B3A76A009E2F6F /* ComparingSkinView.swift */; };
-		9A4A85E928B3B1BD009E2F6F /* SkinConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A85E828B3B1BD009E2F6F /* SkinConditionsView.swift */; };
 		9A747F34286C92A700683171 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F33286C92A700683171 /* LocationManager.swift */; };
 		9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F39286C92D300683171 /* PhotoPreviewView.swift */; };
 		9A747F3E286C92EA00683171 /* PopUpNightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3D286C92EA00683171 /* PopUpNightView.swift */; };
 		9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */; };
-		9A8C429C28B1150C006E0134 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C429B28B1150C006E0134 /* ProfileView.swift */; };
 		9A8C42A028B11640006E0134 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C429F28B11640006E0134 /* MainTabView.swift */; };
 		9AC747CF2867DDFB001C91F8 /* TakePhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC747CE2867DDFB001C91F8 /* TakePhotosView.swift */; };
 		9AD9049A28AEB45100E4F6E4 /* IntroProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD9049928AEB45100E4F6E4 /* IntroProductView.swift */; };
@@ -31,6 +29,8 @@
 		9B0ED36228B25DD1007DFAF7 /* CustomCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0ED36128B25DD1007DFAF7 /* CustomCalendar.swift */; };
 		9B33ADE228ABC31300751F4A /* PhotoAndUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B33ADE128ABC31300751F4A /* PhotoAndUpdateView.swift */; };
 		9B4590B128AB6BDD0083B405 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4590B028AB6BDD0083B405 /* HomePageView.swift */; };
+		9B4ACDB428B4B3E7002BCDAE /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4ACDB328B4B3E6002BCDAE /* ProfilePageView.swift */; };
+		9B77959428B514F900FF2E87 /* SkinTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B77959328B514F900FF2E87 /* SkinTypeView.swift */; };
 		9B86CBE228680B1700449BB4 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE128680B1700449BB4 /* CustomPopUp.swift */; };
 		9B86CBE92868A9C600449BB4 /* PopUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86CBE82868A9C600449BB4 /* PopUpModel.swift */; };
 		9BA6864928AEFDF8001CD564 /* SkinQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6864828AEFDF8001CD564 /* SkinQuizView.swift */; };
@@ -119,14 +119,12 @@
 
 /* Begin PBXFileReference section */
 		9A4A85E628B3A76A009E2F6F /* ComparingSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparingSkinView.swift; sourceTree = "<group>"; };
-		9A4A85E828B3B1BD009E2F6F /* SkinConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinConditionsView.swift; sourceTree = "<group>"; };
 		9A57F9AD28B3118D001A4173 /* LocalNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationView.swift; sourceTree = "<group>"; };
 		9A747F33286C92A700683171 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		9A747F39286C92D300683171 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
 		9A747F3D286C92EA00683171 /* PopUpNightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpNightView.swift; sourceTree = "<group>"; };
 		9A747F48286C933500683171 /* CoreDataNadia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataNadia.xcdatamodel; sourceTree = "<group>"; };
 		9A7B82AB28B228EE00FA44A7 /* SummaryPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryPageView.swift; sourceTree = "<group>"; };
-		9A8C429B28B1150C006E0134 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		9A8C429F28B11640006E0134 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		9AC747CE2867DDFB001C91F8 /* TakePhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotosView.swift; sourceTree = "<group>"; };
 		9AD9049928AEB45100E4F6E4 /* IntroProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroProductView.swift; sourceTree = "<group>"; };
@@ -144,6 +142,8 @@
 		9B0ED36128B25DD1007DFAF7 /* CustomCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendar.swift; sourceTree = "<group>"; };
 		9B33ADE128ABC31300751F4A /* PhotoAndUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAndUpdateView.swift; sourceTree = "<group>"; };
 		9B4590B028AB6BDD0083B405 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		9B4ACDB328B4B3E6002BCDAE /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
+		9B77959328B514F900FF2E87 /* SkinTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeView.swift; sourceTree = "<group>"; };
 		9B86CBE128680B1700449BB4 /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		9B86CBE72868826700449BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9B86CBE82868A9C600449BB4 /* PopUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpModel.swift; sourceTree = "<group>"; };
@@ -264,10 +264,10 @@
 			isa = PBXGroup;
 			children = (
 				9BC77FF128B338C90094FF57 /* LocalNotificationView.swift */,
-				9A8C429B28B1150C006E0134 /* ProfileView.swift */,
 				9BC77FF328B35B120094FF57 /* SetReminderView.swift */,
-				9A4A85E828B3B1BD009E2F6F /* SkinConditionsView.swift */,
 				9A4A85E628B3A76A009E2F6F /* ComparingSkinView.swift */,
+				9B4ACDB328B4B3E6002BCDAE /* ProfilePageView.swift */,
+				9B77959328B514F900FF2E87 /* SkinTypeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1045,7 +1045,6 @@
 				CB3D368A28A27C5D00D9D637 /* AuthenticationDefaultRepository.swift in Sources */,
 				CB19349428A3A1B0000DF7CE /* UserDefaultRepository.swift in Sources */,
 				CBBFE872289FC8250064ADF5 /* AcneCareDB.xcdatamodeld in Sources */,
-				9A8C429C28B1150C006E0134 /* ProfileView.swift in Sources */,
 				CB1934AD28A5528D000DF7CE /* UserProductLocalDataStore.swift in Sources */,
 				9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */,
 				CB33870728AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift in Sources */,
@@ -1089,7 +1088,7 @@
 				9BC77FF228B338C90094FF57 /* LocalNotificationView.swift in Sources */,
 				9A4A85E728B3A76A009E2F6F /* ComparingSkinView.swift in Sources */,
 				9A8C42A028B11640006E0134 /* MainTabView.swift in Sources */,
-				9A4A85E928B3B1BD009E2F6F /* SkinConditionsView.swift in Sources */,
+				9B77959428B514F900FF2E87 /* SkinTypeView.swift in Sources */,
 				CB4FF14728992762008D78AC /* BottomButtonView.swift in Sources */,
 				CBCE6EFD28B32F6800F1468B /* SummaryPageView.swift in Sources */,
 				CB4F383B28A7C31800D91F0B /* UserProductDefaultRepository.swift in Sources */,
@@ -1119,6 +1118,7 @@
 				CB2399ED28B3945F0001DBC1 /* Color+from+hex.swift in Sources */,
 				9B0ED36228B25DD1007DFAF7 /* CustomCalendar.swift in Sources */,
 				9BA6864B28AEFE97001CD564 /* IntroQuizView.swift in Sources */,
+				9B4ACDB428B4B3E7002BCDAE /* ProfilePageView.swift in Sources */,
 				CB3D368028A278C200D9D637 /* AuthLocalDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1279,7 +1279,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ACNIFY/Preview Content\"";
-				DEVELOPMENT_TEAM = 89TMJ964L4;
+				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ACNIFY/Info.plist;
@@ -1294,7 +1294,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.agusart.acnecare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nadiaramadhani.acnecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1311,7 +1311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ACNIFY/Preview Content\"";
-				DEVELOPMENT_TEAM = 89TMJ964L4;
+				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ACNIFY/Info.plist;
@@ -1326,7 +1326,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.agusart.acnecare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nadiaramadhani.acnecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

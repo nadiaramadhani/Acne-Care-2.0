@@ -10,7 +10,7 @@ import SwiftUI
 struct ComparingSkinView: View {
     var body: some View {
         NavigationView{
-            VStack(alignment: .leading){
+            VStack{
                 Text("Compare Image")
                     
                     .font(.system(size: 17))
@@ -44,8 +44,14 @@ struct ComparingSkinView: View {
 
                     }
                 }
+                Text("Look! Your skin face condition is getting better, be consistent to get the best result!We care because we’re Acnecare.")
+                    .multilineTextAlignment(.center)
+                    .padding()
+                    .font(.body)
+                    .frame(width: 350)
+                Spacer()
             }
-            .position(x: 195, y: 160)
+//            .position(x: 195, y: 160)
             .navigationBarHidden(true)
          
             Spacer()

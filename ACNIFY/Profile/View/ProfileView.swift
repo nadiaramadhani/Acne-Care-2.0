@@ -14,95 +14,100 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationView{
-        ZStack(alignment: .top){
-            Image ("Oval2")
-                .edgesIgnoringSafeArea(.all)
-
-            VStack{
-                HStack{
-                    Spacer()
-                    NavigationLink(destination: SetReminderView() .environmentObject(lnManager)
-                                   
-                    ){
-                        Image(systemName: "bell.fill")
-                            .resizable()
-                            .foregroundColor(Color("primaryGreen"))
-                            .font(.system(size: 20))
-                            .frame(width: 30 , height: 30)
-                    }
-                }
-                //MARK: Section Profile
-                //                 ZStack(alignment: .top){
-//                HStack{
-//                    Spacer()
-//
-////                    .padding(.trailing)
-////                        .padding(.top)
-//
+            
+            ZStack(alignment: .top){
+                    Color(.white)
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    Image ("Oval2")
+                        .edgesIgnoringSafeArea(.all)
                 
-//                }
                 VStack{
                     
-                    Image("GirlExample")
-                        .clipShape(Circle())
+                //MARK: Section Profile
+                    VStack{
+                        Image("GirlExample")
+                            .clipShape(Circle())
+                        Spacer()
+                            .frame(height:1)
                         
-                    Spacer()
-                        .frame(height:1)
-                    
-                    
-                    Text("Trier Tieta")
-                        .font(.system(size:20))
-                        .fontWeight(.bold)
-                    
-                    Spacer()
-                        .frame(height:8)
-                    HStack{
-                        Text("Oily Skin")
-                            .font(.system(size: 12))
-                            .fontWeight(.regular)
                         
-                        Circle()
-                            .frame(width: 5, height: 5)
+                        Text("Trier Tieta")
+                            .font(.system(size:20))
+                            .fontWeight(.bold)
                         
-                        Text("Acne: 12")
-                            .font(.system(size: 12))
-                            .fontWeight(.regular)
-                    }
-                    
-                    Section{
+                        Spacer()
+                            .frame(height:8)
+                        HStack{
+                            Text("Oily Skin")
+                                .font(.system(size: 12))
+                                .fontWeight(.regular)
+                            
+                            Circle()
+                                .frame(width: 5, height: 5)
+                            
+                            Text("Acne: 12")
+                                .font(.system(size: 12))
+                                .fontWeight(.regular)
+                        }
+                        
                         Picker("Skin", selection: $selected){
                             Text("Skin Conditions")
-                                .tag(1)
-                            
+                                    .tag(1)
+
                             Text("Comparing Skin")
-                                .tag(2)
-                            
+                                    .tag(2)
+
                         }
                         .pickerStyle(.segmented)
-                        
-                        
+                            
+                            
+                       
+                            
                         
                     }
-                }
-                
-                //      }
-                .position(x: 185, y: 25)
-                .frame(width: 360,height: 170)
+                    .position(x: 185, y: 25)
+                    .frame(width: 360,height: 170)
+                    
+                   
+        
                 //MARK: Section Skin Conditions and Comparing Skin
-                if selected == 1{
-                    SkinConditionsView()
-                }else if selected == 2{
-                    ComparingSkinView()
+                    
+                    
+                    if selected == 1{
+                        SkinConditionsView()
+                    }else if selected == 2{
+                       ComparingSkinView()
+                    }
+                    
                 }
+               
                 
+                        
+            }.navigationBarItems(trailing:
+                                    HStack{
+//                Button(action: {
+//                    self.isDone = true
+//
+//                }){
+//                    Image(systemName: "bell.fill")
+//                        .foregroundColor(Color("primaryGreen"))
+                    
+                NavigationLink(destination: LocalNotificationView(), label:{
+                    Image(systemName: "bell.fill")
+                        .foregroundColor(Color("primaryGreen"))
+                }
+                            
+                    )
+                       
+//                }
                 
-            }
+            })
             
-            
-        }
+        
+    }
         .navigationBarHidden(true)
-
-        }
+        
     }
 }
 

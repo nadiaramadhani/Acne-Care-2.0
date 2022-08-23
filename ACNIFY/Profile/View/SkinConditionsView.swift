@@ -18,37 +18,34 @@ struct SkintypeCauses: Identifiable {
 struct SkinConditionsView: View {
     
     let items: [SkintypeCauses] = [.example1, .example2]
-    
     var body: some View {
-        NavigationView{
+   //     NavigationView{
             VStack{
                 //MARK: Skin Type Section
-                Section{
+                HStack{
                     Text("Skin Type: Oily")
                         .font(.system(size: 17))
                         .fontWeight(.semibold)
                         .foregroundColor(Color("primaryGreen"))
+                        .padding()
+                    
+                    Spacer()
+                    
                 }
-                .padding(.trailing, 235)
-                
-//                .frame(width: 30, alignment: .leading )
-                
-                
-                
-                List(items, children: \.items){ row in
+                List(items, children: \.items) { row in
                     Image(systemName: row.icon)
                     Text(row.name)
-                    Spacer()
+         //           Spacer()
                 }
 
                 
                 //MARK: Acne Severity Section
-                Section{
+              //  Section{
                     Text("Acne Severity: Moderate")
                         .font(.system(size: 17))
                         .fontWeight(.semibold)
                         .foregroundColor(Color("primaryGreen"))
-                }
+         //       }
                 .padding(.trailing, 160)
                 
                 
@@ -57,11 +54,7 @@ struct SkinConditionsView: View {
                     Text(row.name)
                     Spacer()
                 }
-               
-
                 
-
-
                 Text("Source: dr. Nadia Agus Agung")
                     .font(.system(size:13))
                     .italic()
@@ -90,7 +83,7 @@ struct SkinConditionsView: View {
             }
             .navigationBarHidden(true)
             
-        }
+   //     }
         
         
     }
