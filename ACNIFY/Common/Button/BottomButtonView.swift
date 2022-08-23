@@ -13,9 +13,9 @@ struct BottomButtonView: View {
         Text(buttonText)
         .font(.headline)
         .foregroundColor(.white)
-        .frame(width: 350, height:50 )
+        .frame(width: 153, height:50 )
         //            .frame(maxWidth: .infinity)
-        .background(Color("primaryGreen"))
+        .background(Color("yellow"))
         .cornerRadius(10)
         .padding()
     }
