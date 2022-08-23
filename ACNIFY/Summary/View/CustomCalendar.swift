@@ -80,7 +80,7 @@ struct CustomCalendar: View {
             LazyVGrid(columns: columns, spacing: 0) {
                 ForEach(extractDate()) { value in
                     let todayLogs = acneLogList?.filter{
-                        $0.time! < value.date.dayAfter && $0.time! > value.date.dayBefore
+                        $0.time! < value.date.dayAfter && $0.time! > value.date
                     }
                     
                     let dayLog = todayLogs?.filter{

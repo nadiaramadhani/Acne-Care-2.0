@@ -28,8 +28,6 @@ struct CameraView: View{
     @State var isPhotoPreview = false
     @ObservedObject var viewModel : TreatmentPhotoViewModel
     
-    @Environment (\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var skins: FetchedResults<UpdateEntity>
 
     var body: some View{
         if isPhotoPreview{
@@ -70,13 +68,10 @@ struct CameraView: View{
                     Spacer()
                     HStack{
                         
-                        //if taken showing save and again take button
                         if camera.isTaken{
                             Spacer()
-                            //  Button(action:{if !camera.isSaved{camera.savePic()}},
                             Button(action: {
-                                viewModel.acneLog?.image = camera.picData
-                                viewModel.saveChanges()
+                                viewModel.data = camera.picData
                                 isPhotoPreview = true
                                 
                             }, label: {

@@ -82,7 +82,7 @@ final class HomeViewModel: ObservableObject {
         acnelogData.userID = UUID.init(uuidString: AuthenticationDefaultRepository.shared.userID!)
         
         let newAcnelog = acneLogRepository.createNewAcneLog(data: acnelogData)
-        userRepository.addNewAcneLog(id: (currentUser?.id)!.uuidString, acneLog: newAcnelog)
+        userRepository.addNewAcneLog(id: AuthenticationDefaultRepository.shared.userID!, acneLog: newAcnelog)
         acneLogRepository.addAcneLogUnlockProductsByUserID(userID: (currentUser?.id)!.uuidString, acneLog: newAcnelog)
         
         
