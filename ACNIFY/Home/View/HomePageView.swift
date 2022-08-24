@@ -80,7 +80,7 @@ struct HomePageView: View {
                                         .fontWeight(.bold)
                                         .padding(.trailing, 220)
                                     Text(Date().getDisplayedTime())
-                                        .padding(.trailing, 200)
+                                        .padding(.trailing, 180)
                                         .foregroundColor(.gray)
                                     
                                     
