@@ -25,7 +25,7 @@ struct SetReminderView: View {
                 VStack(alignment: .leading){
                     Text("Morning Routine")
                         .font(.body)
-                    Text("\(selectedHourMorning.formatted())")
+                    Text("\(selectedHourMorning.formatted(date: .omitted, time: .shortened))")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
@@ -45,7 +45,7 @@ struct SetReminderView: View {
                             if lnManagerMorning.isGranted {
                                 Button(action: {
                                     Task{
-                                        
+        
                                         let dateComponents = Calendar.current.dateComponents([ .hour, .minute], from: selectedHourMorning)
                                         let localNotificationMorning = LocalNotificationMorning(identifier: UUID().uuidString,
                                                                                                 title: "Morning Routine Reminder",
@@ -86,7 +86,7 @@ struct SetReminderView: View {
                 VStack(alignment: .leading){
                     Text("Night Routine")
                         .font(.body)
-                    Text("\(selectedHourNight.formatted())")
+                    Text("\(selectedHourNight.formatted(date: .omitted, time: .shortened))")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
@@ -107,7 +107,6 @@ struct SetReminderView: View {
                             if lnManagerMorning.isGranted {
                                 Button(action: {
                                     Task{
-                                        
                                         let dateComponents = Calendar.current.dateComponents([ .hour, .minute], from: selectedHourNight)
                                         let localNotificationMorning = LocalNotificationMorning(identifier: UUID().uuidString,
                                                                                                 title: "Night Routine Reminder",
@@ -135,7 +134,8 @@ struct SetReminderView: View {
                                              
                         )
                     
-                        
+                        .navigationBarTitle("Reminder")
+                        .navigationBarTitleDisplayMode(.inline)
                     
                 }
                 
