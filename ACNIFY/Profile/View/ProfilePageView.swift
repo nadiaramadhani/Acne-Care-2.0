@@ -16,6 +16,7 @@ struct ProfilePageView: View {
     @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
+        NavigationView{
             ZStack(alignment: .top){
                 Image("Oval2")
                     .edgesIgnoringSafeArea(.all)
@@ -111,7 +112,7 @@ struct ProfilePageView: View {
             .navigationBarHidden(true)
             
     }
-        
+    }
     }
 
 

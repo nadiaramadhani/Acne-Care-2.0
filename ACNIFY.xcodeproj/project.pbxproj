@@ -148,6 +148,7 @@
 		9B4590B028AB6BDD0083B405 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		9B4ACDB328B4B3E6002BCDAE /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		9B77959328B514F900FF2E87 /* SkinTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeView.swift; sourceTree = "<group>"; };
+		9B7BECC728B6F11500B5717A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9B86CBE128680B1700449BB4 /* CustomPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		9B86CBE72868826700449BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9B86CBE82868A9C600449BB4 /* PopUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpModel.swift; sourceTree = "<group>"; };
@@ -373,6 +374,7 @@
 		9BB3781B28634BA2007A3640 /* ACNIFYTests */ = {
 			isa = PBXGroup;
 			children = (
+				9B7BECC728B6F11500B5717A /* Info.plist */,
 				9BB3781C28634BA2007A3640 /* ACNIFYTests.swift */,
 			);
 			path = ACNIFYTests;
@@ -1307,7 +1309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ACNIFY/Preview Content\"";
-				DEVELOPMENT_TEAM = 89TMJ964L4;
+				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ACNIFY/Info.plist;
@@ -1322,7 +1324,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.agusart.acnecare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramadhani.acnecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1339,7 +1341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ACNIFY/Preview Content\"";
-				DEVELOPMENT_TEAM = 89TMJ964L4;
+				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ACNIFY/Info.plist;
@@ -1354,7 +1356,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.agusart.acnecare;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramadhani.acnecare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1371,6 +1373,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ACNIFYTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-.ACNIFYTests";
@@ -1391,6 +1395,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DZ5KY3PP54;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ACNIFYTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-.ACNIFYTests";
