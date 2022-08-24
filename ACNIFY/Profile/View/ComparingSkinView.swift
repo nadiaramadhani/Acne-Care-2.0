@@ -45,7 +45,7 @@ struct ComparingSkinView: View {
                             
                         }
                     }
-                    Text("Look! Your skin face condition is getting better, be consistent to get the best result!We care because we’re Acnecare.")
+                    Text("Look! Your face condition is getting better, be consistent to get the best result!")
                         .multilineTextAlignment(.center)
                         .padding()
                         .font(.body)

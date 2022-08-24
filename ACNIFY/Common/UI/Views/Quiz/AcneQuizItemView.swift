@@ -25,13 +25,14 @@ struct AcneQuizItemView: View {
 //                    Text("What is the most dominant pimple on your \(acneData?.location ?? "forehead")?")
 //
 //
-                    Text("What is the most dominant pimple on your  \(Text(acneData?.location ?? "forehead").foregroundColor(Color("primaryGreen")).italic())")
+                    Text("What is the most dominant acne on your \(Text(acneData?.location ?? "forehead").foregroundColor(Color("primaryGreen")).italic()) ?")
                     
                     .font(.system(size: 20))
                     .fontWeight(.semibold)
                     .foregroundColor(Color("quizFont"))
                     .frame(width: 300, height: 48)
                     .padding(.bottom)
+                    .multilineTextAlignment(.center)
                 
                 HStack{
                     VStack{

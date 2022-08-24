@@ -98,10 +98,10 @@ struct ProfilePageView: View {
                     
                 }
                 .alert(isPresented: $alertIsPresented, content:{
-                    Alert(title: Text("Leave Page"), message: Text("Are you sure you want to re-test your skin and acne condition?"), primaryButton: .default(Text("Sure"),action: {
+                    Alert(title: Text("Leave Page"), message: Text("Are you sure you want to re-test your skin and acne condition?"), primaryButton: .default(Text("Cancel")),
+                          secondaryButton: .default(Text("Sure"), action: {
                         isReminder = true
-                    }),
-                          secondaryButton: .cancel(Text("Cancel")))
+                    }))
                 })
             }
             .navigationBarHidden(true)

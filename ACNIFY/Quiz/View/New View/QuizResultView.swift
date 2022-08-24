@@ -10,7 +10,7 @@ import SwiftUI
 struct QuizResultView: View {
     @ObservedObject var viewModel: NewQuizViewModel
     @Binding var displayedPage: SkinQuizMainView.DisplayedPage
-    
+    @State var isHomePage: Bool = false
     @State var selectedIndex = 0
     
     var body: some View {
@@ -56,13 +56,17 @@ struct QuizResultView: View {
                     .background(Color("yellow"))
                     .cornerRadius(12)
                     
+                        
+                        
                     Button {
                         viewModel.saveSkinPersona()
+                        isHomePage = true
                     } label: {
                         Text("Not Now")
                             .fontWeight(.semibold)
                             .foregroundColor(Color.black)
                     }
+                       
                     .cornerRadius(12)
                     .frame(width: 325, height: 50)
                     .overlay(
@@ -87,18 +91,22 @@ struct SkinResulView: View {
     var body: some View {
         VStack{
             Text("Your Skin Type: \(data.name)")
-                .font(.title)
+                .font(.title2)
                 .foregroundColor(Color("primaryGreen"))
                 .bold()
             
             Text("\(data.desc)")
                 .multilineTextAlignment(.center)
-                .frame(width: 342, height: 154)
+                .frame(width: 342, height: 176)
+                .font(.body)
+                .foregroundColor(Color("grayFont"))
             
             Text("\(data.source)")
-                .font(.system(size: 13))
+                .font(.footnote)
                 .foregroundColor(Color("primaryGreen"))
                 .italic()
+                .frame(width: 342, height: 18, alignment: .center)
+            
             
         }
     }
@@ -114,19 +122,24 @@ struct AcneResultView: View {
     var body: some View {
         VStack{
             Text("Acne Severity: \(data.name)")
-                .font(.title)
+                .font(.title2)
                 .foregroundColor(Color("primaryGreen"))
                 .bold()
             
             
             Text("\(data.desc)")
                 .multilineTextAlignment(.center)
+                .foregroundColor(Color("grayFont"))
                 .frame(width: 342, height: 154)
+                .font(.body)
             
             Text(data.source)
-                .font(.system(size: 13))
+                .font(.footnote)
                 .foregroundColor(Color("primaryGreen"))
                 .italic()
+                .multilineTextAlignment(.center)
+                .frame(width: 342, height: 60, alignment: .center)
+                
         }
         
     }

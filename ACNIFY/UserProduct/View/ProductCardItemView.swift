@@ -24,7 +24,7 @@ struct ProductCardItemView: View {
                 .padding(5)
                 .shadow(radius: 5)
             
-            HStack{
+            HStack(){
                 Image(productDetail.getImageName(routineType: product.routineType ?? ""))
                     .frame(width:40, height: 90)
                     .padding()
