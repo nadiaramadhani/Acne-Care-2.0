@@ -21,8 +21,8 @@ struct ProductPopUpNight: View {
     @StateObject var lnManagerNight = LocalNotificationManagerNight()
     var body: some View {
         if isUnderstandNight{
-             NightChooseProduct()
-                .environmentObject(lnManagerNight)
+//             NightChooseProduct()
+//                .environmentObject(lnManagerNight)
         }else{
         ZStack{
             Color.black

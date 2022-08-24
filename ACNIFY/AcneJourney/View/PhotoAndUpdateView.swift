@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PhotoAndUpdateView: View {
-    
+    @Binding var isShowPhoto:Bool
     @State var description : String = ""
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel : TreatmentPhotoViewModel
@@ -170,8 +170,9 @@ struct PhotoAndUpdateView: View {
             }
             .foregroundColor(Color.white)
             .frame(width: 153, height: 50)
-            .background(Color("yellow"))
+            .background(viewModel.selectedEmoji == "" ? Color.gray : Color("yellow"))
             .cornerRadius(12)
+            .disabled(viewModel.selectedEmoji == "")
             Spacer()
         }
     }
@@ -186,8 +187,8 @@ struct PhotoAndUpdateView: View {
    
 }
 
-struct PhotoAndUpdateView_Previews: PreviewProvider {
-    static var previews: some View {
-        PhotoAndUpdateView(viewModel: TreatmentPhotoViewModel(acneLog: AcneLog(context: PersistenceController.shared.container.viewContext)))
-    }
-}
+//struct PhotoAndUpdateView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PhotoAndUpdateView(viewModel: TreatmentPhotoViewModel(acneLog: AcneLog(context: PersistenceController.shared.container.viewContext)))
+//    }
+//}

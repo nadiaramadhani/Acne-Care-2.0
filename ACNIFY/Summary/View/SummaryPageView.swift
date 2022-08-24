@@ -227,10 +227,12 @@ struct ReviewView: View{
 
             HStack{
 
+                if acnelog.image != nil {
                 Image(uiImage: UIImage(data: acnelog.image!)!)
                     .resizable()
                     .frame(width: 132, height: 184)
                     .padding(.leading)
+                }
 
                 Spacer()
                     .frame(width:24)

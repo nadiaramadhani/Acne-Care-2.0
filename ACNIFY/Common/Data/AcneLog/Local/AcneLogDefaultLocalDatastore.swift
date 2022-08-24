@@ -45,7 +45,11 @@ final class AcneLogDefaultLocalDataStore: AcneLogLocalDataStore {
     }
     
     func saveChanges() {
-        try? self.container.viewContext.save()
+        do {
+        try self.container.viewContext.save()
+        } catch{
+            print(error.localizedDescription)
+        }
     }
     
     func rollBack() {

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9A4A85E728B3A76A009E2F6F /* ComparingSkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A85E628B3A76A009E2F6F /* ComparingSkinView.swift */; };
 		9A747F34286C92A700683171 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F33286C92A700683171 /* LocationManager.swift */; };
-		9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F39286C92D300683171 /* PhotoPreviewView.swift */; };
 		9A747F3E286C92EA00683171 /* PopUpNightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F3D286C92EA00683171 /* PopUpNightView.swift */; };
 		9A747F49286C933500683171 /* CoreDataNadia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A747F47286C933500683171 /* CoreDataNadia.xcdatamodeld */; };
 		9A8C42A028B11640006E0134 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C429F28B11640006E0134 /* MainTabView.swift */; };
@@ -63,6 +62,7 @@
 		CB2399FF28B4CFB60001DBC1 /* GraphProviderAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2399FE28B4CFB60001DBC1 /* GraphProviderAble.swift */; };
 		CB239A0128B4D0D10001DBC1 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB239A0028B4D0D10001DBC1 /* SummaryViewModel.swift */; };
 		CB239A0328B4E1400001DBC1 /* Date+Today+Display+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB239A0228B4E1400001DBC1 /* Date+Today+Display+Time.swift */; };
+		CB239A0528B5690D0001DBC1 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB239A0428B5690D0001DBC1 /* Camera.swift */; };
 		CB33870128AA0E7E006B839B /* TreatmentPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870028AA0E7E006B839B /* TreatmentPhotoViewModel.swift */; };
 		CB33870528AA1C11006B839B /* AcneLogProductLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870428AA1C11006B839B /* AcneLogProductLocalDataSource.swift */; };
 		CB33870728AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870628AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift */; };
@@ -124,7 +124,6 @@
 		9A4A85E628B3A76A009E2F6F /* ComparingSkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparingSkinView.swift; sourceTree = "<group>"; };
 		9A57F9AD28B3118D001A4173 /* LocalNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationView.swift; sourceTree = "<group>"; };
 		9A747F33286C92A700683171 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		9A747F39286C92D300683171 /* PhotoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewView.swift; sourceTree = "<group>"; };
 		9A747F3D286C92EA00683171 /* PopUpNightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpNightView.swift; sourceTree = "<group>"; };
 		9A747F48286C933500683171 /* CoreDataNadia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataNadia.xcdatamodel; sourceTree = "<group>"; };
 		9A7B82AB28B228EE00FA44A7 /* SummaryPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryPageView.swift; sourceTree = "<group>"; };
@@ -182,6 +181,7 @@
 		CB2399FE28B4CFB60001DBC1 /* GraphProviderAble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphProviderAble.swift; sourceTree = "<group>"; };
 		CB239A0028B4D0D10001DBC1 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		CB239A0228B4E1400001DBC1 /* Date+Today+Display+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Today+Display+Time.swift"; sourceTree = "<group>"; };
+		CB239A0428B5690D0001DBC1 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		CB33870028AA0E7E006B839B /* TreatmentPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentPhotoViewModel.swift; sourceTree = "<group>"; };
 		CB33870428AA1C11006B839B /* AcneLogProductLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductLocalDataSource.swift; sourceTree = "<group>"; };
 		CB33870628AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductDefaultLocalDataSource.swift; sourceTree = "<group>"; };
@@ -514,8 +514,8 @@
 			isa = PBXGroup;
 			children = (
 				9B33ADE128ABC31300751F4A /* PhotoAndUpdateView.swift */,
-				9A747F39286C92D300683171 /* PhotoPreviewView.swift */,
 				9AC747CE2867DDFB001C91F8 /* TakePhotosView.swift */,
+				CB239A0428B5690D0001DBC1 /* Camera.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1052,6 +1052,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB239A0528B5690D0001DBC1 /* Camera.swift in Sources */,
 				9B33ADE228ABC31300751F4A /* PhotoAndUpdateView.swift in Sources */,
 				9BB3780E28634BA0007A3640 /* OnBoardingView.swift in Sources */,
 				CBD812DA28B0F12300EDE2CE /* ProductCardItemView.swift in Sources */,
@@ -1063,7 +1064,6 @@
 				CB19349428A3A1B0000DF7CE /* UserDefaultRepository.swift in Sources */,
 				CBBFE872289FC8250064ADF5 /* AcneCareDB.xcdatamodeld in Sources */,
 				CB1934AD28A5528D000DF7CE /* UserProductLocalDataStore.swift in Sources */,
-				9A747F3A286C92D300683171 /* PhotoPreviewView.swift in Sources */,
 				CB33870728AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift in Sources */,
 				CB3D368D28A2839900D9D637 /* SkinPersonaLocalDataStore.swift in Sources */,
 				9B00AE8028B09A7A0052D1E6 /* SkinQuizItemView.swift in Sources */,

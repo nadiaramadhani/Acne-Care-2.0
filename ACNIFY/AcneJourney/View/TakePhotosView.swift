@@ -9,21 +9,17 @@ import SwiftUI
 import AVFoundation
 
 struct TakePhotos: View {
+    @Binding var isShowPhoto:Bool
     @ObservedObject var viewModel : TreatmentPhotoViewModel
 
     var body: some View {
-        CameraView(viewModel: viewModel)
+        CameraView(isShowPhoto: $isShowPhoto, viewModel: viewModel)
     }
 }
 
-struct TakePhotos_Previews: PreviewProvider {
-    static var previews: some View {
-        TakePhotos(viewModel: TreatmentPhotoViewModel(acneLog: nil))
-    }
-}
 
 struct CameraView: View{
-    
+    @Binding var isShowPhoto:Bool
     @StateObject var camera = CameraModel()
     @State var isPhotoPreview = false
     @ObservedObject var viewModel : TreatmentPhotoViewModel
@@ -31,8 +27,7 @@ struct CameraView: View{
 
     var body: some View{
         if isPhotoPreview{
-//            PhotoPreview(data:viewModel.acneLog?.image)
-            PhotoAndUpdateView(viewModel: viewModel)
+            PhotoAndUpdateView(isShowPhoto: $isShowPhoto, viewModel: viewModel)
         } else {
             ZStack{
                 //Going to be camera preview
@@ -147,14 +142,11 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
 
     
     func Check(){
-        //first checking camera has got permission
         switch AVCaptureDevice.authorizationStatus(for: .video){
         case .authorized:
             setUp()
             return
-            //Setting Up Session
         case .notDetermined:
-            //restusting for permission
             AVCaptureDevice.requestAccess(for: .video) { (status) in
                 if status{
                     self.setUp()
@@ -172,13 +164,10 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     }
     
     func setUp(){
-        //setting up camera
         
         do{
-            //setting configs
             self.session.beginConfiguration()
             
-            //Camera discovery
             let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes:
                                                                         [.builtInTrueDepthCamera, .builtInDualCamera, .builtInWideAngleCamera],
                                                                     mediaType: .video, position: .unspecified)
@@ -191,13 +180,11 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
                 print("Kamera terdeteksi")
             }
             
-            //change for your own
             if let device = AVCaptureDevice.default(.builtInWideAngleCamera,
                                                     for: .video, position: .back) {
                 let input = try AVCaptureDeviceInput(device:
                                                         device)
                 
-                // checking and adding to session
                 if self.session.canAddInput(input){
                     self.session.addInput(input)
                 }
@@ -218,12 +205,13 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     }
     //take and retake functions
     func takePic (){
-        DispatchQueue.global(qos: .background).async{
+        DispatchQueue.global(qos: .userInitiated).async{
             self.output.capturePhoto(with:AVCapturePhotoSettings(), delegate: self)
-            self.session.stopRunning()
-            
+
             DispatchQueue.main.async{
                 withAnimation{self.isTaken.toggle()}
+                print("adasd")
+
             }
         }
     }
@@ -241,13 +229,11 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     }
     
     func photoOutput(_ output:AVCapturePhotoOutput, didFinishProcessingPhoto photo:AVCapturePhoto, error: Error?){
-        
         if error != nil{
             return
         }
         
-        print("pic taken")
-        
+        self.session.stopRunning()
         guard let imageData = photo.fileDataRepresentation() else{return}
         self.picData = imageData
     }

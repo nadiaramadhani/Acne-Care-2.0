@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @State var isShowPhoto = false
+    @ObservedObject var homeViewModel = HomeViewModel()
     var body: some View {
-    //    NavigationView{
             TabView{
-                HomePageView()
+                HomePageView(isShowPhoto: $isShowPhoto, viewModel: homeViewModel)
                     .navigationBarHidden(true)
                     .tabItem{
                         Image(systemName: "house")
@@ -28,10 +29,13 @@ struct MainTabView: View {
                 
             }
             .accentColor(Color("primaryGreen"))
-       // }
+            .fullScreenCover(isPresented: $isShowPhoto, onDismiss: {homeViewModel.getGraphLineData()}){
+                TakePhotos(isShowPhoto: $isShowPhoto, viewModel: TreatmentPhotoViewModel(acneLog: homeViewModel.nightLog))
+            }
         
     }
 }
+    
 
 
 

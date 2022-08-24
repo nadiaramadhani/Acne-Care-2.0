@@ -31,7 +31,7 @@ final class SummaryViewModel: ObservableObject{
         
         guard let dateSelected = self.selectedDate else {return}
         
-        self.selectedAcneLog = acneLogList?.filter{$0.image != nil && $0.type == UserProduct.nightRoutineType && $0.time! > dateSelected.dayBefore && $0.time! < dateSelected.dayAfter}.first
+        self.selectedAcneLog = acneLogList?.filter{$0.image != nil && $0.type == UserProduct.nightRoutineType && $0.time! > dateSelected && $0.time! < dateSelected.dayAfter}.first
     }
     
     func getProductNameUsed(){
