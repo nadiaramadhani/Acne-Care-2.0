@@ -9,8 +9,8 @@ import SwiftUI
 
 
 struct DrySkinView: View {
-    let skinType: String
-    let acneSeverity: String
+    @Binding var skinType: String
+    @Binding var acneSeverity: String
     let items: [BookmarkItem] = [.causesDry, .tipsDry]
     let acneItem: [BookmarkItem] = [.causesSensi, .tipsSensi]
     

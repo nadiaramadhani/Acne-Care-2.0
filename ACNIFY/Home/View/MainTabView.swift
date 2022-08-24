@@ -10,6 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     @State var isShowPhoto = false
     @ObservedObject var homeViewModel = HomeViewModel()
+    @ObservedObject var profileViewModel = ProfileViewModel()
     var body: some View {
             TabView{
                 
@@ -20,7 +21,7 @@ struct MainTabView: View {
                         Text("Progress")
                     }.tag(0)
                 
-                ProfilePageView()
+                ProfilePageView(viewModel: profileViewModel)
                     .navigationBarHidden(true)
                     .tabItem{
                         Image(systemName: "person.crop.circle")

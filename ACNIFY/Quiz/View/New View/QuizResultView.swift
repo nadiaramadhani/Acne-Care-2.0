@@ -10,7 +10,6 @@ import SwiftUI
 struct QuizResultView: View {
     @ObservedObject var viewModel: NewQuizViewModel
     @Binding var displayedPage: SkinQuizMainView.DisplayedPage
-    @State var isHomePage: Bool = false
     @State var selectedIndex = 0
     
     var body: some View {
@@ -60,7 +59,6 @@ struct QuizResultView: View {
                         
                     Button {
                         viewModel.saveSkinPersona()
-                        isHomePage = true
                     } label: {
                         Text("Not Now")
                             .fontWeight(.semibold)

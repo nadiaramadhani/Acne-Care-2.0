@@ -13,7 +13,7 @@ struct ProfilePageView: View {
     @State var isReminder: Bool = false
     @State var alertIsPresented: Bool = false
     
-    @ObservedObject var viewModel = ProfileViewModel()
+    @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
             ZStack(alignment: .top){
@@ -66,7 +66,10 @@ struct ProfilePageView: View {
                     .pickerStyle(.segmented)
                     
                     if selected == 1 {
-                        DrySkinView(skinType: viewModel.skinType, acneSeverity: viewModel.acneSeverity)
+                        DrySkinView(skinType: $viewModel.skinType, acneSeverity: $viewModel.acneSeverity)
+                            .onAppear{
+                                viewModel.getData()
+                            }
                     }
                     else if selected == 2 {
                         ComparingSkinView()
@@ -106,16 +109,9 @@ struct ProfilePageView: View {
                 })
             }
             .navigationBarHidden(true)
-            .onAppear{
-                viewModel.getData()
-            }
+            
     }
         
     }
 
 
-struct TestProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfilePageView()
-    }
-}

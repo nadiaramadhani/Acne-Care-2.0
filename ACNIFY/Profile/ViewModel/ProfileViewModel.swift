@@ -16,20 +16,20 @@ final class ProfileViewModel: ObservableObject {
     private let userRepository: UserRepository
     private let skinPersonaRepository: SkinPersonaRepository
     
-    init(userRepository: UserRepository = UserDefaultRepository(), skinPersonaRepository: SkinPersonaRepository = SkinPersonaDefaultRepository()){
+    init(userRepository: UserRepository = UserDefaultRepository(), skinPersonaRepository: SkinPersonaRepository = SkinPersonaDefaultRepository.shared){
         self.userRepository = userRepository
         self.skinPersonaRepository = skinPersonaRepository
-        self.getData()
     }
     
     
     func getData() {
         let userId = AuthenticationDefaultRepository.shared.userID!
         
-        let logedInUser = userRepository.getUserByID(id: userId)
-        self.userName = logedInUser?.name ?? "User"
+        let logedInUser = userRepository.getUserByID(id: userId)!
+        self.userName = logedInUser.name!
         
         guard let skinPersona = skinPersonaRepository.getUserLatestSkinPersona(userID: userId) else {
+            print("not found")
             return
         }
         
