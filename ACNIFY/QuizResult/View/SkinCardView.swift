@@ -171,16 +171,16 @@ extension BookmarkItem {
 
     
     static func getBookmarkBySkinType(skintype: String) -> [BookmarkItem]{
-        switch skintype {
-        case "Normal":
+        switch skintype.lowercased() {
+        case "normal":
             return [.tipsNormal]
-        case "Dry":
+        case "dry":
             return [.causesDry, .tipsDry]
-        case "Oily":
+        case "oily":
             return [.causesOily,.tipsOily]
-        case "Combination":
+        case "combination":
             return [.causesCombi, .tipsCombi]
-        case "Sensitive":
+        case "sensitive":
             return [.causesSensi, .tipsSensi]
         default:
             return []

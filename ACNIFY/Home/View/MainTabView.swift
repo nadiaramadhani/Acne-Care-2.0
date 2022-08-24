@@ -12,6 +12,7 @@ struct MainTabView: View {
     @ObservedObject var homeViewModel = HomeViewModel()
     var body: some View {
             TabView{
+                
                 HomePageView(isShowPhoto: $isShowPhoto, viewModel: homeViewModel)
                     .navigationBarHidden(true)
                     .tabItem{
@@ -29,7 +30,9 @@ struct MainTabView: View {
                 
             }
             .accentColor(Color("primaryGreen"))
-            .fullScreenCover(isPresented: $isShowPhoto, onDismiss: {homeViewModel.getGraphLineData()}){
+            .fullScreenCover(isPresented: $isShowPhoto, onDismiss: {
+                homeViewModel.getGraphLineData()
+            }){
                 TakePhotos(isShowPhoto: $isShowPhoto, viewModel: TreatmentPhotoViewModel(acneLog: homeViewModel.nightLog))
             }
         

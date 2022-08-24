@@ -16,7 +16,7 @@ struct SummaryPageView: View {
     @State var progressDay : Float = 0.5
     @State var progressNight: Float = 1.0
     @ObservedObject var viewModel = SummaryViewModel()
-    @Binding var graphData: LineChartData
+    @State var graphData: LineChartData
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -190,27 +190,30 @@ struct GraphicView: View{
     var body: some View{
         
         ZStack{
+            
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(Color.white)
                 .frame(width: 338, height: 181)
                 .shadow(color: .gray, radius: 3)
             VStack(alignment:.leading){
 
-                Text ("Your Acne")
+                Text ( graphSource.xAxisLabels == nil ? "Your Progress Graph Still Empty" : "Your Acne")
                     .foregroundColor(Color("primaryGreen"))
                     .font(.system(size: 11).bold())
                     .bold()
                     .padding(.bottom)
 
-
-                LineChartDemoView(data: $graphSource)
+                if graphSource.xAxisLabels != nil  {
+                LineChartDemoView(data: graphSource)
                     .frame(width: 300, height: 100, alignment: .center)
+                }
 
 
             }
         }
     }
 }
+
 
 
 

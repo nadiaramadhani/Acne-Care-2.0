@@ -63,6 +63,8 @@
 		CB239A0128B4D0D10001DBC1 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB239A0028B4D0D10001DBC1 /* SummaryViewModel.swift */; };
 		CB239A0328B4E1400001DBC1 /* Date+Today+Display+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB239A0228B4E1400001DBC1 /* Date+Today+Display+Time.swift */; };
 		CB239A0528B5690D0001DBC1 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB239A0428B5690D0001DBC1 /* Camera.swift */; };
+		CB239A0728B608B10001DBC1 /* ExpandableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB239A0628B608B10001DBC1 /* ExpandableCard.swift */; };
+		CB239A0C28B614AB0001DBC1 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB239A0B28B614AB0001DBC1 /* ProfileViewModel.swift */; };
 		CB33870128AA0E7E006B839B /* TreatmentPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870028AA0E7E006B839B /* TreatmentPhotoViewModel.swift */; };
 		CB33870528AA1C11006B839B /* AcneLogProductLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870428AA1C11006B839B /* AcneLogProductLocalDataSource.swift */; };
 		CB33870728AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33870628AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift */; };
@@ -182,6 +184,8 @@
 		CB239A0028B4D0D10001DBC1 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		CB239A0228B4E1400001DBC1 /* Date+Today+Display+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Today+Display+Time.swift"; sourceTree = "<group>"; };
 		CB239A0428B5690D0001DBC1 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		CB239A0628B608B10001DBC1 /* ExpandableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCard.swift; sourceTree = "<group>"; };
+		CB239A0B28B614AB0001DBC1 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		CB33870028AA0E7E006B839B /* TreatmentPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentPhotoViewModel.swift; sourceTree = "<group>"; };
 		CB33870428AA1C11006B839B /* AcneLogProductLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductLocalDataSource.swift; sourceTree = "<group>"; };
 		CB33870628AA1C4E006B839B /* AcneLogProductDefaultLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcneLogProductDefaultLocalDataSource.swift; sourceTree = "<group>"; };
@@ -253,17 +257,10 @@
 		9A8C429828B114BD006E0134 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				9A8C429928B114D8006E0134 /* View Model */,
+				CB239A0A28B614990001DBC1 /* ViewModel */,
 				9A8C429A28B114E5006E0134 /* View */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		9A8C429928B114D8006E0134 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Model";
 			sourceTree = "<group>";
 		};
 		9A8C429A28B114E5006E0134 /* View */ = {
@@ -274,6 +271,7 @@
 				9A4A85E628B3A76A009E2F6F /* ComparingSkinView.swift */,
 				9B4ACDB328B4B3E6002BCDAE /* ProfilePageView.swift */,
 				9B77959328B514F900FF2E87 /* SkinTypeView.swift */,
+				CB239A0628B608B10001DBC1 /* ExpandableCard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -500,6 +498,14 @@
 				CB2399FE28B4CFB60001DBC1 /* GraphProviderAble.swift */,
 			);
 			path = Graph;
+			sourceTree = "<group>";
+		};
+		CB239A0A28B614990001DBC1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB239A0B28B614AB0001DBC1 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CB3386FE28AA0E5B006B839B /* ViewModel */ = {
@@ -1136,10 +1142,12 @@
 				CB3D368628A27BE700D9D637 /* UserRepository.swift in Sources */,
 				9AF3DC4A2869C588007847E7 /* LocalNotifManager2.swift in Sources */,
 				CB2399ED28B3945F0001DBC1 /* Color+from+hex.swift in Sources */,
+				CB239A0C28B614AB0001DBC1 /* ProfileViewModel.swift in Sources */,
 				9B0ED36228B25DD1007DFAF7 /* CustomCalendar.swift in Sources */,
 				9BA6864B28AEFE97001CD564 /* IntroQuizView.swift in Sources */,
 				9B4ACDB428B4B3E7002BCDAE /* ProfilePageView.swift in Sources */,
 				CB3D368028A278C200D9D637 /* AuthLocalDataStore.swift in Sources */,
+				CB239A0728B608B10001DBC1 /* ExpandableCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

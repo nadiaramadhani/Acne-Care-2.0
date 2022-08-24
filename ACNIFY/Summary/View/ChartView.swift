@@ -11,19 +11,17 @@ import Combine
 
 struct LineChartDemoView: View {
     
-    @Binding var data: LineChartData
+    var data: LineChartData
     
     var body: some View {
         LineChart(chartData: data)
             .pointMarkers(chartData: data)
             .yAxisGrid(chartData: data)
-
             .xAxisLabels(chartData: data)
-        
-        
             .yAxisLabels(chartData: data,
                          formatter: numberFormatter,
                          colourIndicator: .style(size: 12))
+
            
     }
     
