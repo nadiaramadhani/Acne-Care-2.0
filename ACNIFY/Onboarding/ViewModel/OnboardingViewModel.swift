@@ -17,17 +17,17 @@ final class OnboardingViewModel: ObservableObject {
             OnboardingViewModel.OnboardingItem(
                 Title: "**Identify your skin condition**",
                 Subtitle: "Understand your skin and your acne. So you know what to do next",
-                ImageName: "firstOnboard"
+                ImageName: "onboardingPage1"
             ),
             OnboardingViewModel.OnboardingItem(
                 Title: "**Acne treatment routine**",
                 Subtitle: "Create your skincare commitment, find the most suitable products, and stay consistence with Acne Care",
-                ImageName: "secondOnboard"
+                ImageName: "onboardingPage2"
             ),
             OnboardingViewModel.OnboardingItem(
                 Title: "**Healing process**",
                 Subtitle: "No matter how small it is, check your progress and stay motivated",
-                ImageName: "thirdOnboard"
+                ImageName: "onboardingPage3"
             ),
         ]
     }

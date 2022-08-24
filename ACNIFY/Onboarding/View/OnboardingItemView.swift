@@ -13,23 +13,27 @@ struct OnboardingItemView: View {
         VStack{
             Spacer()
             Image(item.ImageName)
-                .padding()
+                .padding(.all)
+            
+            
             Text(item.Title.toMarkdown())
                 .font(.title)
-                .multilineTextAlignment(.leading)
                 .foregroundColor(Color("primaryGreen"))
                 .frame(width: 350, alignment: .leading)
-                .padding(.leading, 30)
+                .multilineTextAlignment(.leading)
+                .padding(.leading)
                 .padding(.bottom)
             
             Text(item.Subtitle)
-                .frame(width: 350, alignment: .leading)
-                .font(.title3)
-                .padding(.leading, 30)
-                        Spacer()
+                .frame(width: 345, alignment: .leading)
+                .font(.headline)
+                .padding(.leading)
+            
+            Spacer()
             
           
         }
+//        .frame(width: 353, height: 443)
     }
 }
 

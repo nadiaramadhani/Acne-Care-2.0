@@ -22,6 +22,8 @@ struct SkinQuizItemView: View {
                 .fontWeight(.semibold)
                 .foregroundColor(Color("quizFont"))
                 .padding()
+                .frame(width: 350, height: 90)
+                .multilineTextAlignment(.center)
             HStack{
                 if let answers = data?.answerList {
                     ForEach(0..<answers.count, id: \.self){ index in
@@ -36,7 +38,8 @@ struct SkinQuizItemView: View {
                                 .font(.system(size: 15))
                                 .fontWeight(.semibold)
                                 .frame(width: 135, height: 40)
-                                .multilineTextAlignment(.leading)
+                                .multilineTextAlignment(.center)
+                            
                             
                         }
                         .padding(.horizontal)

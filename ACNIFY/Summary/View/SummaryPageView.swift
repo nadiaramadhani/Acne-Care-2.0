@@ -33,7 +33,7 @@ struct SummaryPageView: View {
                                 .foregroundColor(Color("yellow2"))
 
                                 .shadow(color: Color("yellow2s"), radius: 2)
-                            Text("Your skin is getting better, keep going")
+                            Text("Look at how far you've come. Keep going!")
                                 .font(.caption)
                         }
 

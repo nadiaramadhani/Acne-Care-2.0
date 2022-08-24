@@ -28,16 +28,19 @@ struct IntroQuizView: View {
                 .fontWeight(.bold)
                 .frame(width: 350, height: 48)
                 .multilineTextAlignment(.leading)
-                .padding(.trailing)
+                .padding(.trailing,30)
             
             Text("""
-Worry no more beautiful! We will be with you to accompany your acne healing process.
-Only instant ramen noodles have immediate results. Everything needs action, perseverance, and consistency to bear the prize, my friend.
+Worry no more! We will be with you to accompany your acne healing process.
+
+Everything needs action, perseverance, and consistency to bear the prize, my friend.
+
 Acne healing will take two to six months.
 """)
-            .frame(width: 305, height: 208)
+            .frame(width: 320, height: 240)
             .font(.body)
             .foregroundColor(Color("grayFont"))
+            .multilineTextAlignment(.leading)
             
             
             Button {
