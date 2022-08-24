@@ -24,21 +24,19 @@ struct ACNIFYApp: App {
             } else {
                 LoginView()
                     .fullScreenCover(isPresented: $authentificationRepository.isLogedIn){
-                        if skinPersonaRepository.isFirstUserQuiz {
-                            SkinQuizMainView()
-                        } else{
-                            
-                            MainTabView()
-                                .transition(transition)
-                                .onAppear{
-                                    let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-                                    print(paths[0])
-                                }
-                        }
+                        MainTabView()
+                            .transition(transition)
+                            .onAppear{
+                                let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+                                print(paths[0])
+                            }.fullScreenCover(isPresented: $skinPersonaRepository.isFirstUserQuiz){
+                                SkinQuizMainView()
+                            }
                     }
+                    
             }
-            
         }
+        
     }
 }
 

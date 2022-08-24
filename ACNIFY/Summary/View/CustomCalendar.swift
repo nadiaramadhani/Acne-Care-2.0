@@ -138,7 +138,7 @@ struct CustomCalendar: View {
                     Circle()
                         .trim(from: 0.5, to: CGFloat(min(self.progressNight, 1.0)))
                         .stroke(style: StrokeStyle(lineWidth: 3.0, lineCap: .round, lineJoin: .round))
-                        .foregroundColor(value.dayLog != nil ? Color("purpleSummary"): Color.gray)
+                        .foregroundColor(value.nightLog != nil ? Color("purpleSummary"): Color.gray)
                         .rotationEffect(Angle(degrees: 270))
                         
                     

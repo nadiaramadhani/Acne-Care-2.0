@@ -11,7 +11,7 @@ import SwiftUICharts
 import Combine
 
 final class HomeViewModel: ObservableObject {
-   
+    
     @Published var currentUser: User?
     @Published var dayLog: AcneLog?
     @Published var nightLog: AcneLog?
@@ -21,7 +21,7 @@ final class HomeViewModel: ObservableObject {
     @Published var productUsedNightNames: [String] = []
     @Published var productUsedDayNames: [String] = []
     @Published var chartData: LineChartData = LineChartData(dataSets: LineDataSet(dataPoints: []))
-
+    
     private let userRepository: UserRepository
     private let acneLogRepository: AcneLogRepository
     private let userProductRepository: UserProductRepository
@@ -111,7 +111,7 @@ final class HomeViewModel: ObservableObject {
     
     func checkChecklistAvailablility(){
         let userProducts  = userProductRepository.getAllUsedUserProduct(userID: AuthenticationDefaultRepository.shared.userID!)
-
+        
         
         if userProducts.filter({$0.routineType == UserProduct.dayRoutineType}).count > 0 {
             isDayProductCreated = true
@@ -122,63 +122,83 @@ final class HomeViewModel: ObservableObject {
         }
     }
     
- 
+    
     
     func getGraphLineData() {
         guard let logs = acneLogRepository.getAcneLogsByUserID(userID: AuthenticationDefaultRepository.shared.userID!) else {
             return
         }
-
+        
+        guard logs.count != 0 else {
+            return
+            
+        }
+        
+        
         guard logs.count != 0 else {return}
-
+        
         var dataPoints: [LineChartDataPoint] = []
         
-        let number = logConditionToNumber(condition: logs.first!.condition ?? "")
-        dataPoints.append(LineChartDataPoint(value: number, xAxisLabel: "Week \(number)", description: logs.first!.condition!   ))
-
-        for log in logs.dropFirst() {
-        
-            if log.condition == nil {
-                continue
-            }
-            
+        var numbers = [Double]()
+        for log in logs {
             let number = logConditionToNumber(condition: log.condition!)
-            
-            guard let firstitem  = dataPoints.first else {
-                continue
-            }
-            
-            if dataPoints.count == 1 {
-                if number == firstitem.value{
+            numbers.append(number)
+        }
+        
+        let uniq =  Set(numbers)
+        print(logs.count)
+        if uniq.count > 1 {
+            var adder = 0.000001
+            for log in logs {
+                guard log.condition != nil else {continue}
+                
+                if log.condition!.isEmpty {
                     continue
                 }
-                dataPoints.append(LineChartDataPoint(value: number, xAxisLabel: "Week \(number)", description: log.condition!))
+                
+                
+                let number = logConditionToNumber(condition: log.condition!)
+                dataPoints.append(LineChartDataPoint(value: number + adder))
+                adder += 0.000001
             }
             
-            dataPoints.append(LineChartDataPoint(value: number, xAxisLabel: "Week \(number)", description: log.condition!))
-
+        }else {
+            
+            for log in logs {
+                guard log.condition != nil else {continue}
+                
+                if log.condition!.isEmpty {
+                    continue
+                }
+                
+                let number = logConditionToNumber(condition: log.condition!)
+                dataPoints.append(LineChartDataPoint(value: number))
+            }
+            
+            while dataPoints.count > 1 {
+                if dataPoints.first!.value == dataPoints[1].value {
+                    dataPoints.remove(at: 0)
+                }else{
+                    break
+                }
+            }
         }
-
-
-        guard dataPoints.count != 0 else {
-            return
-        }
-
+        
         let data = LineDataSet(dataPoints: dataPoints,
                                legendTitle: "Acne Conditions",
                                pointStyle: PointStyle(),
                                style: LineStyle(lineColour: ColourStyle(colour: Color(hex: "#006255")), lineType: .line))
-
+        
         let gridStyle = GridStyle(numberOfLines: 3,
                                   lineColour   : Color(.lightGray).opacity(0.5),
                                   lineWidth    : 1,
                                   dash         : [10],
                                   dashPhase    : 2)
-
-
-
-
-
+        
+        
+        
+        
+        
         let chartStyle = LineChartStyle(infoBoxPlacement    : .infoBox(isStatic: false),
                                         infoBoxContentAlignment: .vertical,
                                         infoBoxBorderColour : Color.primary,
@@ -190,9 +210,9 @@ final class HomeViewModel: ObservableObject {
                                         yAxisLabelColour    : Color(hex: "#006255"), yAxisNumberOfLabels : 3,
                                         yAxisLabelType: .custom,
                                         globalAnimation     : .easeOut(duration: 1))
-
-
-
+        
+        
+        
         let chartData = LineChartData(dataSets: data,
                                       metadata: ChartMetadata(title: "Your acne", subtitle: "A Week"),
                                       xAxisLabels: [Int](0..<dataPoints.count).map{"Week \($0+1)"},
@@ -209,19 +229,20 @@ final class HomeViewModel: ObservableObject {
             let productId = Int($0.productDetailID)
             return UserProductDetail.getDefaultProduct().filter{$0.ID == productId}.first!.title
         }
-       
+        
         self.productUsedNightNames = userProducts.filter{$0.routineType == "night" && $0.isUsed && !$0.isLocked()}.map{
             let productId = Int($0.productDetailID)
             return UserProductDetail.getDefaultProduct().filter{$0.ID == productId}.first!.title
         }
-       
+        
     }
-
+    
     private func logConditionToNumber(condition: String) -> Double {
+        print(condition)
         switch condition.lowercased(){
         case "better":
             return 3
-        case "same":
+        case "normal":
             return 2
         case "worst":
             return 1

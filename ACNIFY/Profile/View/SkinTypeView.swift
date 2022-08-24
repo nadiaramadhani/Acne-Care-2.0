@@ -9,49 +9,46 @@ import SwiftUI
 
 
 struct DrySkinView: View {
-    
+    @Binding var skinType: String
+    @Binding var acneSeverity: String
     let items: [BookmarkItem] = [.causesDry, .tipsDry]
     let acneItem: [BookmarkItem] = [.causesSensi, .tipsSensi]
-    var acne: String = "Mild"
-    var skin: String = "Dry"
+    
     var body: some View {
         VStack{
-        
-        Section {
-            
-                 Text("Skin type: \(skin)")
-                     .foregroundColor(Color("primaryGreen"))
-                     .bold()
-                     .padding(.trailing, 210)
-             
-        }
-            List(items, children: \.items) { row in
-               
-                Image(row.icon)
-                //.padding
-                Text(row.desc)
-                    .font(.system(size: 12))
-            }
-            
-            Section{
-                Text("Acne type: \(acne)")
-                    .foregroundColor(Color("primaryGreen"))
-                    .bold()
-                    .padding(.trailing, 210)
-            }
-            
-            List(acneItem, children: \.items) { row in
-
-                Image(row.icon)
-                //.padding
-                Text(row.desc)
-                    .font(.system(size: 12))
+            ScrollView{
+                HStack{
+                    Text("Skin type: \(skinType.capitalizingFirstLetter())")
+                        .foregroundColor(Color("primaryGreen"))
+                        .bold()
+                    Spacer()
+                }.padding(.leading, 20)
+                ForEach(BookmarkItem.getBookmarkBySkinType(skintype: skinType)){ item in
+                    ExpandableCard(title: item.desc, items: item.items!)
+                }
                 
+                
+                HStack{
+                    Text("Acne Severity: \(acneSeverity.capitalizingFirstLetter())")
+                        .foregroundColor(Color("primaryGreen"))
+                        .bold()
+                    Spacer()
+                }.padding(.leading, 20)
+                ForEach(BookmarkItem.getBookmarkBySkinType(skintype: skinType)){ item in
+                    ExpandableCard(title: item.desc, items: item.items!)
+                }
             }
-            
-            
+            .padding(.bottom, 10)
         }
-        
     }
 }
 
+extension String {
+    func capitalizingFirstLetter() -> String {
+      return prefix(1).uppercased() + self.lowercased().dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+      self = self.capitalizingFirstLetter()
+    }
+}

@@ -13,6 +13,8 @@ struct ProfilePageView: View {
     @State var isReminder: Bool = false
     @State var alertIsPresented: Bool = false
     
+    @ObservedObject var viewModel: ProfileViewModel
+    
     var body: some View {
             ZStack(alignment: .top){
                 Image("Oval2")
@@ -36,11 +38,11 @@ struct ProfilePageView: View {
                     
                     Image("tyta")
                     
-                    Text("Trier Tieta")
+                    Text(viewModel.userName)
                         .font(.system(size:20))
                         .fontWeight(.bold)
                     HStack{
-                        Text("Oily Skin")
+                        Text(viewModel.skinType)
                             .font(.system(size: 12))
                             .fontWeight(.regular)
                         
@@ -64,8 +66,10 @@ struct ProfilePageView: View {
                     .pickerStyle(.segmented)
                     
                     if selected == 1 {
-                        
-                        DrySkinView()
+                        DrySkinView(skinType: $viewModel.skinType, acneSeverity: $viewModel.acneSeverity)
+                            .onAppear{
+                                viewModel.getData()
+                            }
                     }
                     else if selected == 2 {
                         ComparingSkinView()
@@ -105,13 +109,9 @@ struct ProfilePageView: View {
                 })
             }
             .navigationBarHidden(true)
-        }
+            
+    }
         
     }
 
 
-struct TestProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfilePageView()
-    }
-}

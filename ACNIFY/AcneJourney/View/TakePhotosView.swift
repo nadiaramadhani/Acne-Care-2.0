@@ -181,7 +181,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
             }
             
             if let device = AVCaptureDevice.default(.builtInWideAngleCamera,
-                                                    for: .video, position: .back) {
+                                                    for: .video, position: .front) {
                 let input = try AVCaptureDeviceInput(device:
                                                         device)
                 

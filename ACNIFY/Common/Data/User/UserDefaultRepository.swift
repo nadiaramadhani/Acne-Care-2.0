@@ -22,6 +22,7 @@ final class UserDefaultRepository: UserRepository {
         guard let user = self.getUserByID(id: id) else {return}
         user.addToSkinPersona(skinPersona)
         skinPersona.user = user
+        userDataStore.saveChanges()
     }
     
     func addNewAcneLog(id: String, acneLog: AcneLog) {
