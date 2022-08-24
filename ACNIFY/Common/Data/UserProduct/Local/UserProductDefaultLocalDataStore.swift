@@ -26,7 +26,12 @@ final class UserProductDefaultLocalDataStore: UserProductLocalDataStore {
     }
     
     func saveChanges() {
-        try? self.container.viewContext.save()
+        do {
+            try self.container.viewContext.save()
+        }catch{
+            print(error)
+        }
+        
     }
     
     func rollBack() {

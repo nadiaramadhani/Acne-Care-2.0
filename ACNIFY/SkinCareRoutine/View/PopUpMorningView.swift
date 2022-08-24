@@ -18,8 +18,8 @@ struct ProductPopUpMorning: View {
 
     var body: some View {
         if isUnderstandMorning{
-            morningChooseProduct()
-                .environmentObject(lnManagerMorning)
+//            morningChooseProduct()
+//                .environmentObject(lnManagerMorning)
         }else{
         ZStack{
             Color.black
@@ -50,7 +50,7 @@ struct ProductPopUp_Previews: PreviewProvider {
 //            Color.black
 //                .edgesIgnoringSafeArea(.all)
 //                .opacity(0.3)
-            morningChooseProduct()
+//            morningChooseProduct()
             ProductPopUpMorning()
             
         }

@@ -27,6 +27,7 @@ struct ACNIFYApp: App {
                         if skinPersonaRepository.isFirstUserQuiz {
                             SkinQuizMainView()
                         } else{
+                            
                             MainTabView()
                                 .transition(transition)
                                 .onAppear{

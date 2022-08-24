@@ -14,7 +14,6 @@ struct ProfilePageView: View {
     @State var alertIsPresented: Bool = false
     
     var body: some View {
-        NavigationView {
             ZStack(alignment: .top){
                 Image("Oval2")
                     .edgesIgnoringSafeArea(.all)
@@ -109,7 +108,7 @@ struct ProfilePageView: View {
         }
         
     }
-}
+
 
 struct TestProfileView_Previews: PreviewProvider {
     static var previews: some View {

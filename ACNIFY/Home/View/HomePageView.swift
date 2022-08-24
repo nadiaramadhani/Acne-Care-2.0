@@ -15,21 +15,22 @@ import SwiftUI
 import SwiftUICharts
 
 struct HomePageView: View {
-    
+    @Binding var isShowPhoto: Bool
+
     @State private var isMorningCard = false
     @State private var isNightCard = false
     @State private var nightViewCheck = false
     @State private var TakePhotosonAlert = false
     @State private var summaryPageFromGraphic = false
     
-    @ObservedObject var viewModel = HomeViewModel()
+    @ObservedObject var viewModel : HomeViewModel
     @State var isNightLinkActive = false
     @State var isDayLinkActive = false
     
     var body: some View {
         NavigationView{
         ZStack {
-            NavigationLink(destination: TakePhotos(viewModel: TreatmentPhotoViewModel(acneLog: viewModel.nightLog)).navigationBarHidden(true), isActive: self.$TakePhotosonAlert) { EmptyView() }
+            NavigationLink(destination: TakePhotos(isShowPhoto: $isShowPhoto, viewModel: TreatmentPhotoViewModel(acneLog: viewModel.nightLog)).navigationBarHidden(true), isActive: self.$TakePhotosonAlert) { EmptyView() }
             Image("Oval2")
                 .ignoresSafeArea()
             VStack{
@@ -40,7 +41,7 @@ struct HomePageView: View {
                         .navigationBarHidden(true), isActive: $isDayLinkActive) {EmptyView()}
                     NavigationLink("",destination: (SummaryPageView(graphData: $viewModel.chartData)),isActive: $summaryPageFromGraphic)
                         .navigationBarHidden(true)
-                    NavigationLink(destination: TakePhotos(viewModel: TreatmentPhotoViewModel(acneLog: viewModel.nightLog)).navigationBarHidden(true), isActive: self.$TakePhotosonAlert) { EmptyView() }
+                   
                     VStack{
                         Image("Oval2")
                             .ignoresSafeArea()
@@ -132,7 +133,9 @@ struct HomePageView: View {
                                             
                                         }
                                     }.onTapGesture {
-                                        isDayLinkActive.toggle()
+                                        if viewModel.isDayProductCreated {
+                                            isDayLinkActive.toggle()
+                                        }
                                     }
                                     
                                     
@@ -186,12 +189,14 @@ struct HomePageView: View {
                                                       primaryButton: .destructive(Text("Skip"), action:{
                                                     print("Skip has been selected")
                                                 }), secondaryButton: .default(Text("Take Photos"), action:{
-                                                    self.TakePhotosonAlert = true
+                                                    self.isShowPhoto = true
                                                 }))
                                             })
                                         }
                                     }.onTapGesture {
-                                        isNightLinkActive.toggle()
+                                        if viewModel.isNightProductCreated  {
+                                            isNightLinkActive.toggle()
+                                        }
                                     }
                                     
                                 }
@@ -203,13 +208,7 @@ struct HomePageView: View {
                             .fill(Color(hex: "#EDECED"))
                             .frame(height: 8)
                             .edgesIgnoringSafeArea(.horizontal)
-//                        HStack{
-//
-//                            Spacer()
-//
-//                        }.padding(.leading, 26)
-//                            .padding(.top, 5)
-                        
+
                         VStack{
                             HStack{
                                 
@@ -243,17 +242,14 @@ struct HomePageView: View {
                     viewModel.getProductNameUsed()
                     viewModel.checkChecklistAvailablility()
                     viewModel.getGraphLineData()
+                    print("ya")
                 }
                 
             }
         }
+       
     }
     }
 
 }
 
-struct HomePageView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomePageView()
-    }
-}

@@ -43,7 +43,7 @@ final class HomeViewModel: ObservableObject {
     }
     
     func getGraphicData() -> [Date:Int]?{
-        guard let logs = self.acneLogRepository.getAcneLogsByUserID(userID: (currentUser?.id)!.uuidString) else {return nil}
+        guard let logs = self.acneLogRepository.getAcneLogsByUserID(userID:  AuthenticationDefaultRepository.shared.userID!) else {return nil}
         
         var data : [Date : Int] = [:]
         
@@ -63,12 +63,12 @@ final class HomeViewModel: ObservableObject {
         
         let acnelogData = AcneLogData()
         acnelogData.type = "day"
-        acnelogData.userID = (currentUser?.id)!
+        acnelogData.userID = UUID.init(uuidString: AuthenticationDefaultRepository.shared.userID!)
         
         let newAcnelog = acneLogRepository.createNewAcneLog(data: acnelogData)
         
-        userRepository.addNewAcneLog(id: (currentUser?.id)!.uuidString, acneLog: newAcnelog)
-        acneLogRepository.addAcneLogUnlockProductsByUserID(userID: (currentUser?.id)!.uuidString, acneLog: newAcnelog)
+        userRepository.addNewAcneLog(id:  AuthenticationDefaultRepository.shared.userID!, acneLog: newAcnelog)
+        acneLogRepository.addAcneLogUnlockProductsByUserID(userID: AuthenticationDefaultRepository.shared.userID!, acneLog: newAcnelog)
         
         acneLogRepository.saveChanges()
         self.dayLog = newAcnelog
@@ -78,20 +78,19 @@ final class HomeViewModel: ObservableObject {
         guard nightLog == nil else {return}
         
         let acnelogData = AcneLogData()
-        acnelogData.type = "night"
+        acnelogData.type = UserProduct.nightRoutineType
         acnelogData.userID = UUID.init(uuidString: AuthenticationDefaultRepository.shared.userID!)
         
         let newAcnelog = acneLogRepository.createNewAcneLog(data: acnelogData)
         userRepository.addNewAcneLog(id: AuthenticationDefaultRepository.shared.userID!, acneLog: newAcnelog)
-        acneLogRepository.addAcneLogUnlockProductsByUserID(userID: (currentUser?.id)!.uuidString, acneLog: newAcnelog)
+        acneLogRepository.addAcneLogUnlockProductsByUserID(userID: AuthenticationDefaultRepository.shared.userID!, acneLog: newAcnelog)
         
-        
-        acneLogRepository.saveChanges()
         self.nightLog = newAcnelog
+        acneLogRepository.saveChanges()
     }
     
     func getTotalWeekElapsed(){
-        guard let userID = currentUser?.id?.uuidString else {return}
+        guard let userID = AuthenticationDefaultRepository.shared.userID else {return}
         let totalDaySinceFirstLog = acneLogRepository.getDayCountSinceFirstLog(userID: userID)
         
         if totalDaySinceFirstLog < 7 {
@@ -130,12 +129,14 @@ final class HomeViewModel: ObservableObject {
             return
         }
 
+        guard logs.count != 0 else {return}
 
-        print(logs.count)
         var dataPoints: [LineChartDataPoint] = []
-        dataPoints.append(LineChartDataPoint(value: 1, xAxisLabel: "M", description: "Monday"   ))
+        
+        let number = logConditionToNumber(condition: logs.first!.condition ?? "")
+        dataPoints.append(LineChartDataPoint(value: number, xAxisLabel: "Week \(number)", description: logs.first!.condition!   ))
 
-        for log in logs {
+        for log in logs.dropFirst() {
         
             if log.condition == nil {
                 continue
@@ -148,13 +149,13 @@ final class HomeViewModel: ObservableObject {
             }
             
             if dataPoints.count == 1 {
-                if number == firstitem .value{
+                if number == firstitem.value{
                     continue
                 }
-                dataPoints.append(LineChartDataPoint(value: number, xAxisLabel: "M", description: "Monday"   ))
+                dataPoints.append(LineChartDataPoint(value: number, xAxisLabel: "Week \(number)", description: log.condition!))
             }
             
-            dataPoints.append(LineChartDataPoint(value: number, xAxisLabel: "M", description: "Monday"   ))
+            dataPoints.append(LineChartDataPoint(value: number, xAxisLabel: "Week \(number)", description: log.condition!))
 
         }
 
@@ -194,7 +195,7 @@ final class HomeViewModel: ObservableObject {
 
         let chartData = LineChartData(dataSets: data,
                                       metadata: ChartMetadata(title: "Your acne", subtitle: "A Week"),
-                                      xAxisLabels: [Int](0..<dataPoints.count).map{"W\($0+1)"},
+                                      xAxisLabels: [Int](0..<dataPoints.count).map{"Week \($0+1)"},
                                       yAxisLabels: ["Bad", "Balance", "Great"],
                                       chartStyle: chartStyle)
         

@@ -15,25 +15,21 @@ struct IntroProductView: View {
     @AppStorage("firstTimeIntro") var firstIntro: Bool = true
     
     @ObservedObject var viewModel = ChooseProductViewModel()
-    
+    @Environment(\.presentationMode) var presentation
     var body: some View {
         if !firstIntro{
             
-            ChooseProductMainView(viewModel: viewModel, pageDisplayed: pageDisplayed).onAppear{
-                viewModel.getAllUserProducts()
-            }
-        }else if isCancel {
-            withAnimation(.easeInOut){
-                HomePageView()
-            }
-            
+            ChooseProductMainView(viewModel: viewModel, pageDisplayed: pageDisplayed)
+                .onAppear{
+                    viewModel.getAllUserProducts()
+                }
         }
         else{
   
             VStack{
                 Button(
                     action: {
-                        self.isCancel = true
+                        presentation.wrappedValue.dismiss()
                     }, label: {
                         Image(systemName: "xmark")
                             .font(.system(size:24).weight(.bold))
@@ -83,10 +79,10 @@ struct IntroProductView: View {
                 })
                 Spacer()
                 
-            }
-            .onTapGesture {
+            } .onAppear{
                 viewModel.getAllUserProducts()
             }
+        
     }
 }
 }

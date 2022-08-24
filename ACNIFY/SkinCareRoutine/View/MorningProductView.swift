@@ -38,7 +38,7 @@ struct morningChooseProduct: View {
     var body: some View {
         
         if isBack{
-          HomePageView()
+//          HomePageView()
         }else{
             
             NavigationView{
